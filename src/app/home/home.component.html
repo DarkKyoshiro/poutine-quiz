@@ -1,0 +1,8 @@
+<form>
+    <p *ngIf="state === '/rejected'">Ce nom d'équipe est déjà pris. Merci d'en choisir un autre ou de contacter la Grande Frite !</p>
+    <p *ngIf="state === '/disconnected'">Vous venez d'être déconnecté de force. Veuillez vous reconnecter ou contactez la Grande Frite !</p>
+    <label for="teamName">Nom de l'équipe: </label><br>
+    <input type="text" id="teamName" name="teamName" [(ngModel)]="teamName"><br>
+ 
+    <button (click)="onJoin()">Join</button>
+</form>

@@ -1,0 +1,38 @@
+<div *ngIf="this.questionID === 0" id="WaitRoom">
+    Merci de patienter. La grande frite commencera le quiz sous peu.
+</div>
+
+<div id="TeamLeaderBoard">
+    <h3>Votre score: {{this.getScore(teamName)}} <span *ngIf="getQuestion(this.questionID - 1).corrected">({{this.getResult(teamName)}})</span></h3>
+    <table>
+        <tr>
+            <td *ngFor="let team of this.teams | slice:0:3; let i=index">{{i+1}}. {{team.name}} {{team.score}}</td>
+        </tr>
+        <tr *ngIf="getQuestion(this.questionID - 1).corrected">
+            <td *ngFor="let team of this.teams | slice:0:3;">({{this.getResult(team.name)}})</td>
+        </tr>
+    </table>
+</div>
+
+<div id="GameBoard">
+    <div *ngIf="this.questionID > 0">
+        <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
+        <!-- <span>{{getQuestion(this.questionID - 1).question}}</span><br> -->
+        <!-- Before correction -->
+        <div *ngIf="!getQuestion(this.questionID - 1).corrected">
+            <div *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || getQuestion(this.questionID - 1).type === 'SelOuPoivre' )">
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition1)" *ngIf="getQuestion(this.questionID - 1).proposition1">{{getQuestion(this.questionID - 1).proposition1}}</button>
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition2)" *ngIf="getQuestion(this.questionID - 1).proposition2">{{getQuestion(this.questionID - 1).proposition2}}</button>
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition3)" *ngIf="getQuestion(this.questionID - 1).proposition3">{{getQuestion(this.questionID - 1).proposition3}}</button>
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition4)" *ngIf="getQuestion(this.questionID - 1).proposition4">{{getQuestion(this.questionID - 1).proposition4}}</button>
+            </div>
+            
+            <input type="text" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )" [(ngModel)]="this.answer" (keyup)="onAnswer(this.answer)"><br *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )">
+            <!-- <button class="Repondre" (click)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )">Répondre</button> -->
+        </div>
+        <!-- After correction -->
+        <div>
+            {{this.getAnswer()}}
+        </div>
+    </div>
+</div>

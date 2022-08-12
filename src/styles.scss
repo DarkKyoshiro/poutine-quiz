@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+ /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'HooliganJF';
+    src: local("HooliganJF"), url(./assets/fonts/HooliganJF.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'horseshoes_and_lemonadeRg';
+    src: local("HooliganJF"), url(./assets/fonts/horseshoeslemonade.ttf) format("truetype");
+}
+
+html, body { height: 100%; }
+
+body {
+    background-color: black;
+    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    width: 95%;
+    margin: auto;
+}
+
+p {
+    margin: 0;
+}
+
+p.title {
+    font-family: 'horseshoes_and_lemonadeRg', Arial, Helvetica, sans-serif;
+    font-size: 20vw;
+    color: white;
+    line-height: 90%;
+    margin-bottom: 20px;
+}
+@media screen and (min-width: 750px) {
+    p.title {
+       font-size: 150px;
+    }
+}
+
+span.title-blue {
+    color: blue;
+}
+
+span.title-red {
+    color: red;
+}
+
+span.title-yellow {
+    color: yellow;
+}
+
