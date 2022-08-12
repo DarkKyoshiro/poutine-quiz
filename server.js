@@ -1,8 +1,15 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
+app.use(express.static('./dist/client'));
+app.get('/*', function(req, res) {
+  res.sendFile('index.html', {root: 'dist/client/'}
+);
+});
+
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
     cors: {
-      origin: "http://localhost:4200"
+      origin: "http://localhost:" + process.env.PORT || 8080
     }
   });
 
@@ -212,8 +219,8 @@ io.on("connection", socket => {
   })
 });
 
-http.listen(4444, () => {
-    console.log('Listening on port 4444');
+http.listen(process.env.PORT || 8080, () => {
+    console.log('Listening on port 8080');
 });
 
 function getScores() {
