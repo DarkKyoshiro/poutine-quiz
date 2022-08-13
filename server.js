@@ -9,7 +9,7 @@ app.get('/*', function(req, res) {
 const http = require('http').Server(app);
  const io = require('socket.io')(http, {
     cors: {
-      origin: "https://poutinequiz.herokuapp.com/"
+      origin: "*"
     }
   });
 
