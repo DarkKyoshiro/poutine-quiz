@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
-//const config: SocketIoConfig = { url: 'http://localhost:8080/', options: {} };
+//const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
+const config: SocketIoConfig = { url: 'http://localhost:8080/', options: {} };
 
 @NgModule({
   declarations: [
