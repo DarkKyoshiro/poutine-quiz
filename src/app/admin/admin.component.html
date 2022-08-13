@@ -24,22 +24,22 @@
 <div *ngIf="showQuestionSelection && this.questions.length !== 0">
     <p><span *ngFor="let question of this.questions">
         <button *ngIf="question.type === 'Nugget'" (click)="onQuestion(question.id)">
-            <img src="assets/nuggets.png" alt="Nugget"> {{question.id}}
+            <img src="assets/nuggets.png" alt="Nugget" class="icon"> {{question.id}}
         </button>
     </span></p>
     <p><span *ngFor="let question of this.questions">
         <button *ngIf="question.type === 'SelOuPoivre'" (click)="onQuestion(question.id)">
-            <img src="assets/seloupoivre.png" alt="Sel ou Poivre"> {{question.id}}
+            <img src="assets/seloupoivre.png" alt="Sel ou Poivre" class="icon"> {{question.id}}
         </button>
     </span></p>
     <p><span *ngFor="let question of this.questions">
         <button *ngIf="question.type === 'Menu'" (click)="onQuestion(question.id)">
-            <img src="assets/menu.png" alt="Menu"><span *ngIf="question.group">-{{question.group}}</span> {{question.id}}
+            <img src="assets/menu.png" alt="Menu" class="icon"><span *ngIf="question.group">-{{question.group}}</span> {{question.id}}
         </button>
     </span></p>
     <p><span *ngFor="let question of this.questions">
         <button *ngIf="question.type === 'Addition'" (click)="onQuestion(question.id)">
-            <img src="assets/addition.png" alt="Addition"> {{question.id}}
+            <img src="assets/addition.png" alt="Addition" class="icon"> {{question.id}}
         </button>
     </span></p>
     <button (click)="onResetQuiz()" *ngIf="this.questions.length > 0 && !resetCheck"><img src="assets/clear.png" alt="Reset Quiz"></button>
