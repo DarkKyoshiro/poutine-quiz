@@ -68,7 +68,7 @@
                 {{answer.answer}}
             </td>
             <td class="space"  *ngIf="questions[this.questionID - 1].corrected">
-                <img src="assets/check.png" alt="Correct" *ngIf="answer.correct === 1"> <img src="assets/cross.png" alt="Correct" *ngIf="answer.correct === 0">
+                <img src="assets/check.png" alt="Correct" *ngIf="answer.correct === 1"> <img src="assets/cross.png" alt="Correct" *ngIf="answer.correct === 0">{{answer.bonus}}
             </td>
             <td *ngIf="showTimestamp">{{answer.timestamp | date:'HH:mm:ss'}}</td>
             <td>

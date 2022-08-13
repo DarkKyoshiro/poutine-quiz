@@ -108,8 +108,8 @@ export class GameComponent implements OnInit {
         }
       }
         
-      if(element.bonus !== 0) {
-        returnedAnswer = returnedAnswer + ' + ' + element.bonus + ' Bonus'
+      if(element.questionID === this.questionID && element.teamName === this.teamName && element.bonus !== 0) {
+        returnedAnswer = returnedAnswer + ' - Bonus: ' + element.bonus
       }
     })
     return returnedAnswer

@@ -19,7 +19,7 @@
 </div>
 
 <div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
-    <h3>Votre score: {{this.getScore(teamName)}} <span *ngIf="getQuestion(this.questionID - 1).corrected">({{this.getResult(teamName)}})</span></h3>
+    <h3>{{teamName}}: {{this.getScore(teamName)}} <span *ngIf="getQuestion(this.questionID - 1).corrected">({{this.getResult(teamName)}})</span></h3>
     <table>
         <tr>
             <td *ngFor="let team of this.teams | slice:0:3; let i=index">{{i+1}}. {{team.name}} {{team.score}}</td>
