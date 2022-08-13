@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const express = require('express');
 const app = express();
 app.use(express.static('./dist/client'));
@@ -144,6 +146,18 @@ io.on("connection", socket => {
     io.emit('send-questions', questions)
     io.emit('get-answers', answers)
   })
+
+  socket.on('reset-quiz', () => {
+    questions = []
+    answers =[]
+    questionID = 0
+    
+    io.emit('update-question-ID', questionID)
+    io.emit('get-answers', answers)
+    io.emit('send-questions', questions)
+    io.emit('send-teams', getScores())
+  })
+
   socket.on('refresh-questions', () => {
     io.emit('send-questions', questions)
   })
@@ -205,10 +219,10 @@ io.on("connection", socket => {
     io.emit('send-teams', getScores())
   })
 
-  socket.on('bonus-answer', (teamName, questionID) => {
+  socket.on('bonus-answer', (teamName, questionID, bonus) => {
     answers.forEach(element => {
       if(element.teamName === teamName && element.questionID === questionID) {
-        element.bonus === 1 ? element.bonus = 0 : element.bonus = 1
+        element.bonus = element.bonus + bonus
       }
     })
     io.emit('get-answers', answers)
@@ -226,6 +240,35 @@ io.on("connection", socket => {
     })
     io.emit('get-answers', answers)
     io.emit('send-teams', getScores())
+  })
+
+  //------------------------------------------------------------------------------------
+  //---------------------- Save management ---------------------------------------------
+  //------------------------------------------------------------------------------------
+  socket.on('save', () => {
+    const teamsData = JSON.stringify(teams, null, 4)
+    fs.writeFile('db/teams.json', teamsData, (err) => {
+      if(err) {
+        throw err;
+      }
+      console.log('Teams data saved.')
+    })
+
+    const answersData = JSON.stringify(answers, null, 4)
+    fs.writeFile('db/answers.json', answersData, (err) => {
+      if(err) {
+        throw err;
+      }
+      console.log('Answers data saved.')
+    })
+
+    const questionsData = JSON.stringify(questions, null, 4)
+    fs.writeFile('db/questions.json', questionsData, (err) => {
+      if(err) {
+        throw err;
+      }
+      console.log('Questions data saved.')
+    })
   })
 });
 

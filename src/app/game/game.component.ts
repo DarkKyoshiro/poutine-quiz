@@ -106,10 +106,10 @@ export class GameComponent implements OnInit {
         } else if(element.correct === 0) {
           returnedAnswer = returnedAnswer + ' - Incorrect'
         }
+      }
         
-        if(element.bonus === 1) {
-          returnedAnswer = returnedAnswer + ' + Bonus'
-        }
+      if(element.bonus !== 0) {
+        returnedAnswer = returnedAnswer + ' + ' + element.bonus + ' Bonus'
       }
     })
     return returnedAnswer
@@ -134,6 +134,8 @@ export class GameComponent implements OnInit {
       } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && this.questions[this.questionID].speed) {
         returnedAnswer = - this.questions[this.questionID].points + element.bonus
       } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && !this.questions[this.questionID].speed) {
+        returnedAnswer = element.bonus
+      } else if(element.questionID === this.questionID && element.teamName === teamName) {
         returnedAnswer = element.bonus
       }
 

@@ -19,6 +19,7 @@ export class AdminComponent implements OnInit {
   showTeams: boolean = false;
   showQuestionSelection: boolean = false;
   showTimestamp: boolean = false;
+  resetCheck: boolean = false;
 
   constructor(
     private socket: Socket, 
@@ -96,6 +97,19 @@ export class AdminComponent implements OnInit {
     this.socket.emit('start-quiz', this.questionsService.questions)
   }
 
+  onResetQuiz(): void {
+    this.resetCheck = true
+  }
+
+  onYesResetQuiz(): void {
+    this.socket.emit('reset-quiz')
+    this.resetCheck = false
+  }
+
+  onNoResetQuiz(): void {
+    this.resetCheck = false
+  }
+
   onQuestion(id: number): void {
     this.socket.emit('go-to-question', id)
   }
@@ -120,8 +134,8 @@ export class AdminComponent implements OnInit {
     this.socket.emit('valid-answer', teamName, questionID, answerState)
   }
 
-  onBonus(teamName: string, questionID: number): void {
-    this.socket.emit('bonus-answer', teamName, questionID)
+  onBonus(teamName: string, questionID: number, bonus: number): void {
+    this.socket.emit('bonus-answer', teamName, questionID, bonus)
   }
 
   onClear(teamName: string, questionID: number): void {
@@ -136,6 +150,10 @@ export class AdminComponent implements OnInit {
       }
     })
     return newAnswers
+  }
+
+  onSave(): void {
+    this.socket.emit('save')
   }
 
 }
