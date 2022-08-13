@@ -130,16 +130,16 @@ export class GameComponent implements OnInit {
     let sign: string;
     this.answers.forEach(element => {
       if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 1) {
-        returnedAnswer = this.questions[this.questionID].points + element.bonus
-      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && this.questions[this.questionID].speed) {
-        returnedAnswer = - this.questions[this.questionID].points + element.bonus
-      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && !this.questions[this.questionID].speed) {
+        returnedAnswer = this.questions[this.questionID - 1].points + element.bonus
+      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && this.questions[this.questionID - 1].speed) {
+        returnedAnswer = - this.questions[this.questionID - 1].points + element.bonus
+      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && !this.questions[this.questionID - 1].speed) {
         returnedAnswer = element.bonus
       } else if(element.questionID === this.questionID && element.teamName === teamName) {
         returnedAnswer = element.bonus
       }
 
-      if(element.questionID === this.questionID && element.teamName !== teamName && element.correct === 0 && this.questions[this.questionID].speed) {
+      if(element.questionID === this.questionID && element.teamName !== teamName && element.correct === 0 && this.questions[this.questionID - 1].speed) {
         returnedAnswer = returnedAnswer + 1
       }
     })
