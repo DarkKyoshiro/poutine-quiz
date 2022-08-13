@@ -1,23 +1,30 @@
 {
     "Onime": {
-        "socketId": "TGvO8HOTx9ruJGKeAAAL",
+        "socketId": "Xc47cTzKrOg9DHaXAAAX",
         "name": "Onime",
+        "group": 0,
+        "score": 3,
+        "logged": true
+    },
+    "sadfsd": {
+        "socketId": "SKZrqPm2E3VvysjUAAAP",
+        "name": "sadfsd",
         "group": 0,
         "score": 2,
         "logged": true
     },
-    "Iki": {
-        "socketId": "50x1dEhHaLiMK0i5AAAN",
-        "name": "Iki",
+    "sdfsdf": {
+        "socketId": "hmmvyGcy8pHD4YxeAAAR",
+        "name": "sdfsdf",
         "group": 0,
         "score": 1,
         "logged": true
     },
-    "Douki": {
-        "socketId": "oW42Lvivv837zOevAAAP",
-        "name": "Douki",
+    "fghfg": {
+        "socketId": "tUnM-0hBu63YR_W0AAAT",
+        "name": "fghfg",
         "group": 0,
-        "score": 0,
+        "score": 6,
         "logged": true
     }
 }

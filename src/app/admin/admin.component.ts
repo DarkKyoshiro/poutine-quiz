@@ -121,7 +121,7 @@ export class AdminComponent implements OnInit {
   }
 
   onNext(id: number): void {
-    if(id <= this.questions.length) {
+    if(id <= this.questions.length + 1) {
       this.socket.emit('go-to-question', id);
     }
   }

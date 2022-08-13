@@ -48,7 +48,7 @@
 </div>
 
 <div>
-    <div *ngIf="this.questionID > 0">
+    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
         <h3>Question n°{{questions[this.questionID - 1].id}}</h3>
         <p>{{questions[this.questionID - 1].question}}</p>
         <p *ngIf="questions[this.questionID - 1].corrected === true">{{questions[this.questionID - 1].answer}} pour {{questions[this.questionID - 1].points}} point(s)</p>
@@ -56,7 +56,7 @@
 
     <div>
         <button (click)="onPrevious(this.questionID - 1)" *ngIf="this.questions.length !== 0 && this.questionID > 0"><img src="assets/previous.png" alt="Previous"></button>
-        <button (click)="onCorrection()" *ngIf="this.questions.length !== 0 && this.questionID > 0"><img src="assets/corrected.png" alt="Corrected" *ngIf="this.questions[this.questionID-1].corrected"><img src="assets/not-corrected.png" alt="Not corrected" *ngIf="!this.questions[this.questionID-1].corrected"></button>
+        <button (click)="onCorrection()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length"><img src="assets/corrected.png" alt="Corrected" *ngIf="this.questions[this.questionID-1].corrected"><img src="assets/not-corrected.png" alt="Not corrected" *ngIf="!this.questions[this.questionID-1].corrected"></button>
         <button (click)="onNext(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length"><img src="assets/next.png" alt="Next"></button>
         <button (click)="onStartQuiz()" *ngIf="this.questions.length === 0"><img src="assets/start.png" alt="Start Quiz"></button>
     </div>

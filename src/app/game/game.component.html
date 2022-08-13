@@ -1,8 +1,24 @@
 <div *ngIf="this.questionID === 0" id="WaitRoom">
-    Merci de patienter. La grande frite commencera le quiz sous peu.
+    <p>Merci de patienter. La grande frite commencera le quiz sous peu.</p>
 </div>
 
-<div id="TeamLeaderBoard">
+<div *ngIf="this.questionID > this.questions.length" id="Endgame">
+    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
+    <table>
+        <tr>
+            <th>Classement</th>
+            <th>Équipe</th>
+            <th>Score</th>
+        </tr>
+        <tr *ngFor="let team of this.teams; let i=index">
+            <td>{{i+1}}.</td>
+            <td>{{team.name}}</td>
+            <td>{{team.score}}</td>
+        </tr>
+    </table>
+</div>
+
+<div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
     <h3>Votre score: {{this.getScore(teamName)}} <span *ngIf="getQuestion(this.questionID - 1).corrected">({{this.getResult(teamName)}})</span></h3>
     <table>
         <tr>
@@ -15,7 +31,7 @@
 </div>
 
 <div id="GameBoard">
-    <div *ngIf="this.questionID > 0">
+    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
         <!-- <span>{{getQuestion(this.questionID - 1).question}}</span><br> -->
         <!-- Before correction -->
