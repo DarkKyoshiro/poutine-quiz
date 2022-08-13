@@ -7,11 +7,17 @@ app.get('/*', function(req, res) {
 });
 
 const http = require('http').Server(app);
-const io = require('socket.io')(http, {
-    cors: {
-      origin: "http://localhost:" + process.env.PORT || 8080
-    }
-  });
+const io = require('socket.io')(http);
+
+// const io = require('socket.io')(http, {
+//     cors: {
+//       origin: "http://localhost:" + process.env.PORT || 8080
+//     }
+//   });
+
+http.listen(process.env.PORT || 8080, () => {
+    console.log('Listening on port 8080');
+});
 
 var teams = {}
 var adminSocketID = ""
@@ -217,10 +223,6 @@ io.on("connection", socket => {
     io.emit('get-answers', answers)
     io.emit('send-teams', getScores())
   })
-});
-
-http.listen(process.env.PORT || 8080, () => {
-    console.log('Listening on port 8080');
 });
 
 function getScores() {
