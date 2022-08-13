@@ -25,17 +25,21 @@ div#TeamBoard {
 table {
     width: fit-content;
     margin: auto;
-    display: inline-block;
     font-size: 8vw;
 
     td, th {
         padding: 0px 2px;
+        vertical-align: middle;
     }
 }
 @media screen and (min-width: 625px) {
     table {
         font-size: 50px;
     }
+}
+
+table#answers {
+    width: 95%;
 }
 
 table#answers td.space {
@@ -92,7 +96,7 @@ button:hover {
 img {
     margin: 0px;
     padding: 0px;
-    display: block;
+    display: inline-block;
     width: 8vw;
     height: 8vw;
 }
