@@ -560,8 +560,425 @@ export class QuestionsService {
         points: 3
     },
     {
-        id: 8,
-        question: 'Meh...',
+        id: 37,
+        question: 'D\'après sa biographie, quelle taille fait Hello Kitty',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'C',
+        points: 1
+    },
+    {
+        id: 38,
+        question: 'Dans l’ancien code de lois d’Hammurabi, que faisait-on à un barman qui diluait la bière avec de l’Eau ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'C',
+        points: 1
+    },
+    {
+        id: 39,
+        question: 'Quel burger n’existe pas chez McDonald’s  ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'B',
+        points: 1
+    },
+    {
+        id: 40,
+        question: 'Quel est le nom de la mère de Buzz Aldrin ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'C',
+        points: 1
+    },
+    {
+        id: 41,
+        question: 'Quelle date est-il en Éthiopie ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'D',
+        points: 1
+    },
+    {
+        id: 42,
+        question: 'Quel est le nom de rue le plus commun aux USA ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'B',
+        points: 1
+    },
+    {
+        id: 43,
+        question: 'Le prix de l\'encre vs le prix du sang',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\est plus',
+        points: 1
+    },
+    {
+        id: 44,
+        question: 'La taille d\'un velociraptor vs celle d\'une dinde',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est pareil',
+        points: 1
+    },
+    {
+        id: 45,
+        question: 'Le nombre de vélo vs le nombre d\'humains à Copenhague',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est plus',
+        points: 1
+    },
+    {
+        id: 46,
+        question: 'Le nombre de pyramide en Egypte vs au Soudan ',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est moins (138 vs 255)',
+        points: 1
+    },
+    {
+        id: 47,
+        question: 'Le nombre de machine à vendre par personne au japon vs le nombre d’arme à feu au USA ',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est moins (40 vs 120.5)',
+        points: 1
+    },
+    {
+        id: 48,
+        question: 'Le nombre de mots écossais pour décrire la neige vs la durée du plus long concert',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est moins (421 words vs 343 heures 7 minutes et 52 secondes) ex: sneesl, feefle, flinkdrinkin (Children\'s Restoration Network)',
+        points: 1
+    },
+    {
+        id: 49,
+        question: 'Le pourcentage d’américains adultes qui pensent que le chocolat au lait vient de vaches marrons vs le pourcentage des océans qui a été exploré',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est plus (7% vs 5%)',
+        points: 1
+    },
+    {
+        id: 50,
+        question: 'Le nombre de langages inventés pour des TV shows vs le nombre de personnes qui parlent le langage des aborigènes australien (Paakantyi)',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est plus (plus de 200 vs 2-24)',
+        points: 1
+    },
+    {
+        id: 51,
+        question: 'Le nombre d’arbres sur terres vs le nombre d’étoiles dans la galaxie',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'C\'est plus',
+        proposition2: 'C\'est moins',
+        proposition3: 'C\'est pareil',
+        proposition4: '',
+
+        answer: 'C\'est plus (3.04 billions d’arbres vs 100-400 milliards d’étoiles)',
+        points: 1
+    },
+    {
+        id: 52,
+        question: 'V ou F le prince Charles ne presse pas son propre dentifrice ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Vrai',
+        points: 1
+    },
+    {
+        id: 53,
+        question: 'Comment la reine a appelée la nouvelle race de chien créée par le croisement entre l’un de ses Corgi et un Dachshund ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Dorgi',
+        points: 1
+    },
+    {
+        id: 54,
+        question: 'V ou F, la Reine voyage régulièrement avec sa propre réserve de sang ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Vrai',
+        points: 1
+    },
+    {
+        id: 55,
+        question: 'À quel jeu de société la famille royale n’a plus le droit de jouer afin d’éviter de créer des tensions familiales ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Monopoly',
+        points: 1
+    },
+    {
+        id: 56,
+        question: 'V ou F, Kevin Mitnick a été gardé 8 mois en confinement solitaire car la police aurait dit au juge qu’il pouvait lancer des missiles nucléaires en appelant le NORAD depuis un cellulaire en en communiquant avec le serveur juste en sifflant ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Vrai',
+        points: 1
+    },
+    {
+        id: 57,
+        question: 'V ou F, Hackers et Spams existaient au 19ème siècle ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Vrai, avec le réseau des télégrams',
+        points: 1
+    },
+    {
+        id: 58,
+        question: 'Quel hack Bill Gates a fait lors de ses études à l’université ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Il s\'est inscrit à des cours qu\'avec des filles',
+        points: 1
+    },
+    {
+        id: 59,
+        question: 'Qu’a fait Timothy Lloyd après s’être fait viré d’OMEGA en 1996 ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Il a planté une bombe à retardement qui a supprimé l\'OS sur les PCs de sa companie.',
+        points: 1
+    },
+    {
+        id: 60,
+        question: 'Sachant que nous sommes tous génétiquement identiques à 99.8%, combien de polymorphismes mononucléotidiques a-t’on identifié dans le génome humain ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: '1.4 millions SNPs',
+        points: 1
+    },
+    {
+        id: 61,
+        question: 'Quel est le seul institut français impliqué dans le HGP ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Le Commissariat à l\'énergie atomique',
+        points: 1
+    },
+    {
+        id: 62,
+        question: 'En quoi consiste le RNA-Seq, technique utilisée pour accélérer le séquençage du génome humain ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'RNA-Seq (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.',
+        points: 1
+    },
+    {
+        id: 63,
+        question: 'Citez moi trois potentielles utilités du HGP ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'genotyping of specific viruses to direct appropriate treatment; identification of mutations linked to different forms of cancer; the design of medication and more accurate prediction of their effects; advancement in forensic applied sciences; biofuels and other energy applications; agriculture, animal husbandry, bioprocessing; risk assessment; bioarcheology, anthropology and evolution. Another proposed benefit is the commercial development of genomics research related to DNA-based products, a multibillion-dollar industry.',
+        points: 1
+    },
+    {
+        id: 64,
+        question: 'Avoir la Falle Basse',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -571,7 +988,127 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'C\'était bon ?',
+        answer: 'Ne pas avoir le moral, être démotivé ou découragé',
+        points: 3
+    },
+    {
+        id: 65,
+        question: 'Se faire brasser le canadien',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Passer un mauvais quart d\'heure',
+        points: 3
+    },
+    {
+        id: 66,
+        question: 'Avoir l’air d’une chenille à poile ',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Être moche',
+        points: 3
+    },
+    {
+        id: 67,
+        question: 'Mettre un bras dans le tordeur',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'mettre le doigt dans l’engrenage',
+        points: 3
+    },
+    {
+        id: 68,
+        question: 'Il tombe des peaux de lièvres',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Il neige des gros flocons',
+        points: 3
+    },
+    {
+        id: 69,
+        question: 'Se paqueter la fraise',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Boire ou manger en excès',
+        points: 3
+    },
+    {
+        id: 70,
+        question: 'Se virer le derrière à la crèche',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Être contre l\'opinion générale',
+        points: 3
+    },
+    {
+        id: 71,
+        question: 'J\'ai l\'feu au cul',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Je suis en colère',
+        points: 3
+    },
+    {
+        id: 72,
+        question: 'Pousse, mais pousse égal',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'N\'éxagère pas',
         points: 3
     }
   ]
