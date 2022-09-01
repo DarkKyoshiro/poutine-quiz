@@ -43,8 +43,9 @@
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition4)" *ngIf="getQuestion(this.questionID - 1).proposition4">{{getQuestion(this.questionID - 1).proposition4}}</button>
             </div>
             
-            <input type="text" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )" [(ngModel)]="this.answer" (keyup)="onAnswer(this.answer)"><br *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )">
-            <!-- <button class="Repondre" (click)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )">Répondre</button> -->
+            <!-- <input type="text" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )" [(ngModel)]="this.answer" (keyup)="onAnswer(this.answer)"><br *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )"> -->
+            <input type="text" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))" [(ngModel)]="this.answer"><br *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))">
+            <button class="Repondre" (click)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))">Répondre</button>
         </div>
         <!-- After correction -->
         <div>

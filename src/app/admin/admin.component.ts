@@ -65,7 +65,7 @@ export class AdminComponent implements OnInit {
       this.answers = [];
       this.answers = data;
       this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
-      this.answers = this.answers.sort((a, b) => b.correct - a.correct);
+      //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
     })
   }
 
@@ -154,6 +154,10 @@ export class AdminComponent implements OnInit {
 
   onSave(): void {
     this.socket.emit('save')
+  }
+
+  onReload(): void {
+    this.socket.emit('reload')
   }
 
 }

@@ -8,12 +8,13 @@ app.get('/*', function(req, res) {
 );
 });
 
+
 const http = require('http').Server(app);
- const io = require('socket.io')(http, {
-    cors: {
-      origin: "*"
-    }
-  });
+const io = require('socket.io')(http, {
+  cors: {
+    origin: "*"
+  }
+});
 
 // const io = require('socket.io')(http, {
 //     cors: {
@@ -57,7 +58,7 @@ io.on("connection", socket => {
           teamName: teamName,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 86400000,
+          timestamp: Date.now() + 7200000,
           correct: -1,
           bonus: 0
         })
@@ -122,7 +123,7 @@ io.on("connection", socket => {
 
   socket.on('update-team-group', (teamName, teamGroup) => {
     teams[teamName].group = teamGroup;
-    io.emit('send-teams', teams);
+    io.emit('send-teams', getScores())
     io.to(teams[teamName].socketId).emit('send-group', teams[teamName].group)
   })
 
@@ -137,7 +138,7 @@ io.on("connection", socket => {
           teamName: teams[key].name,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 86400000,
+          timestamp: Date.now() + 7200000,
           correct: -1,
           bonus: 0
         })
@@ -233,7 +234,7 @@ io.on("connection", socket => {
     answers.forEach(element => {
       if(element.teamName === teamName && element.questionID === questionID) {
         element.answer = ''
-        element.timestamp = Date.now() + 86400000
+        element.timestamp = Date.now() + 7200000
         element.correct = -1
         element.bonus = 0
       }
@@ -270,6 +271,47 @@ io.on("connection", socket => {
       console.log('Questions data saved.')
     })
   })
+
+  socket.on('reload', () => {
+    for(const key in teams) {
+        teams[key].logged = false
+        io.emit('team-disconnection', teams[key].name)
+        io.emit('send-teams', teams);
+    }
+
+    fs.readFile('db/teams.json', 'utf-8', (err, data) => {
+      if (err) {
+        throw err;
+      }
+  
+      // parse JSON object
+      teams = JSON.parse(data.toString());
+      console.log('Teams restored')
+    });
+
+    fs.readFile('db/questions.json', 'utf-8', (err, data) => {
+      if (err) {
+        throw err;
+      }
+  
+      // parse JSON object
+      questions = JSON.parse(data.toString());
+      console.log('Questions restored')
+    });
+
+    fs.readFile('db/answers.json', 'utf-8', (err, data) => {
+      if (err) {
+        throw err;
+      }
+  
+      // parse JSON object
+      answers = JSON.parse(data.toString());
+      console.log('Answers restored')
+    });
+
+    io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
+  })
 });
 
 function getScores() {
@@ -282,7 +324,7 @@ function getScores() {
     } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
       teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
       for(const key in teams) {
-        if(teams[key].name !== answer.teamName) {
+        if(teams[key].name !== answer.teamName && teams[key].group !== teams[answer.teamName].group) {
           teams[key].score++
         }
       }

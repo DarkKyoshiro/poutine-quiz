@@ -1,7 +1,9 @@
 <button class="menu" (click)="onShowTeams()" *ngIf="this.teams.length !== 0">Teams</button>
 <button class="menu" (click)="onShowQuestionSelection()" *ngIf="this.questions.length !== 0">Questions</button>
 <button class="menu" (click)="onShowTimestamp()" *ngIf="this.questions.length !== 0">Timestamp</button>
-<button class="menu" (click)="onSave()">Save</button><br>
+<button class="menu" (click)="onSave()">Save</button>
+<!-- <button class="menu" (click)="onReload()">Reload</button> -->
+<br>
 
 <div id="TeamBoard" *ngIf="showTeams">
     <table>
@@ -23,6 +25,16 @@
 
 <div *ngIf="showQuestionSelection && this.questions.length !== 0">
     <p><span *ngFor="let question of this.questions">
+        <button (click)="onQuestion(question.id)">
+            <img *ngIf="question.type === 'Nugget'" src="assets/nuggets.png" alt="Nugget" class="icon">
+            <img *ngIf="question.type === 'SelOuPoivre'" src="assets/seloupoivre.png" alt="Nugget" class="icon">
+            <img *ngIf="question.type === 'Menu'" src="assets/menu.png" alt="Nugget" class="icon">
+            <img *ngIf="question.type === 'Addition'" src="assets/addition.png" alt="Nugget" class="icon">
+            <span *ngIf="question.group">-{{question.group}}</span> {{question.id}}
+        </button>
+        <br *ngIf="question.type !== this.questions[question.id].type || question.group !== this.questions[question.id].group ">
+    </span></p>
+    <!--<p><span *ngFor="let question of this.questions">
         <button *ngIf="question.type === 'Nugget'" (click)="onQuestion(question.id)">
             <img src="assets/nuggets.png" alt="Nugget" class="icon"> {{question.id}}
         </button>
@@ -41,24 +53,24 @@
         <button *ngIf="question.type === 'Addition'" (click)="onQuestion(question.id)">
             <img src="assets/addition.png" alt="Addition" class="icon"> {{question.id}}
         </button>
-    </span></p>
+    </span></p>-->
     <button (click)="onResetQuiz()" *ngIf="this.questions.length > 0 && !resetCheck"><img src="assets/clear.png" alt="Reset Quiz"></button>
     <button (click)="onYesResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck"><img src="assets/check.png" alt="Confirm Reset Quiz"></button>
     <button (click)="onNoResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck"><img src="assets/cross.png" alt="Reset Reset Quiz"></button>
 </div>
 
 <div>
-    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
-        <h3><span style="color: red;" *ngIf="this.questionID === this.questions.length">!!!Last!!!</span> {{questions[this.questionID - 1].type}} n°{{questions[this.questionID - 1].id}}</h3>
-        <p>{{questions[this.questionID - 1].question}}</p>
-        <p *ngIf="questions[this.questionID - 1].corrected === true">{{questions[this.questionID - 1].answer}} pour {{questions[this.questionID - 1].points}} point(s)</p>
-    </div>
-
     <div>
         <button (click)="onPrevious(this.questionID - 1)" *ngIf="this.questions.length !== 0 && this.questionID > 0"><img src="assets/previous.png" alt="Previous"></button>
         <button (click)="onCorrection()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length"><img src="assets/corrected.png" alt="Corrected" *ngIf="this.questions[this.questionID-1].corrected"><img src="assets/not-corrected.png" alt="Not corrected" *ngIf="!this.questions[this.questionID-1].corrected"></button>
         <button (click)="onNext(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length"><img src="assets/next.png" alt="Next"></button>
         <button (click)="onStartQuiz()" *ngIf="this.questions.length === 0"><img src="assets/start.png" alt="Start Quiz"></button>
+    </div>
+    
+    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
+        <h3><span style="color: red;" *ngIf="this.questionID === this.questions.length">!!!Last!!!</span> {{questions[this.questionID - 1].type}} n°{{questions[this.questionID - 1].id}}</h3>
+        <p>{{questions[this.questionID - 1].question}}</p>
+        <p *ngIf="questions[this.questionID - 1].corrected === true">{{questions[this.questionID - 1].answer}} pour {{questions[this.questionID - 1].points}} point(s)</p>
     </div>
 
     <table id="answers">

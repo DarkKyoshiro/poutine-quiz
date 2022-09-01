@@ -96,6 +96,16 @@ export class GameComponent implements OnInit {
     //}
   }
 
+  getReponse(): boolean {
+    this.control = false
+    this.answers.forEach(element => {
+      if(element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '') {
+        this.control = true
+      }
+    })
+    return this.control
+  }
+
   getAnswer(): string {
     let returnedAnswer: string = "Vous n'avez rien répondu encore...";
     this.answers.forEach(element => {
@@ -130,16 +140,16 @@ export class GameComponent implements OnInit {
     let sign: string;
     this.answers.forEach(element => {
       if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 1) {
-        returnedAnswer = this.questions[this.questionID - 1].points + element.bonus
+        returnedAnswer = returnedAnswer + this.questions[this.questionID - 1].points + element.bonus
       } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && this.questions[this.questionID - 1].speed) {
-        returnedAnswer = - this.questions[this.questionID - 1].points + element.bonus
+        returnedAnswer = returnedAnswer - this.questions[this.questionID - 1].points + element.bonus
       } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && !this.questions[this.questionID - 1].speed) {
-        returnedAnswer = element.bonus
+        returnedAnswer = returnedAnswer + element.bonus
       } else if(element.questionID === this.questionID && element.teamName === teamName) {
-        returnedAnswer = element.bonus
+        returnedAnswer = returnedAnswer + element.bonus
       }
 
-      if(element.questionID === this.questionID && element.teamName !== teamName && element.correct === 0 && this.questions[this.questionID - 1].speed) {
+      if(element.questionID === this.questionID && element.teamName !== teamName && this.getGroup(element.teamName) !== this.getGroup(teamName) && element.correct === 0 && this.questions[this.questionID - 1].speed) {
         returnedAnswer = returnedAnswer + 1
       }
     })
@@ -152,6 +162,17 @@ export class GameComponent implements OnInit {
       id = 0
     }
     return this.questions[id]
+  }
+
+  getGroup(teamName: string): number {
+    let tempGroup: number = 0;
+    this.teams.forEach(element => {
+      if(element.name === teamName) {
+        tempGroup = element.group
+      }
+    });
+
+    return tempGroup
   }
 
 }

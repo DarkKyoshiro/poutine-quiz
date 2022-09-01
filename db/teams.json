@@ -1,1 +1,23 @@
-{}
+{
+    "test": {
+        "socketId": "-R_8Vz5eQDTS56ldAAAL",
+        "name": "test",
+        "group": 2,
+        "score": 2,
+        "logged": true
+    },
+    "wasrtgh": {
+        "socketId": "Gzxv_uB1QCVKHY_YAAAN",
+        "name": "wasrtgh",
+        "group": 3,
+        "score": 1,
+        "logged": true
+    },
+    "dgfh": {
+        "socketId": "HclVvC262_Gh2V9kAAAP",
+        "name": "dgfh",
+        "group": 1,
+        "score": 0,
+        "logged": true
+    }
+}
