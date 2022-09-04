@@ -28,11 +28,11 @@ const io = require('socket.io')(http, {
 //       origin: "*"
 //     }
 //   });
-
-// http.listen(process.env.PORT || 8080, () => {
-//     console.log('Listening on port 8080');
-// });
 //-----------------------------------------------------------------
+
+http.listen(process.env.PORT || 8080, () => {
+  console.log('Listening on port 8080');
+});
 
 var teams = {}
 var adminSocketID = ""
