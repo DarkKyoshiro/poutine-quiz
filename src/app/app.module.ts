@@ -9,7 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
+//For HerokuApp
 const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
+
+//For Local Server
 //const config: SocketIoConfig = { url: 'http://localhost:8080/', options: {} };
 
 @NgModule({

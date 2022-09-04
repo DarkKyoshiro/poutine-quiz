@@ -20,6 +20,7 @@ export class GameComponent implements OnInit {
   fullAnswer!: Answer;
   answers: Answer[] = [];
   control: boolean = false;
+  showScores: boolean = false;
 
   constructor(
     private socket: Socket,
@@ -82,18 +83,17 @@ export class GameComponent implements OnInit {
         correct: -1,
         bonus: 0
       }
-      this.control = false
-      this.answers.forEach(element => {
-        if(element.questionID === this.questionID && element.teamName === this.teamName) {
-          element.answer = this.fullAnswer.answer
-          element.timestamp = this.fullAnswer.timestamp
-          this.control = true
-        }
-      })
-      if(!this.control) {this.answers.push(this.fullAnswer)}
       
       this.socket.emit('send-answer', this.fullAnswer)
     //}
+  }
+
+  onShowScoring(): void {
+    if(this.showScores) {
+      this.showScores = false
+    } else {
+      this.showScores = true
+    }
   }
 
   getReponse(): boolean {
@@ -133,28 +133,6 @@ export class GameComponent implements OnInit {
       }
     })
     return score
-  }
-
-  getResult(teamName: string): string {
-    let returnedAnswer: number = 0;
-    let sign: string;
-    this.answers.forEach(element => {
-      if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 1) {
-        returnedAnswer = returnedAnswer + this.questions[this.questionID - 1].points + element.bonus
-      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && this.questions[this.questionID - 1].speed) {
-        returnedAnswer = returnedAnswer - this.questions[this.questionID - 1].points + element.bonus
-      } else if(element.questionID === this.questionID && element.teamName === teamName && element.correct === 0 && !this.questions[this.questionID - 1].speed) {
-        returnedAnswer = returnedAnswer + element.bonus
-      } else if(element.questionID === this.questionID && element.teamName === teamName) {
-        returnedAnswer = returnedAnswer + element.bonus
-      }
-
-      if(element.questionID === this.questionID && element.teamName !== teamName && this.getGroup(element.teamName) !== this.getGroup(teamName) && element.correct === 0 && this.questions[this.questionID - 1].speed) {
-        returnedAnswer = returnedAnswer + 1
-      }
-    })
-    returnedAnswer >= 0 ? sign = "+" : sign = ""
-    return sign + returnedAnswer
   }
 
   getQuestion(id: number): Question {

@@ -2,6 +2,9 @@ const fs = require('fs');
 
 const express = require('express');
 const app = express();
+
+//For HerokuApp
+//-----------------------------------------------------------------
 app.use(express.static('./dist/client'));
 app.get('/*', function(req, res) {
   res.sendFile('index.html', {root: 'dist/client/'}
@@ -15,16 +18,21 @@ const io = require('socket.io')(http, {
     origin: "*"
   }
 });
+//-----------------------------------------------------------------
 
+//For Local server
+//-----------------------------------------------------------------
+// const http = require('http').createServer(app);
 // const io = require('socket.io')(http, {
 //     cors: {
-//       origin: "http://localhost:" + process.env.PORT || 8080
+//       origin: "*"
 //     }
 //   });
 
-http.listen(process.env.PORT || 8080, () => {
-    console.log('Listening on port 8080');
-});
+// http.listen(process.env.PORT || 8080, () => {
+//     console.log('Listening on port 8080');
+// });
+//-----------------------------------------------------------------
 
 var teams = {}
 var adminSocketID = ""
@@ -201,8 +209,10 @@ io.on("connection", socket => {
     control = false
     answers.forEach(element => {
       if(element.teamName === data.teamName && element.questionID === data.questionID) {
-        element.answer = data.answer
-        element.timestamp = data.timestamp
+        if(element.answer !== data.answer) {
+          element.answer = data.answer
+          element.timestamp = data.timestamp
+        }
         control = true
       }
     })
@@ -315,21 +325,55 @@ io.on("connection", socket => {
 });
 
 function getScores() {
+  var incorrectAnswers = 0
+  var smallestScore = 10000
   for(const key in teams) {
     teams[key].score = 0
   }
-  answers.forEach(answer => {
-    if(answer.correct === 1) {
-      teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
-    } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
-      teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
+
+  for(let i = 1; i <= questions.length; i++) {
+    incorrectAnswers = 0
+    smallestScore = 10000
+    answers.forEach(answer => {
+      if(answer.questionID === i) {
+        if(answer.correct === 1) {
+          teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
+        } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
+          teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
+          incorrectAnswers = incorrectAnswers + 1
+        }
+
+        if(teams[answer.teamName].score < smallestScore) {
+          smallestScore = teams[answer.teamName].score
+        }
+
+        teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
+      }
+    })
+
+    //To give points to the last teams
+    if(incorrectAnswers > 0) {
       for(const key in teams) {
-        if(teams[key].name !== answer.teamName && teams[key].group !== teams[answer.teamName].group) {
-          teams[key].score++
+        if(teams[key].score === smallestScore) {
+          teams[key].score = teams[key].score + Math.trunc((incorrectAnswers + 1) / 2)
         }
       }
     }
-    teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
-  })
+  }
+
+  // Old score algorythm
+  // answers.forEach(answer => {
+  //   if(answer.correct === 1) {
+  //     teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
+  //   } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
+  //     teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
+  //     for(const key in teams) {
+  //       if(teams[key].name !== answer.teamName && teams[key].group !== teams[answer.teamName].group) {
+  //         teams[key].score++
+  //       }
+  //     }
+  //   }
+  //   teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
+  // })
   return teams
 };

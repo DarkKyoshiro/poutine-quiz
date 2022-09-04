@@ -19,13 +19,17 @@
 </div>
 
 <div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
-    <h3>{{teamName}}: {{this.getScore(teamName)}} <span *ngIf="getQuestion(this.questionID - 1).corrected">({{this.getResult(teamName)}})</span></h3>
-    <table>
+    <h3>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <span *ngIf="getQuestion(this.questionID - 1).corrected"></span><button class="menu" (click)="onShowScoring()">Classement</button></h3>
+    <table *ngIf="this.showScores">
         <tr>
-            <td *ngFor="let team of this.teams | slice:0:3; let i=index">{{i+1}}. {{team.name}} {{team.score}}</td>
+            <th>Rang</th>
+            <th>Équipe</th>
+            <th>Score</th>
         </tr>
-        <tr *ngIf="getQuestion(this.questionID - 1).corrected">
-            <td *ngFor="let team of this.teams | slice:0:3;">({{this.getResult(team.name)}})</td>
+        <tr *ngFor="let team of this.teams; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{team.name}}</td>
+            <td>{{team.score}}<img src="assets/frite.png" alt="Frites"><span *ngIf="getQuestion(this.questionID - 1).corrected"></span></td>
         </tr>
     </table>
 </div>
@@ -33,7 +37,6 @@
 <div id="GameBoard">
     <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
-        <!-- <span>{{getQuestion(this.questionID - 1).question}}</span><br> -->
         <!-- Before correction -->
         <div *ngIf="!getQuestion(this.questionID - 1).corrected">
             <div *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || getQuestion(this.questionID - 1).type === 'SelOuPoivre' )">

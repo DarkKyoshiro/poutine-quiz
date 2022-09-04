@@ -7,10 +7,19 @@
 
 <div id="TeamBoard" *ngIf="showTeams">
     <table>
+        <tr>
+            <th>Stat</th>
+            <th>Grp</th>
+            <th>Nom</th>
+            <th>Score</th>
+            <th>Group</th>
+            <th>Status</th>
+        </tr>
         <tr *ngFor="let team of teams">
             <td><img src="assets/online.png" alt="Online" *ngIf="team.logged"><img src="assets/offline.png" alt="Offline" *ngIf="!team.logged"></td>
-            <td>G{{team.group}} {{team.name}}</td>
-            <td>{{team.score}}</td>
+            <td>{{team.group}}</td>
+            <td>{{team.name}}</td>
+            <td>{{team.score}}<img src="assets/frite.png" alt="Frites" class="icon"></td>
             <td>
                 <button class="teamAdmin" (click)="onChangeGroup(team.name, team.group - 1)"><img src="assets/minus.png" alt="-"></button>
                 <button class="teamAdmin" (click)="onChangeGroup(team.name, team.group + 1)"><img src="assets/plus.png" alt="+"></button> 
@@ -34,26 +43,6 @@
         </button>
         <br *ngIf="question.type !== this.questions[question.id].type || question.group !== this.questions[question.id].group ">
     </span></p>
-    <!--<p><span *ngFor="let question of this.questions">
-        <button *ngIf="question.type === 'Nugget'" (click)="onQuestion(question.id)">
-            <img src="assets/nuggets.png" alt="Nugget" class="icon"> {{question.id}}
-        </button>
-    </span></p>
-    <p><span *ngFor="let question of this.questions">
-        <button *ngIf="question.type === 'SelOuPoivre'" (click)="onQuestion(question.id)">
-            <img src="assets/seloupoivre.png" alt="Sel ou Poivre" class="icon"> {{question.id}}
-        </button>
-    </span></p>
-    <p><span *ngFor="let question of this.questions">
-        <button *ngIf="question.type === 'Menu'" (click)="onQuestion(question.id)">
-            <img src="assets/menu.png" alt="Menu" class="icon"><span *ngIf="question.group">-{{question.group}}</span> {{question.id}}
-        </button>
-    </span></p>
-    <p><span *ngFor="let question of this.questions">
-        <button *ngIf="question.type === 'Addition'" (click)="onQuestion(question.id)">
-            <img src="assets/addition.png" alt="Addition" class="icon"> {{question.id}}
-        </button>
-    </span></p>-->
     <button (click)="onResetQuiz()" *ngIf="this.questions.length > 0 && !resetCheck"><img src="assets/clear.png" alt="Reset Quiz"></button>
     <button (click)="onYesResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck"><img src="assets/check.png" alt="Confirm Reset Quiz"></button>
     <button (click)="onNoResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck"><img src="assets/cross.png" alt="Reset Reset Quiz"></button>
@@ -75,7 +64,7 @@
 
     <table id="answers">
         <tr *ngFor="let answer of getAnswers(this.questionID); let i=index">
-            <td class="space">{{i+1}}. {{answer.teamName}}</td>
+            <td class="space">{{answer.teamName}}</td>
             <td class="space">
                 {{answer.answer}}
             </td>
@@ -86,6 +75,7 @@
             <td>
                 <button class="action" *ngIf="questions[this.questionID - 1].corrected === true" (click)="onValidAnswer(answer.teamName, answer.questionID, 1)"><img src="assets/correct.png" alt="Correct"></button> 
                 <button class="action" *ngIf="questions[this.questionID - 1].corrected === true" (click)="onValidAnswer(answer.teamName, answer.questionID, 0)"><img src="assets/incorrect.png" alt="Imcorrect"></button> 
+                <button class="action" *ngIf="questions[this.questionID - 1].corrected === true" (click)="onValidAnswer(answer.teamName, answer.questionID, -1)"><img src="assets/clear.png" alt="Imcorrect"></button> 
                 <button class="action" (click)="onBonus(answer.teamName, answer.questionID, 1)"><img src="assets/like.png" alt="Bonus"></button> 
                 <button class="action" (click)="onBonus(answer.teamName, answer.questionID, -1)"><img src="assets/dislike.png" alt="Bonus"></button> 
                 <button class="action" (click)="onClear(answer.teamName, answer.questionID)"><img src="assets/clear.png" alt="Clear"></button> 
