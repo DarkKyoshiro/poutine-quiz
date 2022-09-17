@@ -1,40 +1,54 @@
-const fs = require('fs');
+// const fs = require('fs'); //To read/write in json files
+
+const mongoose = require('mongoose');
+// Models mongoose
+const TeamDB = require('./models/teams');
+const QuestionDB = require('./models/questions');
+const AnswerDB = require('./models/answers');
+const ParamDB = require('./models/param');
 
 const express = require('express');
 const app = express();
 
 //For HerokuApp
 //-----------------------------------------------------------------
-app.use(express.static('./dist/client'));
-app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/client/'}
-);
-});
+// mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
+//   { useNewUrlParser: true,
+//     useUnifiedTopology: true })
+//   .then(() => console.log('Connexion à MongoDB réussie !'))
+//   .catch(() => console.log('Connexion à MongoDB échouée !'));
+//
+// app.use(express.static('./dist/client'));
+// app.get('/*', function(req, res) {
+//   res.sendFile('index.html', {root: 'dist/client/'}
+// );
+// });
 
+// const http = require('http').Server(app);
+//-----------------------------------------------------------------
 
-const http = require('http').Server(app);
+//For Local server
+//-----------------------------------------------------------------
+mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequizlocal?retryWrites=true&w=majority',
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+const http = require('http').createServer(app);
+//-----------------------------------------------------------------
+
 const io = require('socket.io')(http, {
   cors: {
     origin: "*"
   }
 });
-//-----------------------------------------------------------------
-
-//For Local server
-//-----------------------------------------------------------------
-// const http = require('http').createServer(app);
-// const io = require('socket.io')(http, {
-//     cors: {
-//       origin: "*"
-//     }
-//   });
-//-----------------------------------------------------------------
 
 http.listen(process.env.PORT || 8080, () => {
   console.log('Listening on port 8080');
 });
 
 var teams = {}
+var teamsSave = {}
 var adminSocketID = ""
 var questionID = 0
 var questions = []
@@ -42,7 +56,9 @@ var answers = []
 var control = false
 
 io.on("connection", socket => {
-  //Admin management
+  //------------------------------------------------------------------------------------
+  //---------------------- Admin management --------------------------------------------
+  //------------------------------------------------------------------------------------
   socket.on('new-admin-connection', () => {
     if(adminSocketID === "") {
       adminSocketID = socket.id
@@ -52,15 +68,18 @@ io.on("connection", socket => {
     }
   })
 
-  //User management - User connection
+  //------------------------------------------------------------------------------------
+  //---------------------- User management ---------------------------------------------
+  //------------------------------------------------------------------------------------
+  // User connection
   socket.on('new-connection', (teamName) => {
-    if(teams[teamName] && teams[teamName].logged) {
+    if(teams[teamName] && teams[teamName].logged) { //team already existing and logged
       socket.emit('user-rejected')
-    } else if(teams[teamName] && !teams[teamName].logged) {
+    } else if(teams[teamName] && !teams[teamName].logged) { //team already existing but not logged
       teams[teamName].socketId = socket.id
       teams[teamName].logged = true
       io.emit('send-teams', teams)
-    } else {
+    } else { //team not existing
       questions.forEach(question => {
         answers.push({
           teamName: teamName,
@@ -95,6 +114,7 @@ io.on("connection", socket => {
     }
   })
 
+  //Ejection
   socket.on('eject-team', (teamName) => {
     for(const key in teams) {
       if(teams[key].name === teamName) {
@@ -108,7 +128,7 @@ io.on("connection", socket => {
     io.emit('get-answers', answers)
   })
 
-  //Disconnection
+  //Timeout disconnection
   socket.on('disconnect', () => {
     //Admin disconnection
     if(adminSocketID === socket.id) { 
@@ -257,29 +277,37 @@ io.on("connection", socket => {
   //---------------------- Save management ---------------------------------------------
   //------------------------------------------------------------------------------------
   socket.on('save', () => {
-    const teamsData = JSON.stringify(teams, null, 4)
-    fs.writeFile('db/teams.json', teamsData, (err) => {
-      if(err) {
-        throw err;
-      }
-      console.log('Teams data saved.')
-    })
+    ParamDB.deleteMany({})
+      .then()
+      .catch((error) => {console.log(error)});
+      ParamDB.insertMany({ID: 1, nb: questionID})
+      .then(() => {console.log('Question ID saved!')})
+      .catch((error) => {console.log(error)});
+    
+    teamsSave = teams
+    for(const key in teamsSave) {
+      teamsSave[key].logged = false
+    }
+    TeamDB.deleteMany({})
+      .then()
+      .catch((error) => {console.log(error)});
+    TeamDB.insertMany(Object.values(teamsSave))
+      .then(() => {console.log('Teams saved!')})
+      .catch((error) => {console.log(error)});
 
-    const answersData = JSON.stringify(answers, null, 4)
-    fs.writeFile('db/answers.json', answersData, (err) => {
-      if(err) {
-        throw err;
-      }
-      console.log('Answers data saved.')
-    })
+    QuestionDB.deleteMany({})
+      .then()
+      .catch((error) => {console.log(error)});
+    QuestionDB.insertMany(questions)
+      .then(() => {console.log('Questions saved!')})
+      .catch((error) => {console.log(error)});
 
-    const questionsData = JSON.stringify(questions, null, 4)
-    fs.writeFile('db/questions.json', questionsData, (err) => {
-      if(err) {
-        throw err;
-      }
-      console.log('Questions data saved.')
-    })
+    AnswerDB.deleteMany({})
+      .then()
+      .catch((error) => {console.log(error)});
+    AnswerDB.insertMany(answers)
+      .then(() => {console.log('Answers saved!')})
+      .catch((error) => {console.log(error)});
   })
 
   socket.on('reload', () => {
@@ -287,43 +315,50 @@ io.on("connection", socket => {
         teams[key].logged = false
         io.emit('team-disconnection', teams[key].name)
         io.emit('send-teams', teams);
+        delete teams[key]
     }
 
-    fs.readFile('db/teams.json', 'utf-8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-  
-      // parse JSON object
-      teams = JSON.parse(data.toString());
-      console.log('Teams restored')
-    });
+    QuestionDB.find()
+      .then(questionsDB => {
+        questions = questionsDB
+        io.emit('send-questions', questions)
 
-    fs.readFile('db/questions.json', 'utf-8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-  
-      // parse JSON object
-      questions = JSON.parse(data.toString());
-      console.log('Questions restored')
-    });
+        AnswerDB.find()
+          .then(answersDB => {
+            answers = answersDB
+            io.emit('get-answers', answers)
 
-    fs.readFile('db/answers.json', 'utf-8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-  
-      // parse JSON object
-      answers = JSON.parse(data.toString());
-      console.log('Answers restored')
-    });
+            TeamDB.find()
+              .then(teamsDB => {
+                teamsDB.forEach(teamDB => {
+                  teams[teamDB.name] = {
+                    socketId: '',
+                    name: teamDB.name,
+                    group: teamDB.group,
+                    score: teamDB.score,
+                    logged: false
+                  }
+                })
+                io.emit('send-teams', getScores())
 
-    io.emit('send-teams', getScores())
-    io.emit('get-answers', answers)
+                ParamDB.findOne({ID: 1})
+                  .then(paramsDB => {
+                    questionID = paramsDB.nb
+                    io.emit('update-question-ID', questionID)
+                  })
+                  .catch((error) => {console.log(error)});
+              })
+              .catch((error) => {console.log(error)});
+          })
+          .catch((error) => {console.log(error)});
+      })
+      .catch((error) => {console.log(error)});
   })
 });
 
+//------------------------------------------------------------------------------------
+//---------------------- Accessory functions -----------------------------------------
+//------------------------------------------------------------------------------------
 function getScores() {
   var incorrectAnswers = 0
   var smallestScore = 10000
