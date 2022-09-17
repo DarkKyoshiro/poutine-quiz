@@ -3,71 +3,47 @@
         "teamName": "test",
         "questionID": 1,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 1,
+        "timestamp": 1662939946977,
+        "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 1,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 1,
-        "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 0,
+        "timestamp": 1662939946977,
+        "correct": -1,
         "bonus": 0
     },
     {
         "teamName": "test",
         "questionID": 2,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 1,
+        "timestamp": 1662939946977,
+        "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 2,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 0,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 2,
-        "answer": "",
-        "timestamp": 1661998097511,
-        "correct": 0,
+        "timestamp": 1662939946977,
+        "correct": -1,
         "bonus": 0
     },
     {
         "teamName": "test",
         "questionID": 3,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 3,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 3,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -75,23 +51,15 @@
         "teamName": "test",
         "questionID": 4,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 4,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 4,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -99,23 +67,15 @@
         "teamName": "test",
         "questionID": 5,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 5,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 5,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -123,23 +83,15 @@
         "teamName": "test",
         "questionID": 6,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 6,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 6,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -147,23 +99,15 @@
         "teamName": "test",
         "questionID": 7,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 7,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 7,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -171,23 +115,15 @@
         "teamName": "test",
         "questionID": 8,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 8,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 8,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -195,23 +131,15 @@
         "teamName": "test",
         "questionID": 9,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 9,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 9,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -219,23 +147,15 @@
         "teamName": "test",
         "questionID": 10,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 10,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 10,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -243,23 +163,15 @@
         "teamName": "test",
         "questionID": 11,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 11,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 11,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -267,23 +179,15 @@
         "teamName": "test",
         "questionID": 12,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 12,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 12,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -291,23 +195,15 @@
         "teamName": "test",
         "questionID": 13,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 13,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 13,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -315,23 +211,15 @@
         "teamName": "test",
         "questionID": 14,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 14,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 14,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -339,23 +227,15 @@
         "teamName": "test",
         "questionID": 15,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 15,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 15,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -363,23 +243,15 @@
         "teamName": "test",
         "questionID": 16,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 16,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 16,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -387,23 +259,15 @@
         "teamName": "test",
         "questionID": 17,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 17,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 17,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -411,23 +275,15 @@
         "teamName": "test",
         "questionID": 18,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 18,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 18,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -435,23 +291,15 @@
         "teamName": "test",
         "questionID": 19,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 19,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 19,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -459,23 +307,15 @@
         "teamName": "test",
         "questionID": 20,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 20,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 20,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -483,23 +323,15 @@
         "teamName": "test",
         "questionID": 21,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 21,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 21,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -507,23 +339,15 @@
         "teamName": "test",
         "questionID": 22,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 22,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 22,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -531,23 +355,15 @@
         "teamName": "test",
         "questionID": 23,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 23,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 23,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -555,23 +371,15 @@
         "teamName": "test",
         "questionID": 24,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 24,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 24,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -579,23 +387,15 @@
         "teamName": "test",
         "questionID": 25,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 25,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 25,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -603,23 +403,15 @@
         "teamName": "test",
         "questionID": 26,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 26,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 26,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -627,23 +419,15 @@
         "teamName": "test",
         "questionID": 27,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 27,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 27,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -651,23 +435,15 @@
         "teamName": "test",
         "questionID": 28,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 28,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 28,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -675,23 +451,15 @@
         "teamName": "test",
         "questionID": 29,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 29,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 29,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -699,23 +467,15 @@
         "teamName": "test",
         "questionID": 30,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 30,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 30,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -723,23 +483,15 @@
         "teamName": "test",
         "questionID": 31,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 31,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 31,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -747,23 +499,15 @@
         "teamName": "test",
         "questionID": 32,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 32,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 32,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -771,23 +515,15 @@
         "teamName": "test",
         "questionID": 33,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 33,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 33,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -795,23 +531,15 @@
         "teamName": "test",
         "questionID": 34,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 34,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 34,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -819,23 +547,15 @@
         "teamName": "test",
         "questionID": 35,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 35,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 35,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -843,23 +563,15 @@
         "teamName": "test",
         "questionID": 36,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 36,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 36,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -867,23 +579,15 @@
         "teamName": "test",
         "questionID": 37,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 37,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 37,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -891,23 +595,15 @@
         "teamName": "test",
         "questionID": 38,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 38,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 38,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -915,23 +611,15 @@
         "teamName": "test",
         "questionID": 39,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 39,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 39,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -939,23 +627,15 @@
         "teamName": "test",
         "questionID": 40,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 40,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 40,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -963,23 +643,15 @@
         "teamName": "test",
         "questionID": 41,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 41,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 41,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -987,23 +659,15 @@
         "teamName": "test",
         "questionID": 42,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 42,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 42,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1011,23 +675,15 @@
         "teamName": "test",
         "questionID": 43,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 43,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 43,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1035,23 +691,15 @@
         "teamName": "test",
         "questionID": 44,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 44,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 44,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1059,23 +707,15 @@
         "teamName": "test",
         "questionID": 45,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 45,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 45,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1083,23 +723,15 @@
         "teamName": "test",
         "questionID": 46,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 46,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 46,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1107,23 +739,15 @@
         "teamName": "test",
         "questionID": 47,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 47,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 47,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1131,23 +755,15 @@
         "teamName": "test",
         "questionID": 48,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 48,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 48,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1155,23 +771,15 @@
         "teamName": "test",
         "questionID": 49,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 49,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 49,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1179,23 +787,15 @@
         "teamName": "test",
         "questionID": 50,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 50,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 50,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1203,23 +803,15 @@
         "teamName": "test",
         "questionID": 51,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 51,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 51,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1227,23 +819,15 @@
         "teamName": "test",
         "questionID": 52,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 52,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 52,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1251,23 +835,15 @@
         "teamName": "test",
         "questionID": 53,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 53,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 53,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1275,23 +851,15 @@
         "teamName": "test",
         "questionID": 54,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 54,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 54,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1299,23 +867,15 @@
         "teamName": "test",
         "questionID": 55,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 55,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 55,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1323,23 +883,15 @@
         "teamName": "test",
         "questionID": 56,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 56,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 56,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1347,23 +899,15 @@
         "teamName": "test",
         "questionID": 57,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 57,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 57,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1371,23 +915,15 @@
         "teamName": "test",
         "questionID": 58,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 58,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 58,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1395,23 +931,15 @@
         "teamName": "test",
         "questionID": 59,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 59,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 59,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1419,23 +947,15 @@
         "teamName": "test",
         "questionID": 60,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 60,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 60,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1443,23 +963,15 @@
         "teamName": "test",
         "questionID": 61,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 61,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 61,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1467,23 +979,15 @@
         "teamName": "test",
         "questionID": 62,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 62,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 62,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1491,23 +995,15 @@
         "teamName": "test",
         "questionID": 63,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 63,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 63,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1515,23 +1011,15 @@
         "teamName": "test",
         "questionID": 64,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 64,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 64,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1539,23 +1027,15 @@
         "teamName": "test",
         "questionID": 65,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 65,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 65,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1563,23 +1043,15 @@
         "teamName": "test",
         "questionID": 66,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 66,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 66,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1587,23 +1059,15 @@
         "teamName": "test",
         "questionID": 67,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 67,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 67,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1611,23 +1075,15 @@
         "teamName": "test",
         "questionID": 68,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 68,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 68,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1635,23 +1091,15 @@
         "teamName": "test",
         "questionID": 69,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 69,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 69,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1659,23 +1107,15 @@
         "teamName": "test",
         "questionID": 70,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 70,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 70,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1683,23 +1123,15 @@
         "teamName": "test",
         "questionID": 71,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 71,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 71,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
@@ -1707,23 +1139,15 @@
         "teamName": "test",
         "questionID": 72,
         "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     },
     {
-        "teamName": "wasrtgh",
+        "teamName": "test2",
         "questionID": 72,
         "answer": "",
-        "timestamp": 1661998097511,
-        "correct": -1,
-        "bonus": 0
-    },
-    {
-        "teamName": "dgfh",
-        "questionID": 72,
-        "answer": "",
-        "timestamp": 1661998097511,
+        "timestamp": 1662939946977,
         "correct": -1,
         "bonus": 0
     }

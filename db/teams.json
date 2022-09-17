@@ -1,22 +1,15 @@
 {
     "test": {
-        "socketId": "-R_8Vz5eQDTS56ldAAAL",
+        "socketId": "2i_OTUBrp3VFxrd-AAAJ",
         "name": "test",
-        "group": 2,
-        "score": 2,
+        "group": 0,
+        "score": 0,
         "logged": true
     },
-    "wasrtgh": {
-        "socketId": "Gzxv_uB1QCVKHY_YAAAN",
-        "name": "wasrtgh",
-        "group": 3,
-        "score": 1,
-        "logged": true
-    },
-    "dgfh": {
-        "socketId": "HclVvC262_Gh2V9kAAAP",
-        "name": "dgfh",
-        "group": 1,
+    "test2": {
+        "socketId": "2aRosdiBtn0HhB33AAAL",
+        "name": "test2",
+        "group": 0,
         "score": 0,
         "logged": true
     }
