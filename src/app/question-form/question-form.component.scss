@@ -1,0 +1,44 @@
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+select, input {
+    height: 75px;
+    width: 80%;
+    max-width: 400px;
+    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin: 5px 5px;
+}
+
+button.menu {
+    background-color: orange;
+}
+
+button.delete {
+    background-color: red;
+}
+
+button:hover {
+    background-color: #3965c4;
+}
