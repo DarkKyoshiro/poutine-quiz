@@ -6,6 +6,7 @@ const TeamDB = require('./models/teams');
 const QuestionDB = require('./models/questions');
 const AnswerDB = require('./models/answers');
 const ParamDB = require('./models/param');
+const PropositionsDB = require('./models/propositions');
 
 const express = require('express');
 const app = express();
@@ -353,6 +354,35 @@ io.on("connection", socket => {
           .catch((error) => {console.log(error)});
       })
       .catch((error) => {console.log(error)});
+  })
+
+  //------------------------------------------------------------------------------------
+  //---------------------- Propositions management -------------------------------------
+  //------------------------------------------------------------------------------------
+  socket.on('sendPropositions', (nuggets, selOuPoivres, menus, additions) => {
+    if(nuggets.propositions.length > 0) {
+      PropositionsDB.insertMany(nuggets)
+        .then(() => {console.log('Nuggets sent!')})
+        .catch((error) => {console.log(error)});
+    }
+    
+    if(selOuPoivres.propositions.length > 0) {
+      PropositionsDB.insertMany(selOuPoivres)
+        .then(() => {console.log('Sel ou Poivre sent!')})
+        .catch((error) => {console.log(error)});
+    }
+    
+    if(menus.propositions.length > 0) {
+      PropositionsDB.insertMany(menus)
+        .then(() => {console.log('Menu sent!')})
+        .catch((error) => {console.log(error)});
+    }
+    
+    if(additions.propositions.length > 0) {
+      PropositionsDB.insertMany(additions)
+        .then(() => {console.log('Addition sent!')})
+        .catch((error) => {console.log(error)});
+    }
   })
 });
 

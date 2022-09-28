@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Socket } from 'ngx-socket-io';
 import { Nugget } from '../models/nuggets.module';
 import { SelOuPoivre } from '../models/seloupoivre.model';
 
@@ -17,7 +18,7 @@ export class QuestionFormComponent implements OnInit {
   name: string = '';
   email: string = '';
 
-  constructor() { }
+  constructor(private socket: Socket) { }
 
   ngOnInit(): void {
     
@@ -136,13 +137,41 @@ export class QuestionFormComponent implements OnInit {
   //-----------------------------------------------------------------------------------------------
   //---------------------------- Answers management -----------------------------------------------
   //-----------------------------------------------------------------------------------------------
-  //To send answers (before confirmation) ---------------------------------------------------------
-  onSend(): void {
+  //To confirm answers (before confirmation) ---------------------------------------------------------
+  onConfirm(): void {
     if(this.confirm) {
       this.confirm = false
     } else {
       this.confirm = true
     }
   }
- 
+
+  //To send answers (before confirmation) ---------------------------------------------------------
+  onSend(): void {
+    this.socket.emit('sendPropositions', 
+    {
+      name: this.name,
+      email: this.email,
+      typeQuestion: 'nuggets',
+      propositions: this.nuggets
+    }, 
+    {
+      name: this.name,
+      email: this.email,
+      typeQuestion: 'sel ou poivres',
+      propositions: this.selOuPoivres
+    }, 
+    {
+      name: this.name,
+      email: this.email,
+      typeQuestion: 'menus',
+      propositions: this.menus
+    }, 
+    {
+      name: this.name,
+      email: this.email,
+      typeQuestion: 'additions',
+      propositions: this.additions
+    })
+  }
 }

@@ -15,58 +15,58 @@
 
     <!-- Nuggets -->
     <div>
-        <div *ngFor="let nugget of this.nuggets; let i=index">
-            Nuggets #{{i+1}}. <input type="text" id="nuggets" name="nuggets" placeholder="Énoncé de la question" [(ngModel)]="nugget.question"><button class="delete" (click)="onDelete('nugget', i)">Delete</button><br>
+        <div *ngFor="let nugget of this.nuggets; let i=index; trackBy: customTrackBy">
+            Nuggets #{{i+1}}. <input type="text" id="nuggets" name="nuggets" placeholder="Énoncé de la question" [(ngModel)]="this.nuggets[i].question"><button class="delete" (click)="onDelete('nugget', i)">Delete</button><br>
 
-            <input *ngFor="let proposition of nugget.propositions; let j=index; trackBy: customTrackBy" type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Proposition {{j+1}}" [(ngModel)]="nugget.propositions[j]" (keyup)="onChangeNuggetsProposition(i, j)"><br>
+            <input *ngFor="let proposition of nugget.propositions; let j=index; trackBy: customTrackBy" type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Proposition {{j+1}}" [(ngModel)]="this.nuggets[i].propositions[j]" (keyup)="onChangeNuggetsProposition(i, j)"><br>
 
-            <input type="text" id="reponse" name="reponse" placeholder="Réponse" [(ngModel)]="nugget.reponse">
-            <input type="text" id="comment" name="comment" placeholder="Commentaire" [(ngModel)]="nugget.comment"><br>
+            <input type="text" id="reponse" name="reponse" placeholder="Réponse" [(ngModel)]="this.nuggets[i].reponse">
+            <input type="text" id="comment" name="comment" placeholder="Commentaire" [(ngModel)]="this.nuggets[i].comment"><br>
         </div>
     </div>
 
     <!-- Sel ou Poivre -->
     <div>
-        <div *ngFor="let selOuPoivre of this.selOuPoivres; let i=index">
-            Sel ou Poivre #{{i+1}}. <input type="text" id="seloupoivre" name="seloupoivre" placeholder="Thème du sel ou poivre" [(ngModel)]="selOuPoivre.theme"><button class="delete" (click)="onDelete('seloupoivre', i)">Delete</button><br>
+        <div *ngFor="let selOuPoivre of this.selOuPoivres; let i=index; trackBy: customTrackBy">
+            Sel ou Poivre #{{i+1}}. <input type="text" id="seloupoivre" name="seloupoivre" placeholder="Thème du sel ou poivre" [(ngModel)]="this.selOuPoivres[i].theme"><button class="delete" (click)="onDelete('seloupoivre', i)">Delete</button><br>
 
             <div *ngFor="let question of selOuPoivre.propositions; let j=index; trackBy: customTrackBy">
-                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Proposition {{j+1}}" [(ngModel)]="selOuPoivre.propositions[j].question" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
-                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="selOuPoivre.propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
-                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="selOuPoivre.propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
+                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Proposition {{j+1}}" [(ngModel)]="this.selOuPoivres[i].propositions[j].question" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
+                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="this.selOuPoivres[i].propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
+                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="this.selOuPoivres[i].propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.selOuPoivres)">
             </div>
         </div>
     </div>
 
     <!-- Menu -->
     <div>
-        <div *ngFor="let menu of this.menus; let i=index">
-            Menu #{{i+1}}. <input type="text" id="menu" name="menu" placeholder="Thème du menu" [(ngModel)]="menu.theme"><button class="delete" (click)="onDelete('menu', i)">Delete</button><br>
+        <div *ngFor="let menu of this.menus; let i=index; trackBy: customTrackBy">
+            Menu #{{i+1}}. <input type="text" id="menu" name="menu" placeholder="Thème du menu" [(ngModel)]="this.menus[i].theme"><button class="delete" (click)="onDelete('menu', i)">Delete</button><br>
 
             <div *ngFor="let question of menu.propositions; let j=index; trackBy: customTrackBy">
-                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Question {{j+1}}" [(ngModel)]="menu.propositions[j].question" (keyup)="onChangeListProposition(i, j, this.menus)">
-                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="menu.propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.menus)">
-                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="menu.propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.menus)">
+                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Question {{j+1}}" [(ngModel)]="this.menus[i].propositions[j].question" (keyup)="onChangeListProposition(i, j, this.menus)">
+                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="this.menus[i].propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.menus)">
+                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="this.menus[i].propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.menus)">
             </div>
         </div>
     </div>
 
     <!-- Addition -->
     <div>
-        <div *ngFor="let addition of this.additions; let i=index">
-            Addition #{{i+1}}. <input type="text" id="addition" name="addition" placeholder="Thème de l'addition" [(ngModel)]="addition.theme"><button class="delete" (click)="onDelete('addition', i)">Delete</button><br>
+        <div *ngFor="let addition of this.additions; let i=index; trackBy: customTrackBy">
+            Addition #{{i+1}}. <input type="text" id="addition" name="addition" placeholder="Thème de l'addition" [(ngModel)]="this.additions[i].theme"><button class="delete" (click)="onDelete('addition', i)">Delete</button><br>
 
             <div *ngFor="let question of addition.propositions; let j=index; trackBy: customTrackBy">
-                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Question {{j+1}}" [(ngModel)]="addition.propositions[j].question" (keyup)="onChangeListProposition(i, j, this.additions)">
-                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="addition.propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.additions)">
-                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="addition.propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.additions)">
+                <input type="text" id="proposition{{j}}" name="proposition{{j}}" placeholder="Question {{j+1}}" [(ngModel)]="this.additions[i].propositions[j].question" (keyup)="onChangeListProposition(i, j, this.additions)">
+                <input type="text" id="reponse{{j}}" name="reponse{{j}}" placeholder="Réponse {{j+1}}" [(ngModel)]="this.additions[i].propositions[j].reponse" (keyup)="onChangeListProposition(i, j, this.additions)">
+                <input type="text" id="comment{{j}}" name="comment{{j}}" placeholder="Commentaire {{j+1}}" [(ngModel)]="this.additions[i].propositions[j].comment" (keyup)="onChangeListProposition(i, j, this.additions)">
             </div>
         </div>
     </div>
     
-    <button *ngIf="!this.confirm && this.nuggets.length + this.selOuPoivres.length + this.menus.length + this.additions.length > 0" (click)="onSend()">Envoyer</button>
+    <button *ngIf="!this.confirm && this.nuggets.length + this.selOuPoivres.length + this.menus.length + this.additions.length > 0" (click)="onConfirm()">Envoyer</button>
     <div *ngIf="this.confirm">
         <p>Êtes-vous sur de vouloir envoyer ces questions ?</p>
-        <button (click)="onSend()">Oui</button><button (click)="onSend()">Non</button>
+        <button (click)="onSend()">Oui</button><button (click)="onConfirm()">Non</button>
     </div>
 </div>
