@@ -21,7 +21,16 @@ export class QuestionFormComponent implements OnInit {
   constructor(private socket: Socket) { }
 
   ngOnInit(): void {
-    
+    this.socket.on('propositionsSaved', () => {
+      this.nuggets = [];
+      this.selOuPoivres = [];
+      this.menus = [];
+      this.additions = [];
+      this.name = '';
+      this.email = '';
+      this.confirm = false;
+      this.sent = true;
+    })
   }
 
   customTrackBy(index: any, item: any) {
@@ -116,7 +125,7 @@ export class QuestionFormComponent implements OnInit {
   onChangeNuggetsProposition(i: number, j: number): void {
     if(this.nuggets[i].propositions[j] !== '' && j+1 === this.nuggets[i].propositions.length) {
       this.nuggets[i].propositions.push('')
-    } else if(this.nuggets[i].propositions[j] === '') {
+    } else if(this.nuggets[i].propositions[j] === '' && this.nuggets[i].propositions.length > 1) {
       this.nuggets[i].propositions.splice(j, 1)
     }
   }
@@ -129,7 +138,7 @@ export class QuestionFormComponent implements OnInit {
         reponse: '',
         comment: ''
       })
-    } else if(list[i].propositions[j].question === '' && list[i].propositions[j].reponse === '' && list[i].propositions[j].comment === '') {
+    } else if(list[i].propositions[j].question === '' && list[i].propositions[j].reponse === '' && list[i].propositions[j].comment === '' && list[i].propositions.length > 1) {
       list[i].propositions.splice(j, 1)
     }
   }
@@ -146,7 +155,7 @@ export class QuestionFormComponent implements OnInit {
     }
   }
 
-  //To send answers (before confirmation) ---------------------------------------------------------
+  //To send answers (After confirmation) ---------------------------------------------------------
   onSend(): void {
     this.socket.emit('sendPropositions', 
     {

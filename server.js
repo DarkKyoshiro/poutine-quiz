@@ -383,6 +383,8 @@ io.on("connection", socket => {
         .then(() => {console.log('Addition sent!')})
         .catch((error) => {console.log(error)});
     }
+
+    socket.emit('propositionsSaved');
   })
 });
 
