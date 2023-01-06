@@ -18,7 +18,7 @@
     </table>
 </div>
 
-<div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
+<!-- <div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
     <h3>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <span *ngIf="getQuestion(this.questionID - 1).corrected"></span><button class="menu" (click)="onShowScoring()">Classement</button></h3>
     <table *ngIf="this.showScores">
         <tr>
@@ -32,7 +32,7 @@
             <td>{{team.score}}<img src="assets/frite.png" alt="Frites"><span *ngIf="getQuestion(this.questionID - 1).corrected"></span></td>
         </tr>
     </table>
-</div>
+</div> -->
 
 <div id="GameBoard">
     <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
