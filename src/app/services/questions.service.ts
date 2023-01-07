@@ -1087,7 +1087,7 @@ export class QuestionsService {
     },
     {
         id: 71,
-        question: 'Comment appelez-vous un pays dirigé par un militaire, qui a les pleins pouvoirs, où les médias sont muselés et où la seule chaîne de télévision est celle de l\'Etat ? La France Madame ! La France du Général de Gaulle !',
+        question: 'Comment vous appelez un pays qui a comme président un militaire avec les pleins pouvoirs, une police secrète, une seule chaîne de télévision et dont toute l’information est contrôlée par l\'Etat ? J’appelle ça la France Mademoiselle ! Et pas n’importe laquelle, la France du Général de Gaulle !',
         type: 'Addition',
         speed: true,
         corrected: false,
