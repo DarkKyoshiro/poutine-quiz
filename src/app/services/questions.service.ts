@@ -9,7 +9,7 @@ export class QuestionsService {
   questions: Question[] = [
     {
         id: 1,
-        question: 'Entre 2018 et 2020, quelle salle a eu le plus de merde ?',
+        question: 'Quel est le métier d\'Astérix ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -19,12 +19,12 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'D',
+        answer: 'B (Mentionné dans l\'album Astérix le Gaulois)',
         points: 1
     },
     {
         id: 2,
-        question: 'À qui appartient ce magnifique doigt ?',
+        question: 'Quel alcool existe vraiment ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -34,12 +34,12 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'C',
+        answer: 'A (Doit sa couleur à la fleur de pois bleu, et il change de couleur pour passer au violet à l\'ajout d\'un composé acide comme du citron)',
         points: 1
     },
     {
         id: 3,
-        question: 'En parlant de doigt, pourquoi cette pyramide ?',
+        question: 'Quelle citation n\'est jamais dite par les Pirates dans le salbums ? (A. Heureux celui qui a pu pénétrer les causes secrètes des choses, B. Il n\'est pas donné à tout le monde d\'aller à Brest, C. C\'est maintenant qu\'il faut boire, D. Bienheureux les pauvres d\'esprits)',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -54,7 +54,7 @@ export class QuestionsService {
     },
     {
         id: 4,
-        question: 'En parlant de pyramide, qui n’a pas participé à la pyramide du party de noël fait en février ?',
+        question: 'Qui a dessiné ce magnifique portrait robot du duo gaulois ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -64,12 +64,12 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'A',
+        answer: 'C',
         points: 1
     },
     {
         id: 5,
-        question: 'Quel trio a incarné les Super-Nanas ?',
+        question: 'Lequel de ces jeux-vidéos n\'existe pas ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -84,7 +84,7 @@ export class QuestionsService {
     },
     {
         id: 6,
-        question: 'Qui a dit, « je viendrais sexualiser tout ce que vous voulez » ?',
+        question: 'Lequel de ces personnages n\'existe pas ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -94,123 +94,123 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'C',
+        answer: 'C (Keskonrix est dans Asterix Gladiateur, Choucroutgarnix dans Obélix et Companie, Adictoserix dans la fille de vercingétorix)',
         points: 1
     },
     {
         id: 7,
-        question: 'A donné son nom à un pays',
-        type: 'SelOuPoivre',
-        speed: true,
+        question: 'Que dis l\'hypnotiseur egyptien dans les 12 travaux d\'Astérix ?',
+        type: 'Nugget',
+        speed: false,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
-        proposition3: 'Les deux',
-        proposition4: '',
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
 
-        answer: 'Des roux',
+        answer: 'A',
         points: 1
     },
     {
         id: 8,
-        question: 'C\'est Biodégradable',
-        type: 'SelOuPoivre',
-        speed: true,
+        question: 'Lequel de ces faits sur Astérix n\'est pas vrai ?',
+        type: 'Nugget',
+        speed: false,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
-        proposition3: 'Les deux',
-        proposition4: '',
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
 
-        answer: 'Des roux',
+        answer: 'C (Times en 15 juillet 1991, Premier satellite français lancé le 26 novembre 1965, slip enlevé récemment)',
         points: 1
     },
     {
         id: 9,
-        question: 'Se fait en plusieurs couleurs',
-        type: 'SelOuPoivre',
-        speed: true,
+        question: 'Dans quel film d\'animation Obélix a pu boire de la potion magique ?',
+        type: 'Nugget',
+        speed: false,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
-        proposition3: 'Les deux',
-        proposition4: '',
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
 
-        answer: 'Les deux',
+        answer: 'B, pour détruire les immeubles construits par les romains et laisser la forêt pousser',
         points: 1
     },
     {
         id: 10,
-        question: 'Keanu Reeves en possède',
+        question: 'A été joué par le plus d\'acteurs différents',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Deux roues',
+        answer: 'Astérix (Asterix: Christian Clavier, Clovis Cornillac, Édouard Baer, Guillaume Canet - Obélix: Gérard Depardieu, Gilles Lelouche)',
         points: 1
     },
     {
         id: 11,
-        question: 'Est dangereux',
+        question: 'A fini par se marier et avoir une famille',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Les deux',
+        answer: 'Astérix (5 petits enfants, dans l\'album L\'anniversaire d\'Astérix et Obélix)',
         points: 1
     },
     {
         id: 12,
-        question: 'Inventé en 1885 par deux allemands',
+        question: 'Aime se tailler le menhir',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Deux roues',
+        answer: 'Obélix',
         points: 1
     },
     {
         id: 13,
-        question: 'Ça tourne pas rond',
+        question: 'D\'après lui, les bébés sont apportés par des cigognes',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Des roux',
+        answer: 'Obélix',
         points: 1
     },
     {
         id: 14,
-        question: 'Plus pratique regonflé à bloc',
+        question: 'Se prends souvent la tête avec l\'autre',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
@@ -219,54 +219,52 @@ export class QuestionsService {
     },
     {
         id: 15,
-        question: 'MC1R',
+        question: 'Ne connait pas la date de la bataille de Gercovie',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'Des roux',
-        proposition2: 'Deux roues',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
         proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Des roux',
+        answer: 'Obélix (-52 avant JC, dans la rentrée des classes)',
         points: 1
     },
     {
         id: 16,
-        question: 'Qu’était écrit sur le T-shirt offert à Nathanël pour son départ lors de cette soirée ?',
-        type: 'Menu',
-        group: 1,
-        speed: false,
+        question: 'S\'est fait charmé par Latraviata',
+        type: 'SelOuPoivre',
+        speed: true,
         corrected: false,
 
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
+        proposition3: 'Les deux',
         proposition4: '',
 
-        answer: 'Savez-vous à quoi sert cette bande de cuire ?',
+        answer: 'Obélix (Astérix est devenu amnésique, mais n\'est jamais vraiment tombé sous le charme)',
         points: 1
     },
     {
         id: 17,
-        question: 'En parlant de cette soirée, après combien de temps me suis-je fais virer de la discussion fb d’Ezkapaz  ?',
-        type: 'Menu',
-        group: 1,
-        speed: false,
+        question: 'Signe un Z de la pointe de son épée',
+        type: 'SelOuPoivre',
+        speed: true,
         corrected: false,
 
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
+        proposition1: 'Astérix',
+        proposition2: 'Obélix',
+        proposition3: 'Les deux',
         proposition4: '',
 
-        answer: '8 minutes',
+        answer: 'Astérix (Dans le cadeau de César)',
         points: 1
     },
     {
         id: 18,
-        question: 'Si je vous dit effeuillage et malaisitude, vous me dites ?',
+        question: 'Quel plat belge le cuisinier Mannekenpix a inventé d\'après les 12 travaux d\'Astérix',
         type: 'Menu',
         group: 1,
         speed: false,
@@ -277,12 +275,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Simon',
+        answer: 'La frite, on dit même qu\'il est à l\'origine du poutine quiz',
         points: 1
     },
     {
         id: 19,
-        question: 'Mais pour quoi donc cette grosse bite doit être pratique ?',
+        question: 'Dans quel album Cétautomatix fini ligauté au lieu d\'Assurancetourix lors du banquet final ?',
         type: 'Menu',
         group: 1,
         speed: false,
@@ -293,14 +291,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Pour faire l\'hélicobite',
+        answer: 'Astérix et les Normands, car c\'est Assurancetourix qui a vaincu les normands en leur faisant peur avec sa voix',
         points: 1
     },
     {
         id: 20,
-        question: 'Quelle chanson a été interdite à Ezkapaz peu de temps après que je l’y ait introduite ?',
+        question: 'Citez-moi deux spécialités récupérées par Astérix et Obélix lors de leur tour de Gaule',
         type: 'Menu',
-        group: 2,
+        group: 1,
         speed: false,
         corrected: false,
 
@@ -309,14 +307,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'La Fée Fagot',
+        answer: 'Jambon de Lutèce (Paris), Bêtises de Camaracum (Cambrai), Vin pétillant (Champagne) de Durocortorum (Reims), Saucisses et Quenelles de Lugdunum (Lyon), Salade nicaeoise de Nicae (Nice), Bouillabaisse de Massilia (Marseille), Saucisses de Tolosa (Toulouse), Pruneaux d\'Aginum (Agen), Huitres et Vin blanc de Burdigala (Bordeaux), La Châtaigne gauloise',
         points: 1
     },
     {
         id: 21,
-        question: 'Mais qui est en train de perdre patience sur cet extrait ?',
+        question: 'Quel ingrédient Tournivis ajoute à la recette du pudding à l\'Arsenic ?',
         type: 'Menu',
-        group: 2,
+        group: 1,
         speed: false,
         corrected: false,
 
@@ -325,14 +323,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Simon',
+        answer: 'Un peu de Vitriol',
         points: 1
     },
     {
         id: 22,
-        question: 'Qui s’est retrouvé enfermé dans le barbier ?',
+        question: 'Complétez les parôles: "Écoutez ce qui va suivre, le vieux proverbe est changé..."',
         type: 'Menu',
-        group: 2,
+        group: 1,
         speed: false,
         corrected: false,
 
@@ -341,12 +339,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Jé',
+        answer: 'On ne mange pas pour vivre, il faut vivre pour manger',
         points: 1
     },
     {
         id: 23,
-        question: 'V ou F, Simon a déjà réussi à faire cuire un œuf sur le radiateur d’Ezkapaz ?',
+        question: 'Citez-moi quatres pays où Astérix et Obélix sont allés au cours de leur aventures',
         type: 'Menu',
         group: 2,
         speed: false,
@@ -357,14 +355,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Faux',
+        answer: 'Allemagne (Chez les Goths), Italie (Gladiateur), Egypte (Et Cléopâtre), Angleterre (Chez les bretons), Tunisie (Légionnaire), Grèce (Jeux olympiques), Espagne (En hispanie), Suisse (Chez les helvetes), Danemark et États-Unis (La grande traversée), Belgique (Chez les belges), Iran et Inde (Chez Rahazade), Atlantide (LA Galère d\'Obélix), Ecosse (Les pictes)',
         points: 1
     },
     {
         id: 24,
-        question: 'Qui est Thomas Sammons ?',
+        question: 'Dans Astérix et les indiens, d\'après Obélix, combien de banquets peut-on faire avec ce nombre de bison ?',
         type: 'Menu',
-        group: 3,
+        group: 2,
         speed: false,
         corrected: false,
 
@@ -373,14 +371,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Thomas N. Sammons (February 7, 1863 – October 15, 1935) was an American diplomat who served for many years in Korea, Japan and China before retiring as United States Consul General to Australia.',
+        answer: '3 banquets',
         points: 1
     },
     {
         id: 25,
-        question: 'Bien qu’elle ait d’abord été une prostituée chinoise, quel destin incroyable a eu Ching Shih ?',
+        question: 'Dans quel album Astérix et Obélix doivent passer une nuit dans un coffre fort ?',
         type: 'Menu',
-        group: 3,
+        group: 2,
         speed: false,
         corrected: false,
 
@@ -389,14 +387,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'She was a Chinese prostitute who married a pirate and took over his fleet when he died. She ran her ships with an iron fist and took no shit and was super successful, to the point that the Chinese government sent out an armada to stop her. She kicked their asses and captured 63 of their ships. They fought for two years and even brought in Dutch and British ships before they gave up and offered amnesty to her and her 17,000 crewmen. She got to keep ALL of her loot, spent her later years running a brothel/casino and lived to be 69.',
+        answer: 'Astérix chez les Herlvètes',
         points: 1
     },
     {
         id: 26,
-        question: 'Qui a travaillé dans les services d’espionnages pendant la WW2 et a partiellement inspiré James Bond, a sorti un album de Heavy Metal à l’age de 88 ans, a joué le compte Dracula, et a survécu à un crash d’Avion ?',
+        question: 'V ou F, dans Astérix chez les Goths, Astérix, Obélix et Panoramix organisent une guerre civile dopée à la potion magique pour décourager les Goths d\'envahir la Gaule ?',
         type: 'Menu',
-        group: 3,
+        group: 2,
         speed: false,
         corrected: false,
 
@@ -405,12 +403,28 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Sir Christopher Lee',
+        answer: 'V',
         points: 1
     },
     {
         id: 27,
-        question: 'Qu’a inventé Nicolas Tesla ?',
+        question: 'Quel célèbre personnage de la littérature espagnole apperçoit-on dans Astérix en Hispanie ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Don Quichotte',
+        points: 1
+    },
+    {
+        id: 28,
+        question: 'Que se passe-t\'il dans la troisième case de la page 17 d\'Astérix chez Rahazade ?',
         type: 'Menu',
         group: 3,
         speed: false,
@@ -421,29 +435,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Achievements: Invented the alternating-current generator that provides light and electricity, the transformer through which it is sent, and even the high voltage coil used in television sets. Nikola was the ultimate mad scientist, meaning he was both slightly insane and terrifyingly smart. He held 700 patents at the time of his death yet he passed away penniless and in major debt. He once melted one of his assistants\' hands by overloading it with X-rays, like a badass. His experiments were risky and dangerous, if there was one man who could have single-handedly destroyed the planet, it\'s this guy. You crazy Nikola!',
+        answer: 'Le fakir est saoul après avoir un peu trop bu',
         points: 1
     },
     {
-        id: 28,
-        question: 'Se dit de quelqu\'un qui est particulièrement virile, chargé de testostérone, ou pas d\'ailleurs, maintenant c\'est risqué d\'assumer quoique ce soit...',
-        type: 'Addition',
-        speed: true,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'L\'homme - Stéphane',
-        points: 3
-    },
-    {
         id: 29,
-        question: 'Alors c\'est un plat d\'ici, très connu et hônnetement très bon, mais celui là est particulièrement chaud, il est même hot, c\'est plus de la bouffe à ce niveau là',
-        type: 'Addition',
-        speed: true,
+        question: 'Que se passe-t\'il dans la troisième case de la page 17 d\'Astérix et Latraviata ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -451,14 +451,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Poutine Sexuelle - Alexie',
-        points: 3
+        answer: 'Latraviata essaie de prendre le casque que le père d\'Obélix lui a offert',
+        points: 1
     },
     {
         id: 30,
-        question: 'C\'est pas mal inspiré d\'un sketch d\'humoristes français à propos d\'une campagne electorale je crois',
-        type: 'Addition',
-        speed: true,
+        question: 'Que se passe-t\'il dans la troisième case de la page 17 de la Grande Traversée ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -466,14 +467,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Simon Beauregard, souple et solide à la fois',
-        points: 3
+        answer: 'Un indien fait Glouglouglou',
+        points: 1
     },
     {
         id: 31,
-        question: 'Alors elle on n\'arrivait jamais à se rappeler son prénom donc on sortait n\'importe quoi qui commençait par la même lettre.',
-        type: 'Addition',
-        speed: true,
+        question: 'Que se passe-t\'il dans la troisième case de la page 17 des Lauriers de César ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -481,12 +483,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Cannelle, Clarence, C\'est quoi son nom déjà ? - Céline',
-        points: 3
+        answer: 'Gardefréjus goute la soupe d\'Astérix et Obélix',
+        points: 1
     },
     {
         id: 32,
-        question: 'Alors celui là a eu pas mal de changement. C\'est partie de Frenchie, mais ça a mal fini. C\'est en deux mots',
+        question: 'Cuir, Cuir, Moustache',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -496,12 +498,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Frank Chie - Mégane',
+        answer: 'Astérix',
         points: 3
     },
     {
         id: 33,
-        question: 'Tiré d\'une vidéo d\'un jeu vidéo sur les pirates, c\'est dit par quelqu\'un qui n\'aime pas les espagnols',
+        question: 'Cuir, Cuir, Moustache',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -511,12 +513,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Mat Are U Spanish',
+        answer: 'Cylindric le Germain',
         points: 3
     },
     {
         id: 34,
-        question: 'Lui il a carrément fallu changer le prénom, y en avait trop...',
+        question: 'Cuir, Cuir, Moustache',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -526,12 +528,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Bob car y a déjà trop de Gui - Guillaume',
+        answer: 'Sulfurix',
         points: 3
     },
     {
         id: 35,
-        question: 'C\'est quelqu\'un qui anime particulièrement bien certains Quiz, tout le monde l\'aime',
+        question: 'Cuir, Cuir, Moustache',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -541,12 +543,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'La grande frite - Guillaume',
+        answer: 'Ordralfabetix',
         points: 3
     },
     {
         id: 36,
-        question: 'Bon celui là c\'est soit une référence à une chanson, soit à une sitcom culte, en tout cas c\'est un membre super important de l\'équipe',
+        question: 'Cuir, Cuir, Moustache',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -556,42 +558,72 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Gunter/Odélaf - La Cafetière',
+        answer: 'Caius Céplus',
         points: 3
     },
     {
         id: 37,
-        question: 'D\'après sa biographie, quelle taille fait Hello Kitty',
-        type: 'Nugget',
-        speed: false,
+        question: 'Cuir, Cuir, Moustache',
+        type: 'Addition',
+        speed: true,
         corrected: false,
 
-        proposition1: 'A',
-        proposition2: 'B',
-        proposition3: 'C',
-        proposition4: 'D',
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
 
-        answer: 'C',
-        points: 1
+        answer: 'Idéfix',
+        points: 3
     },
     {
         id: 38,
-        question: 'Dans l’ancien code de lois d’Hammurabi, que faisait-on à un barman qui diluait la bière avec de l’Eau ?',
-        type: 'Nugget',
-        speed: false,
+        question: 'Cuir, Cuir, Moustache',
+        type: 'Addition',
+        speed: true,
         corrected: false,
 
-        proposition1: 'A',
-        proposition2: 'B',
-        proposition3: 'C',
-        proposition4: 'D',
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
 
-        answer: 'C',
-        points: 1
+        answer: 'Cétautomatix',
+        points: 3
     },
     {
         id: 39,
-        question: 'Quel burger n’existe pas chez McDonald’s  ?',
+        question: 'Cuir, Cuir, Moustache',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Kiçàh le fakir',
+        points: 3
+    },
+    {
+        id: 40,
+        question: 'Cuir, Cuir, Moustache',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Caius Bonus',
+        points: 3
+    },
+    {
+        id: 41,
+        question: 'Lequel de ces articles scientifiques n\'existe pas ? (A. La bouche, l\'anus et le blastopore - questions ouvertes sur les ouvertures questionables, B. Le rhume des neiges et ses septs souches, C. Un anneau pour les multiplexer tous, D. Les levures fantastiques et où les trouver)',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -605,8 +637,8 @@ export class QuestionsService {
         points: 1
     },
     {
-        id: 40,
-        question: 'Quel est le nom de la mère de Buzz Aldrin ?',
+        id: 42,
+        question: 'Dans l\'allemagne médiévale, comment les couples réglaient leurs problèmes ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -616,12 +648,42 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'C',
+        answer: 'C (Pour équilibrer, les hommes combattait dans un trou avec une seule main, et les femmes pouvaient frapper les hommes avec un sac de pierre)',
         points: 1
     },
     {
-        id: 41,
-        question: 'Quelle date est-il en Éthiopie ?',
+        id: 43,
+        question: 'Quel est le plus gros flop de l\'histoire du cinéma ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'A (John Carter: 236 Million $, Lone Ranger: 221 Million $, 13th warrior: 210 million $, Mortal engine: 189 million $)',
+        points: 1
+    },
+    {
+        id: 44,
+        question: 'Combien de temps a duré la guerre la plus courte du monde ?',
+        type: 'Nugget',
+        speed: false,
+        corrected: false,
+
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+
+        answer: 'A (La guerre Anglo-Zanzibar du 27 août 1896 a duré 38 minutes. Suite à la mort du Sultan pro-anglais Hamad ibn Thuwaïni, le sultan pro-allemand Khalid ibn Bargach pris le pouvoir sans l\'accord des anglais qui lui préféraient un autre. Les anglais ont alors braqués leurs canons vers le palais royal en donnant pour ultimatum le départ du sultan. Il refusa, les anglais ont attaqués, le palais est en ruine, et un nouveau sultan a été mis en place (500 pertes sansibarienne, 1 seule anglais))',
+        points: 1
+    },
+    {
+        id: 45,
+        question: 'Lequel de ces faits est faux ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -635,8 +697,8 @@ export class QuestionsService {
         points: 1
     },
     {
-        id: 42,
-        question: 'Quel est le nom de rue le plus commun aux USA ?',
+        id: 46,
+        question: 'Quel objet va apparaitre sur cette vidéo ?',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -646,195 +708,164 @@ export class QuestionsService {
         proposition3: 'C',
         proposition4: 'D',
 
-        answer: 'B',
-        points: 1
-    },
-    {
-        id: 43,
-        question: 'Le prix de l\'encre vs le prix du sang',
-        type: 'SelOuPoivre',
-        speed: true,
-        corrected: false,
-
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
-
-        answer: 'C\est plus',
-        points: 1
-    },
-    {
-        id: 44,
-        question: 'La taille d\'un velociraptor vs celle d\'une dinde',
-        type: 'SelOuPoivre',
-        speed: true,
-        corrected: false,
-
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
-
-        answer: 'C\'est pareil',
-        points: 1
-    },
-    {
-        id: 45,
-        question: 'Le nombre de vélo vs le nombre d\'humains à Copenhague',
-        type: 'SelOuPoivre',
-        speed: true,
-        corrected: false,
-
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
-
-        answer: 'C\'est plus',
-        points: 1
-    },
-    {
-        id: 46,
-        question: 'Le nombre de pyramide en Egypte vs au Soudan ',
-        type: 'SelOuPoivre',
-        speed: true,
-        corrected: false,
-
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
-
-        answer: 'C\'est moins (138 vs 255)',
+        answer: 'C (Expliquer histoire du cadeau de Noël)',
         points: 1
     },
     {
         id: 47,
-        question: 'Le nombre de machine à vendre par personne au japon vs le nombre d’arme à feu au USA ',
-        type: 'SelOuPoivre',
-        speed: true,
+        question: 'Lequel de ces vins n\'existent pas ?',
+        type: 'Nugget',
+        speed: false,
         corrected: false,
 
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
+        proposition5: 'E',
+        proposition6: 'F',
 
-        answer: 'C\'est moins (40 vs 120.5)',
+        answer: 'C',
         points: 1
     },
     {
         id: 48,
-        question: 'Le nombre de mots écossais pour décrire la neige vs la durée du plus long concert',
-        type: 'SelOuPoivre',
-        speed: true,
+        question: 'Quel acteur est mort le plus de fois sur écran ?',
+        type: 'Nugget',
+        speed: false,
         corrected: false,
 
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
-        proposition4: '',
+        proposition1: 'A',
+        proposition2: 'B',
+        proposition3: 'C',
+        proposition4: 'D',
 
-        answer: 'C\'est moins (421 words vs 343 heures 7 minutes et 52 secondes) ex: sneesl, feefle, flinkdrinkin (Children\'s Restoration Network)',
+        answer: 'D (Sean Bean: 23 morts, Nicolas Cage: 32 morts, Christopher Lee: 69 morts, Danny Trejo: 72 morts)',
         points: 1
     },
     {
         id: 49,
-        question: 'Le pourcentage d’américains adultes qui pensent que le chocolat au lait vient de vaches marrons vs le pourcentage des océans qui a été exploré',
+        question: 'A été donné par un homme encapuchonné dans une taverne',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'C\'est plus (7% vs 5%)',
+        answer: 'Aragog',
         points: 1
     },
     {
         id: 50,
-        question: 'Le nombre de langages inventés pour des TV shows vs le nombre de personnes qui parlent le langage des aborigènes australien (Paakantyi)',
+        question: 'Aime passer du temps encapuchonné dans une taverne',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'C\'est plus (plus de 200 vs 2-24)',
+        answer: 'Aragorn',
         points: 1
     },
     {
         id: 51,
-        question: 'Le nombre d’arbres sur terres vs le nombre d’étoiles dans la galaxie',
+        question: 'A un nom qui veut dire "Qui se plaie sur la montagne"',
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
 
-        proposition1: 'C\'est plus',
-        proposition2: 'C\'est moins',
-        proposition3: 'C\'est pareil',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'C\'est plus (3.04 billions d’arbres vs 100-400 milliards d’étoiles)',
+        answer: 'Origan',
         points: 1
     },
     {
         id: 52,
-        question: 'V ou F le prince Charles ne presse pas son propre dentifrice ?',
-        type: 'Menu',
-        group: 1,
-        speed: false,
+        question: 'A des propriétés anti-insectes',
+        type: 'SelOuPoivre',
+        speed: true,
         corrected: false,
 
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'Vrai',
+        answer: 'Origan (Aussi anti-oxidant, sédatif et anti-tussif)',
         points: 1
     },
     {
         id: 53,
-        question: 'Comment la reine a appelée la nouvelle race de chien créée par le croisement entre l’un de ses Corgi et un Dachshund ?',
-        type: 'Menu',
-        group: 1,
-        speed: false,
+        question: 'A des propriétés anti-orc',
+        type: 'SelOuPoivre',
+        speed: true,
         corrected: false,
 
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'Dorgi',
+        answer: 'Aragorn (Aussi anti-Uruk Hai, anti-Nazguls et pro-Rohirim)',
         points: 1
     },
     {
         id: 54,
-        question: 'V ou F, la Reine voyage régulièrement avec sa propre réserve de sang ?',
-        type: 'Menu',
-        group: 1,
-        speed: false,
+        question: 'A vécu plus de 200 ans',
+        type: 'SelOuPoivre',
+        speed: true,
         corrected: false,
 
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
         proposition4: '',
 
-        answer: 'Vrai',
+        answer: 'Aragorn',
         points: 1
     },
     {
         id: 55,
-        question: 'À quel jeu de société la famille royale n’a plus le droit de jouer afin d’éviter de créer des tensions familiales ?',
+        question: 'Est devenu populaire aux US après la seconde guerre mondiale',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
+        proposition4: '',
+
+        answer: 'Origan (ramené de l\'Italie comme herbe à Pizza)',
+        points: 1
+    },
+    {
+        id: 56,
+        question: 'A repeuplé une colonie avec sa femme',
+        type: 'SelOuPoivre',
+        speed: true,
+        corrected: false,
+
+        proposition1: 'Aragorn',
+        proposition2: 'Aragog',
+        proposition3: 'Origan',
+        proposition4: '',
+
+        answer: 'Aragog',
+        points: 1
+    },
+    {
+        id: 57,
+        question: 'V ou F, durant les élections présidentielles de 2020, P***hub n\'était accessible qu\'aux américains ayant voté ?',
         type: 'Menu',
         group: 1,
         speed: false,
@@ -845,46 +876,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Monopoly',
-        points: 1
-    },
-    {
-        id: 56,
-        question: 'V ou F, Kevin Mitnick a été gardé 8 mois en confinement solitaire car la police aurait dit au juge qu’il pouvait lancer des missiles nucléaires en appelant le NORAD depuis un cellulaire en en communiquant avec le serveur juste en sifflant ?',
-        type: 'Menu',
-        group: 2,
-        speed: false,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Vrai',
-        points: 1
-    },
-    {
-        id: 57,
-        question: 'V ou F, Hackers et Spams existaient au 19ème siècle ?',
-        type: 'Menu',
-        group: 2,
-        speed: false,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Vrai, avec le réseau des télégrams',
+        answer: 'V (Give a F***, Get a F***)',
         points: 1
     },
     {
         id: 58,
-        question: 'Quel hack Bill Gates a fait lors de ses études à l’université ?',
+        question: 'Quel était le but du "Wank Band", bracelet créé par P***Hub (mais malheureusement jamais commercialisé) ?',
         type: 'Menu',
-        group: 2,
+        group: 1,
         speed: false,
         corrected: false,
 
@@ -893,12 +892,44 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Il s\'est inscrit à des cours qu\'avec des filles',
+        answer: 'Convertir l\'énergie cinétique de la branlette en électricité',
         points: 1
     },
     {
         id: 59,
-        question: 'Qu’a fait Timothy Lloyd après s’être fait viré d’OMEGA en 1996 ?',
+        question: 'En 2022, à quelle place se situe le canada en terme de trafic ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: '8ème place',
+        points: 1
+    },
+    {
+        id: 60,
+        question: 'V ou F, P***Hub a une chaîne pour les aveugles ?',
+        type: 'Menu',
+        group: 1,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'V (avec audiodescription)',
+        points: 1
+    },
+    {
+        id: 61,
+        question: 'V ou F, la terre est au plus proche du soleil en hivers ?',
         type: 'Menu',
         group: 2,
         speed: false,
@@ -909,46 +940,14 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Il a planté une bombe à retardement qui a supprimé l\'OS sur les PCs de sa companie.',
-        points: 1
-    },
-    {
-        id: 60,
-        question: 'Sachant que nous sommes tous génétiquement identiques à 99.8%, combien de polymorphismes mononucléotidiques a-t’on identifié dans le génome humain ?',
-        type: 'Menu',
-        group: 3,
-        speed: false,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: '1.4 millions SNPs',
-        points: 1
-    },
-    {
-        id: 61,
-        question: 'Quel est le seul institut français impliqué dans le HGP ?',
-        type: 'Menu',
-        group: 3,
-        speed: false,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Le Commissariat à l\'énergie atomique',
+        answer: 'V (et c\'est assez contrintuitif, mais c\'est l\'angle d\'arrivé des rayons du soleil qui détermine l\'énergie délivrée)',
         points: 1
     },
     {
         id: 62,
-        question: 'En quoi consiste le RNA-Seq, technique utilisée pour accélérer le séquençage du génome humain ?',
+        question: 'Quelle couleur, autre que le blanc, la neige peut naturellement avoir ?',
         type: 'Menu',
-        group: 3,
+        group: 2,
         speed: false,
         corrected: false,
 
@@ -957,12 +956,60 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'RNA-Seq (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.',
+        answer: 'Jaune, Orange, Rouge, Gris, Bleu, Vert',
         points: 1
     },
     {
         id: 63,
-        question: 'Citez moi trois potentielles utilités du HGP ?',
+        question: 'Quelle est la température extérieure la plus froide enregistrée sur Terre ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: '-98°C en antarctique',
+        points: 1
+    },
+    {
+        id: 64,
+        question: 'Combien de pays de l\'hémisphère sud ont accueillis les jeux olympique d\'hivers ? (À 4 près)',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: '13',
+        points: 1
+    },
+    {
+        id: 65,
+        question: 'V ou F, la Terre a attendue presque 20 ans avant d\'envoyer de la neige au Sahara juste pour faire chier Anggun ?',
+        type: 'Menu',
+        group: 2,
+        speed: false,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'V',
+        points: 0
+    },
+    {
+        id: 66,
+        question: 'Posons les bases, quel est la température du zéro absolue en Fahrenheit ? (Avec deux décimales)',
         type: 'Menu',
         group: 3,
         speed: false,
@@ -973,59 +1020,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'genotyping of specific viruses to direct appropriate treatment; identification of mutations linked to different forms of cancer; the design of medication and more accurate prediction of their effects; advancement in forensic applied sciences; biofuels and other energy applications; agriculture, animal husbandry, bioprocessing; risk assessment; bioarcheology, anthropology and evolution. Another proposed benefit is the commercial development of genomics research related to DNA-based products, a multibillion-dollar industry.',
+        answer: '-459.67°F',
         points: 1
     },
     {
-        id: 64,
-        question: 'Avoir la Falle Basse',
-        type: 'Addition',
-        speed: true,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Ne pas avoir le moral, être démotivé ou découragé',
-        points: 3
-    },
-    {
-        id: 65,
-        question: 'Se faire brasser le canadien',
-        type: 'Addition',
-        speed: true,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Passer un mauvais quart d\'heure',
-        points: 3
-    },
-    {
-        id: 66,
-        question: 'Avoir l’air d’une chenille à poile ',
-        type: 'Addition',
-        speed: true,
-        corrected: false,
-
-        proposition1: '',
-        proposition2: '',
-        proposition3: '',
-        proposition4: '',
-
-        answer: 'Être moche',
-        points: 3
-    },
-    {
         id: 67,
-        question: 'Mettre un bras dans le tordeur',
-        type: 'Addition',
-        speed: true,
+        question: 'D\'après quelle constante est dérivée l\'amplitude du Kelvin défini par la théorie cinétique ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -1033,14 +1036,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'mettre le doigt dans l’engrenage',
-        points: 3
+        answer: 'La constante de Boltsmann',
+        points: 1
     },
     {
         id: 68,
-        question: 'Il tombe des peaux de lièvres',
-        type: 'Addition',
-        speed: true,
+        question: 'Quelle est la loi zéro de la thermodynamique ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -1048,14 +1052,15 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Il neige des gros flocons',
-        points: 3
+        answer: 'Si deux systèmes sont tous deux en équilibre thermique avec un troisième système, alors ils sont en équilibre thermique l\'un avec l\'autre.',
+        points: 1
     },
     {
         id: 69,
-        question: 'Se paqueter la fraise',
-        type: 'Addition',
-        speed: true,
+        question: 'Que fait l\'entropie d\'un système quand sa température approche le zéro absolu ?',
+        type: 'Menu',
+        group: 3,
+        speed: false,
         corrected: false,
 
         proposition1: '',
@@ -1063,12 +1068,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Boire ou manger en excès',
-        points: 3
+        answer: 'L\'entropie approche une constante (4ème loi de la thermodynamique)',
+        points: 1
     },
     {
         id: 70,
-        question: 'Se virer le derrière à la crèche',
+        question: 'Yippie-ki-yay, pauvre con ! (Yippie-ki-yay, motherfucker)',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -1078,12 +1083,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Être contre l\'opinion générale',
+        answer: 'Piège de Cristal (Die Hard)',
         points: 3
     },
     {
         id: 71,
-        question: 'J\'ai l\'feu au cul',
+        question: 'Comment appelez-vous un pays dirigé par un militaire, qui a les pleins pouvoirs, où les médias sont muselés et où la seule chaîne de télévision est celle de l\'Etat ? La France Madame ! La France du Général de Gaulle !',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -1093,12 +1098,12 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Je suis en colère',
+        answer: 'OSS 117, Rio ne répond plus',
         points: 3
     },
     {
         id: 72,
-        question: 'Pousse, mais pousse égal',
+        question: 'Ta mère suce des bites en enfer!',
         type: 'Addition',
         speed: true,
         corrected: false,
@@ -1108,7 +1113,82 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'N\'éxagère pas',
+        answer: 'L\'exorciste',
+        points: 3
+    },
+    {
+        id: 73,
+        question: 'Stupide hobbit joufflu !',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Le seigneur des anneaux, les deux tours',
+        points: 3
+    },
+    {
+        id: 74,
+        question: 'Mais tu sais c\'que t\'es ? T\'es le roi des cons au pays des emmerdeurs ! Un pt… un p\'tit con casse couille qui prend la tête d\'accord ?! Hein espèce de petit enculé, de merdeux, qui chiale sa race toute la journée, voilà c\'que t\'es ! Connard, connard, connard… Casse-toi putain, connard, connard, connard ! Petit enculé de merde !',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Nos jours heureux',
+        points: 3
+    },
+    {
+        id: 75,
+        question: 'Vous êtes le fils d\'une femelle hamster et d\'un homme puant le sureau !',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Monthy Python, Sacré Graal',
+        points: 3
+    },
+    {
+        id: 76,
+        question: 'Nom de Dieu de putain de bordel de merde de saloperie de connard d\'enculé de ta mère. Vous voyez, c\'est aussi jouissif que de se torcher le cul avec de la soie, j\'adore ça.',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Matrix Reloaded',
+        points: 3
+    },
+    {
+        id: 77,
+        question: 'Mon hostie de câlice de pourri sale',
+        type: 'Addition',
+        speed: true,
+        corrected: false,
+
+        proposition1: '',
+        proposition2: '',
+        proposition3: '',
+        proposition4: '',
+
+        answer: 'Bon cop, bad cop',
         points: 3
     }
   ]
