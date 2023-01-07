@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { SocketIoModule } from 'ngx-socket-io';
 import { Question } from '../models/question.model';
 
 @Injectable({
@@ -39,7 +38,7 @@ export class QuestionsService {
     },
     {
         id: 3,
-        question: 'Quelle citation n\'est jamais dite par les Pirates dans le salbums ? (A. Heureux celui qui a pu pénétrer les causes secrètes des choses, B. Il n\'est pas donné à tout le monde d\'aller à Brest, C. C\'est maintenant qu\'il faut boire, D. Bienheureux les pauvres d\'esprits)',
+        question: 'Quelle citation n\'est jamais dite par les Pirates dans le salbums ?\nA. Heureux celui qui a pu pénétrer les causes secrètes des choses\nB. Il n\'est pas donné à tout le monde d\'aller à Brest\nC. C\'est maintenant qu\'il faut boire\nD. Bienheureux les pauvres d\'esprits)',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -307,7 +306,7 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Jambon de Lutèce (Paris), Bêtises de Camaracum (Cambrai), Vin pétillant (Champagne) de Durocortorum (Reims), Saucisses et Quenelles de Lugdunum (Lyon), Salade nicaeoise de Nicae (Nice), Bouillabaisse de Massilia (Marseille), Saucisses de Tolosa (Toulouse), Pruneaux d\'Aginum (Agen), Huitres et Vin blanc de Burdigala (Bordeaux), La Châtaigne gauloise',
+        answer: 'Jambon de Lutèce (Paris)\n Bêtises de Camaracum (Cambrai)\nVin pétillant (Champagne) de Durocortorum (Reims)\nSaucisses et Quenelles de Lugdunum (Lyon)\nSalade nicaeoise de Nicae (Nice)\nBouillabaisse de Massilia (Marseille)\nSaucisses de Tolosa (Toulouse)\nPruneaux d\'Aginum (Agen)\nHuitres et Vin blanc de Burdigala (Bordeaux)\nLa Châtaigne gauloise\n',
         points: 1
     },
     {
@@ -355,7 +354,7 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Allemagne (Chez les Goths), Italie (Gladiateur), Egypte (Et Cléopâtre), Angleterre (Chez les bretons), Tunisie (Légionnaire), Grèce (Jeux olympiques), Espagne (En hispanie), Suisse (Chez les helvetes), Danemark et États-Unis (La grande traversée), Belgique (Chez les belges), Iran et Inde (Chez Rahazade), Atlantide (LA Galère d\'Obélix), Ecosse (Les pictes)',
+        answer: 'Allemagne (Chez les Goths)\nItalie (Gladiateur)\nEgypte (Et Cléopâtre)\nAngleterre (Chez les bretons)\nTunisie (Légionnaire)\nGrèce (Jeux olympiques)\nEspagne (En hispanie)\nSuisse (Chez les helvetes)\nDanemark et États-Unis (La grande traversée)\nBelgique (Chez les belges)\nIran et Inde (Chez Rahazade)\nAtlantide (LA Galère d\'Obélix)\nEcosse (Les pictes)\n',
         points: 1
     },
     {
@@ -623,7 +622,7 @@ export class QuestionsService {
     },
     {
         id: 41,
-        question: 'Lequel de ces articles scientifiques n\'existe pas ? (A. La bouche, l\'anus et le blastopore - questions ouvertes sur les ouvertures questionables, B. Le rhume des neiges et ses septs souches, C. Un anneau pour les multiplexer tous, D. Les levures fantastiques et où les trouver)',
+        question: 'Lequel de ces articles scientifiques n\'existe pas ?\nA. La bouche, l\'anus et le blastopore - questions ouvertes sur les ouvertures questionables\nB. Le rhume des neiges et ses septs souches\nC. Un anneau pour les multiplexer tous\nD. Les levures fantastiques et où les trouver',
         type: 'Nugget',
         speed: false,
         corrected: false,
@@ -961,7 +960,7 @@ export class QuestionsService {
     },
     {
         id: 63,
-        question: 'Quelle est la température extérieure la plus froide enregistrée sur Terre ?',
+        question: 'Quelle est la température extérieure la plus froide enregistrée sur Terre ? (À 10 degrés près)',
         type: 'Menu',
         group: 2,
         speed: false,
@@ -1188,7 +1187,7 @@ export class QuestionsService {
         proposition3: '',
         proposition4: '',
 
-        answer: 'Bon cop, bad cop',
+        answer: 'Bon cop, bad cop\n1. V ou F, D\'après Astérix et les indiens, les romains pensent que la terre est plate ?\n2. Diriez-vous qu\'Astérix a un problème de dépendance à la potion magique ?\n3. Alors, il est frais ou non ce poisson ?\n4. V ou F, Panoramix utilise des cubes de bouillon pour donner du gout à sa potion magique ?\n5. En quelle année a eu lieu de bataille de Gergovie ? En chiffre romain bien sur, si vous ne savez pas dites LII av JC\n6. Vous êtes plus Choucroutgarnix ou Tartifletix ?\n7. Si la Grande Frite était gauloise, combien de sanglier mangerait-elle à chaque buffet ?\n8. V ou F, dans les années 80 on pouvait suivre les aventures d\'un autre héro gaulois, le célèbre Agencetourix ?\n9. Pensez-vous que Scribe soit une bonne situation ?\n10. Pensez vous voir Astérix et Obélix l\'empire du milieu au cinéma quand il sera sorti ?\n',
         points: 3
     }
   ]
