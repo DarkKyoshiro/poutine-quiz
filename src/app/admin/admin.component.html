@@ -58,8 +58,8 @@
     
     <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
         <h3><span style="color: red;" *ngIf="this.questionID === this.questions.length">!!!Last!!!</span> {{questions[this.questionID - 1].type}} n°{{questions[this.questionID - 1].id}}</h3>
-        <p>{{questions[this.questionID - 1].question}}</p>
-        <p *ngIf="questions[this.questionID - 1].corrected === true">{{questions[this.questionID - 1].answer}} pour {{questions[this.questionID - 1].points}} point(s)</p>
+        <p style="white-space: pre-wrap">{{questions[this.questionID - 1].question}}</p>
+        <p *ngIf="questions[this.questionID - 1].corrected === true" style="white-space: pre-wrap">{{questions[this.questionID - 1].answer}} pour {{questions[this.questionID - 1].points}} point(s)</p>
     </div>
 
     <table id="answers">
