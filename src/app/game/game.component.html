@@ -44,6 +44,8 @@
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition2)" *ngIf="getQuestion(this.questionID - 1).proposition2">{{getQuestion(this.questionID - 1).proposition2}}</button>
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition3)" *ngIf="getQuestion(this.questionID - 1).proposition3">{{getQuestion(this.questionID - 1).proposition3}}</button>
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition4)" *ngIf="getQuestion(this.questionID - 1).proposition4">{{getQuestion(this.questionID - 1).proposition4}}</button>
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition5)" *ngIf="getQuestion(this.questionID - 1).proposition5">{{getQuestion(this.questionID - 1).proposition5}}</button>
+                <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition6)" *ngIf="getQuestion(this.questionID - 1).proposition6">{{getQuestion(this.questionID - 1).proposition6}}</button>
             </div>
             
             <!-- <input type="text" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )" [(ngModel)]="this.answer" (keyup)="onAnswer(this.answer)"><br *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && getQuestion(this.questionID - 1).group === this.group) || getQuestion(this.questionID - 1).type === 'Addition' )"> -->
