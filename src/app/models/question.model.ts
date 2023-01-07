@@ -10,6 +10,8 @@ export class Question {
   proposition2?: string;
   proposition3?: string;
   proposition4?: string;
+  proposition5?: string;
+  proposition6?: string;
 
   answer!: string;
   points!: number;
