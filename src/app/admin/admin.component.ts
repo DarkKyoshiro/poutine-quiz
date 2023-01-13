@@ -18,7 +18,6 @@ export class AdminComponent implements OnInit {
   answers: Answer[] = [];
   showTeams: boolean = false;
   showQuestionSelection: boolean = false;
-  showTimestamp: boolean = false;
   resetCheck: boolean = false;
 
   constructor(
@@ -64,7 +63,7 @@ export class AdminComponent implements OnInit {
     this.socket.on('get-answers', (data: any) => {
       this.answers = [];
       this.answers = data;
-      this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
+      // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
     })
   }
@@ -75,10 +74,6 @@ export class AdminComponent implements OnInit {
 
   onShowQuestionSelection(): void {
     this.showQuestionSelection? this.showQuestionSelection = false : this.showQuestionSelection = true
-  }
-
-  onShowTimestamp(): void {
-    this.showTimestamp? this.showTimestamp = false : this.showTimestamp = true
   }
 
   onChangeGroup(teamName: string, teamGroup: number): void {
@@ -160,4 +155,25 @@ export class AdminComponent implements OnInit {
     this.socket.emit('reload')
   }
 
+  getRanks(teamName: string): number {
+    let timestampArray: number[] = []
+    let sortedArray: number[] = []
+    let rankings: number[] = []
+
+    let i: number = 0
+    let teamIndex: number = 0
+
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID) {
+        timestampArray.push(answer.timestamp)
+        if(answer.teamName === teamName) { teamIndex = i }
+        i++
+      }
+    })
+
+    sortedArray = timestampArray.slice().sort((a,b) => { return a-b })
+    rankings = timestampArray.map((v) => { return sortedArray.indexOf(v)+1 })
+
+    return rankings[teamIndex]
+  }
 }

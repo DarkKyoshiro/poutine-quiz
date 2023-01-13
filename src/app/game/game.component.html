@@ -39,7 +39,7 @@
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
         <!-- Before correction -->
         <div *ngIf="!getQuestion(this.questionID - 1).corrected">
-            <div *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || getQuestion(this.questionID - 1).type === 'SelOuPoivre' )">
+            <div *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && !getReponse()))">
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition1)" *ngIf="getQuestion(this.questionID - 1).proposition1">{{getQuestion(this.questionID - 1).proposition1}}</button>
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition2)" *ngIf="getQuestion(this.questionID - 1).proposition2">{{getQuestion(this.questionID - 1).proposition2}}</button>
                 <button class="Proposition" (click)="onAnswer(getQuestion(this.questionID - 1).proposition3)" *ngIf="getQuestion(this.questionID - 1).proposition3">{{getQuestion(this.questionID - 1).proposition3}}</button>

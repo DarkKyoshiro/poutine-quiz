@@ -1,6 +1,5 @@
 <button class="menu" (click)="onShowTeams()" *ngIf="this.teams.length !== 0">Teams</button>
 <button class="menu" (click)="onShowQuestionSelection()" *ngIf="this.questions.length !== 0">Questions</button>
-<button class="menu" (click)="onShowTimestamp()" *ngIf="this.questions.length !== 0">Timestamp</button>
 <button class="menu" (click)="onSave()">Save</button>
 <button class="menu" (click)="onReload()">Reload</button> 
 <br>
@@ -64,14 +63,14 @@
 
     <table id="answers">
         <tr *ngFor="let answer of getAnswers(this.questionID); let i=index">
-            <td class="space">{{answer.teamName}}</td>
+            <td class="space">{{this.getRanks(answer.teamName)}} - {{answer.teamName}}</td>
             <td class="space">
                 {{answer.answer}}
             </td>
             <td class="space"  *ngIf="questions[this.questionID - 1].corrected">
                 <img src="assets/check.png" alt="Correct" class="icon" *ngIf="answer.correct === 1"><img src="assets/cross.png" alt="Correct" class="icon" *ngIf="answer.correct === 0"> {{answer.bonus}} <img src="assets/like.png" alt="Bonus" class="icon" *ngIf="answer.bonus > 0"><img src="assets/dislike.png" alt="Bonus" class="icon" *ngIf="answer.bonus < 0">
             </td>
-            <td *ngIf="showTimestamp">{{answer.timestamp | date:'HH:mm:ss'}}</td>
+            <td>{{answer.timestamp | date:'HH:mm:ss'}}</td>
             <td>
                 <button class="action" *ngIf="questions[this.questionID - 1].corrected === true" (click)="onValidAnswer(answer.teamName, answer.questionID, 1)"><img src="assets/correct.png" alt="Correct"></button> 
                 <button class="action" *ngIf="questions[this.questionID - 1].corrected === true" (click)="onValidAnswer(answer.teamName, answer.questionID, 0)"><img src="assets/incorrect.png" alt="Imcorrect"></button> 
