@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //For HerokuApp
 //const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
@@ -31,7 +32,8 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
