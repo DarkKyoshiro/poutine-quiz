@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 // Models mongoose
 const TeamDB = require('./models/teams');
 const QuestionDB = require('./models/questions');
+const MenuTeamGroupDB = require('./models/menuTeamGroups');
 const AnswerDB = require('./models/answers');
 const ParamDB = require('./models/param');
 const PropositionsDB = require('./models/propositions');
@@ -13,29 +14,29 @@ const app = express();
 
 //For HerokuApp
 //-----------------------------------------------------------------
-mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
-
-app.use(express.static('./dist/client'));
-app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/client/'}
-);
-});
-
-const http = require('http').Server(app);
-//-----------------------------------------------------------------
-
-//For Local server
-//-----------------------------------------------------------------
-// mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequizlocal?retryWrites=true&w=majority',
+// mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
 //   { useNewUrlParser: true,
 //     useUnifiedTopology: true })
 //   .then(() => console.log('Connexion à MongoDB réussie !'))
 //   .catch(() => console.log('Connexion à MongoDB échouée !'));
-// const http = require('http').createServer(app);
+
+// app.use(express.static('./dist/client'));
+// app.get('/*', function(req, res) {
+//   res.sendFile('index.html', {root: 'dist/client/'}
+// );
+// });
+
+// const http = require('http').Server(app);
+//-----------------------------------------------------------------
+
+//For Local server
+//-----------------------------------------------------------------
+mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequizlocal?retryWrites=true&w=majority',
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+const http = require('http').createServer(app);
 //-----------------------------------------------------------------
 
 const io = require('socket.io')(http, {
@@ -50,6 +51,7 @@ http.listen(process.env.PORT || 8080, () => {
 
 var teams = {}
 var teamsSave = {}
+var menuTeamGroup = {}
 var adminSocketID = ""
 var questionID = 0
 var questions = []
@@ -86,7 +88,7 @@ io.on("connection", socket => {
           teamName: teamName,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 7200000,
+          timestamp: Date.now() + 21600000,
           correct: -1,
           bonus: 0
         })
@@ -95,7 +97,8 @@ io.on("connection", socket => {
       teams[teamName] = {
         socketId: socket.id,
         name: teamName,
-        group: 0,
+        group1: 0,
+        group2: 0,
         score: 0,
         logged: true
       }
@@ -147,13 +150,14 @@ io.on("connection", socket => {
 
   //Group update
   socket.on('refresh-group', (teamName) => {
-    socket.emit('send-group', teams[teamName].group)
+    socket.emit('send-group', teams[teamName].group1, teams[teamName].group2)
   })
 
-  socket.on('update-team-group', (teamName, teamGroup) => {
-    teams[teamName].group = teamGroup;
+  socket.on('update-team-group', (round, teamName, teamGroup) => {
+    if(round === 1) {teams[teamName].group1 = teamGroup;}
+    if(round === 2) {teams[teamName].group2 = teamGroup;}
     io.emit('send-teams', getScores())
-    io.to(teams[teamName].socketId).emit('send-group', teams[teamName].group)
+    io.to(teams[teamName].socketId).emit('send-group', teams[teamName].group1, teams[teamName].group2)
   })
 
   //------------------------------------------------------------------------------------
@@ -162,34 +166,48 @@ io.on("connection", socket => {
   socket.on('start-quiz', (data) => {
     questions = data
     questions.forEach(question => {
+      if(question.group) {
+        if(!menuTeamGroup[question.group + '-' + question.round]) {
+          menuTeamGroup[question.group + '-' + question.round] = {
+            menuNb: question.group,
+            round: question.round,
+            teamGroup: -1
+          }
+        }
+      };
+
       for(const key in teams) {
         answers.push({
           teamName: teams[key].name,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 7200000,
+          timestamp: Date.now() + 21600000,
           correct: -1,
           bonus: 0
         })
       }
     })
     io.emit('send-questions', questions)
+    io.emit('send-menu-groups', menuTeamGroup)
     io.emit('get-answers', answers)
   })
 
   socket.on('reset-quiz', () => {
     questions = []
     answers =[]
+    menuTeamGroup = {}
     questionID = 0
     
     io.emit('update-question-ID', questionID)
     io.emit('get-answers', answers)
     io.emit('send-questions', questions)
+    io.emit('send-menu-groups', menuTeamGroup)
     io.emit('send-teams', getScores())
   })
 
   socket.on('refresh-questions', () => {
     io.emit('send-questions', questions)
+    io.emit('send-menu-groups', menuTeamGroup)
   })
   
   socket.on('refresh-question-ID', () => {
@@ -215,9 +233,14 @@ io.on("connection", socket => {
       questions[questionID - 1].corrected = true
     }
     io.emit('send-teams', getScores())
-    io.emit('send-questions', questions)
+    io.emit('send-questions', questions, menuTeamGroup)
     io.emit('get-answers', answers)
   })
+
+  socket.on('update-menu-team-group', (menuNb, round, teamGroup) => {
+    menuTeamGroup[menuNb + '-' + round].teamGroup = teamGroup;
+    io.emit('send-menu-groups', menuTeamGroup)
+  });
 
   //------------------------------------------------------------------------------------
   //---------------------- Answers management ------------------------------------------
@@ -265,7 +288,7 @@ io.on("connection", socket => {
     answers.forEach(element => {
       if(element.teamName === teamName && element.questionID === questionID) {
         element.answer = ''
-        element.timestamp = Date.now() + 7200000
+        element.timestamp = Date.now() + 21600000
         element.correct = -1
         element.bonus = 0
       }
@@ -281,8 +304,15 @@ io.on("connection", socket => {
     ParamDB.deleteMany({})
       .then()
       .catch((error) => {console.log(error)});
-      ParamDB.insertMany({ID: 1, nb: questionID})
+    ParamDB.insertMany({ID: 1, nb: questionID})
       .then(() => {console.log('Question ID saved!')})
+      .catch((error) => {console.log(error)});
+
+    MenuTeamGroupDB.deleteMany({})
+      .then()
+      .catch((error) => {console.log(error)});
+    MenuTeamGroupDB.insertMany(Object.values(menuTeamGroup))
+      .then(() => {console.log('Menu distribution saved!')})
       .catch((error) => {console.log(error)});
     
     teamsSave = teams
@@ -319,41 +349,53 @@ io.on("connection", socket => {
         delete teams[key]
     }
 
-    QuestionDB.find()
-      .then(questionsDB => {
-        questions = questionsDB
-        io.emit('send-questions', questions)
+    MenuTeamGroupDB.find()
+      .then(menuTeamGroupDB => {
+        menuTeamGroupDB.forEach(menu => {
+          menuTeamGroup[menu.menuNb + '-' + menu.round] = {
+            menuNb: menu.menuNb,
+            round: menu.round,
+            teamGroup: -1
+          }
+        })
 
-        AnswerDB.find()
-          .then(answersDB => {
-            answers = answersDB
-            io.emit('get-answers', answers)
+        QuestionDB.find()
+          .then(questionsDB => {
+            questions = questionsDB
+            io.emit('send-questions', questions, menuTeamGroup)
 
-            TeamDB.find()
-              .then(teamsDB => {
-                teamsDB.forEach(teamDB => {
-                  teams[teamDB.name] = {
-                    socketId: '',
-                    name: teamDB.name,
-                    group: teamDB.group,
-                    score: teamDB.score,
-                    logged: false
-                  }
-                })
-                io.emit('send-teams', getScores())
+            AnswerDB.find()
+              .then(answersDB => {
+                answers = answersDB
+                io.emit('get-answers', answers)
 
-                ParamDB.findOne({ID: 1})
-                  .then(paramsDB => {
-                    questionID = paramsDB.nb
-                    io.emit('update-question-ID', questionID)
+                TeamDB.find()
+                  .then(teamsDB => {
+                    teamsDB.forEach(teamDB => {
+                      teams[teamDB.name] = {
+                        socketId: '',
+                        name: teamDB.name,
+                        group: teamDB.group,
+                        score: teamDB.score,
+                        logged: false
+                      }
+                    })
+                    io.emit('send-teams', getScores())
+
+                    ParamDB.findOne({ID: 1})
+                      .then(paramsDB => {
+                        questionID = paramsDB.nb
+                        io.emit('update-question-ID', questionID)
+                      })
+                      .catch((error) => {console.log(error)});
                   })
                   .catch((error) => {console.log(error)});
               })
               .catch((error) => {console.log(error)});
           })
           .catch((error) => {console.log(error)});
-      })
-      .catch((error) => {console.log(error)});
+          })
+      .catch((error) => {console.log(error)})
   })
 
   //------------------------------------------------------------------------------------

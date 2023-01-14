@@ -12,6 +12,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -27,6 +28,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -38,10 +40,11 @@ export class QuestionsService {
     },
     {
         id: 3,
-        question: 'Quelle citation n\'est jamais dite par les Pirates dans le salbums ?\nA. Heureux celui qui a pu pénétrer les causes secrètes des choses\nB. Il n\'est pas donné à tout le monde d\'aller à Brest\nC. C\'est maintenant qu\'il faut boire\nD. Bienheureux les pauvres d\'esprits)',
+        question: 'Quelle citation n\'est jamais dite par les Pirates dans les albums ?\nA. Heureux celui qui a pu pénétrer les causes secrètes des choses\nB. Il n\'est pas donné à tout le monde d\'aller à Brest\nC. C\'est maintenant qu\'il faut boire\nD. Bienheureux les pauvres d\'esprits)',
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -57,6 +60,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -72,6 +76,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -87,6 +92,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -102,6 +108,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -117,6 +124,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -132,6 +140,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -147,6 +156,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -162,6 +172,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -177,6 +188,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -192,6 +204,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -207,6 +220,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -222,6 +236,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -237,6 +252,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -252,6 +268,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: 'Astérix',
         proposition2: 'Obélix',
@@ -268,6 +285,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -284,6 +302,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -300,6 +319,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -316,6 +336,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -332,6 +353,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -353,6 +375,7 @@ export class QuestionsService {
         proposition2: '',
         proposition3: '',
         proposition4: '',
+        round: 1,
 
         answer: 'Allemagne (Chez les Goths)\nItalie (Gladiateur)\nEgypte (Et Cléopâtre)\nAngleterre (Chez les bretons)\nTunisie (Légionnaire)\nGrèce (Jeux olympiques)\nEspagne (En hispanie)\nSuisse (Chez les helvetes)\nDanemark et États-Unis (La grande traversée)\nBelgique (Chez les belges)\nIran et Inde (Chez Rahazade)\nAtlantide (LA Galère d\'Obélix)\nEcosse (Les pictes)\n',
         points: 1
@@ -364,6 +387,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -380,6 +404,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -396,6 +421,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -412,6 +438,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -428,6 +455,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -444,6 +472,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -460,6 +489,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -476,6 +506,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -491,6 +522,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -506,6 +538,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -521,6 +554,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -536,6 +570,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -551,6 +586,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -566,6 +602,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -581,6 +618,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -596,6 +634,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -611,6 +650,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 1,
 
         proposition1: '',
         proposition2: '',
@@ -626,6 +666,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -641,6 +682,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -656,6 +698,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -671,6 +714,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -686,6 +730,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -701,6 +746,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -716,6 +762,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -733,6 +780,7 @@ export class QuestionsService {
         type: 'Nugget',
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: 'A',
         proposition2: 'B',
@@ -748,6 +796,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -763,6 +812,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -778,6 +828,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -793,6 +844,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -808,6 +860,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -823,6 +876,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -838,6 +892,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -853,6 +908,7 @@ export class QuestionsService {
         type: 'SelOuPoivre',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: 'Aragorn',
         proposition2: 'Aragog',
@@ -869,6 +925,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -885,6 +942,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -901,6 +959,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -917,6 +976,7 @@ export class QuestionsService {
         group: 1,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -933,6 +993,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -949,6 +1010,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -965,6 +1027,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -981,6 +1044,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -997,6 +1061,7 @@ export class QuestionsService {
         group: 2,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1013,6 +1078,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1029,6 +1095,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1045,6 +1112,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1061,6 +1129,7 @@ export class QuestionsService {
         group: 3,
         speed: false,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1076,6 +1145,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1091,6 +1161,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1106,6 +1177,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1121,6 +1193,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1136,6 +1209,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1151,6 +1225,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1166,6 +1241,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',
@@ -1181,6 +1257,7 @@ export class QuestionsService {
         type: 'Addition',
         speed: true,
         corrected: false,
+        round: 2,
 
         proposition1: '',
         proposition2: '',

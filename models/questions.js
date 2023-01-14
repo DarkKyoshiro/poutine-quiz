@@ -6,6 +6,7 @@ const questionSchema = mongoose.Schema({
   type: { type: String, required: true },
   speed: { type: Boolean, required: true },
   corrected: { type: Boolean, required: true },
+  round: { type: Number, required: true },
   group: { type: Number, required: false },
   
   proposition1: { type: String, required: false },

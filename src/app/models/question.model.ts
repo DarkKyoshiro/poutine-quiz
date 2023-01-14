@@ -4,6 +4,7 @@ export class Question {
   type!: string;
   speed!: boolean;
   corrected!: boolean;
+  round!: number;
   group?: number;
 
   proposition1?: string;

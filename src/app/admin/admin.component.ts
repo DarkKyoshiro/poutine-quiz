@@ -6,6 +6,7 @@ import { Question } from '../models/question.model';
 import { Team } from '../models/team.model';
 import { QuestionsService } from '../services/questions.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MenuDistribution } from '../models/menuDistribution.model';
 
 @Component({
   selector: 'app-admin',
@@ -14,7 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AdminComponent implements OnInit {
   questionID: number = 0;
-  questions: Question[] =[];
+  questions: Question[] = [];
+  menuDistribution: MenuDistribution[] = [];
   teams: Team[] = [];
   answers: Answer[] = [];
   showTeams: boolean = false;
@@ -23,7 +25,8 @@ export class AdminComponent implements OnInit {
   durationInSeconds: number = 2;
   questionType: string = 'Nugget';
 
-  columnsToDisplay: string[] = ['logged', 'group', 'name', 'score', 'groupManagement', 'loggedManagement'];
+  columnsToDisplay: string[] = ['logged', 'name', 'score', 'group1', 'group2', 'loggedManagement'];
+  columnsToDisplay2: string[] = ['menuNb', 'round', 'teamGroup', 'groupManagement'];
 
   constructor(
     private socket: Socket, 
@@ -59,6 +62,10 @@ export class AdminComponent implements OnInit {
       this.questions = data
     })
 
+    this.socket.on('send-menu-groups', (menuTeamGroup: any[]) => {
+      this.menuDistribution = Object.keys(menuTeamGroup).map((key: any) => menuTeamGroup[key]);
+    })
+
     this.socket.emit('refresh-question-ID')
     this.socket.on('update-question-ID', (data: number) => {this.questionID = data})
 
@@ -82,8 +89,12 @@ export class AdminComponent implements OnInit {
     this.showQuestionSelection? this.showQuestionSelection = false : this.showQuestionSelection = true
   }
 
-  onChangeGroup(teamName: string, teamGroup: number): void {
-    this.socket.emit('update-team-group', teamName, teamGroup);
+  onChangeGroup(round: number, teamName: string, teamGroup: number): void {
+    this.socket.emit('update-team-group', round, teamName, teamGroup);
+  }
+
+  onChangeMenuGroup(menuNb: number, round: number, teamGroup: number): void {
+    this.socket.emit('update-menu-team-group', menuNb, round, teamGroup);
   }
 
   onDisconnect(teamName: string): void {
@@ -202,5 +213,36 @@ export class AdminComponent implements OnInit {
     })
     
     return score;
+  }
+
+  isMenuActive(teamName: string): boolean {
+    if(!this.questions[this.questionID - 1].group) {
+      return false
+    } else {
+      let round: number = this.questions[this.questionID - 1].round
+      let menuNb: any = this.questions[this.questionID - 1].group
+      let teamGroup: number = -1
+      let teamGroup1: number = -2
+      let teamGroup2: number = -2
+
+      this.menuDistribution.forEach(menu => {
+        if(menu.menuNb === menuNb && menu.round === round) {teamGroup = menu.teamGroup}
+      })
+
+      this.teams.forEach(team => {
+        if(team.name === teamName) {
+          teamGroup1 = team.group1
+          teamGroup2 = team.group2
+        }
+      })
+
+      if(round === 1) {
+        return (teamGroup === teamGroup1)
+      } else if(round === 2) {
+        return (teamGroup === teamGroup2)
+      } else {
+        return false
+      }
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
 import { Answer } from '../models/answer.model';
+import { MenuDistribution } from '../models/menuDistribution.model';
 import { Question } from '../models/question.model';
 import { Team } from '../models/team.model';
 
@@ -12,9 +13,11 @@ import { Team } from '../models/team.model';
 })
 export class GameComponent implements OnInit {
   questions!: Question[];
+  menuDistribution: MenuDistribution[] = [];
   questionID: number = 0;
   teamName!: string;
-  group!: number;
+  group1!: number;
+  group2!: number;
   teams: Team[] = [];
   answer!: string;
   fullAnswer!: Answer;
@@ -34,8 +37,9 @@ export class GameComponent implements OnInit {
     //User management
     this.socket.emit('new-connection', this.teamName);
     this.socket.emit('refresh-group', this.teamName);
-    this.socket.on('send-group', (data: any) => {
-      this.group = data
+    this.socket.on('send-group', (group1: any, group2: any) => {
+      this.group1 = group1
+      this.group2 = group2
     })
 
     //If teamname is already taken
@@ -53,6 +57,10 @@ export class GameComponent implements OnInit {
       this.teams = Object.keys(data).map(key => data[key]);
       this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
       this.teams = this.teams.sort((a, b) => b.score - a.score);
+    })
+
+    this.socket.on('send-menu-groups', (menuTeamGroup: any[]) => {
+      this.menuDistribution = Object.keys(menuTeamGroup).map((key: any) => menuTeamGroup[key]);
     })
 
     this.socket.emit('refresh-questions')
@@ -142,15 +150,32 @@ export class GameComponent implements OnInit {
     return this.questions[id]
   }
 
-  getGroup(teamName: string): number {
-    let tempGroup: number = 0;
-    this.teams.forEach(element => {
-      if(element.name === teamName) {
-        tempGroup = element.group
-      }
-    });
+  isMenu(): boolean {
+    let round: number = this.getQuestion(this.questionID - 1).round;
+    let group: any = this.getQuestion(this.questionID - 1).group;
+    let teamGroup = -1;
+    this.menuDistribution.forEach(menu => {
+      if(menu.menuNb === group && menu.round === round) {teamGroup = menu.teamGroup}
+    })
 
-    return tempGroup
+    if(round === 1) {
+      return (this.group1 === teamGroup) ? true : false;
+    } else if(round === 2) {
+      return (this.group2 === teamGroup) ? true : false;
+    } else {
+      return false
+    }
   }
+
+  // getGroup(teamName: string): number {
+  //   let tempGroup: number = 0;
+  //   this.teams.forEach(element => {
+  //     if(element.name === teamName) {
+  //       tempGroup = element.group
+  //     }
+  //   });
+
+  //   return tempGroup
+  // }
 
 }
