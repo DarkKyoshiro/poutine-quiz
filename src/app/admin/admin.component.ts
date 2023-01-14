@@ -5,6 +5,7 @@ import { Answer } from '../models/answer.model';
 import { Question } from '../models/question.model';
 import { Team } from '../models/team.model';
 import { QuestionsService } from '../services/questions.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin',
@@ -19,11 +20,16 @@ export class AdminComponent implements OnInit {
   showTeams: boolean = false;
   showQuestionSelection: boolean = false;
   resetCheck: boolean = false;
+  durationInSeconds: number = 2;
+  questionType: string = 'Nugget';
+
+  columnsToDisplay: string[] = ['logged', 'group', 'name', 'score', 'groupManagement', 'loggedManagement'];
 
   constructor(
     private socket: Socket, 
     private questionsService: QuestionsService,
-    private router: Router
+    private router: Router,
+    private _snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -107,6 +113,9 @@ export class AdminComponent implements OnInit {
 
   onQuestion(id: number): void {
     this.socket.emit('go-to-question', id)
+    this._snackBar.open(this.questions[id-1].type + " #" + this.questions[id-1].id + " loaded", "OK", {
+      duration: this.durationInSeconds * 1000
+    });
   }
 
   onPrevious(id: number): void {
@@ -149,10 +158,16 @@ export class AdminComponent implements OnInit {
 
   onSave(): void {
     this.socket.emit('save')
+    this._snackBar.open("Data saved!", "OK", {
+      duration: this.durationInSeconds * 1000
+    });
   }
 
   onReload(): void {
     this.socket.emit('reload')
+    this._snackBar.open("Data reloaded!", "OK", {
+      duration: this.durationInSeconds * 1000
+    });
   }
 
   getRanks(teamName: string): number {
@@ -175,5 +190,17 @@ export class AdminComponent implements OnInit {
     rankings = timestampArray.map((v) => { return sortedArray.indexOf(v)+1 })
 
     return rankings[teamIndex]
+  }
+
+  getTeamScore(teamName: string): number {
+    let score: number = 0;
+
+    this.teams.forEach(team => {
+      if(team.name === teamName) {
+        score = team.score
+      }
+    })
+    
+    return score;
   }
 }
