@@ -10,6 +10,7 @@ const ParamDB = require('./models/param');
 const PropositionsDB = require('./models/propositions');
 
 const express = require('express');
+const { TestScheduler } = require('rxjs/testing');
 const app = express();
 
 //For HerokuApp
@@ -54,6 +55,12 @@ var teamsSave = {}
 var menuTeamGroup = {}
 var adminSocketID = ""
 var questionID = 0
+var negativePoints = false
+var bonusesWrongAnswers = true
+var percentErrorsTiers = [30, 50]
+var bonusWrong = [2, 2, 1]
+var teamThreshold = 20
+var teamThresholdModifier = 1.5
 var questions = []
 var answers = []
 var control = false
@@ -161,6 +168,14 @@ io.on("connection", socket => {
   })
 
   //------------------------------------------------------------------------------------
+  //---------------------- Display management ------------------------------------------
+  //------------------------------------------------------------------------------------
+  socket.on('go-to-step', step => {
+    questions[questionID-1].propositionsStep = step
+    io.emit('send-questions', questions)
+  })
+
+  //------------------------------------------------------------------------------------
   //---------------------- Questions management ----------------------------------------
   //------------------------------------------------------------------------------------
   socket.on('start-quiz', (data) => {
@@ -214,15 +229,48 @@ io.on("connection", socket => {
     io.emit('update-question-ID', questionID)
   })
 
+  socket.on('refresh-scoreSettings', () => {
+    io.emit('update-scoreSettings', negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
+  })
+
+  socket.on('change-negative-points', negPts => {
+    negativePoints = negPts
+    io.emit('send-teams', getScores())
+  })
+
+  socket.on('change-bonuses-wrong-answers', bonuses => {
+    bonusesWrongAnswers = bonuses
+    io.emit('send-teams', getScores())
+  })
+
+  socket.on('change-threshold', Threshold => {
+    teamThreshold = Threshold
+    io.emit('send-teams', getScores())
+  })
+
+  socket.on('change-threshold-modifier', ThresholdModifier => {
+    teamThresholdModifier = ThresholdModifier
+    io.emit('send-teams', getScores())
+  })
+
+  socket.on('change-percent-error', percentErrors => {
+    percentErrorsTiers = percentErrors
+    io.emit('send-teams', getScores())
+  })
+
+  socket.on('update-bonuses', bonuses => {
+    bonusWrong = bonuses
+    io.emit('send-teams', getScores())
+  })
+
   socket.on('go-to-question', (id) => {
-    console.log(`Sent to question n°${id}.`)
     questionID = id
     io.emit('update-question-ID', questionID)
   })
 
   socket.on('question-correction', () => {
-    if(questions[questionID - 1].corrected) {
-      questions[questionID - 1].corrected = false
+    if(questions[questionID - 1].locked) {
+      questions[questionID - 1].locked = false
       answers.forEach(element => {
         if(element.questionID === questionID) {
           element.correct = -1
@@ -230,7 +278,7 @@ io.on("connection", socket => {
         }
       })
     } else {
-      questions[questionID - 1].corrected = true
+      questions[questionID - 1].locked = true
     }
     io.emit('send-teams', getScores())
     io.emit('send-questions', questions, menuTeamGroup)
@@ -302,17 +350,28 @@ io.on("connection", socket => {
   //------------------------------------------------------------------------------------
   socket.on('save', () => {
     ParamDB.deleteMany({})
-      .then()
-      .catch((error) => {console.log(error)});
-    ParamDB.insertMany({ID: 1, nb: questionID})
-      .then(() => {console.log('Question ID saved!')})
+      .then(
+        ParamDB.insertMany({
+          ID: 1, 
+          nb: questionID, 
+          negPoints: negativePoints, 
+          bonusesWrongAnswers: bonusesWrongAnswers,
+          teamThreshold: teamThreshold,
+          teamThresholdModifier: teamThresholdModifier,
+          percentErrorsTiers: percentErrorsTiers,
+          bonusWrong: bonusWrong
+        })
+          .then(() => {console.log('Parameters saved!')})
+          .catch((error) => {console.log(error)})
+      )
       .catch((error) => {console.log(error)});
 
     MenuTeamGroupDB.deleteMany({})
-      .then()
-      .catch((error) => {console.log(error)});
-    MenuTeamGroupDB.insertMany(Object.values(menuTeamGroup))
-      .then(() => {console.log('Menu distribution saved!')})
+      .then(
+        MenuTeamGroupDB.insertMany(Object.values(menuTeamGroup))
+          .then(() => {console.log('Menu distribution saved!')})
+          .catch((error) => {console.log(error)})
+      )
       .catch((error) => {console.log(error)});
     
     teamsSave = teams
@@ -320,24 +379,27 @@ io.on("connection", socket => {
       teamsSave[key].logged = false
     }
     TeamDB.deleteMany({})
-      .then()
-      .catch((error) => {console.log(error)});
-    TeamDB.insertMany(Object.values(teamsSave))
-      .then(() => {console.log('Teams saved!')})
+      .then(
+        TeamDB.insertMany(Object.values(teamsSave))
+          .then(() => {console.log('Teams saved!')})
+          .catch((error) => {console.log(error)})
+      )
       .catch((error) => {console.log(error)});
 
     QuestionDB.deleteMany({})
-      .then()
-      .catch((error) => {console.log(error)});
-    QuestionDB.insertMany(questions)
-      .then(() => {console.log('Questions saved!')})
+      .then(
+        QuestionDB.insertMany(questions)
+          .then(() => {console.log('Questions saved!')})
+          .catch((error) => {console.log(error)})
+      )
       .catch((error) => {console.log(error)});
 
     AnswerDB.deleteMany({})
-      .then()
-      .catch((error) => {console.log(error)});
-    AnswerDB.insertMany(answers)
-      .then(() => {console.log('Answers saved!')})
+      .then(
+        AnswerDB.insertMany(answers)
+          .then(() => {console.log('Answers saved!')})
+          .catch((error) => {console.log(error)})
+      )
       .catch((error) => {console.log(error)});
   })
 
@@ -355,14 +417,15 @@ io.on("connection", socket => {
           menuTeamGroup[menu.menuNb + '-' + menu.round] = {
             menuNb: menu.menuNb,
             round: menu.round,
-            teamGroup: -1
+            teamGroup: menu.teamGroup
           }
         })
+        io.emit('send-menu-groups', menuTeamGroup)
 
         QuestionDB.find()
           .then(questionsDB => {
             questions = questionsDB
-            io.emit('send-questions', questions, menuTeamGroup)
+            io.emit('send-questions', questions)
 
             AnswerDB.find()
               .then(answersDB => {
@@ -375,7 +438,8 @@ io.on("connection", socket => {
                       teams[teamDB.name] = {
                         socketId: '',
                         name: teamDB.name,
-                        group: teamDB.group,
+                        group1: teamDB.group1,
+                        group2: teamDB.group2,
                         score: teamDB.score,
                         logged: false
                       }
@@ -385,7 +449,14 @@ io.on("connection", socket => {
                     ParamDB.findOne({ID: 1})
                       .then(paramsDB => {
                         questionID = paramsDB.nb
+                        negativePoints = paramsDB.negPoints
+                        bonusesWrongAnswers = paramsDB.bonusesWrongAnswers
+                        teamThreshold = paramsDB.teamThreshold
+                        teamThresholdModifier = paramsDB.teamThresholdModifier
+                        percentErrorsTiers = paramsDB.percentErrorsTiers
+                        bonusWrong = paramsDB.bonusWrong
                         io.emit('update-question-ID', questionID)
+                        io.emit('update-scoreSettings', negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
                       })
                       .catch((error) => {console.log(error)});
                   })
@@ -435,40 +506,159 @@ io.on("connection", socket => {
 //------------------------------------------------------------------------------------
 function getScores() {
   var incorrectAnswers = 0
-  var smallestScore = 10000
+  var percentErrors = 0
+  var numberAnswers = 0
+  var numberTeamsTier1 = 0
+  var numberTeamsTier2 = 0
+  var firstSmallestScore = 10000
+  var secondSmallestScore = 10000
+  var thirdSmallestScore = 10000
   for(const key in teams) {
     teams[key].score = 0
   }
 
   for(let i = 1; i <= questions.length; i++) {
     incorrectAnswers = 0
-    smallestScore = 10000
+    percentErrors = 0
+    numberAnswers = 0
+    numberTeamsTier1 = 0
+    numberTeamsTier2 = 0
+    firstSmallestScore = 10000
+    secondSmallestScore = 10000
+    thirdSmallestScore = 10000
+
     answers.forEach(answer => {
       if(answer.questionID === i) {
+        numberAnswers++
         if(answer.correct === 1) {
           teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
         } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
-          teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
+          if(negativePoints) {teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points}
           incorrectAnswers = incorrectAnswers + 1
         }
 
-        if(teams[answer.teamName].score < smallestScore) {
-          smallestScore = teams[answer.teamName].score
+        if(teams[answer.teamName].score < firstSmallestScore) {
+          thirdSmallestScore = secondSmallestScore
+          secondSmallestScore = firstSmallestScore
+          firstSmallestScore = teams[answer.teamName].score
+        }
+        if(teams[answer.teamName].score < secondSmallestScore && teams[answer.teamName].score > firstSmallestScore) {
+          thirdSmallestScore = secondSmallestScore
+          secondSmallestScore = teams[answer.teamName].score
+        }
+        if(teams[answer.teamName].score < thirdSmallestScore && teams[answer.teamName].score > secondSmallestScore) {
+          thirdSmallestScore = teams[answer.teamName].score
         }
 
         teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
       }
     })
+    
+    percentErrors = Math.round(100 * incorrectAnswers / numberAnswers)
+    // console.log("Questions #" + i + "(" + percentErrors + "%) 1st: " + firstSmallestScore + ", 2nd: " + secondSmallestScore + ", 3rd: " + thirdSmallestScore)
 
     //To give points to the last teams
-    if(incorrectAnswers > 0) {
+    if(bonusesWrongAnswers) {
       for(const key in teams) {
-        if(teams[key].score === smallestScore) {
-          teams[key].score = teams[key].score + Math.trunc((incorrectAnswers + 1) / 2)
+        switch(teams[key].score) {
+          case firstSmallestScore:
+            numberTeamsTier1++
+            break;
+
+          case secondSmallestScore:
+            numberTeamsTier2++
+            break;
+        }
+      }
+
+      for(const key in teams) {
+        if(teams[key].score === firstSmallestScore) {
+          switch(true) {
+            case (percentErrors === 0):
+              break;
+            
+            case (percentErrors >= percentErrorsTiers[1]):
+                teams[key].score = teams[key].score + bonusWrong[0]
+              break;
+            
+            case (percentErrors >= percentErrorsTiers[0]):
+              teams[key].score = teams[key].score + bonusWrong[1]
+              break;
+            
+            default:
+              teams[key].score = teams[key].score + bonusWrong[2]
+              break;
+          }
+        } else if(teams[key].score === secondSmallestScore && Math.round(100 * numberTeamsTier1 / numberAnswers) < teamThreshold) {
+          switch(true) {
+            case (percentErrors === 0):
+              break;
+            
+            case (percentErrors >= percentErrorsTiers[1]):
+              teams[key].score = teams[key].score + bonusWrong[1]
+              break;
+            
+            case (percentErrors >= percentErrorsTiers[0]):
+              teams[key].score = teams[key].score + bonusWrong[2]
+              break;
+            
+            default:
+              break;
+          }
+        } else if(teams[key].score === thirdSmallestScore && Math.round(100 * (numberTeamsTier1 + numberTeamsTier2) / numberAnswers) < teamThreshold * teamThresholdModifier) {
+          switch(true) {
+            case (percentErrors === 0):
+              break;
+            
+            case (percentErrors >= percentErrorsTiers[1]):
+              teams[key].score = teams[key].score + bonusWrong[2]
+              break;
+            
+            default:
+              break;
+          }
         }
       }
     }
   }
+
+  // function getScores() {
+  //   var incorrectAnswers = 0
+  //   var smallestScore = 10000
+  //   for(const key in teams) {
+  //     teams[key].score = 0
+  //   }
+  
+  //   for(let i = 1; i <= questions.length; i++) {
+  //     incorrectAnswers = 0
+  //     smallestScore = 10000
+  //     answers.forEach(answer => {
+  //       if(answer.questionID === i) {
+  //         if(answer.correct === 1) {
+  //           teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
+  //         } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
+  //           teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points
+  //           incorrectAnswers = incorrectAnswers + 1
+  //         }
+  
+  //         if(teams[answer.teamName].score < smallestScore) {
+  //           smallestScore = teams[answer.teamName].score
+  //         }
+  
+  //         teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
+  //       }
+  //     })
+  
+  //     //To give points to the last teams
+  //     if(incorrectAnswers > 0 && negativePoints) {
+  //       for(const key in teams) {
+  //         if(teams[key].score === smallestScore) {
+  //           teams[key].score = teams[key].score + Math.trunc((incorrectAnswers + 1) / 2)
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   // Old score algorythm
   // answers.forEach(answer => {

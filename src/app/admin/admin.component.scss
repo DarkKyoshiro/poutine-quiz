@@ -63,7 +63,7 @@ div#answers {
 
 .answer-card {
     width: auto;
-    min-width: 30%;
+    // min-width: 20%;
     margin-top: 20px;
 }
 
@@ -135,4 +135,22 @@ img.icon {
 
 .mat-button-base {
     margin: 8px 8px 8px 0;
+}
+
+table.material {
+    display: block;
+    font-size: medium;
+}
+
+table.material tr {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+table.material td, th{
+  flex: 1;
 }

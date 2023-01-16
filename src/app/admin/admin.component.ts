@@ -15,18 +15,22 @@ import { MenuDistribution } from '../models/menuDistribution.model';
 })
 export class AdminComponent implements OnInit {
   questionID: number = 0;
+  negativePoints: boolean = false;
+  bonusesWrongAnswers: boolean = true;
+  teamThreshold: number = 0;
+  teamThresholdModifier: number = 0;
+  percentErrorsTiers: number[] = [];
+  bonusWrong: number[] = [];
   questions: Question[] = [];
   menuDistribution: MenuDistribution[] = [];
   teams: Team[] = [];
   answers: Answer[] = [];
-  showTeams: boolean = false;
-  showQuestionSelection: boolean = false;
   resetCheck: boolean = false;
   durationInSeconds: number = 2;
   questionType: string = 'Nugget';
 
   columnsToDisplay: string[] = ['logged', 'name', 'score', 'group1', 'group2', 'loggedManagement'];
-  columnsToDisplay2: string[] = ['menuNb', 'round', 'teamGroup', 'groupManagement'];
+  columnsToDisplay2: string[] = ['round', 'menuNb', 'teamGroup', 'groupManagement'];
 
   constructor(
     private socket: Socket, 
@@ -69,6 +73,16 @@ export class AdminComponent implements OnInit {
     this.socket.emit('refresh-question-ID')
     this.socket.on('update-question-ID', (data: number) => {this.questionID = data})
 
+    this.socket.emit('refresh-scoreSettings')
+    this.socket.on('update-scoreSettings', (negPts: boolean, bonuses: boolean, threshold: number, thresholdModifier: number, percentErrorsTiers: number[], bonusWrong: number[]) => {
+      this.negativePoints = negPts
+      this.bonusesWrongAnswers = bonuses
+      this.teamThreshold = threshold
+      this.teamThresholdModifier = thresholdModifier
+      this.percentErrorsTiers = percentErrorsTiers
+      this.bonusWrong = bonusWrong
+    })
+
     //------------------------------------------------------------------------------------
     //---------------------- Answers management ------------------------------------------
     //------------------------------------------------------------------------------------
@@ -79,14 +93,6 @@ export class AdminComponent implements OnInit {
       // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
     })
-  }
-
-  onShowTeams(): void {
-    this.showTeams? this.showTeams = false : this.showTeams = true
-  }
-
-  onShowQuestionSelection(): void {
-    this.showQuestionSelection? this.showQuestionSelection = false : this.showQuestionSelection = true
   }
 
   onChangeGroup(round: number, teamName: string, teamGroup: number): void {
@@ -141,6 +147,14 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  onPreviousStep(step: number): void {
+    this.socket.emit('go-to-step', step);
+  }
+
+  onNextStep(step: number): void {
+    this.socket.emit('go-to-step', step);
+  }
+
   onCorrection(): void {
     this.socket.emit('question-correction')
   }
@@ -179,6 +193,31 @@ export class AdminComponent implements OnInit {
     this._snackBar.open("Data reloaded!", "OK", {
       duration: this.durationInSeconds * 1000
     });
+  }
+
+  onChangeNegPoints(): void {
+    this.socket.emit('change-negative-points', this.negativePoints)
+  }
+
+  onChangeBonusesWrongAnswers(): void {
+    this.socket.emit('change-bonuses-wrong-answers', this.bonusesWrongAnswers)
+  }
+
+  onChangeTreshold(): void {
+    this.socket.emit('change-threshold', this.teamThreshold)
+  }
+
+  onChangeTresholdModifier(): void {
+    this.socket.emit('change-threshold-modifier', this.teamThresholdModifier)
+  }
+
+  onChangePercentError(): void {
+    this.socket.emit('change-percent-error', this.percentErrorsTiers)
+  }
+
+  onChangeBonuses(id: number, bonus: number): void {
+    this.bonusWrong[id] = bonus
+    this.socket.emit('update-bonuses', this.bonusWrong)
   }
 
   getRanks(teamName: string): number {

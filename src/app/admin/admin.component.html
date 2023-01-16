@@ -106,10 +106,16 @@
                     <button mat-icon-button aria-label="Previous question" (click)="onPrevious(this.questionID - 1)" *ngIf="this.questions.length !== 0 && this.questionID > 0">
                         <mat-icon>fast_rewind</mat-icon>
                     </button>
+                    <!-- <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)" *ngIf="this.questions.length !== 0">
+                        <mat-icon>arrow_left</mat-icon>
+                    </button> -->
                     <button mat-icon-button aria-label="Unlock/Lock question" (click)="onCorrection()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
-                        <mat-icon *ngIf="this.questions[this.questionID-1].corrected">lock</mat-icon>
-                        <mat-icon *ngIf="!this.questions[this.questionID-1].corrected">lock_open</mat-icon>
+                        <mat-icon *ngIf="this.questions[this.questionID-1].locked">lock</mat-icon>
+                        <mat-icon *ngIf="!this.questions[this.questionID-1].locked">lock_open</mat-icon>
                     </button>
+                    <!-- <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)" *ngIf="this.questions.length !== 0">
+                        <mat-icon>arrow_right</mat-icon>
+                    </button> -->
                     <button mat-icon-button aria-label="Next question" (click)="onPrevious(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length">
                         <mat-icon>fast_forward</mat-icon>
                     </button>
@@ -120,12 +126,16 @@
                 </mat-card-actions>
                 <ng-container *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
                     <mat-card-header>
-                        <mat-card-subtitle>{{questions[this.questionID - 1].type}} n°{{questions[this.questionID - 1].id}}</mat-card-subtitle>
-                        <mat-card-title style="white-space: pre-wrap" [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">{{questions[this.questionID - 1].question}}</mat-card-title>
+                        <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}}</mat-card-subtitle>
+                        <mat-card-title style="white-space: pre-wrap" [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
+                            <p>{{questions[this.questionID - 1].question}}</p>
+                            <p>{{questions[this.questionID - 1].questionComment}}</p>
+                        </mat-card-title>
                     </mat-card-header>
-                    <mat-card-content *ngIf="questions[this.questionID - 1].corrected === true" style="white-space: pre-wrap">
+                    <mat-card-content *ngIf="questions[this.questionID - 1].locked === true" style="white-space: pre-wrap">
                         <mat-divider></mat-divider>
                         <p>{{questions[this.questionID - 1].answer}}</p>
+                        <p>{{questions[this.questionID - 1].answerComment}}</p>
                     </mat-card-content>
                 </ng-container>
                 <mat-card-footer>
@@ -159,7 +169,7 @@
                     <mat-divider></mat-divider>
                 </mat-card-content>
                 <mat-card-actions>
-                    <ng-container *ngIf="questions[this.questionID - 1].corrected === true">
+                    <ng-container *ngIf="questions[this.questionID - 1].locked === true">
                         <button mat-mini-fab color="accent" aria-label="Valid answer" (click)="onValidAnswer(answer.teamName, answer.questionID, 1)">
                             <mat-icon>check_circle</mat-icon>
                         </button>
@@ -186,43 +196,169 @@
     </mat-tab>
 
     <mat-tab label="Settings">
-        <button mat-raised-button aria-label="Save data" (click)="onSave()">
-            <mat-icon>save</mat-icon>
-        </button>
-        <button mat-raised-button aria-label="Reload data" (click)="onReload()">
-            <mat-icon>download</mat-icon>
-        </button>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Data backup options
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button mat-raised-button aria-label="Save data" (click)="onSave()">
+                    <mat-icon>save</mat-icon>
+                </button>
+                <button mat-raised-button aria-label="Reload data" (click)="onReload()">
+                    <mat-icon>download</mat-icon>
+                </button>
+            </mat-expansion-panel>
 
-        <table mat-table [dataSource]="menuDistribution" *ngIf="menuDistribution.length !== 0">
-            <ng-container matColumnDef="menuNb">
-                <th mat-header-cell *matHeaderCellDef> Menu group </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.menuNb}} </td>
-            </ng-container>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Bonus calculation settings
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p><mat-slide-toggle [(ngModel)]="negativePoints" (change)="onChangeNegPoints()">Negative points ?</mat-slide-toggle></p>
+                <p><mat-slide-toggle [(ngModel)]="bonusesWrongAnswers" (change)="onChangeBonusesWrongAnswers()">Bonuses for wrong answers ?</mat-slide-toggle></p>
+                <p>Team threshold: {{teamThreshold}}
+                    <mat-slider
+                        max="100"
+                        min="0"
+                        step="5"
+                        thumbLabel="true"
+                        [(ngModel)]="teamThreshold"
+                        (change)="onChangeTreshold()" 
+                        aria-labelledby="Threshold of team at minimum score (%)">
+                    </mat-slider>
+                </p>
+                <p>Team threshold modifier: {{teamThresholdModifier}}
+                    <mat-slider
+                        max="3"
+                        min="0"
+                        step="0.5"
+                        thumbLabel="true"
+                        [(ngModel)]="teamThresholdModifier"
+                        (change)="onChangeTresholdModifier()" 
+                        aria-labelledby="Threshold modifier">
+                    </mat-slider>
+                </p>
+                <table class="material">
+                    <tr>
+                        <th>Position</th>
+                        <th>0% Errors</th>
+                        <th>{{percentErrorsTiers[0]}}% Errors</th>
+                        <th>{{percentErrorsTiers[1]}}% Errors</th>
+                        <th>Team percentage (%)</th>
+                    </tr>
+                    <tr>
+                        <td>Last</td>
+                        <td>{{bonusWrong[2]}}</td>
+                        <td>{{bonusWrong[1]}}</td>
+                        <td>{{bonusWrong[0]}}</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>Last-1</td>
+                        <td>0</td>
+                        <td>{{bonusWrong[2]}}</td>
+                        <td>{{bonusWrong[1]}}</td>
+                        <td>{{teamThreshold}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last-2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>{{bonusWrong[2]}}</td>
+                        <td>{{teamThreshold * teamThresholdModifier}}</td>
+                    </tr>
+                </table>
 
-            <ng-container matColumnDef="round">
-                <th mat-header-cell *matHeaderCellDef> Round # </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.round}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="teamGroup">
-                <th mat-header-cell *matHeaderCellDef> Team group </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.teamGroup}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="groupManagement">
-                <th mat-header-cell *matHeaderCellDef> Team groups management </th>
-                <td mat-cell *matCellDef="let menu">
-                    <button mat-icon-button aria-label="Previous group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup - 1)">
+                <p>Team error percentage threshold: 0 -> {{percentErrorsTiers[0]}} -> {{percentErrorsTiers[1]}}
+                    <mat-slider
+                        max="100"
+                        min="0"
+                        step="5"
+                        thumbLabel="true"
+                        [(ngModel)]="percentErrorsTiers[0]"
+                        (change)="onChangePercentError()" 
+                        aria-labelledby="Threshold of team at minimum score (%)">
+                    </mat-slider> 
+                    <mat-slider
+                        max="100"
+                        min="0"
+                        step="5"
+                        thumbLabel="true"
+                        [(ngModel)]="percentErrorsTiers[1]"
+                        (change)="onChangePercentError()" 
+                        aria-labelledby="Threshold of team at minimum score (%)">
+                    </mat-slider>
+                </p>
+                <p>Max bonus: 
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(2, bonusWrong[2]-1)">
                         <mat-icon>do_not_disturb_on</mat-icon>
                     </button>
-                    <button mat-icon-button aria-label="Next group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup + 1)">
+                    {{bonusWrong[2]}}
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(2, bonusWrong[2]+1)">
                         <mat-icon>add_circle</mat-icon>
                     </button>
-                </td>
-            </ng-container>
+                </p>
+                <p>Max bonus-1: 
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(1, bonusWrong[1]-1)">
+                        <mat-icon>do_not_disturb_on</mat-icon>
+                    </button>
+                    {{bonusWrong[1]}}
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(1, bonusWrong[1]+1)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </p>
+                <p>Max bonus-2: 
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(0, bonusWrong[0]-1)">
+                        <mat-icon>do_not_disturb_on</mat-icon>
+                    </button>
+                    {{bonusWrong[0]}}
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(0, bonusWrong[0]+1)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </p>
+            </mat-expansion-panel>
 
-            <tr mat-header-row *matHeaderRowDef="columnsToDisplay2"></tr>
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay2"></tr>
-        </table>
+            <mat-expansion-panel *ngIf="menuDistribution.length !== 0">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Menus attribution
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <table mat-table [dataSource]="menuDistribution">
+                    <ng-container matColumnDef="menuNb">
+                        <th mat-header-cell *matHeaderCellDef> Menu group </th>
+                        <td mat-cell *matCellDef="let menu"> {{menu.menuNb}} </td>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="round">
+                        <th mat-header-cell *matHeaderCellDef> Round # </th>
+                        <td mat-cell *matCellDef="let menu"> {{menu.round}} </td>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="teamGroup">
+                        <th mat-header-cell *matHeaderCellDef> Team group </th>
+                        <td mat-cell *matCellDef="let menu"> {{menu.teamGroup}} </td>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="groupManagement">
+                        <th mat-header-cell *matHeaderCellDef> Team groups management </th>
+                        <td mat-cell *matCellDef="let menu">
+                            <button mat-icon-button aria-label="Previous group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup - 1)">
+                                <mat-icon>do_not_disturb_on</mat-icon>
+                            </button>
+                            <button mat-icon-button aria-label="Next group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup + 1)">
+                                <mat-icon>add_circle</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+        
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay2"></tr>
+                    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay2"></tr>
+                </table>
+            </mat-expansion-panel>
+        </mat-accordion>
     </mat-tab>
 </mat-tab-group>

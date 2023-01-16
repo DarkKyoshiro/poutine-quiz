@@ -1,19 +1,21 @@
 export class Question {
   id!: number;
-  question!: string;
   type!: string;
   speed!: boolean;
-  corrected!: boolean;
   round!: number;
   group?: number;
-
-  proposition1?: string;
-  proposition2?: string;
-  proposition3?: string;
-  proposition4?: string;
-  proposition5?: string;
-  proposition6?: string;
-
-  answer!: string;
   points!: number;
+
+  question!: string;
+  questionComment?: string;
+  propositionsDetailed?: string[];
+  propositionsShort?: string[];
+  answer!: string;
+  answerComment?: string;
+
+
+  showQuestion!: boolean;
+  propositionsStep!: number;
+  locked!: boolean;
+  showAnswer!: boolean;
 }
