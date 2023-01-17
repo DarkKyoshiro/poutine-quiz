@@ -151,17 +151,10 @@
         <div id="answers">
             <mat-card class="answer-card" *ngFor="let answer of getAnswers(this.questionID); let i=index">
                 <mat-card-header>
-                    <button mat-mini-fab mat-card-avatar>{{this.getTeamScore(answer.teamName)}}</button>
+                    <button mat-mini-fab mat-card-avatar [matBadge]="answer.bonusWrongAnswers" [matBadgeHidden]="answer.bonusWrongAnswers<=0" matBadgeOverlap="true">{{this.getTeamScore(answer.teamName)}}</button>
                     <mat-card-title [matBadge]="getRanks(answer.teamName)" matBadgeOverlap="false" matBadgePosition="after">
                         <mat-icon *ngIf="isMenuActive(answer.teamName)">restaurant_menu</mat-icon> {{answer.teamName}} 
                     </mat-card-title>
-                    <mat-card-subtitle>
-                        <mat-icon *ngIf="answer.correct === 1" color="accent">check</mat-icon>
-                        <mat-icon *ngIf="answer.correct === 0" color="warn">close</mat-icon>
-                        <span *ngIf="answer.bonus !== 0">{{answer.bonus}}</span>
-                        <mat-icon *ngIf="answer.bonus > 0" color="accent">thumb_up</mat-icon>
-                        <mat-icon *ngIf="answer.bonus < 0" color="warn">thumb_down</mat-icon>
-                    </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                     <mat-divider></mat-divider>
@@ -171,10 +164,10 @@
                 <mat-card-actions>
                     <ng-container *ngIf="questions[this.questionID - 1].locked === true">
                         <button mat-mini-fab color="accent" aria-label="Valid answer" (click)="onValidAnswer(answer.teamName, answer.questionID, 1)">
-                            <mat-icon>check_circle</mat-icon>
+                            <mat-icon [matBadge]="answer.points" [matBadgeHidden]="answer.correct != 1" matBadgeOverlap="false">check_circle</mat-icon>
                         </button>
                         <button mat-mini-fab color="warn" aria-label="Incorrect answer" (click)="onValidAnswer(answer.teamName, answer.questionID, 0)">
-                            <mat-icon>cancel</mat-icon>
+                            <mat-icon [matBadge]="answer.points" [matBadgeHidden]="answer.correct != 0" matBadgeOverlap="false">cancel</mat-icon>
                         </button>
                         <button mat-mini-fab color="primary" aria-label="Reset answer" (click)="onValidAnswer(answer.teamName, answer.questionID, -1)">
                             <mat-icon>autorenew</mat-icon>
@@ -182,10 +175,10 @@
                     </ng-container>
 
                     <button mat-mini-fab color="accent" aria-label="Bonus+" (click)="onBonus(answer.teamName, answer.questionID, 1)">
-                        <mat-icon>thumb_up</mat-icon>
+                        <mat-icon [matBadge]="answer.bonus" [matBadgeHidden]="answer.bonus<=0" matBadgeOverlap="false">thumb_up</mat-icon>
                     </button>
                     <button mat-mini-fab color="warn" aria-label="Bonus-" (click)="onBonus(answer.teamName, answer.questionID, -1)">
-                        <mat-icon>thumb_down</mat-icon>
+                        <mat-icon [matBadge]="answer.bonus" [matBadgeHidden]="answer.bonus>=0" matBadgeOverlap="false">thumb_down</mat-icon>
                     </button>
                     <button mat-mini-fab color="primary" aria-label="Reset answer" (click)="onClear(answer.teamName, answer.questionID)">
                         <mat-icon>refresh</mat-icon>
@@ -244,7 +237,7 @@
                 <table class="material">
                     <tr>
                         <th>Position</th>
-                        <th>0% Errors</th>
+                        <th>1% Errors</th>
                         <th>{{percentErrorsTiers[0]}}% Errors</th>
                         <th>{{percentErrorsTiers[1]}}% Errors</th>
                         <th>Team percentage (%)</th>

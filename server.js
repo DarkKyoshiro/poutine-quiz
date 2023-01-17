@@ -97,6 +97,8 @@ io.on("connection", socket => {
           answer: '',
           timestamp: Date.now() + 21600000,
           correct: -1,
+          points: 0,
+          bonusWrongAnswers: 0,
           bonus: 0
         })
       })
@@ -163,7 +165,7 @@ io.on("connection", socket => {
   socket.on('update-team-group', (round, teamName, teamGroup) => {
     if(round === 1) {teams[teamName].group1 = teamGroup;}
     if(round === 2) {teams[teamName].group2 = teamGroup;}
-    io.emit('send-teams', getScores())
+    io.emit('send-teams', teams)
     io.to(teams[teamName].socketId).emit('send-group', teams[teamName].group1, teams[teamName].group2)
   })
 
@@ -198,6 +200,8 @@ io.on("connection", socket => {
           answer: '',
           timestamp: Date.now() + 21600000,
           correct: -1,
+          points: 0,
+          bonusWrongAnswers: 0,
           bonus: 0
         })
       }
@@ -214,10 +218,10 @@ io.on("connection", socket => {
     questionID = 0
     
     io.emit('update-question-ID', questionID)
-    io.emit('get-answers', answers)
     io.emit('send-questions', questions)
     io.emit('send-menu-groups', menuTeamGroup)
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('refresh-questions', () => {
@@ -236,31 +240,37 @@ io.on("connection", socket => {
   socket.on('change-negative-points', negPts => {
     negativePoints = negPts
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('change-bonuses-wrong-answers', bonuses => {
     bonusesWrongAnswers = bonuses
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('change-threshold', Threshold => {
     teamThreshold = Threshold
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('change-threshold-modifier', ThresholdModifier => {
     teamThresholdModifier = ThresholdModifier
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('change-percent-error', percentErrors => {
     percentErrorsTiers = percentErrors
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('update-bonuses', bonuses => {
     bonusWrong = bonuses
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('go-to-question', (id) => {
@@ -274,7 +284,8 @@ io.on("connection", socket => {
       answers.forEach(element => {
         if(element.questionID === questionID) {
           element.correct = -1
-          element.bonus = 0
+          element.points = 0
+          element.bonusWrongAnswers = 0
         }
       })
     } else {
@@ -318,8 +329,8 @@ io.on("connection", socket => {
         element.correct = answerState
       }
     })
-    io.emit('get-answers', answers)
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('bonus-answer', (teamName, questionID, bonus) => {
@@ -328,8 +339,8 @@ io.on("connection", socket => {
         element.bonus = element.bonus + bonus
       }
     })
-    io.emit('get-answers', answers)
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   socket.on('clear-answer', (teamName, questionID) => {
@@ -338,11 +349,13 @@ io.on("connection", socket => {
         element.answer = ''
         element.timestamp = Date.now() + 21600000
         element.correct = -1
+        element.points = 0
+        element.bonusWrongAnswers = 0
         element.bonus = 0
       }
     })
-    io.emit('get-answers', answers)
     io.emit('send-teams', getScores())
+    io.emit('get-answers', answers)
   })
 
   //------------------------------------------------------------------------------------
@@ -513,6 +526,7 @@ function getScores() {
   var firstSmallestScore = 10000
   var secondSmallestScore = 10000
   var thirdSmallestScore = 10000
+  var bonusWrongAnswers = 0
   for(const key in teams) {
     teams[key].score = 0
   }
@@ -529,13 +543,17 @@ function getScores() {
 
     answers.forEach(answer => {
       if(answer.questionID === i) {
+        answer.points = 0
+        answer.bonusWrongAnswers = 0
         numberAnswers++
         if(answer.correct === 1) {
-          teams[answer.teamName].score = teams[answer.teamName].score + questions[answer.questionID-1].points
+          answer.points = questions[answer.questionID-1].points
         } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
-          if(negativePoints) {teams[answer.teamName].score = teams[answer.teamName].score - questions[answer.questionID-1].points}
+          if(negativePoints) {answer.points = - questions[answer.questionID-1].points}
           incorrectAnswers = incorrectAnswers + 1
         }
+
+        teams[answer.teamName].score = teams[answer.teamName].score + answer.points + answer.bonus
 
         if(teams[answer.teamName].score < firstSmallestScore) {
           thirdSmallestScore = secondSmallestScore
@@ -549,8 +567,6 @@ function getScores() {
         if(teams[answer.teamName].score < thirdSmallestScore && teams[answer.teamName].score > secondSmallestScore) {
           thirdSmallestScore = teams[answer.teamName].score
         }
-
-        teams[answer.teamName].score = teams[answer.teamName].score + answer.bonus
       }
     })
     
@@ -572,20 +588,25 @@ function getScores() {
       }
 
       for(const key in teams) {
+        bonusWrongAnswers = 0
+
         if(teams[key].score === firstSmallestScore) {
           switch(true) {
             case (percentErrors === 0):
               break;
             
             case (percentErrors >= percentErrorsTiers[1]):
+                bonusWrongAnswers = bonusWrong[0]
                 teams[key].score = teams[key].score + bonusWrong[0]
               break;
             
             case (percentErrors >= percentErrorsTiers[0]):
+              bonusWrongAnswers = bonusWrong[1]
               teams[key].score = teams[key].score + bonusWrong[1]
               break;
             
             default:
+              bonusWrongAnswers = bonusWrong[2]
               teams[key].score = teams[key].score + bonusWrong[2]
               break;
           }
@@ -595,10 +616,12 @@ function getScores() {
               break;
             
             case (percentErrors >= percentErrorsTiers[1]):
+              bonusWrongAnswers = bonusWrong[1]
               teams[key].score = teams[key].score + bonusWrong[1]
               break;
             
             case (percentErrors >= percentErrorsTiers[0]):
+              bonusWrongAnswers = bonusWrong[2]
               teams[key].score = teams[key].score + bonusWrong[2]
               break;
             
@@ -611,12 +634,19 @@ function getScores() {
               break;
             
             case (percentErrors >= percentErrorsTiers[1]):
+              bonusWrongAnswers = bonusWrong[2]
               teams[key].score = teams[key].score + bonusWrong[2]
               break;
             
             default:
               break;
           }
+        }
+
+        if(bonusWrongAnswers > 0) {
+          answers.forEach(answer => {
+            if(answer.teamName === key && answer.questionID === i) {answer.bonusWrongAnswers = bonusWrongAnswers}
+          })
         }
       }
     }

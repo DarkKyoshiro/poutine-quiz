@@ -23,7 +23,6 @@ export class GameComponent implements OnInit {
   fullAnswer!: Answer;
   answers: Answer[] = [];
   control: boolean = false;
-  showScores: boolean = false;
 
   constructor(
     private socket: Socket,
@@ -89,19 +88,13 @@ export class GameComponent implements OnInit {
         answer: sentAnswer,
         timestamp: Date.now(),
         correct: -1,
+        points: 0,
+        bonusWrongAnswers: 0,
         bonus: 0
       }
       
       this.socket.emit('send-answer', this.fullAnswer)
     //}
-  }
-
-  onShowScoring(): void {
-    if(this.showScores) {
-      this.showScores = false
-    } else {
-      this.showScores = true
-    }
   }
 
   getReponse(): boolean {
@@ -125,10 +118,6 @@ export class GameComponent implements OnInit {
           returnedAnswer = returnedAnswer + ' - Incorrect'
         }
       }
-        
-      if(element.questionID === this.questionID && element.teamName === this.teamName && element.bonus !== 0) {
-        returnedAnswer = returnedAnswer + ' - Bonus: ' + element.bonus
-      }
     })
     return returnedAnswer
   }
@@ -148,6 +137,16 @@ export class GameComponent implements OnInit {
       id = 0
     }
     return this.questions[id]
+  }
+
+  getPoints(): number[] {
+    let points: number[] = [0,0,0];
+    this.answers.forEach(element => {
+      if(element.questionID === this.questionID && element.teamName === this.teamName) {
+        points = [element.points, element.bonusWrongAnswers, element.bonus]
+      }
+    })
+    return points
   }
 
   isMenu(): boolean {
