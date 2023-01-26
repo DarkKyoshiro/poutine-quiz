@@ -7,7 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { DisplayComponent } from './display/display.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { environment } from 'src/environments/environment';
@@ -26,6 +26,13 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { TeamScoreDetailComponent } from './team-score-detail/team-score-detail.component';
+import { AdminTeamsComponent } from './admin-modules/admin-teams/admin-teams.component';
+import { AdminQuestionsComponent } from './admin-modules/admin-questions/admin-questions.component';
+import { AdminGameComponent } from './admin-modules/admin-game/admin-game.component';
+import { AdminSettingsComponent } from './admin-modules/admin-settings/admin-settings.component';
+import { AdminStatsComponent } from './admin-modules/admin-stats/admin-stats.component';
 
 //For HerokuApp
 //const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
@@ -42,12 +49,19 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     AdminComponent,
     GameComponent,
     QuestionFormComponent,
-    DisplayComponent
+    DisplayComponent,
+    TeamScoreDetailComponent,
+    AdminTeamsComponent,
+    AdminQuestionsComponent,
+    AdminGameComponent,
+    AdminSettingsComponent,
+    AdminStatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     SocketIoModule.forRoot(config),
     BrowserAnimationsModule,
     MatCardModule,
@@ -62,7 +76,8 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     MatButtonToggleModule,
     MatProgressBarModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
+    MatBottomSheetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

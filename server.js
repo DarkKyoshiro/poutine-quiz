@@ -81,6 +81,11 @@ io.on("connection", socket => {
   //------------------------------------------------------------------------------------
   //---------------------- User management ---------------------------------------------
   //------------------------------------------------------------------------------------
+  //Teams refreshment
+  socket.on('refresh-teams', () => {
+    io.emit('send-teams', getScores())
+  })
+
   // User connection
   socket.on('new-connection', (teamName) => {
     if(teams[teamName] && teams[teamName].logged) { //team already existing and logged
@@ -356,6 +361,22 @@ io.on("connection", socket => {
     })
     io.emit('send-teams', getScores())
     io.emit('get-answers', answers)
+  })
+
+  socket.on('get-team-scores', teamName => {
+    let teamScores = []
+    answers.forEach(answer => {
+      if(answer.teamName === teamName) {
+        teamScores.push({
+          questionID: answer.questionID,
+          points: answer.points,
+          bonusManual: answer.bonus,
+          bonusAuto: answer.bonusWrongAnswers
+        })
+      }
+    })
+
+    socket.emit('send-team-scores', teamScores)
   })
 
   //------------------------------------------------------------------------------------

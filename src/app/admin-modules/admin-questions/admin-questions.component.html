@@ -1,0 +1,32 @@
+<mat-button-toggle-group name="QuestionType" aria-label="Question type selection" style="font-size:small;" [(ngModel)]="questionType">
+    <mat-button-toggle value="Nugget"><img src="assets/nuggets.png" alt="Nugget" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="SelOuPoivre"><img src="assets/seloupoivre.png" alt="Nugget" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Menu"><img src="assets/menu.png" alt="Nugget" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Addition"><img src="assets/addition.png" alt="Nugget" class="icon"></mat-button-toggle>
+</mat-button-toggle-group>
+
+<p>
+    <span *ngFor="let question of this.questions; let i = index;">
+        <button mat-raised-button (click)="onQuestion(question.id)" [matBadge]="question.group" *ngIf="question.type === questionType && question.round === 1">
+            {{question.id}}
+        </button>
+    </span>
+</p>
+<p>
+    <span *ngFor="let question of this.questions; let i = index;">
+        <button mat-raised-button (click)="onQuestion(question.id)" [matBadge]="question.group" *ngIf="question.type === questionType && question.round === 2">
+            {{question.id}}
+        </button>
+    </span>
+</p>
+
+
+<button mat-mini-fab color="primary" aria-label="Reset Quiz" (click)="onResetQuiz()" *ngIf="this.questions.length > 0 && !resetCheck">
+    <mat-icon>replay</mat-icon>
+</button>
+<button mat-mini-fab color="accent" aria-label="Confirm Reset quiz" (click)="onYesResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck">
+    <mat-icon>check</mat-icon>
+</button>
+<button mat-mini-fab color="warn" aria-label="Cancel Reset quiz" (click)="onNoResetQuiz()" *ngIf="this.questions.length > 0 && resetCheck">
+    <mat-icon>cancel</mat-icon>
+</button>

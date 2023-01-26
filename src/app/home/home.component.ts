@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,12 +15,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.state = this.router.url
-    console.log(this.state)
   }
 
-  onJoin(): void {
-    if(this.teamName) {
-      this.router.navigateByUrl('game/' + this.teamName);
+  onJoin(form: NgForm): void {
+    if(form.value.teamName) {
+      this.router.navigateByUrl('game/' + form.value.teamName);
     }
   }
 }

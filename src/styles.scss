@@ -1,5 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
  /* You can add global styles to this file, and also import other style files */
+
+//-------------------------------------------------------------------------------------------------
+//--------------------------- SCSS reset ----------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+//-------------------------------------------------------------------------------------------------
+//--------------------------- Custom SCSS ---------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
 @font-face {
     font-family: 'HooliganJF';
     src: local("HooliganJF"), url(./assets/fonts/HooliganJF.ttf) format("truetype");
@@ -7,49 +64,98 @@
 
 @font-face {
     font-family: 'horseshoes_and_lemonadeRg';
-    src: local("HooliganJF"), url(./assets/fonts/horseshoeslemonade.ttf) format("truetype");
+    src: local("horseshoes_and_lemonadeRg"), url(./assets/fonts/horseshoeslemonade.ttf) format("truetype");
 }
 
-html, body { height: 100%; }
+// html, body { height: 100%; }
 
 body {
     background-color: black;
     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 50px;
+    font-size: 8vw;
     color: white;
     text-align: center;
+    width: 95%;
     margin: auto;
 }
-
-p {
-    margin: 0;
+@media screen and (min-width: 750px) {
+    body {
+       font-size: 60px;
+    }
 }
 
-p.title {
+h1.title {
     font-family: 'horseshoes_and_lemonadeRg', Arial, Helvetica, sans-serif;
     font-size: 20vw;
     color: white;
     line-height: 90%;
+    // margin: 0;
     margin-bottom: 20px;
 }
 @media screen and (min-width: 750px) {
-    p.title {
+    h1.title {
        font-size: 150px;
     }
 }
 
-span.title-blue {
+h1 span.title-blue {
     color: blue;
 }
 
-span.title-red {
+h1 span.title-red {
     color: red;
 }
 
-span.title-yellow {
+h1 span.title-yellow {
     color: yellow;
 }
 
+p {
+    margin-bottom: 20px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//-------------------------------------------------------------------------------------------------
+// html, body { height: 100%; }
+
+// body {
+//     background-color: black;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     color: white;
+//     text-align: center;
+//     margin: auto;
+// }
+
+// p {
+//     margin: 0;
+// }
+
+// p.title {
+//     font-family: 'horseshoes_and_lemonadeRg', Arial, Helvetica, sans-serif;
+//     font-size: 20vw;
+//     color: white;
+//     line-height: 90%;
+//     margin-bottom: 20px;
+// }
+// @media screen and (min-width: 750px) {
+//     p.title {
+//        font-size: 150px;
+//     }
+// }
+
+// span.title-blue {
+//     color: blue;
+// }
+
+// span.title-red {
+//     color: red;
+// }
+
+// span.title-yellow {
+//     color: yellow;
+// }
+
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

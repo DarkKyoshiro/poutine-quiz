@@ -5,6 +5,8 @@ import { Answer } from '../models/answer.model';
 import { MenuDistribution } from '../models/menuDistribution.model';
 import { Question } from '../models/question.model';
 import { Team } from '../models/team.model';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { TeamScoreDetailComponent } from '../team-score-detail/team-score-detail.component';
 
 @Component({
   selector: 'app-game',
@@ -27,7 +29,8 @@ export class GameComponent implements OnInit {
   constructor(
     private socket: Socket,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private matBottomSheet: MatBottomSheet
     ) { }
 
   ngOnInit(): void {
@@ -164,6 +167,15 @@ export class GameComponent implements OnInit {
     } else {
       return false
     }
+  }
+
+  onScoreDetailTrigger(): void {
+    this.matBottomSheet.open(TeamScoreDetailComponent, {
+      data: {
+        teamName: this.teamName,
+        score: this.getScore(this.teamName)
+      }
+    });
   }
 
   // getGroup(teamName: string): number {

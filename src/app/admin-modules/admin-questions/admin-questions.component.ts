@@ -1,0 +1,50 @@
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Socket } from 'ngx-socket-io';
+import { Question } from 'src/app/models/question.model';
+
+@Component({
+  selector: 'app-admin-questions',
+  templateUrl: './admin-questions.component.html',
+  styleUrls: ['./admin-questions.component.scss']
+})
+export class AdminQuestionsComponent implements OnInit {
+  questionType: string = 'Nugget';
+  questions: Question[] = [];
+  durationInSeconds: number = 2;
+  resetCheck: boolean = false;
+
+  constructor(private socket: Socket, 
+    private _snackBar: MatSnackBar) { }
+
+  ngOnInit(): void {
+    //------------------------------------------------------------------------------------
+    //---------------------- Questions management ----------------------------------------
+    //------------------------------------------------------------------------------------
+    this.socket.emit('refresh-questions')
+    this.socket.on('send-questions', (data: any[]) => {
+      this.questions = data
+    })
+  }
+
+  onQuestion(id: number): void {
+    this.socket.emit('go-to-question', id)
+    this._snackBar.open(this.questions[id-1].type + " #" + this.questions[id-1].id + " loaded", "OK", {
+      duration: this.durationInSeconds * 1000
+    });
+  }
+
+  onResetQuiz(): void {
+    this.resetCheck = true
+  }
+
+  onYesResetQuiz(): void {
+    this.socket.emit('reset-quiz')
+    this.resetCheck = false
+  }
+
+  onNoResetQuiz(): void {
+    this.resetCheck = false
+  }
+
+}

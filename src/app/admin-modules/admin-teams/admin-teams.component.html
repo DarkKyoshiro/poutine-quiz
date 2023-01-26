@@ -1,0 +1,60 @@
+<table mat-table [dataSource]="teams" style="margin: auto;">
+    <ng-container matColumnDef="logged">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let team">
+            <mat-icon *ngIf="team.logged">wifi</mat-icon>
+            <mat-icon *ngIf="!team.logged">wifi_off</mat-icon>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let team"> {{team.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef> Score </th>
+        <td mat-cell *matCellDef="let team"> {{team.score}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="group1">
+        <th mat-header-cell *matHeaderCellDef> Groupe round 1</th>
+        <td mat-cell *matCellDef="let team">
+            <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(1, team.name, team.group1 - 1)">
+                <mat-icon>do_not_disturb_on</mat-icon>
+            </button>
+            {{team.group1}}
+            <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(1, team.name, team.group1 + 1)">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="group2">
+        <th mat-header-cell *matHeaderCellDef> Groupe round 2</th>
+        <td mat-cell *matCellDef="let team">
+            <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(2, team.name, team.group2 - 1)">
+                <mat-icon>do_not_disturb_on</mat-icon>
+            </button>
+            {{team.group2}}
+            <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(2, team.name, team.group2 + 1)">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loggedManagement">
+        <th mat-header-cell *matHeaderCellDef> Gestion du status </th>
+        <td mat-cell *matCellDef="let team">
+            <button mat-icon-button aria-label="Disconnect team" (click)="onDisconnect(team.name)" *ngIf="team.logged">
+                <mat-icon>signal_wifi_statusbar_null</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Delete team" (click)="onEject(team.name)">
+                <mat-icon>signal_wifi_off</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>

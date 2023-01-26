@@ -3,86 +3,126 @@ h3 {
     margin-top: 20px;
 }
 
+// #Endgame table {
+//     font-size: 8vw;
+//     margin: auto;
+//     width: fit-content;
+// }
+// @media screen and (min-width: 750px) {
+//     #Endgame table {
+//        font-size: 60px;
+//     }
+// }
+
+// #Endgame table td {
+//     padding: 0px 10px;
+// }
+
 #Endgame table {
-    font-size: 50px;
+    min-width: 70%;
+    // display: block;
     margin: auto;
-    width:fit-content;
+    font-size: medium;
+    font-size: 6vw;
+}
+@media screen and (min-width: 750px) {
+    #Endgame table {
+       font-size: 45px;
+    }
 }
 
-#Endgame table td {
-    padding: 0px 10px;
+#Endgame table tr {
+    // display: flex;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    align-items: center;
+    min-height: 10vw;
+    padding: 0 24px;
+}
+@media screen and (min-width: 750px) {
+    #Endgame table tr {
+        min-height: 75px;
+    }
 }
 
-#TeamLeaderBoard table {
-    font-size: 30px;
-    margin: auto;
-    width:fit-content;
+#Endgame table th{
+    flex: 1;
 }
 
-#TeamLeaderBoard table td {
-    padding: 0px 10px;
+#Endgame table td, th{
+    flex: 1;
 }
 
-button.Proposition {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    min-width: 45%;
-    max-width: 95%;
-    margin: 5px 5px;
-}
+// #TeamLeaderBoard table {
+//     font-size: 30px;
+//     margin: auto;
+//     width:fit-content;
+// }
 
-button.Proposition:hover {
-    background-color: #3965c4;
-}
+// #TeamLeaderBoard table td {
+//     padding: 0px 10px;
+// }
 
-button.menu {
-    background-color: orange;
-    border: none;
-    color: white;
-    padding: 5px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    width:fit-content;
-    margin: 5px 5px;
-}
+// button.Proposition {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     min-width: 45%;
+//     max-width: 95%;
+//     margin: 5px 5px;
+// }
 
-input {
-    height: 75px;
-    width: 80%;
-    max-width: 400px;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 15px;
-}
+// button.Proposition:hover {
+//     background-color: #3965c4;
+// }
 
-button.Repondre {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    width:fit-content;
-    margin: 5px 5px;
-}
+// button.menu {
+//     background-color: orange;
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     width:fit-content;
+//     margin: 5px 5px;
+// }
 
-button.Repondre:hover {
-    background-color: #3965c4;
-}
+// input {
+//     height: 75px;
+//     width: 80%;
+//     max-width: 400px;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 40px;
+//     text-align: center;
+//     margin-bottom: 15px;
+// }
+
+// button.Repondre {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     width:fit-content;
+//     margin: 5px 5px;
+// }
+
+// button.Repondre:hover {
+//     background-color: #3965c4;
+// }
 
 h3 img {
     margin: 0px;
@@ -111,3 +151,119 @@ img {
         height: 50px;
     }
 }
+
+//-------------------------------------------------------------------------------------------------
+
+// h3 {
+//     margin-bottom: 0;
+//     margin-top: 20px;
+// }
+
+// #Endgame table {
+//     font-size: 50px;
+//     margin: auto;
+//     width:fit-content;
+// }
+
+// #Endgame table td {
+//     padding: 0px 10px;
+// }
+
+// #TeamLeaderBoard table {
+//     font-size: 30px;
+//     margin: auto;
+//     width:fit-content;
+// }
+
+// #TeamLeaderBoard table td {
+//     padding: 0px 10px;
+// }
+
+// button.Proposition {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     min-width: 45%;
+//     max-width: 95%;
+//     margin: 5px 5px;
+// }
+
+// button.Proposition:hover {
+//     background-color: #3965c4;
+// }
+
+// button.menu {
+//     background-color: orange;
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     width:fit-content;
+//     margin: 5px 5px;
+// }
+
+// input {
+//     height: 75px;
+//     width: 80%;
+//     max-width: 400px;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 40px;
+//     text-align: center;
+//     margin-bottom: 15px;
+// }
+
+// button.Repondre {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 5px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 50px;
+//     width:fit-content;
+//     margin: 5px 5px;
+// }
+
+// button.Repondre:hover {
+//     background-color: #3965c4;
+// }
+
+// h3 img {
+//     margin: 0px;
+//     padding: 0px;
+//     display: inline-block;
+//     width: 8vw;
+//     height: 8vw;
+// }
+// @media screen and (min-width: 625px) {
+//     h3 img {
+//         width: 50px;
+//         height: 50px;
+//     }
+// }
+
+// img {
+//     margin: 0px;
+//     padding: 0px;
+//     display: inline-block;
+//     width: 8.3vw;
+//     height: 8.3vw;
+// }
+// @media screen and (min-width: 600px) {
+//     img {
+//         width: 50px;
+//         height: 50px;
+//     }
+// }

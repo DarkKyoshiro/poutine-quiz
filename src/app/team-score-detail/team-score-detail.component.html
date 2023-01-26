@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="scores" style="margin: auto;">
+    <ng-container matColumnDef="questionID">
+        <th mat-header-cell *matHeaderCellDef>Question n°</th>
+        <td mat-cell *matCellDef="let score">{{score.questionID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef>Points</th>
+        <td mat-cell *matCellDef="let score">{{score.points}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bonusManual">
+        <th mat-header-cell *matHeaderCellDef>Bonus/Malus</th>
+        <td mat-cell *matCellDef="let score">{{score.bonusManual}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bonusAuto">
+        <th mat-header-cell *matHeaderCellDef>Points pour mauvaises réponses</th>
+        <td mat-cell *matCellDef="let score">{{score.bonusAuto}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
