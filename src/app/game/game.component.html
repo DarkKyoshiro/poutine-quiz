@@ -24,6 +24,7 @@
 <!-- Team score -->
 <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
     <h2>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <button class="detail" (click)="onScoreDetailTrigger()">Détails</button></h2>
+    <mat-divider></mat-divider>
 </div>
 
 <!-- Gameboard -->

@@ -10,7 +10,7 @@ import { Score } from '../models/score.model';
 })
 export class TeamScoreDetailComponent implements OnInit {
   scores: Score[] = []
-  columnsToDisplay: string[] = ['questionID', 'points', 'bonusManual', 'bonusAuto'];
+  // columnsToDisplay: string[] = ['questionID', 'points', 'bonusManual', 'bonusAuto'];
 
   constructor(private socket: Socket,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: {teamName: string, score: number}

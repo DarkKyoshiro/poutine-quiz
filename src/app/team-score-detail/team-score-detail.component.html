@@ -1,24 +1,15 @@
-<table mat-table [dataSource]="scores" style="margin: auto;">
-    <ng-container matColumnDef="questionID">
-        <th mat-header-cell *matHeaderCellDef>Question n°</th>
-        <td mat-cell *matCellDef="let score">{{score.questionID}}</td>
-    </ng-container>
+<table>
+    <tr>
+        <th>Question n°</th>
+        <th>Points</th>
+        <th>Bonus/Malus</th>
+        <th>Points pour mauvaises réponses</th>
+    </tr>
 
-    <ng-container matColumnDef="points">
-        <th mat-header-cell *matHeaderCellDef>Points</th>
-        <td mat-cell *matCellDef="let score">{{score.points}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="bonusManual">
-        <th mat-header-cell *matHeaderCellDef>Bonus/Malus</th>
-        <td mat-cell *matCellDef="let score">{{score.bonusManual}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="bonusAuto">
-        <th mat-header-cell *matHeaderCellDef>Points pour mauvaises réponses</th>
-        <td mat-cell *matCellDef="let score">{{score.bonusAuto}}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    <tr *ngFor="let score of scores">
+        <td>{{score.questionID}}</td>
+        <td>{{score.points}}</td>
+        <td>{{score.bonusManual}}</td>
+        <td>{{score.bonusAuto}}</td>
+    </tr>
 </table>

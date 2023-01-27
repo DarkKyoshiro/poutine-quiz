@@ -1,0 +1,86 @@
+.mat-expansion-panel-header-title {
+    font-size: 4vw;
+}
+@media screen and (min-width: 750px) {
+    .mat-expansion-panel-header-title {
+        font-size: 30px;
+    }
+}
+
+table {
+    width: 80%;
+    margin: auto;
+}
+
+th.mat-header-cell {
+    text-align: center;
+    font-size: 3vw;
+}
+@media screen and (min-width: 750px) {
+    th.mat-header-cell {
+        font-size: 22.5px;
+    }
+}
+
+.mat-cell {
+    text-align: center;
+    font-size: 3vw;
+}
+@media screen and (min-width: 750px) {
+    .mat-cell {
+        font-size: 22.5px;
+    }
+}
+
+.mat-icon-button .mat-icon {
+    line-height: 4vw;
+    height: 4vw;
+    width: 4vw;
+    font-size: 4vw;
+}
+@media screen and (min-width: 750px) {
+    .mat-icon-button .mat-icon {
+        line-height: 30px;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+    }
+}
+
+p {
+    font-size: 3vw;
+}
+@media screen and (min-width: 750px) {
+    p {
+        font-size: 22.5px;
+    }
+}
+
+table.material {
+    margin: auto;
+    font-size: 3vw;
+    min-width: 50%;
+    // text-align: justify;
+}
+@media screen and (min-width: 750px) {
+    table.material {
+        font-size: 22.5px;
+    }
+}
+
+table.material tr {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+table.material tr:last-of-type {
+  border-bottom-width: 0px;
+}
+
+table.material td, th{
+  flex: 1;
+}

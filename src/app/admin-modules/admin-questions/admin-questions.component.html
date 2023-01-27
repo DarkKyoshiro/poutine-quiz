@@ -11,8 +11,7 @@
             {{question.id}}
         </button>
     </span>
-</p>
-<p>
+<br>
     <span *ngFor="let question of this.questions; let i = index;">
         <button mat-raised-button (click)="onQuestion(question.id)" [matBadge]="question.group" *ngIf="question.type === questionType && question.round === 2">
             {{question.id}}

@@ -1,0 +1,21 @@
+table {
+    font-size: 3vw;
+}
+@media screen and (min-width: 750px) {
+    table {
+        font-size: 22.5px;
+    }
+}
+
+table tr {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 24px;
+}
+
+table td, th{
+  flex: 1;
+}
