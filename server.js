@@ -459,6 +459,7 @@ io.on("connection", socket => {
         QuestionDB.find()
           .then(questionsDB => {
             questions = questionsDB
+            questions.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
             io.emit('send-questions', questions)
 
             AnswerDB.find()
@@ -548,6 +549,7 @@ function getScores() {
   var secondSmallestScore = 10000
   var thirdSmallestScore = 10000
   var bonusWrongAnswers = 0
+  
   for(const key in teams) {
     teams[key].score = 0
   }

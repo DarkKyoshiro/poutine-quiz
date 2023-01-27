@@ -14,7 +14,7 @@ import { TeamScoreDetailComponent } from '../team-score-detail/team-score-detail
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  questions!: Question[];
+  questions: Question[] = [];
   menuDistribution: MenuDistribution[] = [];
   questionID: number = 0;
   teamName!: string;
@@ -176,6 +176,26 @@ export class GameComponent implements OnInit {
         score: this.getScore(this.teamName)
       }
     });
+  }
+
+  getRanks(teamName: string): number {
+    let teamsArray: number[] = []
+    let sortedArray: number[] = []
+    let rankings: number[] = []
+
+    let i: number = 0
+    let teamIndex: number = 0
+
+    this.teams.forEach(team => {
+      teamsArray.push(team.score)
+      if(team.name === teamName) { teamIndex = i }
+      i++
+    })
+
+    sortedArray = teamsArray.slice().sort((a,b) => { return b-a })
+    rankings = teamsArray.map((v) => { return sortedArray.indexOf(v)+1 })
+
+    return rankings[teamIndex]
   }
 
   // getGroup(teamName: string): number {

@@ -23,6 +23,7 @@ export class TeamScoreDetailComponent implements OnInit {
     //Receive score details
     this.socket.on('send-team-scores', (teamScores: Score[]) => {
       this.scores = teamScores
+      this.scores.sort((a, b) => b.questionID < a.questionID ? 1 : -1);
     })
   }
 }

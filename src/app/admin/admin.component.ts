@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
     //Request teams refreshment
     this.socket.emit('refresh-teams')
     
-    //Teams refreshment
+    //Receive teams refreshment
     this.socket.on('send-teams', (data: any) => {
       this.teams = Object.keys(data).map(key => data[key]);
       this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
@@ -47,7 +47,10 @@ export class AdminComponent implements OnInit {
     //------------------------------------------------------------------------------------
     //---------------------- Questions management ----------------------------------------
     //------------------------------------------------------------------------------------
+    //Request questions refreshment
     this.socket.emit('refresh-questions')
+
+    //Receive questions refreshment
     this.socket.on('send-questions', (data: any[]) => {
       this.questions = data
     })

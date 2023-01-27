@@ -1,59 +1,62 @@
+<!-- Before start -->
 <div *ngIf="this.questionID === 0" id="WaitRoom">
     <p>Merci de patienter. La grande frite commencera le quiz sous peu.</p>
 </div>
 
+<!-- After start -->
 <div *ngIf="this.questionID > this.questions.length" id="Endgame">
-    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
+    <h2>Classement</h2>
     <table>
         <tr>
-            <th>Pos.</th>
+            <th>Rang</th>
             <th>Équipe</th>
             <th>Score</th>
         </tr>
         <tr *ngFor="let team of this.teams; let i=index">
-            <td>{{i+1}}.</td>
+            <td>{{getRanks(team.name)}}.</td>
             <td>{{team.name}}</td>
             <td>{{team.score}}</td>
         </tr>
     </table>
+    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
 </div>
 
-<div id="TeamLeaderBoard" *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
-    <h3>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"></h3>
-    <button (click)="onScoreDetailTrigger()">Détails</button>
+<!-- Team score -->
+<div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
+    <h2>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <button class="detail" (click)="onScoreDetailTrigger()">Détails</button></h2>
 </div>
 
-<div id="GameBoard">
+<!-- Gameboard -->
+<div>
     <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
         <!-- Before correction -->
         <div *ngIf="!getQuestion(this.questionID - 1).locked">
-            <div *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && !getReponse()))">
+            <div class="Proposition" *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && !getReponse()))">
                 <button class="Proposition" *ngFor="let proposition of getQuestion(this.questionID - 1).propositionsShort" (click)="onAnswer(proposition)">{{proposition}}</button>
             </div>
                 
-            <form (ngSubmit)="onAnswer(this.answer)" >
+            <form (ngSubmit)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))">
                 <input 
                     type="text" 
                     name="reponse"
-                    *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))" 
                     [(ngModel)]="this.answer"
-                ><br 
-                    *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))">
+                ><br>
                 <button 
                     type="submit" 
-                    class="Repondre" 
-                    *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))"
+                    class="Repondre"
                 >Répondre</button>
             </form>
         </div>
         
         <!-- After correction -->
         <div>
-            {{this.getAnswer()}}
-            <p *ngIf="getQuestion(this.questionID - 1).locked">Pour votre réponse: {{getPoints()[0]}}<img src="assets/frite.png" alt="Frites"></p>
-            <p *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[1] != 0">Pour les mauvaises réponses des autres: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"></p>
-            <p *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[2] != 0">Et en bonus (ou malus): {{getPoints()[2]}}<img src="assets/frite.png" alt="Frites"></p>
+            <p>
+                {{this.getAnswer()}} <br>
+                <span *ngIf="getQuestion(this.questionID - 1).locked">Pour votre réponse: {{getPoints()[0]}}<img src="assets/frite.png" alt="Frites"><br></span>
+                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[1] != 0">Pour les mauvaises réponses des autres: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"><br></span>
+                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[2] != 0">Et en bonus (ou malus): {{getPoints()[2]}}<img src="assets/frite.png" alt="Frites"></span>
+            </p>
         </div>
     </div>
 </div>

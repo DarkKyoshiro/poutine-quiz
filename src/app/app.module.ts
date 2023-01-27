@@ -33,6 +33,7 @@ import { AdminQuestionsComponent } from './admin-modules/admin-questions/admin-q
 import { AdminGameComponent } from './admin-modules/admin-game/admin-game.component';
 import { AdminSettingsComponent } from './admin-modules/admin-settings/admin-settings.component';
 import { AdminStatsComponent } from './admin-modules/admin-stats/admin-stats.component';
+import { MatInputModule } from '@angular/material/input';
 
 //For HerokuApp
 //const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
@@ -77,7 +78,8 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     MatProgressBarModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

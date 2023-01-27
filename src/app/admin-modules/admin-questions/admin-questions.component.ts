@@ -28,7 +28,7 @@ export class AdminQuestionsComponent implements OnInit {
   }
 
   onQuestion(id: number): void {
-    this.socket.emit('go-to-question', id)
+    this.socket.emit('go-to-question', this.questions[id-1].id)
     this._snackBar.open(this.questions[id-1].type + " #" + this.questions[id-1].id + " loaded", "OK", {
       duration: this.durationInSeconds * 1000
     });
