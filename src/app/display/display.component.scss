@@ -1,0 +1,81 @@
+.red {
+    background-color: red;
+
+    .slide-background {
+        -webkit-transform: rotate(-0.5deg);
+        -ms-transform: rotate(-0.5deg);
+        transform: rotate(-0.5deg);
+    }
+    
+    .slide-content {
+        -webkit-transform: rotate(0.5deg);
+        -ms-transform: rotate(0.5deg);
+        transform: rotate(0.5deg);
+    }
+}
+.yellow {
+    background-color: yellow;
+
+    .slide-background {
+        -webkit-transform: rotate(0.5deg);
+        -ms-transform: rotate(0.5deg);
+        transform: rotate(0.5deg);
+    }
+    
+    .slide-content {
+        -webkit-transform: rotate(-0.5deg);
+        -ms-transform: rotate(-0.5deg);
+        transform: rotate(-0.5deg);
+    }
+}
+
+.slide-frame {
+    width: 90%;
+    max-width: 1800px;
+    border-radius: 5vw;
+    padding: 2vw 3vw;
+    margin: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+@media screen and (min-width: 1800px) {
+    .slide-frame {
+        padding: 36px 54px;
+        border-radius: 90px;
+    }
+}
+
+.slide-background {
+    background-color: black;
+    border-radius: 3vw;
+    margin: auto;
+    white-space: pre-wrap;
+    padding: 1vw;
+}
+@media screen and (min-width: 1800px) {
+    .slide-background {
+        padding: 18px;
+        border-radius: 54px;
+    }
+}
+
+p {
+    font-size: 10vw;
+    margin: 0;
+}
+@media screen and (min-width: 1000px) {
+    p {
+        font-size: 100px;
+    }
+}
+
+img.frites {
+    width: 8vw;
+    height: 8vw;
+}
+@media screen and (min-width: 1000px) {
+    img.frites {
+        width: 80px;
+        height: 80px;
+    }
+}

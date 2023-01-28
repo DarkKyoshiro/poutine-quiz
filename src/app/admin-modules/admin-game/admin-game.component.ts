@@ -59,7 +59,7 @@ export class AdminGameComponent implements OnInit {
     this.socket.on('get-answers', (data: any) => {
       this.answers = [];
       this.answers = data;
-      this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
+      // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
     })
   }

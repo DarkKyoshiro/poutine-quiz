@@ -1,1 +1,17 @@
-<p>display works!</p>
+<div class="slide-frame" *ngFor="let question of questions" [ngClass]="{ red: question.id % 2 === 0, yellow: question.id % 2 === 1 }">
+    <div class="slide-background"> <!-- *ngIf="question.id === questionID"-->
+        <div class="slide-content">
+            <p>Round n°{{question.round}} - Question n°{{question.id}} - {{question.type}} pour {{question.points}}<img src="assets/frite.png" alt="Frites" class="frites"></p>
+
+            <p>{{question.question}}</p>
+            <ul *ngIf="question.propositionsDetailed && question.propositionsShort">
+                <li *ngFor="let proposition of question.propositionsDetailed; let i=index">
+                    <ng-container *ngIf="question.type === 'Nugget'">{{question.propositionsShort[i]}}. </ng-container>{{proposition}}
+                </li>
+            </ul>
+
+            <p>{{question.answer}}</p>
+            <p>{{question.showQuestion}} - {{question.propositionsStep}} - {{question.locked}} - {{question.showAnswer}}</p>
+        </div>
+    </div>
+</div>
