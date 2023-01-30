@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'qform', component: QuestionFormComponent}, 
   { path: 'admin', component: AdminComponent}, 
   { path: 'display', component: DisplayComponent}, 
-  { path: 'game/:team', component: GameComponent }
+  { path: 'game/:team', component: GameComponent }, 
+  { path: '*', component: HomeComponent }
 ];
 
 @NgModule({

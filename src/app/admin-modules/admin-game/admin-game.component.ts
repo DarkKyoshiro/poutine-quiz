@@ -78,7 +78,7 @@ export class AdminGameComponent implements OnInit {
   }
 
   onNext(id: number): void {
-    if(id > 1) {
+    if(id > 1 && !this.isCorrected()) {
       const dialogConfig = new MatDialogConfig();
 
       dialogConfig.disableClose = true;
@@ -216,6 +216,16 @@ export class AdminGameComponent implements OnInit {
         return false
       }
     }
+  }
+
+  isCorrected(): boolean {
+    let correctedAnswers: number = 0
+
+    this.answers.forEach(answer => {
+      if(answer.correct >= 0 && answer.questionID === this.questionID) {correctedAnswers++}
+    })
+
+    return correctedAnswers === this.teams.length
   }
 
   //Slide steps management
