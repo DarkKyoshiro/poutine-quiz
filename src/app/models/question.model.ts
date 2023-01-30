@@ -6,6 +6,7 @@ export class Question {
   group?: number;
   points!: number;
 
+  title?: string;
   question!: string;
   questionComment?: string;
   propositionsDetailed?: string[];

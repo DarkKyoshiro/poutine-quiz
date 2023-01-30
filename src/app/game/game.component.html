@@ -33,11 +33,11 @@
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
         <!-- Before correction -->
         <div *ngIf="!getQuestion(this.questionID - 1).locked">
-            <div class="Proposition" *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && !getReponse()))">
+            <div class="Proposition" *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && (!getReponse() || !this.lockSpeed)))">
                 <button class="Proposition" *ngFor="let proposition of getQuestion(this.questionID - 1).propositionsShort" (click)="onAnswer(proposition)">{{proposition}}</button>
             </div>
                 
-            <form (ngSubmit)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && !getReponse()))">
+            <form (ngSubmit)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && (!getReponse() || !this.lockSpeed)))">
                 <input 
                     type="text" 
                     name="reponse"

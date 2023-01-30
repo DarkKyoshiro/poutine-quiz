@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Socket } from 'ngx-socket-io';
+import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
 import { Team } from 'src/app/models/team.model';
 
 @Component({
@@ -15,7 +16,7 @@ export class AdminTeamsComponent implements OnInit {
 
   constructor(
     private socket: Socket,
-    private router: Router
+    private dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -42,7 +43,22 @@ export class AdminTeamsComponent implements OnInit {
   }
 
   onEject(teamName: string): void {
-    this.socket.emit('eject-team', teamName);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      text: 'Vous êtes sur le point de supprimer l\'utilisateur "' + teamName + '", ce qui supprimera aussi toutes ses data.'
+    }
+
+    const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if(data) {this.socket.emit('eject-team', teamName)}
+      }
+    )
   }
 
   getTeamScore(teamName: string): number {

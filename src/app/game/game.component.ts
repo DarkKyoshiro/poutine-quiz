@@ -25,6 +25,7 @@ export class GameComponent implements OnInit {
   fullAnswer!: Answer;
   answers: Answer[] = [];
   control: boolean = false;
+  lockSpeed: boolean = true;
 
   constructor(
     private socket: Socket,
@@ -80,6 +81,11 @@ export class GameComponent implements OnInit {
     this.socket.on('get-answers', (data: any[]) => {
       this.answers = []
       this.answers = data
+    })
+
+    //Settings update
+    this.socket.on('change-lock-speed', (lockState: boolean) => {
+      this.lockSpeed = lockState
     })
   }
 

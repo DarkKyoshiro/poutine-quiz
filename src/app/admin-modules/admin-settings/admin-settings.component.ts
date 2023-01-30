@@ -17,6 +17,7 @@ export class AdminSettingsComponent implements OnInit {
   bonusWrong: number[] = [];
   menuDistribution: MenuDistribution[] = [];
   durationInSeconds: number = 2;
+  lockSpeed: boolean = true;
 
   columnsToDisplay2: string[] = ['round', 'menuNb', 'teamGroup', 'groupManagement'];
 
@@ -32,7 +33,8 @@ export class AdminSettingsComponent implements OnInit {
     })
 
     this.socket.emit('refresh-scoreSettings')
-    this.socket.on('update-scoreSettings', (negPts: boolean, bonuses: boolean, threshold: number, thresholdModifier: number, percentErrorsTiers: number[], bonusWrong: number[]) => {
+    this.socket.on('update-scoreSettings', (lockState: boolean, negPts: boolean, bonuses: boolean, threshold: number, thresholdModifier: number, percentErrorsTiers: number[], bonusWrong: number[]) => {
+      this.lockSpeed = lockState
       this.negativePoints = negPts
       this.bonusesWrongAnswers = bonuses
       this.teamThreshold = threshold
@@ -58,6 +60,10 @@ export class AdminSettingsComponent implements OnInit {
 
   onChangeMenuGroup(menuNb: number, round: number, teamGroup: number): void {
     this.socket.emit('update-menu-team-group', menuNb, round, teamGroup);
+  }
+
+  onChangeLockSpeed(): void {
+    this.socket.emit('change-lock-speed', this.lockSpeed)
   }
 
   onChangeNegPoints(): void {

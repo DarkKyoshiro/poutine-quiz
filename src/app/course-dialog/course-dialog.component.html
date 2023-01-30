@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>!! Attention !!</h1>
+
+<mat-dialog-content>
+    <p>
+        {{text}}<br>
+        Voulez-vous continuer ?
+    </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-accent"(click)="yes()">Oui</button>
+    <button class="mat-raised-button mat-warn"(click)="no()">Non</button>
+</mat-dialog-actions>

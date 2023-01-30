@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Socket } from 'ngx-socket-io';
+import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
 import { Answer } from 'src/app/models/answer.model';
 import { MenuDistribution } from 'src/app/models/menuDistribution.model';
 import { Question } from 'src/app/models/question.model';
@@ -19,7 +21,8 @@ export class AdminGameComponent implements OnInit {
   menuDistribution: MenuDistribution[] = [];
 
   constructor(private socket: Socket, 
-    private questionsService: QuestionsService) { }
+    private questionsService: QuestionsService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     //------------------------------------------------------------------------------------
@@ -75,21 +78,57 @@ export class AdminGameComponent implements OnInit {
   }
 
   onNext(id: number): void {
-    if(id <= this.questions.length + 1) {
+    if(id > 1) {
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+
+      dialogConfig.data = {
+        text: 'Vous êtes sur le point de passer à la question suivante, assurez-vous d\'avoir tout corriger.'
+      }
+
+      const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+      dialogRef.afterClosed().subscribe(
+        data => {
+          if(data) {
+            if(id <= this.questions.length + 1) {
+              this.socket.emit('go-to-question', id);
+            }
+          }
+        }
+      )
+    }
+    else {
       this.socket.emit('go-to-question', id);
     }
   }
 
-  onPreviousStep(step: number): void {
-    this.socket.emit('go-to-step', step);
-  }
-
-  onNextStep(step: number): void {
-    this.socket.emit('go-to-step', step);
-  }
-
   onCorrection(): void {
-    this.socket.emit('question-correction')
+    if(this.questions[this.questionID-1].locked) {
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+
+      dialogConfig.data = {
+        text: 'Vous êtes sur le point de déverrouiller la question, ce qui effacera les corrections de chacun.'
+      }
+
+      const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+      dialogRef.afterClosed().subscribe(
+        data => {
+          if(data) {
+            this.socket.emit('question-correction')
+          }
+        }
+      )
+    }
+    else {
+      this.socket.emit('question-correction')
+    }
   }
 
   onValidAnswer(teamName: string, questionID: number, answerState: number): void {
@@ -179,4 +218,20 @@ export class AdminGameComponent implements OnInit {
     }
   }
 
+  //Slide steps management
+  onShowQuestion(): void {
+    this.socket.emit('show-question')
+  }
+
+  onPreviousStep(step: number): void {
+    this.socket.emit('go-to-step', step);
+  }
+
+  onNextStep(step: number): void {
+    this.socket.emit('go-to-step', step);
+  }
+
+  onShowAnswer(): void {
+    this.socket.emit('show-answer');
+  }
 }

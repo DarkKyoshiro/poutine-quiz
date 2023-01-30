@@ -1,6 +1,7 @@
 <div id="question">
     <mat-card>
         <mat-card-actions>
+            <!-- Slides management -->
             <button mat-icon-button aria-label="Previous question" (click)="onPrevious(this.questionID - 1)" *ngIf="this.questions.length !== 0 && this.questionID > 0">
                 <mat-icon>fast_rewind</mat-icon>
             </button>
@@ -8,7 +9,7 @@
                 <mat-icon *ngIf="this.questions[this.questionID-1].locked">lock</mat-icon>
                 <mat-icon *ngIf="!this.questions[this.questionID-1].locked">lock_open</mat-icon>
             </button>
-            <button mat-icon-button aria-label="Next question" (click)="onPrevious(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length">
+            <button mat-icon-button aria-label="Next question" (click)="onNext(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length">
                 <mat-icon>fast_forward</mat-icon>
             </button>
 
@@ -16,13 +17,30 @@
                 <mat-icon>play_arrow</mat-icon>
             </button>
 
-            <!-- <br>
-            <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)" *ngIf="this.questions.length !== 0">
-                <mat-icon>arrow_left</mat-icon>
-            </button>
-            <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)" *ngIf="this.questions.length !== 0">
-                <mat-icon>arrow_right</mat-icon>
-            </button> -->
+            <!-- Steps management -->
+            <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
+                <br>
+                <button mat-icon-button aria-label="Show Question" (click)="onShowQuestion()">
+                    <mat-icon *ngIf="questions[this.questionID-1].showQuestion">hide_source</mat-icon>
+                    <mat-icon *ngIf="!questions[this.questionID-1].showQuestion">question_mark</mat-icon>
+                </button>
+                <ng-container *ngIf="questions[this.questionID-1].propositionsDetailed">
+                    <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)">
+                        <mat-icon>arrow_left</mat-icon>
+                    </button>
+                    <span class="step">{{questions[this.questionID-1].propositionsStep}}</span>
+                    <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)">
+                        <mat-icon>arrow_right</mat-icon>
+                    </button>
+                </ng-container>
+                <ng-container *ngIf="questions[this.questionID-1].locked">
+                    <button mat-icon-button aria-label="Hide answer" (click)="onShowAnswer()">
+                        <mat-icon *ngIf="questions[this.questionID-1].showAnswer">hide_source</mat-icon>
+                        <mat-icon *ngIf="!questions[this.questionID-1].showAnswer">done_all</mat-icon>
+                    </button>
+                </ng-container>
+            </ng-container>
+            
             
             <mat-progress-bar
                 color="primary"

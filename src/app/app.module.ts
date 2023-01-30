@@ -27,13 +27,16 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { TeamScoreDetailComponent } from './team-score-detail/team-score-detail.component';
 import { AdminTeamsComponent } from './admin-modules/admin-teams/admin-teams.component';
 import { AdminQuestionsComponent } from './admin-modules/admin-questions/admin-questions.component';
 import { AdminGameComponent } from './admin-modules/admin-game/admin-game.component';
 import { AdminSettingsComponent } from './admin-modules/admin-settings/admin-settings.component';
 import { AdminStatsComponent } from './admin-modules/admin-stats/admin-stats.component';
-import { MatInputModule } from '@angular/material/input';
+import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 
 //For HerokuApp
 //const config: SocketIoConfig = { url: 'https://poutinequiz.herokuapp.com/', options: {} };
@@ -56,7 +59,8 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     AdminQuestionsComponent,
     AdminGameComponent,
     AdminSettingsComponent,
-    AdminStatsComponent
+    AdminStatsComponent,
+    CourseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,9 +83,11 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     MatSlideToggleModule,
     MatSliderModule,
     MatBottomSheetModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CourseDialogComponent]
 })
 export class AppModule { }

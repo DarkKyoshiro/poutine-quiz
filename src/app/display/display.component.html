@@ -1,17 +1,86 @@
-<div class="slide-frame" *ngFor="let question of questions" [ngClass]="{ red: question.id % 2 === 0, yellow: question.id % 2 === 1 }">
-    <div class="slide-background"> <!-- *ngIf="question.id === questionID"-->
-        <div class="slide-content">
-            <p>Round n°{{question.round}} - Question n°{{question.id}} - {{question.type}} pour {{question.points}}<img src="assets/frite.png" alt="Frites" class="frites"></p>
+<div *ngFor="let question of questions">
+    <!-- <ng-container *ngIf="question.id === questionID">showQuestion: {{question.showQuestion}} - 
+    propositionsStep: {{question.propositionsStep}} - 
+    locked: {{question.locked}} - 
+    showAnswer: {{question.showAnswer}}</ng-container> -->
+    <div class="slide-frame" [ngClass]="{ red: question.id % 2 === 0, yellow: question.id % 2 === 1 }" *ngIf="question.id === questionID"> <!-- *ngIf="question.id === questionID"-->
+        <div class="slide-background">
+            <!-- Nuggets -->
+            <ng-container *ngIf="question.type === 'Nugget'">
+                <div class="header">
+                    <p class="round left">Round {{question.round}}</p>
+                    <p class="round center">Condiment</p>
+                    <p class="round right">Question {{question.id}}<img src="assets/frite.png" alt="Frites" class="frites" *ngFor="let e of [].constructor(question.points); let i = index"></p>
+                </div>
 
-            <p>{{question.question}}</p>
-            <ul *ngIf="question.propositionsDetailed && question.propositionsShort">
-                <li *ngFor="let proposition of question.propositionsDetailed; let i=index">
-                    <ng-container *ngIf="question.type === 'Nugget'">{{question.propositionsShort[i]}}. </ng-container>{{proposition}}
-                </li>
-            </ul>
+                <div class="slide-content">
+                    <div class="question-content nugget" *ngIf="question.showQuestion">
+                        <p class="question">{{question.question}}</p>
 
-            <p>{{question.answer}}</p>
-            <p>{{question.showQuestion}} - {{question.propositionsStep}} - {{question.locked}} - {{question.showAnswer}}</p>
+                        <ul *ngIf="question.propositionsDetailed && question.propositionsShort">
+                            <ng-container *ngFor="let proposition of question.propositionsDetailed; let i=index">
+                                <li *ngIf="question.propositionsStep > i">{{question.propositionsShort[i]}}. {{proposition}}</li>
+                            </ng-container>
+                        </ul>
+
+                        <p class="answer" *ngIf="question.showAnswer">{{question.answer}}</p>
+                    </div>
+                </div>
+            </ng-container>
+            
+            <!-- Sel ou Poivre -->
+            <ng-container *ngIf="question.type === 'SelOuPoivre'">
+                <div class="header">
+                    <p class="round left">Round {{question.round}}</p>
+                    <p class="round center">Sauce viande/vege</p>
+                    <p class="round right">Question {{question.id}}<img src="assets/frite.png" alt="Frites" class="frites" *ngFor="let e of [].constructor(question.points); let i = index"></p>
+                </div>
+
+                <div class="slide-content">
+                    <div class="question-content" *ngIf="question.showQuestion">
+                        <p class="question selOuPoivre">
+                            <ng-container *ngFor="let proposition of question.propositionsDetailed; let i=index; let l = count"><span *ngIf="i > 0">, </span><span *ngIf="i === l - 1">ou </span>{{proposition}}</ng-container>
+                        </p>
+
+                        <p class="answer" *ngIf="question.showAnswer">{{question.answer}}</p>
+                    </div>
+                </div>
+            </ng-container>
+            
+            <!-- Menu -->
+            <ng-container *ngIf="question.type === 'Menu'">
+                <div class="header">
+                    <p class="round left">Round {{question.round}}</p>
+                    <p class="round center">Trio {{question.title}}</p>
+                    <p class="round right">Question {{question.id}}<img src="assets/frite.png" alt="Frites" class="frites" *ngFor="let e of [].constructor(question.points); let i = index"></p>
+                </div>
+
+                <div class="slide-content">
+                    <div class="question-content" *ngIf="question.showQuestion">
+                        <p class="question menu">{{question.question}}</p>
+
+                        <p class="answer" *ngIf="question.showAnswer">{{question.answer}}</p>
+                    </div>
+                </div>
+            </ng-container>
+            
+            <!-- Addition -->
+            <ng-container *ngIf="question.type === 'Addition'">
+                <div class="header">
+                    <p class="round left">Round {{question.round}}</p>
+                    <p class="round center">Facture</p>
+                    <p class="round right">Question {{question.id}}<img src="assets/frite.png" alt="Frites" class="frites" *ngFor="let e of [].constructor(question.points); let i = index"></p>
+                </div>
+
+                <div class="slide-content">
+                    <div class="question-content" *ngIf="question.showQuestion">
+                        <p class="question selOuPoivre">{{question.title}}</p>
+
+                        <p class="answer" *ngIf="question.showAnswer">{{question.answer}}</p>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
+

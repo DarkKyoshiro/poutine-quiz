@@ -58,6 +58,7 @@
                 Bonus calculation settings
             </mat-panel-title>
         </mat-expansion-panel-header>
+        <p><mat-slide-toggle [(ngModel)]="lockSpeed" (change)="onChangeLockSpeed()">Verrouiller réponses de vitesse ?</mat-slide-toggle></p>
         <p><mat-slide-toggle [(ngModel)]="negativePoints" (change)="onChangeNegPoints()">Negative points ?</mat-slide-toggle></p>
         <p><mat-slide-toggle [(ngModel)]="bonusesWrongAnswers" (change)="onChangeBonusesWrongAnswers()">Bonuses for wrong answers ?</mat-slide-toggle></p>
         <p>Team threshold: {{teamThreshold}}

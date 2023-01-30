@@ -64,6 +64,7 @@ var teamThresholdModifier = 1.5
 var questions = []
 var answers = []
 var control = false
+var lockspeed = true
 
 io.on("connection", socket => {
   //------------------------------------------------------------------------------------
@@ -177,9 +178,21 @@ io.on("connection", socket => {
   //------------------------------------------------------------------------------------
   //---------------------- Display management ------------------------------------------
   //------------------------------------------------------------------------------------
+  socket.on('show-question', () => {
+    questions[questionID - 1].showQuestion = questions[questionID - 1].showQuestion ? false : true
+    io.emit('send-questions', questions, menuTeamGroup)
+  })
+  
   socket.on('go-to-step', step => {
-    questions[questionID-1].propositionsStep = step
-    io.emit('send-questions', questions)
+    if(step <= questions[questionID-1].propositionsDetailed.length) {
+      questions[questionID-1].propositionsStep = step
+      io.emit('send-questions', questions, menuTeamGroup)
+    }
+  })
+
+  socket.on('show-answer', () => {
+    questions[questionID - 1].showAnswer = questions[questionID - 1].showAnswer ? false : true
+    io.emit('send-questions', questions, menuTeamGroup)
   })
 
   //------------------------------------------------------------------------------------
@@ -239,7 +252,12 @@ io.on("connection", socket => {
   })
 
   socket.on('refresh-scoreSettings', () => {
-    io.emit('update-scoreSettings', negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
+    io.emit('update-scoreSettings', lockspeed, negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
+  })
+
+  socket.on('change-lock-speed', lockState => {
+    lockspeed = lockState
+    io.emit('change-lock-speed', lockspeed)
   })
 
   socket.on('change-negative-points', negPts => {
@@ -285,6 +303,7 @@ io.on("connection", socket => {
 
   socket.on('question-correction', () => {
     if(questions[questionID - 1].locked) {
+      questions[questionID - 1].showAnswer = false
       questions[questionID - 1].locked = false
       answers.forEach(element => {
         if(element.questionID === questionID) {
@@ -393,7 +412,8 @@ io.on("connection", socket => {
           teamThreshold: teamThreshold,
           teamThresholdModifier: teamThresholdModifier,
           percentErrorsTiers: percentErrorsTiers,
-          bonusWrong: bonusWrong
+          bonusWrong: bonusWrong,
+          lockSpeed: lockspeed
         })
           .then(() => {console.log('Parameters saved!')})
           .catch((error) => {console.log(error)})
@@ -490,8 +510,9 @@ io.on("connection", socket => {
                         teamThresholdModifier = paramsDB.teamThresholdModifier
                         percentErrorsTiers = paramsDB.percentErrorsTiers
                         bonusWrong = paramsDB.bonusWrong
+                        lockspeed = ParamDB.lockSpeed
                         io.emit('update-question-ID', questionID)
-                        io.emit('update-scoreSettings', negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
+                        io.emit('update-scoreSettings', lockspeed, negativePoints, bonusesWrongAnswers, teamThreshold, teamThresholdModifier, percentErrorsTiers, bonusWrong)
                       })
                       .catch((error) => {console.log(error)});
                   })
