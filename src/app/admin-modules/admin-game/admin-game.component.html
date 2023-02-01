@@ -9,7 +9,7 @@
                 <mat-icon *ngIf="this.questions[this.questionID-1].locked">lock</mat-icon>
                 <mat-icon *ngIf="!this.questions[this.questionID-1].locked">lock_open</mat-icon>
             </button>
-            <button mat-icon-button aria-label="Next question" (click)="onNext(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length">
+            <button mat-icon-button aria-label="Next question" (click)="onNext(this.questionID + 1)" *ngIf="this.questions.length !== 0 && this.questionID <= this.questions.length-1">
                 <mat-icon>fast_forward</mat-icon>
             </button>
 

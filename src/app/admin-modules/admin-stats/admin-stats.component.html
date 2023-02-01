@@ -1,1 +1,32 @@
-<p>admin-stats works!</p>
+<table>
+    <tr>
+        <th rowspan="2">Question</th>
+        <th class="separator-left" colspan="4" *ngFor="let team of detailedScores.get(1)">{{team.team}}</th>
+        <th class="separator-left" rowspan="2">Question</th>
+    </tr>
+    <tr>
+        <ng-container *ngFor="let team of detailedScores.get(1)">
+            <th class="separator-left"><mat-icon>question_mark</mat-icon></th>
+            <th><mat-icon>timeline</mat-icon></th>
+            <th><mat-icon>exposure_plus_1</mat-icon></th>
+            <th><mat-icon>rule</mat-icon></th>
+        </ng-container>
+    </tr>
+
+    <tr *ngFor="let fullScore of detailedScores | keyvalue">
+        <td>{{fullScore.key}}</td>
+        <ng-container *ngFor="let score of fullScore.value">
+            <td class="separator-left" [ngClass]="score.isCorrected > 0 ? 'green' : (score.isCorrected === 0 ? 'red' : '')">
+                <mat-icon *ngIf="score.isCorrected === -1">question_mark</mat-icon>
+                <mat-icon *ngIf="score.isCorrected === 0">close</mat-icon>
+                <mat-icon *ngIf="score.isCorrected === 1">check</mat-icon>
+            </td>
+            <td [ngClass]="score.points > 0 ? 'green' : (score.points < 0 ? 'red' : '')">{{score.points}}</td>
+            <td [ngClass]="score.bonus > 0 ? 'green' : (score.bonus < 0 ? 'red' : '')">{{score.bonus}}</td>
+            <td [ngClass]="score.bonusWrongAnswers > 0 ? 'green' : (score.bonusWrongAnswers < 0 ? 'red' : '')">{{score.bonusWrongAnswers}}</td>
+        </ng-container>
+        <td class="separator-left">{{fullScore.key}}</td>
+    </tr>
+</table>
+
+<!-- Need to add total for each team for each question -->

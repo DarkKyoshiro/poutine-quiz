@@ -4,7 +4,7 @@
 </div>
 
 <!-- After start -->
-<div *ngIf="this.questionID > this.questions.length" id="Endgame">
+<div *ngIf="this.questionID > this.questions.length-1" id="Endgame">
     <h2>Classement</h2>
     <table>
         <tr>
@@ -22,14 +22,14 @@
 </div>
 
 <!-- Team score -->
-<div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
+<div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length-1">
     <h2>{{teamName}}: {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <button class="detail" (click)="onScoreDetailTrigger()">Détails</button></h2>
     <mat-divider></mat-divider>
 </div>
 
 <!-- Gameboard -->
 <div>
-    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
+    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length-1">
         <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
         <!-- Before correction -->
         <div *ngIf="!getQuestion(this.questionID - 1).locked">

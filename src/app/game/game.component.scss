@@ -4,6 +4,8 @@
     margin: auto;
     margin-bottom: 20px;
     font-size: 6vw;
+    background-color: #424242;
+    border-radius: 4px;
 }
 @media screen and (min-width: 750px) {
     #Endgame table {
@@ -16,13 +18,17 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     align-items: center;
-    min-height: 10vw;
+    line-height: 8vw;
     padding: 0 24px;
 }
 @media screen and (min-width: 750px) {
     #Endgame table tr {
-        min-height: 75px;
+        line-height: 60px;
     }
+}
+
+#Endgame table tr:last-of-type {
+  border-bottom-width: 0px;
 }
 
 #Endgame table th{

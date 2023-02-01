@@ -99,6 +99,27 @@ export class AdminGameComponent implements OnInit {
           }
         }
       )
+    }else if(id === this.questions.length) {
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+
+      dialogConfig.data = {
+        text: '!!!ATTENTION!!! Vous êtes sur le point de passer au Poutine de la Mort !!!ATTENTION!!!'
+      }
+
+      const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+      dialogRef.afterClosed().subscribe(
+        data => {
+          if(data) {
+            if(id <= this.questions.length + 1) {
+              this.socket.emit('go-to-question', id);
+            }
+          }
+        }
+      )
     }
     else {
       this.socket.emit('go-to-question', id);

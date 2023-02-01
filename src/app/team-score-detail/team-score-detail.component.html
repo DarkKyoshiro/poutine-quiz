@@ -1,15 +1,23 @@
 <table>
     <tr>
         <th>Question n°</th>
+        <th>Réponse</th>
         <th>Points</th>
         <th>Bonus/Malus</th>
         <th>Points pour mauvaises réponses</th>
+        <th>Total</th>
     </tr>
 
     <tr *ngFor="let score of scores">
         <td>{{score.questionID}}</td>
+        <td>
+            <mat-icon *ngIf="score.corrected === -1">question_mark</mat-icon>
+            <mat-icon style="color: red;" *ngIf="score.corrected === 0">close</mat-icon>
+            <mat-icon style="color: green;" *ngIf="score.corrected === 1">check</mat-icon>
+        </td>
         <td>{{score.points}}</td>
         <td>{{score.bonusManual}}</td>
         <td>{{score.bonusAuto}}</td>
+        <td>{{score.total}}</td>
     </tr>
 </table>

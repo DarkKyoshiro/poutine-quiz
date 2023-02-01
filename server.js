@@ -384,13 +384,17 @@ io.on("connection", socket => {
 
   socket.on('get-team-scores', teamName => {
     let teamScores = []
+    let total = 0
     answers.forEach(answer => {
       if(answer.teamName === teamName) {
+        total += answer.points + answer.bonus + answer.bonusWrongAnswers
         teamScores.push({
           questionID: answer.questionID,
+          corrected: answer.correct,
           points: answer.points,
           bonusManual: answer.bonus,
-          bonusAuto: answer.bonusWrongAnswers
+          bonusAuto: answer.bonusWrongAnswers,
+          total: total
         })
       }
     })
