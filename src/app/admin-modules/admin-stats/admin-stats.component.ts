@@ -10,6 +10,7 @@ import { Answer } from 'src/app/models/answer.model';
 export class AdminStatsComponent implements OnInit {
   answers: Answer[] = []
   detailedScores = new Map;
+  showDetails: boolean = true;
 
   constructor(private socket: Socket) { }
 
@@ -29,15 +30,22 @@ export class AdminStatsComponent implements OnInit {
 
   createScoringTable(): any {
     let table = new Map
+    let scoreTotal = new Map
 
     this.answers.forEach(answer => {
+      if(!scoreTotal.has(answer.teamName)) {
+        scoreTotal.set(answer.teamName, 0)
+      }
+      scoreTotal.set(answer.teamName, answer.points + answer.bonus + answer.bonusWrongAnswers + scoreTotal.get(answer.teamName))
+
       if(table.has(answer.questionID)) {
         table.get(answer.questionID).push({
           team: answer.teamName,
           isCorrected: answer.correct,
           points: answer.points,
           bonus: answer.bonus,
-          bonusWrongAnswers: answer.bonusWrongAnswers
+          bonusWrongAnswers: answer.bonusWrongAnswers,
+          total: scoreTotal.get(answer.teamName)
         })
       } else {
         table.set(answer.questionID, [{
@@ -45,11 +53,16 @@ export class AdminStatsComponent implements OnInit {
           isCorrected: answer.correct,
           points: answer.points,
           bonus: answer.bonus,
-          bonusWrongAnswers: answer.bonusWrongAnswers
+          bonusWrongAnswers: answer.bonusWrongAnswers,
+          total: scoreTotal.get(answer.teamName)
         }])
       }
     })
 
     return table
+  }
+
+  onChangeDetailsDisplay(): void {
+    console.log(this.showDetails)
   }
 }

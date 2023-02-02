@@ -1044,7 +1044,7 @@ export class QuestionsService {
         points: 0,
 
         question: '1. V ou F, D\'après Astérix et les indiens, les romains pensent que la terre est plate ?\n\n2. Diriez-vous qu\'Astérix a un problème de dépendance à la potion magique ?\n\n3. Alors, il est frais ou non ce poisson ?\n\n4. V ou F, Panoramix utilise des cubes de bouillon pour donner du gout à sa potion magique ?\n\n5. En quelle année a eu lieu de bataille de Gergovie ? En chiffre romain bien sur, si vous ne savez pas dites LII av JC\n\n6. Vous êtes plus Choucroutgarnix ou Tartifletix ?\n\n7. Si la Grande Frite était gauloise, combien de sanglier mangerait-elle à chaque buffet ?\n\n8. V ou F, dans les années 80 on pouvait suivre les aventures d\'un autre héro gaulois, le célèbre Agencetourix ?\n\n9. Pensez-vous que Scribe soit une bonne situation ?\n\n10. Pensez vous voir Astérix et Obélix l\'empire du milieu au cinéma quand il sera sorti ?',
-        answer: '',
+        answer: 'NA',
         
         showQuestion: false,
         propositionsStep: 0,

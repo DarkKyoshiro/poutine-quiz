@@ -13,54 +13,25 @@
         </button>
     </mat-expansion-panel>
 
-    <mat-expansion-panel *ngIf="menuDistribution.length !== 0">
+    <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Menus attribution
+                Score calculation settings
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <table mat-table [dataSource]="menuDistribution">
-            <ng-container matColumnDef="menuNb">
-                <th mat-header-cell *matHeaderCellDef> Menu group </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.menuNb}} </td>
-            </ng-container>
 
-            <ng-container matColumnDef="round">
-                <th mat-header-cell *matHeaderCellDef> Round # </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.round}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="teamGroup">
-                <th mat-header-cell *matHeaderCellDef> Team group </th>
-                <td mat-cell *matCellDef="let menu"> {{menu.teamGroup}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="groupManagement">
-                <th mat-header-cell *matHeaderCellDef> Team groups management </th>
-                <td mat-cell *matCellDef="let menu">
-                    <button mat-icon-button aria-label="Previous group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup - 1)">
-                        <mat-icon>do_not_disturb_on</mat-icon>
-                    </button>
-                    <button mat-icon-button aria-label="Next group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup + 1)">
-                        <mat-icon>add_circle</mat-icon>
-                    </button>
-                </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="columnsToDisplay2"></tr>
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay2"></tr>
-        </table>
+        <p><mat-slide-toggle [(ngModel)]="lockSpeed" (change)="onChangeLockSpeed()">Verrouiller réponses de vitesse ?</mat-slide-toggle><br>
+        <mat-slide-toggle [(ngModel)]="negativePoints" (change)="onChangeNegPoints()">Negative points ?</mat-slide-toggle><br>
+        <mat-slide-toggle [(ngModel)]="bonusesWrongAnswers" (change)="onChangeBonusesWrongAnswers()">Bonuses for wrong answers ?</mat-slide-toggle></p>
     </mat-expansion-panel>
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Bonus calculation settings
+                Error bonus settings
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <p><mat-slide-toggle [(ngModel)]="lockSpeed" (change)="onChangeLockSpeed()">Verrouiller réponses de vitesse ?</mat-slide-toggle></p>
-        <p><mat-slide-toggle [(ngModel)]="negativePoints" (change)="onChangeNegPoints()">Negative points ?</mat-slide-toggle></p>
-        <p><mat-slide-toggle [(ngModel)]="bonusesWrongAnswers" (change)="onChangeBonusesWrongAnswers()">Bonuses for wrong answers ?</mat-slide-toggle></p>
+
         <p>Team threshold: {{teamThreshold}}
             <mat-slider
                 max="100"
@@ -71,8 +42,8 @@
                 (change)="onChangeTreshold()" 
                 aria-labelledby="Threshold of team at minimum score (%)">
             </mat-slider>
-        </p>
-        <p>Team threshold modifier: {{teamThresholdModifier}}
+        <br>
+        Team threshold modifier: {{teamThresholdModifier}}
             <mat-slider
                 max="3"
                 min="0"
@@ -142,8 +113,8 @@
             <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(2, bonusWrong[2]+1)">
                 <mat-icon>add_circle</mat-icon>
             </button>
-        </p>
-        <p>Max bonus-1: 
+        <br>
+            Max bonus-1: 
             <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(1, bonusWrong[1]-1)">
                 <mat-icon>do_not_disturb_on</mat-icon>
             </button>
@@ -151,8 +122,8 @@
             <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(1, bonusWrong[1]+1)">
                 <mat-icon>add_circle</mat-icon>
             </button>
-        </p>
-        <p>Max bonus-2: 
+        <br>
+            Max bonus-2: 
             <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(0, bonusWrong[0]-1)">
                 <mat-icon>do_not_disturb_on</mat-icon>
             </button>

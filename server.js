@@ -75,7 +75,7 @@ io.on("connection", socket => {
       adminSocketID = socket.id
       socket.emit('send-teams', teams);
     } else {
-      socket.emit('user-rejected')
+      // socket.emit('user-rejected')
     }
   })
 
@@ -101,7 +101,7 @@ io.on("connection", socket => {
           teamName: teamName,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 21600000,
+          timestamp: 1989811953988,
           correct: -1,
           points: 0,
           bonusWrongAnswers: 0,
@@ -216,7 +216,7 @@ io.on("connection", socket => {
           teamName: teams[key].name,
           questionID: question.id,
           answer: '',
-          timestamp: Date.now() + 21600000,
+          timestamp: 1989811953988,
           correct: -1,
           points: 0,
           bonusWrongAnswers: 0,
@@ -371,7 +371,7 @@ io.on("connection", socket => {
     answers.forEach(element => {
       if(element.teamName === teamName && element.questionID === questionID) {
         element.answer = ''
-        element.timestamp = Date.now() + 21600000
+        element.timestamp = 1989811953988
         element.correct = -1
         element.points = 0
         element.bonusWrongAnswers = 0

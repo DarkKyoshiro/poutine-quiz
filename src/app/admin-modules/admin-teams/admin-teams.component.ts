@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Socket } from 'ngx-socket-io';
 import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
+import { MenuDistribution } from 'src/app/models/menuDistribution.model';
 import { Team } from 'src/app/models/team.model';
 
 @Component({
@@ -11,8 +12,7 @@ import { Team } from 'src/app/models/team.model';
 })
 export class AdminTeamsComponent implements OnInit {
   teams: Team[] = [];
-
-  columnsToDisplay: string[] = ['logged', 'name', 'score', 'group1', 'group2', 'loggedManagement'];
+  menuDistribution: MenuDistribution[] = [];
 
   constructor(
     private socket: Socket,
@@ -30,8 +30,15 @@ export class AdminTeamsComponent implements OnInit {
     this.socket.on('send-teams', (data: any) => {
       this.teams = Object.keys(data).map(key => data[key]);
       this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
-      // this.teams = this.teams.sort((a, b) => b.score - a.score);
+      this.teams = this.teams.sort((a, b) => b.score - a.score);
     });
+
+    //------------------------------------------------------------------------------------
+    //---------------------- Questions management ----------------------------------------
+    //------------------------------------------------------------------------------------
+    this.socket.on('send-menu-groups', (menuTeamGroup: any[]) => {
+      this.menuDistribution = Object.keys(menuTeamGroup).map((key: any) => menuTeamGroup[key]);
+    })
   }
 
   onChangeGroup(round: number, teamName: string, teamGroup: number): void {
@@ -71,6 +78,10 @@ export class AdminTeamsComponent implements OnInit {
     })
     
     return score;
+  }
+
+  onChangeMenuGroup(menuNb: number, round: number, teamGroup: number): void {
+    this.socket.emit('update-menu-team-group', menuNb, round, teamGroup);
   }
 
 }

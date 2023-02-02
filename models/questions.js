@@ -8,6 +8,7 @@ const questionSchema = mongoose.Schema({
   group: { type: Number, required: false },
   points: { type: Number, required: true },
   
+  title: { type: String, required: false },
   question: { type: String, required: true },
   questionComment: { type: String, required: false },
   propositionsDetailed: { type: Array, required: false },

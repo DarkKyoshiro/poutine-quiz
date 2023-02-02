@@ -12,10 +12,35 @@ table tr {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   align-items: center;
-  min-height: 40px;
+  line-height: 40px;
   padding: 0 24px;
 }
 
 table td, th{
   flex: 1;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.mat-icon {
+  height: 4vw;
+  width: 4vw;
+  font-size: 4vw;
+}
+@media screen and (min-width: 750px) {
+  .mat-icon {
+      height: 30px;
+      width: 30px;
+      font-size: 30px;
+    }
+}
+
+.material-icons {
+  line-height: 1.4;
 }

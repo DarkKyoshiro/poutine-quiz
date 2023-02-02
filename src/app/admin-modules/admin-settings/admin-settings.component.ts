@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Socket } from 'ngx-socket-io';
-import { MenuDistribution } from 'src/app/models/menuDistribution.model';
 
 @Component({
   selector: 'app-admin-settings',
@@ -15,7 +14,6 @@ export class AdminSettingsComponent implements OnInit {
   teamThresholdModifier: number = 0;
   percentErrorsTiers: number[] = [];
   bonusWrong: number[] = [];
-  menuDistribution: MenuDistribution[] = [];
   durationInSeconds: number = 2;
   lockSpeed: boolean = true;
 
@@ -28,10 +26,6 @@ export class AdminSettingsComponent implements OnInit {
     //------------------------------------------------------------------------------------
     //---------------------- Questions management ----------------------------------------
     //------------------------------------------------------------------------------------
-    this.socket.on('send-menu-groups', (menuTeamGroup: any[]) => {
-      this.menuDistribution = Object.keys(menuTeamGroup).map((key: any) => menuTeamGroup[key]);
-    })
-
     this.socket.emit('refresh-scoreSettings')
     this.socket.on('update-scoreSettings', (lockState: boolean, negPts: boolean, bonuses: boolean, threshold: number, thresholdModifier: number, percentErrorsTiers: number[], bonusWrong: number[]) => {
       this.lockSpeed = lockState
@@ -56,10 +50,6 @@ export class AdminSettingsComponent implements OnInit {
     this._snackBar.open("Data reloaded!", "OK", {
       duration: this.durationInSeconds * 1000
     });
-  }
-
-  onChangeMenuGroup(menuNb: number, round: number, teamGroup: number): void {
-    this.socket.emit('update-menu-team-group', menuNb, round, teamGroup);
   }
 
   onChangeLockSpeed(): void {

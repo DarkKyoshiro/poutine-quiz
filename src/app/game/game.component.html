@@ -4,7 +4,7 @@
 </div>
 
 <!-- After start -->
-<div *ngIf="this.questionID > this.questions.length-1" id="Endgame">
+<div *ngIf="this.questionID > this.questions.length-1 && this.questions.length > 0" id="Endgame">
     <h2>Classement</h2>
     <table>
         <tr>

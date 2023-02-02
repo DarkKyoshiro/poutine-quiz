@@ -42,6 +42,14 @@
         flex-grow: 1;
     }
 
+    .correct {
+        background-color:darkgreen;
+    }
+
+    .incorrect {
+        background-color:darkred;
+    }
+
     .mat-card-header {
         button {
             font-size: 4vw;

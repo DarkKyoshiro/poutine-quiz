@@ -3,21 +3,21 @@
         <th>Question n°</th>
         <th>Réponse</th>
         <th>Points</th>
-        <th>Bonus/Malus</th>
-        <th>Points pour mauvaises réponses</th>
+        <th>Bonus / Malus</th>
+        <th>Bonus mauvaises réponses</th>
         <th>Total</th>
     </tr>
 
     <tr *ngFor="let score of scores">
         <td>{{score.questionID}}</td>
-        <td>
+        <td [ngClass]="score.corrected > 0 ? 'green' : (score.corrected === 0 ? 'red' : '')">
             <mat-icon *ngIf="score.corrected === -1">question_mark</mat-icon>
-            <mat-icon style="color: red;" *ngIf="score.corrected === 0">close</mat-icon>
-            <mat-icon style="color: green;" *ngIf="score.corrected === 1">check</mat-icon>
+            <mat-icon *ngIf="score.corrected === 0">close</mat-icon>
+            <mat-icon *ngIf="score.corrected === 1">check</mat-icon>
         </td>
         <td>{{score.points}}</td>
         <td>{{score.bonusManual}}</td>
         <td>{{score.bonusAuto}}</td>
-        <td>{{score.total}}</td>
+        <td>{{score.total}} <mat-icon style="color:red;" *ngIf="score.points + score.bonusManual + score.bonusAuto < 0">trending_down</mat-icon><mat-icon style="color:yellow;" *ngIf="score.points + score.bonusManual + score.bonusAuto === 0">trending_flat</mat-icon><mat-icon style="color:green;" *ngIf="score.points + score.bonusManual + score.bonusAuto > 0">trending_up</mat-icon></td>
     </tr>
 </table>

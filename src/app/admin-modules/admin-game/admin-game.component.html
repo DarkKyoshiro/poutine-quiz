@@ -68,7 +68,7 @@
 </div>
 
 <div id="answers">
-    <mat-card class="answer-card" *ngFor="let answer of getAnswers(this.questionID); let i=index">
+    <mat-card class="answer-card" *ngFor="let answer of getAnswers(this.questionID); let i=index" [ngClass]="answer.correct > 0 ? 'correct' : (answer.correct === 0 ? 'incorrect' : '')">
         <mat-card-header>
             <button mat-mini-fab mat-card-avatar [matBadge]="answer.bonusWrongAnswers" [matBadgeHidden]="answer.bonusWrongAnswers<=0" matBadgeOverlap="true">{{this.getTeamScore(answer.teamName)}}</button>
             <mat-card-title [matBadge]="getRanks(answer.teamName)" matBadgeOverlap="false" matBadgePosition="after">

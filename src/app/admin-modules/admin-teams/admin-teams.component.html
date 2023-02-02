@@ -1,50 +1,92 @@
-<table>
-    <tr>
-        <th>Status</th>
-        <th>Actions</th>
-        <th>Équipe</th>
-        <th>Score</th>
-        <th>Groupe round 1</th>
-        <th>Groupe round 2</th>
-    </tr>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Team Management
+            </mat-panel-title>
+        </mat-expansion-panel-header>
 
-    <tr *ngFor="let team of teams">
-        <td>
-            <mat-icon *ngIf="team.logged">wifi</mat-icon>
-            <mat-icon *ngIf="!team.logged">wifi_off</mat-icon>
-        </td>
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>Actions</th>
+                <th>Équipe</th>
+                <th>Score</th>
+                <th>Groupe round 1</th>
+                <th>Groupe round 2</th>
+            </tr>
 
-        <td>
-            <button mat-icon-button aria-label="Disconnect team" (click)="onDisconnect(team.name)" *ngIf="team.logged">
-                <mat-icon>signal_wifi_statusbar_null</mat-icon>
-            </button>
-            <button mat-icon-button aria-label="Delete team" (click)="onEject(team.name)">
-                <mat-icon>signal_wifi_off</mat-icon>
-            </button>
-        </td>
+            <tr *ngFor="let team of teams">
+                <td>
+                    <mat-icon *ngIf="team.logged">wifi</mat-icon>
+                    <mat-icon *ngIf="!team.logged">wifi_off</mat-icon>
+                </td>
 
-        <td>{{team.name}}</td>
+                <td>
+                    <button mat-icon-button aria-label="Disconnect team" (click)="onDisconnect(team.name)" *ngIf="team.logged">
+                        <mat-icon>signal_wifi_statusbar_null</mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="Delete team" (click)="onEject(team.name)">
+                        <mat-icon>signal_wifi_off</mat-icon>
+                    </button>
+                </td>
 
-        <td>{{team.score}}</td>
+                <td>{{team.name}}</td>
 
-        <td>
-            <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(1, team.name, team.group1 - 1)">
-                <mat-icon>do_not_disturb_on</mat-icon>
-            </button>
-            {{team.group1}}
-            <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(1, team.name, team.group1 + 1)">
-                <mat-icon>add_circle</mat-icon>
-            </button>
-        </td>
+                <td>{{team.score}}</td>
 
-        <td>
-            <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(2, team.name, team.group2 - 1)">
-                <mat-icon>do_not_disturb_on</mat-icon>
-            </button>
-            {{team.group2}}
-            <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(2, team.name, team.group2 + 1)">
-                <mat-icon>add_circle</mat-icon>
-            </button>
-        </td>
-    </tr>
-</table>
+                <td>
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(1, team.name, team.group1 - 1)">
+                        <mat-icon>do_not_disturb_on</mat-icon>
+                    </button>
+                    {{team.group1}}
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(1, team.name, team.group1 + 1)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </td>
+
+                <td>
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeGroup(2, team.name, team.group2 - 1)">
+                        <mat-icon>do_not_disturb_on</mat-icon>
+                    </button>
+                    {{team.group2}}
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeGroup(2, team.name, team.group2 + 1)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
+
+    
+    <mat-expansion-panel *ngIf="menuDistribution.length !== 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Menus attribution
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <table>
+            <tr>
+                <th>Round #</th>
+                <th>Groupe du menu</th>
+                <th>Groupe d'équipe</th>
+                <th>Management</th>
+            </tr>
+
+            <tr *ngFor="let menu of menuDistribution">
+                <td>{{menu.menuNb}}</td>
+                <td>{{menu.round}}</td>
+                <td>{{menu.teamGroup}}</td>
+                <td>
+                    <button mat-icon-button aria-label="Previous group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup - 1)">
+                        <mat-icon>do_not_disturb_on</mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="Next group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup + 1)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
+</mat-accordion>
