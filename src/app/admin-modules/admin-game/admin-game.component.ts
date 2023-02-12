@@ -78,7 +78,7 @@ export class AdminGameComponent implements OnInit {
   }
 
   onNext(id: number): void {
-    if(id > 1 && !this.isCorrected()) {
+    if(id > 1 && !this.isCorrected() && this.questions[this.questionID-1].locked) {
       const dialogConfig = new MatDialogConfig();
 
       dialogConfig.disableClose = true;
