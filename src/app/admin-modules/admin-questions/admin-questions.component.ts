@@ -13,6 +13,7 @@ export class AdminQuestionsComponent implements OnInit {
   questions: Question[] = [];
   durationInSeconds: number = 2;
   resetCheck: boolean = false;
+  questionID: number = 0;
 
   constructor(private socket: Socket, 
     private _snackBar: MatSnackBar) { }
@@ -27,11 +28,20 @@ export class AdminQuestionsComponent implements OnInit {
     })
   }
 
-  onQuestion(id: number): void {
+  onActivate(id: number): void {
     this.socket.emit('go-to-question', this.questions[id-1].id)
     this._snackBar.open(this.questions[id-1].type + " #" + this.questions[id-1].id + " loaded", "OK", {
       duration: this.durationInSeconds * 1000
     });
+    this.questionID = 0
+  }
+
+  onClose(): void {
+    this.questionID = 0
+  }
+
+  onQuestion(id: number): void {
+    this.questionID === id ? this.questionID = 0 : this.questionID = id;
   }
 
   onResetQuiz(): void {

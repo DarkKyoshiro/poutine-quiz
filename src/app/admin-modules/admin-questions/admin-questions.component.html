@@ -20,6 +20,32 @@
 </p>
 
 
+<mat-card class="example-card" *ngIf="questions && questionID > 0">
+    <mat-card-header>
+        <mat-card-title>Round #{{questions[questionID - 1].round}} - {{questions[questionID - 1].type}} #{{questions[questionID - 1].id}}</mat-card-title>
+        <mat-card-subtitle><span *ngIf="questions[questionID - 1].group">Group #{{questions[questionID - 1].group}} - </span>{{questions[questionID - 1].points}} Frite(s)</mat-card-subtitle>
+        <div>
+            <button mat-button (click)="onActivate(questions[questionID - 1].id)">ACTIVER</button>
+            <button mat-button (click)="onClose()">FERMER</button>
+        </div>
+        
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{questions[questionID - 1].question}}</p>
+        <p class="comment" *ngIf="questions[questionID - 1].questionComment">{{questions[questionID - 1].questionComment}}</p>
+
+        <ng-container *ngIf="questions[questionID - 1].propositionsDetailed && questions[questionID - 1].propositionsShort">
+            <mat-divider></mat-divider>
+            <p class="comment" *ngFor="let proposition of questions[questionID - 1].propositionsDetailed; let i=index">{{proposition}}</p>
+        </ng-container>
+
+        <mat-divider></mat-divider>
+        <p>{{questions[questionID - 1].answer}}</p>
+        <p class="comment" *ngIf="questions[questionID - 1].answerComment">{{questions[questionID - 1].answerComment}}</p>
+    </mat-card-content>
+</mat-card>
+
+
 <button mat-mini-fab color="primary" aria-label="Reset Quiz" (click)="onResetQuiz()" *ngIf="this.questions.length > 0 && !resetCheck">
     <mat-icon>replay</mat-icon>
 </button>

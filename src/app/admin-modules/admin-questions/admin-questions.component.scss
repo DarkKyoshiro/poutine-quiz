@@ -1,3 +1,17 @@
+p {
+    white-space: pre-wrap;
+}
+
+.comment {
+    margin-bottom: 10px;
+    font-size: 4vw;
+}
+@media screen and (min-width: 750px) {
+    .comment {
+       font-size: 30px;
+    }
+}
+
 .mat-button-toggle-group {
     border-radius: 0px 0px 4px 4px;
     margin-bottom: 10px;
@@ -30,5 +44,15 @@ img {
 @media screen and (min-width: 750px) {
     .mat-mini-fab {
         font-size: 30px;
+    }
+}
+
+.mat-card-header {
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
     }
 }
