@@ -265,4 +265,46 @@ export class AdminGameComponent implements OnInit {
   onShowAnswer(): void {
     this.socket.emit('show-answer');
   }
+
+  //Get fastest answer time
+  getFastestTime(): number {
+    let timestamp: number = 9999999999999;
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID && answer.timestamp < timestamp) {
+        timestamp = answer.timestamp;
+      }
+    })
+
+    return timestamp;
+  }
+
+  getTimeString(): string {
+    let timeString: string = "";
+    let minutes: number = 0;
+    let seconds: number = 0;
+    let fastestTime: number = this.getFastestTime();
+    let answers: Answer[] = [];
+
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID) {
+        answers.push(answer);
+      }
+    })
+    answers = answers.sort((a, b) => b.timestamp < a.timestamp ? 1 : -1);
+
+    answers.forEach((answer) => {
+      minutes = Math.trunc((answer.timestamp - fastestTime) / (1000 * 60));
+      seconds = Math.trunc(((answer.timestamp - fastestTime) / (1000) - minutes * 60)*100)/100;
+
+      if(minutes === 0) {
+        timeString = timeString + answer.teamName + ": " + seconds + "sec";
+      } else {
+        timeString = timeString + answer.teamName + ": " + minutes + "mins " + seconds + "sec";
+      }
+
+      answer.correct ? timeString = timeString + " VRAI\n" : timeString = timeString + " FAUX\n"
+    })
+    
+    return timeString;
+  }
 }

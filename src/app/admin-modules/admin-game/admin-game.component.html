@@ -62,6 +62,9 @@
                 <mat-divider></mat-divider>
                 <p>{{questions[this.questionID - 1].answer}}</p>
                 <p class="comment">{{questions[this.questionID - 1].answerComment}}</p>
+
+                <mat-divider></mat-divider>
+                <p class="comment">{{getTimeString()}}</p>
             </mat-card-content>
         </ng-container>
     </mat-card>

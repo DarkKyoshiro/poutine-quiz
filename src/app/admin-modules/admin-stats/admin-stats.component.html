@@ -1,38 +1,61 @@
 <!-- <p><mat-slide-toggle [(ngModel)]="showDetails" (change)="onChangeDetailsDisplay()">Show details</mat-slide-toggle></p> -->
-<table>
-    <tr>
-        <th rowspan="2">Question</th>
-        <th class="separator-left" [attr.colspan]="showDetails ? 6 : 2" *ngFor="let team of detailedScores.get(1)">{{team.team}}</th>
-        <th class="separator-left" rowspan="2">Question</th>
-    </tr>
-    <tr>
-        <ng-container *ngFor="let team of detailedScores.get(1)">
-            <th class="separator-left" *ngIf="showDetails"><mat-icon>question_mark</mat-icon></th>
-            <th *ngIf="showDetails"><mat-icon>timeline</mat-icon></th>
-            <th *ngIf="showDetails"><mat-icon>exposure_plus_1</mat-icon></th>
-            <th *ngIf="showDetails"><mat-icon>rule</mat-icon></th>
-            <th colspan="2" class="separator-left"><mat-icon>functions</mat-icon></th>
-        </ng-container>
-    </tr>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Stats
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Le plus de bonnes réponses: {{mostCorrectAnswers()}}</p>
+        <p>Le plus de mauvaises réponses: {{mostIncorrectAnswers()}}</p>
+        <p>Réponds le plus rapidement (moyenne): {{fastestTeamAverage()}}</p>
+        <p>Prends le plus son temps (moyenne): {{slowestTeamAverage()}}</p>
+        <p>Réponds le plus rapidement (addition): {{fastestTeamAdded()}}</p>
+        <p>Prends le plus son temps (addition): {{slowestTeamAdded()}}</p>
+    </mat-expansion-panel>
 
-    <tr *ngFor="let fullScore of detailedScores | keyvalue">
-        <td>{{fullScore.key}}</td>
-        <ng-container *ngFor="let score of fullScore.value">
-            <td class="separator-left" [ngClass]="score.isCorrected > 0 ? 'green' : (score.isCorrected === 0 ? 'red' : '')" *ngIf="showDetails">
-                <mat-icon *ngIf="score.isCorrected === -1">question_mark</mat-icon>
-                <mat-icon *ngIf="score.isCorrected === 0">close</mat-icon>
-                <mat-icon *ngIf="score.isCorrected === 1">check</mat-icon>
-            </td>
-            <td [ngClass]="score.points > 0 ? 'green' : (score.points < 0 ? 'red' : '')" *ngIf="showDetails">{{score.points}}</td>
-            <td [ngClass]="score.bonus > 0 ? 'green' : (score.bonus < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonus}}</td>
-            <td [ngClass]="score.bonusWrongAnswers > 0 ? 'green' : (score.bonusWrongAnswers < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonusWrongAnswers}}</td>
-            <td class="separator-left">{{score.total}}</td>
-            <td>
-                <mat-icon style="color:red;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers < 0">trending_down</mat-icon>
-                <mat-icon style="color:yellow;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers === 0">trending_flat</mat-icon>
-                <mat-icon style="color:green;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers > 0">trending_up</mat-icon>
-            </td>
-        </ng-container>
-        <td class="separator-left">{{fullScore.key}}</td>
-    </tr>
-</table>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Detailed scores
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table>
+            <tr>
+                <th rowspan="2">Question</th>
+                <th class="separator-left" [attr.colspan]="showDetails ? 6 : 2" *ngFor="let team of detailedScores.get(1)">{{team.team}}</th>
+                <th class="separator-left" rowspan="2">Question</th>
+            </tr>
+            <tr>
+                <ng-container *ngFor="let team of detailedScores.get(1)">
+                    <th class="separator-left" *ngIf="showDetails"><mat-icon>question_mark</mat-icon></th>
+                    <th *ngIf="showDetails"><mat-icon>timeline</mat-icon></th>
+                    <th *ngIf="showDetails"><mat-icon>exposure_plus_1</mat-icon></th>
+                    <th *ngIf="showDetails"><mat-icon>rule</mat-icon></th>
+                    <th colspan="2" class="separator-left"><mat-icon>functions</mat-icon></th>
+                </ng-container>
+            </tr>
+        
+            <tr *ngFor="let fullScore of detailedScores | keyvalue">
+                <td>{{fullScore.key}}</td>
+                <ng-container *ngFor="let score of fullScore.value">
+                    <td class="separator-left" [ngClass]="score.isCorrected > 0 ? 'green' : (score.isCorrected === 0 ? 'red' : '')" *ngIf="showDetails">
+                        <mat-icon *ngIf="score.isCorrected === -1">question_mark</mat-icon>
+                        <mat-icon *ngIf="score.isCorrected === 0">close</mat-icon>
+                        <mat-icon *ngIf="score.isCorrected === 1">check</mat-icon>
+                    </td>
+                    <td [ngClass]="score.points > 0 ? 'green' : (score.points < 0 ? 'red' : '')" *ngIf="showDetails">{{score.points}}</td>
+                    <td [ngClass]="score.bonus > 0 ? 'green' : (score.bonus < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonus}}</td>
+                    <td [ngClass]="score.bonusWrongAnswers > 0 ? 'green' : (score.bonusWrongAnswers < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonusWrongAnswers}}</td>
+                    <td class="separator-left">{{score.total}}</td>
+                    <td>
+                        <mat-icon style="color:red;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers < 0">trending_down</mat-icon>
+                        <mat-icon style="color:yellow;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers === 0">trending_flat</mat-icon>
+                        <mat-icon style="color:green;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers > 0">trending_up</mat-icon>
+                    </td>
+                </ng-container>
+                <td class="separator-left">{{fullScore.key}}</td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
+</mat-accordion>
