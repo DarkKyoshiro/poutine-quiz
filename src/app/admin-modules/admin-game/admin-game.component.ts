@@ -278,8 +278,9 @@ export class AdminGameComponent implements OnInit {
     return timestamp;
   }
 
-  getTimeString(): string {
-    let timeString: string = "";
+  getTimeString(): {result: string; correct: number;}[] {
+    let timeStrings: {result: string; correct: number;}[] = [];
+    let tempString: string = "";
     let minutes: number = 0;
     let seconds: number = 0;
     let fastestTime: number = this.getFastestTime();
@@ -296,15 +297,11 @@ export class AdminGameComponent implements OnInit {
       minutes = Math.trunc((answer.timestamp - fastestTime) / (1000 * 60));
       seconds = Math.trunc(((answer.timestamp - fastestTime) / (1000) - minutes * 60)*100)/100;
 
-      if(minutes === 0) {
-        timeString = timeString + answer.teamName + ": " + seconds + "sec";
-      } else {
-        timeString = timeString + answer.teamName + ": " + minutes + "mins " + seconds + "sec";
-      }
-
-      answer.correct ? timeString = timeString + " VRAI\n" : timeString = timeString + " FAUX\n"
+      minutes === 0 ? tempString = answer.teamName + ": " + seconds + "sec" : tempString = answer.teamName + ": " + minutes + "mins " + seconds + "sec";
+      
+      timeStrings.push({ result: tempString, correct: answer.correct})
     })
     
-    return timeString;
+    return timeStrings;
   }
 }

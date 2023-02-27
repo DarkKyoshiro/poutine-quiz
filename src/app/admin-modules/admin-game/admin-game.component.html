@@ -64,7 +64,14 @@
                 <p class="comment">{{questions[this.questionID - 1].answerComment}}</p>
 
                 <mat-divider></mat-divider>
-                <p class="comment">{{getTimeString()}}</p>
+                <div class="speedResults">
+                    <p class="comment" *ngFor="let result of getTimeString(); index as i" [ngClass]="result.correct > 0 ? 'green' : (result.correct === 0 ? 'red' : 'yellow')">
+                        <mat-icon *ngIf="result.correct === 0">close</mat-icon>
+                        <mat-icon *ngIf="result.correct < 0">question_mark</mat-icon>
+                        <mat-icon *ngIf="result.correct > 0">check</mat-icon>
+                        <span>{{i + 1}}. {{result.result}}</span>
+                    </p>
+                </div>
             </mat-card-content>
         </ng-container>
     </mat-card>

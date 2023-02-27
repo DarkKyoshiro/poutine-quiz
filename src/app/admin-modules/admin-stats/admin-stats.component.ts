@@ -130,10 +130,39 @@ export class AdminStatsComponent implements OnInit {
 
     this.answers.forEach(answer => {
       if(!teamsAverage.has(answer.teamName) && !teamsNumber.has(answer.teamName)) { 
-        teamsAverage.set(answer.teamName, 0) 
+        teamsAverage.set(answer.teamName, 999999999) 
         teamsNumber.set(answer.teamName, 0) 
       }
       if(answer.correct !== -1) {
+        teamsAverage.set(answer.teamName, (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) / (teamsNumber.get(answer.teamName)! + 1))
+        teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
+      }
+    })
+
+    for (let [key, value] of teamsAverage) {
+      if(value < bestScore) { 
+        bestTeam = key
+        bestScore = value 
+      } else if(value === bestScore) { 
+        bestTeam =  bestTeam + ", " + key 
+      }
+    }
+
+    return bestTeam + " (" + Math.trunc(bestScore)/1000 + " sec)";
+  }
+
+  fastestTeamWrongAverage(): string {
+    let teamsAverage = new Map<string, number>()
+    let teamsNumber = new Map<string, number>()
+    let bestTeam: string = "";
+    let bestScore: number = 999999999999;
+
+    this.answers.forEach(answer => {
+      if(!teamsAverage.has(answer.teamName) && !teamsNumber.has(answer.teamName)) { 
+        teamsAverage.set(answer.teamName, 999999999) 
+        teamsNumber.set(answer.teamName, 0) 
+      }
+      if(answer.correct === 0) {
         teamsAverage.set(answer.teamName, (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) / (teamsNumber.get(answer.teamName)! + 1))
         teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
       }
@@ -188,6 +217,28 @@ export class AdminStatsComponent implements OnInit {
     this.answers.forEach(answer => {
       if(!teamsAdded.has(answer.teamName)) { teamsAdded.set(answer.teamName, 0) }
       if(answer.correct !== -1) { teamsAdded.set(answer.teamName, teamsAdded.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) }
+    })
+
+    for (let [key, value] of teamsAdded) {
+      if(value < bestScore) { 
+        bestTeam = key
+        bestScore = value 
+      } else if(value === bestScore) { 
+        bestTeam =  bestTeam + ", " + key 
+      }
+    }
+
+    return bestTeam + " (" + Math.trunc(bestScore)/1000 + " sec)";
+  }
+
+  fastestTeamWrongAdded(): string {
+    let teamsAdded = new Map<string, number>()
+    let bestTeam: string = "";
+    let bestScore: number = 999999999999;
+
+    this.answers.forEach(answer => {
+      if(!teamsAdded.has(answer.teamName)) { teamsAdded.set(answer.teamName, 0) }
+      if(answer.correct === 0) { teamsAdded.set(answer.teamName, teamsAdded.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) }
     })
 
     for (let [key, value] of teamsAdded) {

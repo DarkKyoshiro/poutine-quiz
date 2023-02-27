@@ -30,6 +30,24 @@
     .step {
         font-size: 20px;
     }
+
+    .speedResults {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .yellow {
+        color: yellow;
+    }
 }
 
 #answers {
