@@ -51,7 +51,7 @@
 
         <ng-container *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
             <mat-card-header>
-                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}}</mat-card-subtitle>
+                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}}</mat-card-subtitle>
                 <mat-card-title [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
                     <p>{{questions[this.questionID - 1].question}}</p>
                     <p class="comment">{{questions[this.questionID - 1].questionComment}}</p>

@@ -33,3 +33,40 @@ button {
          font-size: 45px;
       }
   }
+
+#leaderboard {
+    margin-top: 20px;
+}
+
+#scoreTables {
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    table {
+        border: 1px white solid;
+    }
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}

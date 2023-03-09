@@ -304,4 +304,14 @@ export class AdminGameComponent implements OnInit {
     
     return timeStrings;
   }
+
+  getNumberAnswers(): number {
+    let numberAnswers: number = 0;
+
+    this.answers.forEach((answer) => {
+      if(answer.questionID === this.questionID && answer.answer !== "") {numberAnswers++}
+    })
+
+    return numberAnswers
+  }
 }
