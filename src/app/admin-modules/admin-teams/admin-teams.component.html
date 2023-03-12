@@ -75,8 +75,8 @@
             </tr>
 
             <tr *ngFor="let menu of menuDistribution">
-                <td>{{menu.menuNb}}</td>
                 <td>{{menu.round}}</td>
+                <td>{{menu.menuNb}}</td>
                 <td>{{menu.teamGroup}}</td>
                 <td>
                     <button mat-icon-button aria-label="Previous group" (click)="onChangeMenuGroup(menu.menuNb, menu.round, menu.teamGroup - 1)">

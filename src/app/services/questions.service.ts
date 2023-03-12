@@ -247,7 +247,7 @@ export class QuestionsService {
         points: 1,
 
         title: 'Mais c\'est un scandale',
-        question: 'Combien de statuette des oscars ont été volées en 2000 ?',
+        question: 'Combien de statuette des oscars ont été volées en 2000 ? (À 10 près)',
         answer: '55',
         answerComment: '52 statuettes furent retrouvées dans une poubelle à l\'arrière d\'un supermarché par un clochard, qui est donc devenu l\'homme le plus récompensé de l\'histoire des oscars. Deux statuettes n\'ont jamais été retrouvées.',
         
@@ -714,9 +714,9 @@ export class QuestionsService {
         points: 1,
 
         title: 'C\'est normal au Japon!',
-        question: 'V ou F, Les japonais célèbre la fin de la période de la gastro en vénérant une statue géante de crotte doré ?',
-        answer: 'Faux',
-        answerComment: 'mais ils vénèrent une statue de penis rose pour célébrer la fertilité.',
+        question: 'V ou F, Godzilla a la citoyenneté japonaise ?',
+        answer: 'Vrai',
+        answerComment: 'Âgé de 61 ans, ses papiers lui ont été remis en grande pompe par la mairie de Shinjuku en avril 2015. Ainsi, le lézard géant devient également l\'ambassadeur du tourisme de la municipalité de quelques 310.000 habitants.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -732,9 +732,9 @@ export class QuestionsService {
         points: 0,
 
         title: 'C\'est normal au Japon!',
-        question: 'V ou F, Godzilla a la citoyenneté japonaise ? ',
-        answer: 'Vrai',
-        answerComment: 'mais pour 0 frites',
+        question: 'V ou F, Les japonais célèbre la fin de la période de la gastro en vénérant une statue géante de crotte doré ?',
+        answer: 'Faux',
+        answerComment: 'mais ils vénèrent une statue de penis rose pour célébrer la fertilité',
         
         showQuestion: false,
         propositionsStep: 0,

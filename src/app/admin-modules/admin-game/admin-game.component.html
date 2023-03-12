@@ -18,7 +18,7 @@
             </button>
 
             <!-- Steps management -->
-            <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
+            <!-- <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
                 <br>
                 <button mat-icon-button aria-label="Show Question" (click)="onShowQuestion()">
                     <mat-icon *ngIf="questions[this.questionID-1].showQuestion">hide_source</mat-icon>
@@ -39,7 +39,7 @@
                         <mat-icon *ngIf="!questions[this.questionID-1].showAnswer">done_all</mat-icon>
                     </button>
                 </ng-container>
-            </ng-container>
+            </ng-container> -->
             
             
             <mat-progress-bar
@@ -53,10 +53,15 @@
             <mat-card-header>
                 <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}}</mat-card-subtitle>
                 <mat-card-title [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
+                    <p class="comment"><ng-container *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i"><ng-container *ngIf="i>0">, </ng-container><ng-container *ngIf="i + 1 === questions[this.questionID - 1].propositionsDetailed?.length">ou </ng-container>{{proposition}}</ng-container></p>
                     <p>{{questions[this.questionID - 1].question}}</p>
                     <p class="comment">{{questions[this.questionID - 1].questionComment}}</p>
                 </mat-card-title>
             </mat-card-header>
+            
+            <mat-card-content *ngIf="questions[this.questionID - 1].type === 'Nugget'" style="white-space: pre-wrap">
+                <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{i+1}}. {{proposition}}</p>
+            </mat-card-content>
 
             <mat-card-content *ngIf="questions[this.questionID - 1].locked === true" style="white-space: pre-wrap">
                 <mat-divider></mat-divider>
@@ -81,7 +86,7 @@
     <mat-card class="answer-card" *ngFor="let answer of getAnswers(this.questionID); let i=index" [ngClass]="answer.correct > 0 ? 'correct' : (answer.correct === 0 ? 'incorrect' : (isMenuActive(answer.teamName) ? 'menu' : ''))">
         <mat-card-header>
             <button mat-mini-fab mat-card-avatar [matBadge]="answer.bonusWrongAnswers" [matBadgeHidden]="answer.bonusWrongAnswers<=0" matBadgeOverlap="true">{{this.getTeamScore(answer.teamName)}}</button>
-            <mat-card-title [matBadge]="getRanks(answer.teamName)" matBadgeOverlap="false" matBadgePosition="after">
+            <mat-card-title> <!-- [matBadge]="getRanks(answer.teamName)" matBadgeOverlap="false" matBadgePosition="after" -->
                 <p>{{answer.teamName}}</p>
             </mat-card-title>
         </mat-card-header>
