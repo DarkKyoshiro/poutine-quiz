@@ -518,7 +518,7 @@ export class QuestionsService {
         points: 1,
 
         question: 'Combien de calories brulerait-on si on se frappait la tete contre un mur pendant 1h ?',
-        propositionsDetailed: ['100 calories, ou autant que d\'avoir un fou rire pendant 30-40 min', '150 calories ou autant que de se brosser les dents pendant 45 min', '200 calories ou autant qu\'un baisé de 1h30', '0 calories, ou autant que d\'écouter un discours de Donald Trump pendant trop longtemps'],
+        propositionsDetailed: ['100 calories, ou autant que d\'avoir un fou rire pendant 30-40 min', '150 calories ou autant que de se brosser les dents pendant 45 min', '200 calories ou autant que de rouler des pelles pendant 1h30', '0 calories, ou autant que d\'écouter un discours de Donald Trump pendant trop longtemps'],
         propositionsShort: ['A', 'B', 'C', 'D'],
         answer: 'B. 150 calories',
         
@@ -678,9 +678,8 @@ export class QuestionsService {
         points: 1,
 
         title: 'C\'est normal au Japon!',
-        question: 'D\'ailleurs, combien de candidat ont réussi vaincre le fameux compte Takeshi durant toute la durée de l\'émission ? (À 3 près)',
-        answer: '8',
-        answerComment: 'Sur plus de 130 épisodes',
+        question: 'V ou F, il existe un jeu tv où les candidats doivent chanter une chanson sans se laisser déconcentrer par une hôtesse particulièrement charmante et entreprenante ?',
+        answer: 'V',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -696,9 +695,9 @@ export class QuestionsService {
         points: 1,
 
         title: 'C\'est normal au Japon!',
-        question: 'V ou F, les toilettes japonaises peuvent avoir une option pour jouer un bruit de fond vous permettant de vous lâcher sans craindre d\'être entendu ? ',
-        answer: 'Vrai',
-        answerComment: 'On y retrouve aussi une fonction siège chauffant, massage par jet d\'eau pulsé, séchage par ventilation, et bien d\'autres',
+        question: 'D\'après une publicité pour un opérateur mobile, en combien de temps leur machine peut faire des raviolis ? (À 10 secondes près)',
+        answer: '2-3 secondes',
+        answerComment: 'La pub est une parodie pour vanter la rapidité du réseau mobile de l\'opérateur',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -714,9 +713,8 @@ export class QuestionsService {
         points: 1,
 
         title: 'C\'est normal au Japon!',
-        question: 'V ou F, Godzilla a la citoyenneté japonaise ?',
-        answer: 'Vrai',
-        answerComment: 'Âgé de 61 ans, ses papiers lui ont été remis en grande pompe par la mairie de Shinjuku en avril 2015. Ainsi, le lézard géant devient également l\'ambassadeur du tourisme de la municipalité de quelques 310.000 habitants.',
+        question: 'Quel produit est vendue par cette pub ?',
+        answer: 'Du Lait',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -750,8 +748,9 @@ export class QuestionsService {
         points: 1,
 
         title: 'America, F*** Yeah!!',
-        question: 'V ou F, un homme a tenté de braquer une banque en utilisant un avocat comme arme ?',
+        question: 'V ou F, il est légal pour un enfant de fumer une cigarette ?',
         answer: 'Vrai',
+        answerComment: 'Il est cependant illégal d\'en vendre avant les 21 ans',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -801,8 +800,8 @@ export class QuestionsService {
         points: 1,
 
         title: 'America, F*** Yeah!!',
-        question: 'Pourquoi Joshua James a tiré plusieurs fois sur une voiture en marche ? (Heureusement sans faire de victimes)',
-        answer: 'Parce qu\'il pensait que les conducteurs était des Aliens',
+        question: 'Dans Inglorious Basterds, que se passe-t\'il pendant la projection du film de propagande «Stolz der Nation» (Nation\'s Pride) ?',
+        answer: 'Hitler et Goebbels sont tués, le cinéma est incendié, et beaucoup de Nazis sont tués dans l\'incendie, un beau moment America Fuck Yeah',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -986,7 +985,7 @@ export class QuestionsService {
         round: 3,
         points: 0,
 
-        question: '1. V ou F, D\'après Astérix et les indiens, les romains pensent que la terre est plate ?\n\n2. Diriez-vous qu\'Astérix a un problème de dépendance à la potion magique ?\n\n3. Alors, il est frais ou non ce poisson ?\n\n4. V ou F, Panoramix utilise des cubes de bouillon pour donner du gout à sa potion magique ?\n\n5. En quelle année a eu lieu de bataille de Gergovie ? En chiffre romain bien sur, si vous ne savez pas dites LII av JC\n\n6. Vous êtes plus Choucroutgarnix ou Tartifletix ?\n\n7. Si la Grande Frite était gauloise, combien de sanglier mangerait-elle à chaque buffet ?\n\n8. V ou F, dans les années 80 on pouvait suivre les aventures d\'un autre héro gaulois, le célèbre Agencetourix ?\n\n9. Pensez-vous que Scribe soit une bonne situation ?\n\n10. Pensez vous voir Astérix et Obélix l\'empire du milieu au cinéma quand il sera sorti ?',
+        question: '1. Avez-vous déjà vu un cycliste respecter un feu rouge ?\n\n2. À qui donneriez vous l\'Oscar de la meilleure patate frite ?\n\n3. D\'après le film, À l\'ouest rien de nouveau. Mais qu\'en est-il de l\'Est ?\n\n4. En terme d\'ambiance, vous préférez la gilfe de Will Smith ou le coup de boule de Zizou ?\n\n5. V ou F, après avatar dans la forêt et avatar 2 dans l\'eau, avatar 3 verra la nation du feu passer à l\'attaque et Jack Sully qui va disparaitre pendant 100 ans avant d\'être retrouvé par deux gamins ?\n\n6. Vous préférez siffler une chanson ou un fut de bière ?\n\n7. V ou F, le film nominé en 2022 "Don\'t look up" raconte l\'histoire surréaliste d\'un homme qui refuse de regarde le film Up ?\n\n8. À votre avis, est-ce que la nommination du film Dune a eu un impact sur le nombre de visite de la dune du pilat près de Bordeaux ?\n\n9. Dans le film Spider-Man No way Home, combien d\'arraignées faisaient partis des figurants ?\n\n10. V ou F, tous les ans, des centaines de noeud papillons migrent vers la cérémonie des oscars afin de se reproduire ?',
         answer: 'NA',
         
         showQuestion: false,
