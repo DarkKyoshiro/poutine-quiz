@@ -88,3 +88,14 @@ table td, th{
 .material-icons {
   line-height: 1.4;
 }
+
+div.Stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5vw; 
+  
+  .material-icons {
+    line-height: 1.0;
+  }
+}

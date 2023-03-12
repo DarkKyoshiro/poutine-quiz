@@ -6,16 +6,54 @@
                 Stats
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Le plus de bonnes réponses: {{mostCorrectAnswers()}}</p>
-        <p>Le plus de mauvaises réponses: {{mostIncorrectAnswers()}}</p>
-        <br>
-        <p>Réponds le plus rapidement (moyenne): {{fastestTeamAverage()}}</p>
-        <p>Réponds faux le plus rapidement (moyenne): {{fastestTeamWrongAverage()}}</p>
-        <p>Prends le plus son temps (moyenne): {{slowestTeamAverage()}}</p>
-        <br>
-        <p>Réponds le plus rapidement (addition): {{fastestTeamAdded()}}</p>
-        <p>Réponds faux le plus rapidement (addition): {{fastestTeamWrongAdded()}}</p>
-        <p>Prends le plus son temps (addition): {{slowestTeamAdded()}}</p>
+
+        <h4>Most answers</h4>
+        <div class="Stats">
+            <p>
+                <mat-icon>check</mat-icon><br>
+                {{mostCorrectAnswers()}}
+            </p>
+            <p>
+                <mat-icon>close</mat-icon><br>
+                {{mostIncorrectAnswers()}}
+            </p>
+        </div>
+
+        <mat-divider></mat-divider>
+        
+        <h4>Average</h4>
+        <div class="Stats">
+            <p>
+                <mat-icon>fast_forward</mat-icon><br>
+                {{fastestTeamAverage()}}
+            </p>
+            <p>
+                <mat-icon>close</mat-icon><mat-icon>fast_forward</mat-icon><br>
+                {{fastestTeamWrongAverage()}}
+            </p>
+            <p>
+                <mat-icon>front_hand</mat-icon><br>
+                {{slowestTeamAverage()}}
+            </p>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h4>Accumulated</h4>
+        <div class="Stats">
+            <p>
+                <mat-icon>fast_forward</mat-icon><br>
+                {{fastestTeamAdded()}}
+            </p>
+            <p>
+                <mat-icon>close</mat-icon><mat-icon>fast_forward</mat-icon><br>
+                {{fastestTeamWrongAdded()}}
+            </p>
+            <p>
+                <mat-icon>front_hand</mat-icon><br>
+                {{slowestTeamAdded()}}
+            </p>
+        </div>
     </mat-expansion-panel>
 
     <mat-expansion-panel>
