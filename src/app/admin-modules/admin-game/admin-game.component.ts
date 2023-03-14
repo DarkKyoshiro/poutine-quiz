@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Socket } from 'ngx-socket-io';
 import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
 import { Answer } from 'src/app/models/answer.model';
@@ -19,10 +20,13 @@ export class AdminGameComponent implements OnInit {
   teams: Team[] = [];
   answers: Answer[] = [];
   menuDistribution: MenuDistribution[] = [];
+  durationInSeconds: number = 5;
+  divider: number = 3;
 
   constructor(private socket: Socket, 
     private questionsService: QuestionsService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog, 
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     //------------------------------------------------------------------------------------
@@ -64,6 +68,12 @@ export class AdminGameComponent implements OnInit {
       this.answers = data;
       // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
+
+      if(this.getNumberAnswers() >= this.teams.length / this.divider  && this.getNumberAnswers() - 1 < this.teams.length / 3  && (this.questions[this.questionID - 1].type === 'Addition' || this.questions[this.questionID - 1].type === 'SelOuPoivre')) {
+        this._snackBar.open("Au moins un tier des équipes ont répondus. Vous pouvez arrêter ici.", "OK", {
+          duration: this.durationInSeconds * 1000
+        });
+      }
     })
   }
 

@@ -469,7 +469,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Quel honneur',
-        question: 'Après Million Dollar Baby, Chariots of Fire, Rocky ou encore The Fighter, il était temps que l\'on s\'intéresse au Tennis, et quel meilleur rôle que ce rôle de père et de coach. Un script de 78 pages pour un plan de 78 pages',
+        question: 'Après Million Dollar Baby, Chariots of Fire, Rocky ou encore The Fighter, il était temps que l\'on s\'intéresse au Tennis, et quel meilleur rôle que ce rôle de père et de coach de ce duo de tenniswomen légendaire. Un script de 78 pages pour un plan de 78 pages',
         answer: 'Will Smith dans King Richard',
         
         showQuestion: false,
@@ -885,7 +885,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Personnalité multiple',
-        question: 'Alors lui il joue le rôle d\'un animateur radio pendant la guerre du Vietnam qui raconte l\'histoire d\'un professeur de littérature aux méthodes pédagogiques plutôt originales. Ce professeur est ami avec le psychologue Sean Maguire qui suit un jeune homme brillant mais en difficulté. Ce jeune homme est aidé par un Génie au pouvoirs cosmiques phénoménaux dans un vrai mouchoir de poche.',
+        question: 'Alors lui il joue le rôle d\'un animateur radio pendant la guerre du Vietnam qui raconte l\'histoire d\'un professeur de littérature aux méthodes pédagogiques plutôt originales. Ce professeur est ami avec le psychologue Sean Maguire qui suit un jeune homme brillant mais en difficulté. Ce jeune homme est aidé par un Génie au pouvoirs cosmiques phénoménaux dans un vrai mouchoir de poche qui l\'aide a surmonté son traumatisme d\'enfance et à trouver le bonheur.',
         answer: 'Robin Williams',
         answerComment: '(Good Morning Vietnam, Le cercle des poètes disparus, good will hunting, Aladdin)',
         
@@ -902,7 +902,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Personnalité multiple',
-        question: 'Après avoir quitté son mari et son fils pour poursuivre sa carrière avant de le regretter et revenir réclamer la garde du fils qu\'elle avait pourtant abandonné. Ce que personne ne savait, c\'est que cette femme est une survivante de l\'holocauste qui doit faire un choix déchirant pour sauver la vie d\'un de ses enfants. Soit devenir une éditrice tyrannique d\'un magasine de mode, ou devenir mère célibataire propriétaire d\'un hôtel sur une ile grecque et qui doit faire face à l\'arrivée soudaine de son ancien amant et père de sa fille. ',
+        question: 'Après avoir quitté son mari et son fils pour poursuivre sa carrière, cette femme le regrette rapidement et revient réclamer la garde du fils qu\'elle avait pourtant abandonné. Ce que personne ne savait, c\'est que cette femme est une survivante de l\'holocauste qui a dû faire un choix déchirant pour sauver la vie d\'un de ses enfants. Soit devenir une éditrice tyrannique d\'un magasine de mode, ou devenir mère célibataire propriétaire d\'un hôtel sur une ile grecque et qui doit faire face à l\'arrivée soudaine de son ancien amant et père de sa fille. ',
         answer: 'Meryl Streep',
         answerComment: '(Kramer vs Kramer, Sophie\'s choice, The devil wears prada, Mamma Mia)',
         
@@ -936,7 +936,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Personnalité multiple',
-        question: 'Lorelei Lee, une chanteuse de cabaret blonde et espiègle cherche à épouser un millionnaire. Pour ça elle devient chanteuse de Jazz, mais tombe amoureuse d\'un musicien déguisé en femme. Malheureusement pour lui, elle était tout autant séduisante que manipulatrice et après l\'avoir épousé décida de le tuer à l\'aide d\'un cow-boy qui l\'avait enlevé dans le passé car il pensait que c\'était la femme de sa vie',
+        question: 'Lorelei Lee, une chanteuse de cabaret blonde et espiègle cherche à épouser un millionnaire. Pour ça elle devient chanteuse de Jazz, mais tombe amoureuse d\'un musicien déguisé en femme. Malheureusement pour lui, elle était tout autant séduisante que manipulatrice et après l\'avoir épousé, elle décida de le tuer avec l\'aide d\'un cow-boy qui l\'avait enlevé dans le passé car il pensait que c\'était la femme de sa vie',
         answer: 'Marilyn Monroe',
         answerComment: '(Gentlemen prefers blondes, Some like it hot, Niagara, Bus Stop)',
         
@@ -953,7 +953,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Personnalité multiple',
-        question: 'C\'est l\'histoire d\'une femme forte et indépendante ayant survécu à des extraterrestres mortels, s\'étant battu pour la sauvegarde des gorilles du Rwanda qu\'elle étudie, et ayant affronté le sexisme et la concurrence pour réussir dans le monde de la finance. Les gorilles ne sont pas les seules espèces qu\'elle étudie, elle étudia aussi une espèces humanoïde bleue vivant sur une autre planète tout en ayant un fantôme hantant son appartement, la forçant à appeler une équipe d\'exorcistes modernes',
+        question: 'C\'est l\'histoire d\'une femme forte et indépendante ayant survécu à des extraterrestres mortels, s\'étant battu pour la sauvegarde des gorilles du Rwanda qu\'elle étudie, et ayant affronté le sexisme et la concurrence pour réussir dans le monde de la finance. D\'ailleurs, les gorilles ne sont pas les seules espèces qu\'elle étudie, elle étudia aussi une espèces humanoïde bleue vivant sur une autre planète tout en ayant un fantôme hantant son appartement, la forçant à appeler une équipe d\'exorcistes modernes.',
         answer: 'Sigourney Weavers',
         answerComment: '(Alien, Gorilles dans la brume, Working Girl, Avatar, Ghostbusters)',
         
