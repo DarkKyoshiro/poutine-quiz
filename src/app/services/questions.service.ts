@@ -265,9 +265,9 @@ export class QuestionsService {
         points: 1,
 
         title: 'Ces premières fois dont on se souvient',
-        question: 'Lors de quelle cérémonie le prix du meilleur long métrage international a été remis pour la première fois ? (À 10 ans près)',
-        answer: '29ème',
-        answerComment: 'prix remis à La Strada de Federico Fellini (Gervaise de René Clément était nominé)',
+        question: 'Le Seigneur des Anneaux: Le Retour du Roi est le film le plus récompensé aux Oscars (avec Titanic et Ben Hur). Combien de statuettes le film a remporté ? (À 3 près)',
+        answer: '11',
+        answerComment: 'Meilleur film, Meilleur réalisateur, Meilleur scénario adapté, Meilleure musique de film, Meilleure chanson originale, Meilleurs décors, Meilleurs costumes, Meilleurs effets visuels, Meilleur montage, Meilleur maquillage, et Meilleur mixage de son',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -283,8 +283,9 @@ export class QuestionsService {
         points: 1,
 
         title: 'Ces premières fois dont on se souvient',
-        question: 'En quelle année a été diffusée la cérémonie pour la première fois en couleur ? (À 5 ans près)',
-        answer: '1966 pour la 38ème édition',
+        question: 'Qui a été la première actrice asiatique à remporter l\'Oscar de la Meilleure Actrice ?',
+        answer: 'Michelle Yeoh',
+        answerComment: 'Pour Everything, Everywhere, All at once (le film a aussi remporté Meilleur film, Meilleure réalisation, Meilleur acteur dans un rôle secondaire, Meilleure actrice dans un rôle secondaire, Meilleur scénario original, et Meilleur montage',
         
         showQuestion: false,
         propositionsStep: 0,
