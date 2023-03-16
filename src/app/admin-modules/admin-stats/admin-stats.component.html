@@ -59,6 +59,28 @@
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
+                Classement
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <table>
+            <tr>
+                <th >Rang</th>
+                <th>Équipe</th>
+                <th>Score</th>
+            </tr>
+        
+            <tr *ngFor="let team of this.teams; let i=index">
+                <td>{{getRanks(team.name)}}.</td>
+                <td>{{team.name}}</td>
+                <td>{{team.score}}</td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
+
+    <!-- <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
                 Detailed scores
             </mat-panel-title>
         </mat-expansion-panel-header>
@@ -99,5 +121,5 @@
                 <td class="separator-left">{{fullScore.key}}</td>
             </tr>
         </table>
-    </mat-expansion-panel>
+    </mat-expansion-panel> -->
 </mat-accordion>

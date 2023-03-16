@@ -15,29 +15,29 @@ const app = express();
 
 //For HerokuApp
 //-----------------------------------------------------------------
-mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
-
-app.use(express.static('./dist/client'));
-app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/client/'}
-);
-});
-
-const http = require('http').Server(app);
-//-----------------------------------------------------------------
-
-//For Local server
-//-----------------------------------------------------------------
-// mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequizlocal?retryWrites=true&w=majority',
+// mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
 //   { useNewUrlParser: true,
 //     useUnifiedTopology: true })
 //   .then(() => console.log('Connexion à MongoDB réussie !'))
 //   .catch(() => console.log('Connexion à MongoDB échouée !'));
-// const http = require('http').createServer(app);
+
+// app.use(express.static('./dist/client'));
+// app.get('/*', function(req, res) {
+//   res.sendFile('index.html', {root: 'dist/client/'}
+// );
+// });
+
+// const http = require('http').Server(app);
+//-----------------------------------------------------------------
+
+//For Local server
+//-----------------------------------------------------------------
+mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequizlocal?retryWrites=true&w=majority',
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+const http = require('http').createServer(app);
 //-----------------------------------------------------------------
 
 const io = require('socket.io')(http, {

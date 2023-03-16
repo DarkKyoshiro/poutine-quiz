@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { Answer } from 'src/app/models/answer.model';
+import { Team } from 'src/app/models/team.model';
 
 @Component({
   selector: 'app-admin-stats',
@@ -11,6 +12,7 @@ export class AdminStatsComponent implements OnInit {
   answers: Answer[] = []
   detailedScores = new Map;
   showDetails: boolean = true;
+  teams: Team[] = [];
 
   constructor(private socket: Socket) { }
 
@@ -25,6 +27,13 @@ export class AdminStatsComponent implements OnInit {
       // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
       this.detailedScores = this.createScoringTable()
+    })
+
+    //Teams refreshment
+    this.socket.on('send-teams', (data: any) => {
+      this.teams = Object.keys(data).map(key => data[key]);
+      this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
+      this.teams = this.teams.sort((a, b) => b.score - a.score);
     })
   }
 
@@ -191,7 +200,7 @@ export class AdminStatsComponent implements OnInit {
         teamsAverage.set(answer.teamName, 0) 
         teamsNumber.set(answer.teamName, 0) 
       }
-      if(answer.correct !== -1) {
+      if(answer.correct !== -1 && answer.timestamp !== 1989811953988) {
         teamsAverage.set(answer.teamName, (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) / (teamsNumber.get(answer.teamName)! + 1))
         teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
       }
@@ -260,7 +269,7 @@ export class AdminStatsComponent implements OnInit {
 
     this.answers.forEach(answer => {
       if(!teamsAdded.has(answer.teamName)) { teamsAdded.set(answer.teamName, 0) }
-      if(answer.correct !== -1) { teamsAdded.set(answer.teamName, teamsAdded.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) }
+      if(answer.correct !== -1 && answer.timestamp !== 1989811953988) { teamsAdded.set(answer.teamName, teamsAdded.get(answer.teamName)! + (answer.timestamp - this.getFastestTime(answer.questionID))) }
     })
 
     for (let [key, value] of teamsAdded) {
@@ -273,5 +282,25 @@ export class AdminStatsComponent implements OnInit {
     }
 
     return bestTeam + " (" + Math.trunc(bestScore)/1000 + " sec)";
+  }
+
+  getRanks(teamName: string): number {
+    let teamsArray: number[] = []
+    let sortedArray: number[] = []
+    let rankings: number[] = []
+
+    let i: number = 0
+    let teamIndex: number = 0
+
+    this.teams.forEach(team => {
+      teamsArray.push(team.score)
+      if(team.name === teamName) { teamIndex = i }
+      i++
+    })
+
+    sortedArray = teamsArray.slice().sort((a,b) => { return b-a })
+    rankings = teamsArray.map((v) => { return sortedArray.indexOf(v)+1 })
+
+    return rankings[teamIndex]
   }
 }

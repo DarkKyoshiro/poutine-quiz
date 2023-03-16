@@ -29,8 +29,8 @@ export class AdminTeamsComponent implements OnInit {
     //Teams refreshment
     this.socket.on('send-teams', (data: any) => {
       this.teams = Object.keys(data).map(key => data[key]);
-      this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
-      this.teams = this.teams.sort((a, b) => b.score - a.score);
+      // this.teams = this.teams.sort((a, b) => b.name < a.name ? 1 : -1);
+      // this.teams = this.teams.sort((a, b) => b.score - a.score);
     });
 
     //------------------------------------------------------------------------------------
