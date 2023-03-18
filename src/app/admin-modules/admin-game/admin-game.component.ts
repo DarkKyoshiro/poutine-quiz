@@ -127,6 +127,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
 
   onPrevious(id: number): void {
     if(id >= 0) {
+      this.socket.emit("resetTimer", this.timerDuration)
       this.socket.emit('go-to-question', id);
     }
   }
@@ -148,6 +149,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         data => {
           if(data) {
             if(id <= this.questions.length + 1) {
+              this.socket.emit("resetTimer", this.timerDuration)
               this.socket.emit('go-to-question', id);
             }
           }
@@ -169,6 +171,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         data => {
           if(data) {
             if(id <= this.questions.length + 1) {
+              this.socket.emit("resetTimer", this.timerDuration)
               this.socket.emit('go-to-question', id);
             }
           }
@@ -176,6 +179,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
       )
     }
     else {
+      this.socket.emit("resetTimer", this.timerDuration)
       this.socket.emit('go-to-question', id);
     }
   }
@@ -206,12 +210,45 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     }
   }
 
-  onValidAnswer(teamName: string, questionID: number, answerState: number): void {
-    this.socket.emit('valid-answer', teamName, questionID, answerState)
+  onValidate(): void {
+    this.socket.emit("validate-answers", this.answers)
   }
 
-  onBonus(teamName: string, questionID: number, bonus: number): void {
-    this.socket.emit('bonus-answer', teamName, questionID, bonus)
+  onResetScores(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      text: 'Vous êtes sur le point de remettre les corrections de cette question à zero.'
+    }
+
+    const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if(data) {
+          this.answers.forEach(answer => {
+            if(answer.questionID === this.questionID) {
+              answer.correct = -1
+              answer.bonus = 0
+            }
+          })
+          this.socket.emit("validate-answers", this.answers)
+        }
+      }
+    )
+  }
+
+  onValidAnswer(i: number, answerState: number): void {
+    // this.socket.emit('valid-answer', teamName, questionID, answerState)
+    this.answers[i].correct = answerState
+  }
+
+  onBonus(i: number, bonus: number): void {
+    // this.socket.emit('bonus-answer', teamName, questionID, bonus)
+    this.answers[i].bonus += bonus
   }
 
   onClear(teamName: string, questionID: number): void {
@@ -341,7 +378,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     let answers: Answer[] = [];
 
     this.answers.forEach(answer => {
-      if(answer.questionID === this.questionID) {
+      if(answer.questionID === this.questionID && answer.correct === 1) {
         answers.push(answer);
       }
     })

@@ -6,6 +6,7 @@
 <!-- After start -->
 <div *ngIf="this.questionID > this.questions.length-1 && this.questions.length > 0" id="Endgame">
     <h2>Classement</h2>
+    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
     <table>
         <tr>
             <th>Rang</th>
@@ -18,7 +19,6 @@
             <td>{{team.score}}</td>
         </tr>
     </table>
-    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
 </div>
 
 <!-- Team score -->

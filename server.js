@@ -305,19 +305,19 @@ io.on("connection", socket => {
     if(questions[questionID - 1].locked) {
       questions[questionID - 1].showAnswer = false
       questions[questionID - 1].locked = false
-      answers.forEach(element => {
-        if(element.questionID === questionID) {
-          element.correct = -1
-          element.points = 0
-          element.bonusWrongAnswers = 0
-        }
-      })
+      // answers.forEach(element => {
+      //   if(element.questionID === questionID) {
+      //     element.correct = -1
+      //     element.points = 0
+      //     element.bonusWrongAnswers = 0
+      //   }
+      // })
     } else {
       questions[questionID - 1].locked = true
     }
-    io.emit('send-teams', getScores())
+    // io.emit('send-teams', getScores())
     io.emit('send-questions', questions, menuTeamGroup)
-    io.emit('get-answers', answers)
+    // io.emit('get-answers', answers)
   })
 
   socket.on('update-menu-team-group', (menuNb, round, teamGroup) => {
@@ -336,7 +336,7 @@ io.on("connection", socket => {
     control = false
     answers.forEach(element => {
       if(element.teamName === data.teamName && element.questionID === data.questionID) {
-        if(element.answer !== data.answer) {
+        if(element.answer !== data.answer || element.timestamp !== data.timestamp) {
           element.answer = data.answer
           element.timestamp = data.timestamp
         }
@@ -347,25 +347,32 @@ io.on("connection", socket => {
     io.emit('get-answers', answers)
   })
 
-  socket.on('valid-answer', (teamName, questionID, answerState) => {
-    answers.forEach(element => {
-      if(element.teamName === teamName && element.questionID === questionID) {
-        element.correct = answerState
-      }
-    })
+  socket.on("validate-answers", (data) => {
+    answers = data;
+
     io.emit('send-teams', getScores())
     io.emit('get-answers', answers)
   })
 
-  socket.on('bonus-answer', (teamName, questionID, bonus) => {
-    answers.forEach(element => {
-      if(element.teamName === teamName && element.questionID === questionID) {
-        element.bonus = element.bonus + bonus
-      }
-    })
-    io.emit('send-teams', getScores())
-    io.emit('get-answers', answers)
-  })
+  // socket.on('valid-answer', (teamName, questionID, answerState) => {
+  //   answers.forEach(element => {
+  //     if(element.teamName === teamName && element.questionID === questionID) {
+  //       element.correct = answerState
+  //     }
+  //   })
+  //   io.emit('send-teams', getScores())
+  //   io.emit('get-answers', answers)
+  // })
+
+  // socket.on('bonus-answer', (teamName, questionID, bonus) => {
+  //   answers.forEach(element => {
+  //     if(element.teamName === teamName && element.questionID === questionID) {
+  //       element.bonus = element.bonus + bonus
+  //     }
+  //   })
+  //   io.emit('send-teams', getScores())
+  //   io.emit('get-answers', answers)
+  // })
 
   socket.on('clear-answer', (teamName, questionID) => {
     answers.forEach(element => {

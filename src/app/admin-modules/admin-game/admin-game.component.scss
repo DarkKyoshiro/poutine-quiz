@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    vertical-align: middle;
+}
+
 #question {
     white-space: pre-wrap;
 

@@ -28,7 +28,7 @@ export class GameComponent implements OnInit, OnDestroy {
   control: boolean = false;
   lockSpeed: boolean = true;
   interval$!: Observable<number>;
-  timer: number = 10;
+  timer: number = 30;
   timerActive: boolean = false;
   private destroy$!: Subject<boolean>;
 
@@ -51,8 +51,12 @@ export class GameComponent implements OnInit, OnDestroy {
     this.interval$.pipe(
       takeUntil(this.destroy$)
     ).subscribe(() => {
-      if(this.timerActive && this.timer > 0) { this.timer-- };
-      if(this.timerActive && this.timer === 0) { this.onAnswer('') };
+      if(this.timerActive && this.timer > 0) { 
+        this.timer-- 
+        if(this.timer === 0) { 
+          if(!this.getReponse()) { this.onAnswer('') }
+        };
+      };
     })
 
     //Timer server management
@@ -165,7 +169,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getAnswer(): string {
     let returnedAnswer: string = "Vous n'avez rien répondu encore...";
     this.answers.forEach(element => {
-      if(element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '') {
+      if(this.questions[this.questionID-1].locked && element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '') {
         returnedAnswer = "Vous avez répondu " + element.answer
         if(element.correct === 1) {
           returnedAnswer = returnedAnswer + ' - Correct'
