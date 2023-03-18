@@ -16,6 +16,21 @@
             <button mat-icon-button aria-label="Start quiz" (click)="onStartQuiz()" *ngIf="this.questions.length === 0">
                 <mat-icon>play_arrow</mat-icon>
             </button>
+            <br>
+
+            <h3 [style.color]="timer <= 5 ? 'red' : ''">{{timer}} sec</h3>
+            <button mat-icon-button aria-label="Start timer" (click)="onStartTimer()" *ngIf="this.questions.length > 0 && !this.timerActive">
+                <mat-icon>timer</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Pause timer" (click)="onPauseTimer()" *ngIf="this.questions.length > 0 && this.timerActive">
+                <mat-icon>timer_off</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Reset timer" (click)="onResetTimer()" *ngIf="this.questions.length > 0">
+                <mat-icon>restart_alt</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Extend timer" (click)="onExtendTimer()" *ngIf="this.questions.length > 0">
+                <mat-icon>timer_10_alt_1</mat-icon>
+            </button>
 
             <!-- Steps management -->
             <!-- <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">

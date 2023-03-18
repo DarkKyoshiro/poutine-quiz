@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
 import { Answer } from '../models/answer.model';
@@ -7,13 +7,14 @@ import { Question } from '../models/question.model';
 import { Team } from '../models/team.model';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { TeamScoreDetailComponent } from '../team-score-detail/team-score-detail.component';
+import { Observable, Subject, takeUntil, timer } from 'rxjs';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, OnDestroy {
   questions: Question[] = [];
   menuDistribution: MenuDistribution[] = [];
   questionID: number = 0;
@@ -26,6 +27,10 @@ export class GameComponent implements OnInit {
   answers: Answer[] = [];
   control: boolean = false;
   lockSpeed: boolean = true;
+  interval$!: Observable<number>;
+  timer: number = 10;
+  timerActive: boolean = false;
+  private destroy$!: Subject<boolean>;
 
   constructor(
     private socket: Socket,
@@ -35,6 +40,43 @@ export class GameComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    //------------------------------------------------------------------------------------
+    //---------------------- Timer management --------------------------------------------
+    //------------------------------------------------------------------------------------
+    //Initiate variables
+    this.destroy$ = new Subject<boolean>();
+    this.interval$ = timer(0, 1000);
+
+    //Timer process
+    this.interval$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(() => {
+      if(this.timerActive && this.timer > 0) { this.timer-- };
+      if(this.timerActive && this.timer === 0) { this.onAnswer('') };
+    })
+
+    //Timer server management
+    this.socket.on("startTimer", () => {
+      this.timerActive = true;
+    })
+    
+    this.socket.on("pauseTimer", () => {
+      this.timerActive = false;
+    })
+    
+    this.socket.on("resetTimer", (duration: number) => {
+      this.timerActive = false;
+      this.timer = duration;
+    })
+    
+    this.socket.on("extendTimer", (duration: number) => {
+      this.timer += duration;
+    })
+
+    //------------------------------------------------------------------------------------
+    //---------------------- Team management ---------------------------------------------
+    //------------------------------------------------------------------------------------
+    //Initiate variables
     this.teamName = this.route.snapshot.params['team'];
 
     //User management
@@ -87,6 +129,10 @@ export class GameComponent implements OnInit {
     this.socket.on('change-lock-speed', (lockState: boolean) => {
       this.lockSpeed = lockState
     })
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
   }
 
   onAnswer(sentAnswer: any): void {

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Socket } from 'ngx-socket-io';
+import { Observable, Subject, takeUntil, timer } from 'rxjs';
 import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
 import { Answer } from 'src/app/models/answer.model';
 import { MenuDistribution } from 'src/app/models/menuDistribution.model';
@@ -14,7 +15,7 @@ import { QuestionsService } from 'src/app/services/questions.service';
   templateUrl: './admin-game.component.html',
   styleUrls: ['./admin-game.component.scss']
 })
-export class AdminGameComponent implements OnInit {
+export class AdminGameComponent implements OnInit, OnDestroy {
   questionID: number = 0;
   questions: Question[] = [];
   teams: Team[] = [];
@@ -22,6 +23,11 @@ export class AdminGameComponent implements OnInit {
   menuDistribution: MenuDistribution[] = [];
   durationInSeconds: number = 5;
   divider: number = 3;
+  interval$!: Observable<number>;
+  timerDuration: number = 30;
+  timer!: number;
+  timerActive: boolean = false;
+  private destroy$!: Subject<boolean>;
 
   constructor(private socket: Socket, 
     private questionsService: QuestionsService,
@@ -29,6 +35,40 @@ export class AdminGameComponent implements OnInit {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    //------------------------------------------------------------------------------------
+    //---------------------- Timer management --------------------------------------------
+    //------------------------------------------------------------------------------------
+    //Initiate variables
+    this.timer = this.timerDuration
+    this.destroy$ = new Subject<boolean>();
+    this.interval$ = timer(0, 1000);
+
+    //Timer process
+    this.interval$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(() => {
+      if(this.timerActive && this.timer > 0) {this.timer--};
+    })
+
+    //Timer server management
+    this.socket.on("startTimer", () => {
+      this.timerActive = true;
+    })
+    
+    this.socket.on("pauseTimer", () => {
+      this.timerActive = false;
+    })
+    
+    this.socket.on("resetTimer", (duration: number) => {
+      this.timerActive = false;
+      this.timer = duration;
+    })
+    
+    this.socket.on("extendTimer", (duration: number) => {
+      this.timer += duration;
+    })
+
+
     //------------------------------------------------------------------------------------
     //---------------------- Teams management --------------------------------------------
     //------------------------------------------------------------------------------------
@@ -75,6 +115,10 @@ export class AdminGameComponent implements OnInit {
         });
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
   }
 
   onStartQuiz(): void {
@@ -323,5 +367,22 @@ export class AdminGameComponent implements OnInit {
     })
 
     return numberAnswers
+  }
+
+  //Timer management
+  onStartTimer(): void {
+    this.socket.emit("startTimer")
+  }
+
+  onPauseTimer(): void {
+    this.socket.emit("pauseTimer")
+  }
+
+  onResetTimer(): void {
+    this.socket.emit("resetTimer", this.timerDuration)
+  }
+
+  onExtendTimer(): void {
+    this.socket.emit("extendTimer", 10)
   }
 }

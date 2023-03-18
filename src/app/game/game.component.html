@@ -30,9 +30,9 @@
 <!-- Gameboard -->
 <div>
     <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length-1">
-        <h3>Question n°{{getQuestion(this.questionID - 1).id}}</h3>
+        <h3>Question n°{{getQuestion(this.questionID - 1).id}} - <span [style.color]="timer <= 5 ? 'red' : ''">{{timer}} sec</span></h3>
         <!-- Before correction -->
-        <div *ngIf="!getQuestion(this.questionID - 1).locked">
+        <div *ngIf="!getQuestion(this.questionID - 1).locked && timer !== 0">
             <div class="Proposition" *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && (!getReponse() || !this.lockSpeed)))">
                 <button class="Proposition" *ngFor="let proposition of getQuestion(this.questionID - 1).propositionsShort" (click)="onAnswer(proposition)">{{proposition}}</button>
             </div>

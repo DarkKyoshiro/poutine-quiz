@@ -559,6 +559,25 @@ io.on("connection", socket => {
 
     socket.emit('propositionsSaved');
   })
+
+  //------------------------------------------------------------------------------------
+  //---------------------- Timer management --------------------------------------------
+  //------------------------------------------------------------------------------------
+  socket.on("startTimer", () => {
+    io.emit("startTimer");
+  })
+
+  socket.on("pauseTimer", () => {
+    io.emit("pauseTimer");
+  })
+
+  socket.on("resetTimer", (duration) => {
+    io.emit("resetTimer", duration);
+  })
+
+  socket.on("extendTimer", (duration) => {
+    io.emit("extendTimer", duration);
+  })
 });
 
 //------------------------------------------------------------------------------------
