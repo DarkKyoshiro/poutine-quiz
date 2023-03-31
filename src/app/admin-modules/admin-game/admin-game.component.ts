@@ -48,6 +48,10 @@ export class AdminGameComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe(() => {
       if(this.timerActive && this.timer > 0) {this.timer--};
+      if(this.timerActive && this.timer === 0 && !this.questions[this.questionID - 1].locked) {
+        this.timerActive = false;
+        this.onCorrection();
+      };
     })
 
     //Timer server management

@@ -6,6 +6,7 @@ const answerSchema = mongoose.Schema({
   answer: { type: String, required: false },
   timestamp: { type: Number, required: true },
   correct: { type: Number, required: true },
+  pointsBet: { type: Number, required: true},
   points: { type: Number, required: true },
   bonusWrongAnswers: { type: Number, required: true },
   bonus: { type: Number, required: false }

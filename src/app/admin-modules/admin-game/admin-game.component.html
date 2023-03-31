@@ -117,7 +117,7 @@
 
             <mat-card-content>
                 <mat-divider></mat-divider>
-                <p>{{answer.answer}}</p>
+                <p>{{answer.answer}}<span *ngIf="questions[questionID - 1].type === 'Tips'"> ({{answer.pointsBet}})</span></p>
                 <mat-divider *ngIf="answer.answer"></mat-divider>
             </mat-card-content>
 

@@ -1,8 +1,10 @@
 <mat-button-toggle-group name="QuestionType" aria-label="Question type selection" style="font-size:small;" [(ngModel)]="questionType">
-    <mat-button-toggle value="Nugget"><img src="assets/nuggets.png" alt="Nugget" class="icon"></mat-button-toggle>
-    <mat-button-toggle value="SelOuPoivre"><img src="assets/seloupoivre.png" alt="Nugget" class="icon"></mat-button-toggle>
-    <mat-button-toggle value="Menu"><img src="assets/menu.png" alt="Nugget" class="icon"></mat-button-toggle>
-    <mat-button-toggle value="Addition"><img src="assets/addition.png" alt="Nugget" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Nugget"><img src="assets/nuggets.png" alt="Nuggets" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="SelOuPoivre"><img src="assets/seloupoivre.png" alt="Sel ou Poivre" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Menu"><img src="assets/menu.png" alt="Menu" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Addition"><img src="assets/addition.png" alt="Addition" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="Tips"><img src="assets/tips.png" alt="Tips" class="icon"></mat-button-toggle>
+    <mat-button-toggle value="PoutineDeLaMort"><img src="assets/mort.png" alt="Poutine de la Mort" class="icon"></mat-button-toggle>
 </mat-button-toggle-group>
 
 <p>
@@ -14,6 +16,11 @@
 <br>
     <span *ngFor="let question of this.questions; let i = index;">
         <button mat-raised-button (click)="onQuestion(question.id)" [matBadge]="question.group" *ngIf="question.type === questionType && question.round === 2">
+            {{question.id}}
+        </button>
+    </span>
+    <span *ngFor="let question of this.questions; let i = index;">
+        <button mat-raised-button (click)="onQuestion(question.id)" [matBadge]="question.group" *ngIf="question.type === questionType && question.round === 3">
             {{question.id}}
         </button>
     </span>

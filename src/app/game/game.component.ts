@@ -22,6 +22,7 @@ export class GameComponent implements OnInit, OnDestroy {
   group1!: number;
   group2!: number;
   teams: Team[] = [];
+  pointsBet: number = 0;
   answer!: string;
   fullAnswer!: Answer;
   answers: Answer[] = [];
@@ -54,7 +55,7 @@ export class GameComponent implements OnInit, OnDestroy {
       if(this.timerActive && this.timer > 0) { 
         this.timer-- 
         if(this.timer === 0) { 
-          if(!this.getReponse()) { this.onAnswer('') }
+          if(!this.getReponse()) { this.onAnswer('#!Timeout!#') }
         };
       };
     })
@@ -121,6 +122,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.socket.on('update-question-ID', (data: number) => {
       this.answer = ''
       this.questionID = data
+      this.pointsBet = this.getPoints()[3]
     })
 
     this.socket.emit('refresh-answers')
@@ -147,6 +149,7 @@ export class GameComponent implements OnInit, OnDestroy {
         answer: sentAnswer,
         timestamp: Date.now(),
         correct: -1,
+        pointsBet: this.pointsBet,
         points: 0,
         bonusWrongAnswers: 0,
         bonus: 0
@@ -169,7 +172,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getAnswer(): string {
     let returnedAnswer: string = "Vous n'avez rien répondu encore...";
     this.answers.forEach(element => {
-      if(this.questions[this.questionID-1].locked && element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '') {
+      if(element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '' && element.answer !== '#!Timeout!#') {
         returnedAnswer = "Vous avez répondu " + element.answer
         if(element.correct === 1) {
           returnedAnswer = returnedAnswer + ' - Correct'
@@ -199,10 +202,10 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   getPoints(): number[] {
-    let points: number[] = [0,0,0];
+    let points: number[] = [0,0,0,0];
     this.answers.forEach(element => {
       if(element.questionID === this.questionID && element.teamName === this.teamName) {
-        points = [element.points, element.bonusWrongAnswers, element.bonus]
+        points = [element.points, element.bonusWrongAnswers, element.bonus, element.pointsBet]
       }
     })
     return points

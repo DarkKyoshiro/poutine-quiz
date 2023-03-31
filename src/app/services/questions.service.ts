@@ -981,8 +981,23 @@ export class QuestionsService {
     },
     {
         id: 57,
+        type: 'Tips',
+        speed: false,
+        round: 2,
+        points: 0,
+
+        question: 'test de question de tips',
+        answer: 'NA',
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 58,
         type: 'PoutineDeLaMort',
-        speed: true,
+        speed: false,
         round: 3,
         points: 0,
 

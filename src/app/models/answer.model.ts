@@ -4,6 +4,7 @@ export class Answer {
   answer!: string;
   timestamp!: number;
   correct!: number;
+  pointsBet!: number;
   points!: number;
   bonusWrongAnswers!: number;
   bonus!: number;

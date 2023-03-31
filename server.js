@@ -103,6 +103,7 @@ io.on("connection", socket => {
           answer: '',
           timestamp: 1989811953988,
           correct: -1,
+          pointsBet: 0,
           points: 0,
           bonusWrongAnswers: 0,
           bonus: 0
@@ -218,6 +219,7 @@ io.on("connection", socket => {
           answer: '',
           timestamp: 1989811953988,
           correct: -1,
+          pointsBet: 0,
           points: 0,
           bonusWrongAnswers: 0,
           bonus: 0
@@ -336,9 +338,10 @@ io.on("connection", socket => {
     control = false
     answers.forEach(element => {
       if(element.teamName === data.teamName && element.questionID === data.questionID) {
-        if(element.answer !== data.answer || element.timestamp !== data.timestamp) {
+        if(element.answer !== data.answer || element.timestamp !== data.timestamp || element.pointsBet !== data.pointsBet) {
           element.answer = data.answer
           element.timestamp = data.timestamp
+          element.pointsBet = data.pointsBet
         }
         control = true
       }
@@ -380,6 +383,7 @@ io.on("connection", socket => {
         element.answer = ''
         element.timestamp = 1989811953988
         element.correct = -1
+        element.pointsBet = 1
         element.points = 0
         element.bonusWrongAnswers = 0
         element.bonus = 0
@@ -621,7 +625,9 @@ function getScores() {
         answer.bonusWrongAnswers = 0
         numberAnswers++
         if(answer.correct === 1) {
-          answer.points = questions[answer.questionID-1].points
+          answer.points = questions[answer.questionID-1].type === 'Tips' ? answer.pointsBet : questions[answer.questionID-1].points
+        } else if(answer.correct === 0 && questions[answer.questionID-1].type === 'Tips') {
+          answer.points = - answer.pointsBet
         } else if(answer.correct === 0 && questions[answer.questionID-1].speed === true) {
           if(negativePoints) {answer.points = - questions[answer.questionID-1].points}
           incorrectAnswers = incorrectAnswers + 1
