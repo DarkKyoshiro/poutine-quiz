@@ -9,7 +9,7 @@
                 <mat-icon *ngIf="this.questions[this.questionID-1].locked">lock</mat-icon>
                 <mat-icon *ngIf="!this.questions[this.questionID-1].locked">lock_open</mat-icon>
             </button>
-            <button mat-icon-button aria-label="Validate answers" (click)="onValidate()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
+            <button mat-icon-button aria-label="Validate answers" (click)="onValidate()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length && this.questions[this.questionID-1].locked">
                 <mat-icon>published_with_changes</mat-icon>
             </button>
             <button mat-icon-button aria-label="Reset answers scores" (click)="onResetScores()" *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
