@@ -9,6 +9,7 @@ import { MenuDistribution } from 'src/app/models/menuDistribution.model';
 import { Question } from 'src/app/models/question.model';
 import { Team } from 'src/app/models/team.model';
 import { QuestionsService } from 'src/app/services/questions.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-admin-game',
@@ -108,7 +109,20 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     //------------------------------------------------------------------------------------
     this.socket.emit('refresh-answers')
     this.socket.on('get-answers', (data: any) => {
-      this.answers = [];
+      let answerState: number = 0;
+      let tempAnswer!: Answer;
+      // this.answers = [];
+      this.answers.forEach((answer) => {
+        answerState = answer.correct
+        tempAnswer = data[_.findIndex(data, {'teamName': answer.teamName, 'questionID': answer.questionID})]
+        if(answer.answer === tempAnswer.answer) {
+          answer = tempAnswer
+          answer.correct = answerState
+        } else {
+          answer = tempAnswer
+          answer.correct = -1
+        }
+      })
       this.answers = data;
       // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
       //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
