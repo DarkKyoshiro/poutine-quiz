@@ -13,10 +13,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Quel est le nom de la méchante reine dans Blanche-Neige et les Sept Nains ?',
-        propositionsDetailed: ['Morgause', 'Grimhilde', 'Amara', 'Valérie'],
+        question: 'Quelle chanson Seth McFarlane a chanté lors de la cérémonie des Oscars de 2013 ?',
+        propositionsDetailed: ['Get off the stage (Dégage de la scène)', 'Why not me ? (Pourquoi pas moi ?)', 'We saw your boobs (On a vu vos seins)', 'It used to be better (C\'était mieux avant)'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Grimhilde',
+        answer: 'C. We saw your boobs',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -30,10 +30,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Dans quel film apparait Scar ?',
-        propositionsDetailed: ['Aladdin', 'Hercules', 'La Petite Sirène', 'Avengers: End Game'],
+        question: 'Quel est la longueur du Tapis Rouge ?',
+        propositionsDetailed: ['500 mètres', '500 pieds', '500 mains', '500 verges'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Hercules',
+        answer: 'B. 500 pieds',
+        answerComment: '500 pieds = 152.4 mètres (1 pied = 0.3048m)\n500 mains = 50.8 mètres (1 main = 0.1016m)\n500 verges = 457.2 mètres (1 verge = 0.9144m)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -47,10 +48,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Mais que fume la chenille dans Alice au pays des merveilles ?',
-        propositionsDetailed: ['De la Weed', 'Un Narguilé', 'La Pipe', 'Du Vermifuge'],
+        question: 'Quel réalisateur a juste dit "Thank you" pour accepter son Oscar ?',
+        propositionsDetailed: ['Alfred Hitchcock', 'Clint Eastwood', 'Roman Polanski', 'Woody Allen'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Un Narguilé',
+        answer: 'A. Alfred Hitchcock',
+        answerComment: 'Prix Irving G. Thalberg Memorial reçu en 1968 pour l\'ensemble de sa carrière après avoir été nominé pour Rebecca (1940), Lifeboat (1944), Spellbound (1945), Rear window (1954) et Psycho (1960) pour Meilleur directeur',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -64,12 +66,12 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Dans merlin l\'enchanteur, en quoi se transforme Merlin pour vaincre MIM ?',
-        propositionsDetailed: ['En Bouc', 'En Morse', 'En Souris', 'En Virus'],
+        question: 'Comment Roberto Benigni s\'est rendu sur scène pour recevoir son Oscar du meilleur film en langue étrangère en 1999 (Life is Beautiful) ?',
+        propositionsDetailed: ['En marchant, ça serait normal', 'En moto, ça serait classe', 'En sautant sur les dossiers des sièges, ça serait accrobatique', 'En parachute, ça serait un peu con vu que la cérémonie est en intérieur'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'D. En Virus',
-        answerComment: 'Mim en Crocodile -> Merlin en tortue -> Merlin en lièvre -> Mim en renard -> Merlin en chenille -> Mim en poule -> Merlin en morse -> Mim en elephant -> Merlin en souris -> Mim en chat -> Mim en serpent -> Merlin en crabe -> Mim en rhinocéros -> Merlin en bouc -> Mim en dragon -> Merlin en virus -> KO technique, merlin l\'emporte',
-         
+        answer: 'C. En sautant sur les dossiers des sièges, ça serait accrobatique',
+        answerComment: 'Le film Life is Beautiful a remporté les Oscars du Mailleur acteur, du Meilleur film en langue étrangère, et de la Meilleure musique originale, et a été nommé pour Meilleur film, Meilleur réalisateur, Meilleur scénario original, et Meilleur montage',
+        
         showQuestion: false,
         propositionsStep: 0,
         locked: false,
@@ -82,10 +84,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Quelle est la meilleure chanson de méchant de Disney ?',
-        propositionsDetailed: ['Soyez prêtes, du Roi Lion', 'Pauvres âmes infortunées, de La Petite Sirène', 'Mes amis de l\'au-delà, de la Princesse et la Grenouille', 'Infernale, du Bossu de Notre-Dame'],
+        question: 'Qui a gagné un Oscar et un Razzie dans le même week-end ?',
+        propositionsDetailed: ['Halle Berry', 'Marlon Brando', 'Eddie Redmayne', 'Sandra Bullock'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'En fonction des réponses des équipes, en cas d\'égalité, A.',
+        answer: 'D. Sandra Bullock',
+        answerComment: 'Eddie Redmayne: Oscar du meilleur acteur en 2015 pour The theory of Everything (Stephen Hawking), Razzie du pire acteur secondaire en 2016 pour Jupiter Ascending\nMarlon Brando: Oscar du meilleur acteur en 1955 et 1973 pour On the waterfront et The Godfather, Razzie du pire acteur en 1996 pour The Island of Dr. Moreau\nHalle Berry: Oscar de la meilleure actrice en 2002 pour Monster\'s ball, Razzie de la pire actrice pour Catwoman en 2004\nSandra Bullock: Oscar de la meilleure actrice en 2010 dans The Blind Side, Razzie de la pire actrice et pire couple sur écran dans All about steve en 2010',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -99,11 +102,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Syndrome',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Pixar (Les indestructibles, 2004)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Peterson',
+        propositionsDetailed: ['Oscar', 'Oscars', 'Les deux'],
+        propositionsShort: ['Oscar', 'Oscars', 'Les deux'],
+        answer: 'Oscar',
+        answerComment: 'Pianiste de jazz lauréat de huit Grammy Awards, Oscar Peterson a continué à maîtriser son art et à jouer sa musique en public jusqu\'en 2006, un an avant sa mort. Bien qu\'il ait été avant tout un artiste solo, le "Maharaja du clavier" a joué avec d\'innombrables autres musiciens tout au long de sa carrière de plus de 60 ans dans le jazz, et il est considéré comme l\'un des plus grands pianistes de jazz de tous les temps',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -117,10 +120,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Edgar Balthazar',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Disney (Les aristochats)',
+        question: 'Cuaron',
+        propositionsDetailed: ['Oscar', 'Oscars', 'Les deux'],
+        propositionsShort: ['Oscar', 'Oscars', 'Les deux'],
+        answer: 'Oscars',
+        answerComment: 'Alfonso Cuarón. En 2013, il a remporté l\'Oscar du meilleur réalisateur pour "Gravity", un film de science-fiction acclamé par la critique. Il a également écrit et réalisé "Roma" en 2018, un drame semi-autobiographique qui a remporté trois Oscars, dont celui du meilleur réalisateur, du meilleur film étranger et de la meilleure photographie. Alfonso Cuarón est reconnu pour son style visuel distinctif, sa narration captivante et son engagement en faveur de l\'inclusion et de la diversité dans l\'industrie cinématographique',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -134,10 +138,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Capitaine Rourke',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Disney (Atlantis)',
+        question: 'Wilde',
+        propositionsDetailed: ['Oscar', 'Oscars', 'Les deux'],
+        propositionsShort: ['Oscar', 'Oscars', 'Les deux'],
+        answer: 'Oscar',
+        answerComment: 'Cet écrivain et poète irlandais du 19e siècle continue d\'avoir une influence dans le monde littéraire d\'aujourd\'hui. Quand on pense aux classiques de la littérature, il est difficile d\'ignorer son roman Le portrait de Dorian Gray ou son chef-d\'œuvre L\'importance d\'être constant, qui sont tous deux des lectures obligatoires dans de nombreux cours d\'anglais',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -151,11 +156,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Mor\'Du',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Les deux (Rebelle, 2012)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Isaac',
+        propositionsDetailed: ['Oscar', 'Oscars', 'Les deux'],
+        propositionsShort: ['Oscar', 'Oscars', 'Les deux'],
+        answer: 'Oscar',
+        answerComment: 'Óscar Isaac Hernández Estrada. Il a tenu des rôles principaux au cinéma dans la tragicomédie Inside Llewyn Davis (2013), pour laquelle il a été nommé aux Golden Globe Awards, et dans le film australien Balibo, pour lequel il a remporté le prix AACTA du meilleur acteur dans un second rôle. Il est apparu dans la trilogie des suites de Star Wars dans le rôle du pilote de X-wing Poe Dameron, et dans X-Men : Apocalypse (2016) dans le rôle du super-méchant mutant titulaire Apocalypse. Il a également été la tête d\'affiche de la mini-série Show Me a Hero (2015) de HBO dans le rôle du politicien Nick Wasicsko, qui lui a valu le Golden Globe Award du meilleur acteur - mini-série ou téléfilm. En 2016, Time a désigné Isaac comme l\'une des 100 personnes les plus influentes du monde dans sa liste annuelle Time 100.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -169,11 +174,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Randall Boggs',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Pixar (Monstres et Companie, 2001)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Dujardin',
+        propositionsDetailed: ['Oscar', 'Oscars', 'Les deux'],
+        propositionsShort: ['Oscar', 'Oscars', 'Les deux'],
+        answer: 'Oscars',
+        answerComment: 'Jean Dujardin. Acteur français connu pour ses rôles comiques. Il a commencé sa carrière dans des séries télévisées et des publicités avant de devenir célèbre avec la série télévisée "Un gars, une fille". Il est devenu une star du cinéma français avec les films OSS 117 et The Artist, qui lui a valu l\'Oscar du meilleur acteur en 2012. Depuis, il a continué à jouer dans des films à succès en France et à l\'étranger, y compris dans des films hollywoodiens tels que The Monuments Men et The Wolf of Wall Street',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -182,16 +187,15 @@ export class QuestionsService {
     },
     {
         id: 11,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 1,
+        group: 1,
         points: 1,
 
-        question: 'Ercole Visconti',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Les deux (Luca, 2021)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        title: 'Mais c\'est un scandale',
+        question: 'Pour quelle raison Will Smith a giflé Chris Rock durant la cérémonie de remise des oscars en 2022 ?',
+        answer: 'Car il s\'est moqué de Jada Smith, la femme de Will, et de son alopecia',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -206,10 +210,10 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'V ou F, dans le livre Peter Pan et Wendy de James Matthew Barrie, Peter tue les enfants perdus dès qu\'ils grandissent trop ?',
-        answer: 'Vrai',
-        answerComment: 'Peter Pan est né de la plume de James Matthew Barrie, écrivain né en 1860 en Écosse. Lorsqu\'il a 7 ans, il perd son grand frère David, chouchou de la famille. À sa mort J.M Barrie prend la place de ce frère disparu, il porte ses vêtements, imite sa voix, réécrit son histoire. On raconte même qu\'il s\'était tellement mis dans son personnage, que des médecins constatent un arrêt de croissance. Comme s\'il était bloqué dans la vie qu\'il inventait pour David. Cette histoire hante tous ses textes.\n\nL\'histoire est celle d\'un enfant qui ne veut pas grandir et qui récupère les enfants morts, tombés du berceau ou abandonnés pour les envoyer au pays de “Neverland”. Ce personnage, loin d\'être un enfant de chœur, est habité par une haine profonde des adultes. Un adage de l\'île raconte qu\'à chaque respiration, un adulte meurt. Alors Peter Pan s\'amuse à respirer fort et haleter le plus possible pour tuer le maximum d\'adultes. Il tue aussi les enfants perdus. Dès qu\'ils grandissent, il ne veut plus d\'eux sur cette île. Profondément égoïste, le héros a aussi perdu la notion de temps en étant bloqué depuis des années sur cette île.',
+        title: 'Mais c\'est un scandale',
+        question: 'Lors de la cérémonie de remise des oscars de 2017, l\'oscar de la meilleure photographie a été remis à La La Land par erreur. À quel film devait revenir ce prix ?',
+        answer: 'Moonlight',
+        answerComment: 'La mauvaise enveloppe a été remise aux présentateur',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -224,10 +228,10 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'Quelle œuvre classique de la littérature britanique a inspiré le Roi Lion ? ',
-        answer: 'Hamlet',
-        answerComment: 'Les deux intrigues ont un méchant assoiffé de pouvoir qui assassine son frère pour prendre le trône. Il exile ensuite son neveu et essaye de le détruire. Il appartient alors au prince, en proie à des conflits intérieurs émotifs et intellectuels, de récupérer ce qui lui est légitime.',
+        title: 'Mais c\'est un scandale',
+        question: 'Lors de la cérémonie des oscars de 2014, quelle chanteuse a été annoncée comme s\'appelant Adele Dazeem ? ',
+        answer: 'Indila Menzel',
+        answerComment: 'John Travolta s\'est planté (le nom était écrit phonétiquement, et il a été prévenu au dernier moment)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -242,9 +246,10 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'À quel âge la vraie Pocahontas est morte après avoir été faite prisonnière, convertie au catholicisme, et mariée à un producteur de tabac en Angleterre ? (À deux ans près)',
-        answer: '22 ans',
+        title: 'Mais c\'est un scandale',
+        question: 'Combien de statuette des oscars ont été volées en 2000 ? (À 10 près)',
+        answer: '55',
+        answerComment: '52 statuettes furent retrouvées dans une poubelle à l\'arrière d\'un supermarché par un clochard, qui est donc devenu l\'homme le plus récompensé de l\'histoire des oscars. Deux statuettes n\'ont jamais été retrouvées.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -256,12 +261,13 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 1,
-        group: 1,
+        group: 2,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'Comment se fini l\'histoire du Bossu de Notre-Dame dans le livre ?',
-        answer: 'Frollo tue Phoebus, Frollo fait tuer Esmeralda, Quasimodo tue Frollo, et il se laisse mourir avec le cadavre d\'Esmeralda',
+        title: 'Ces premières fois dont on se souvient',
+        question: 'Le Seigneur des Anneaux: Le Retour du Roi est le film le plus récompensé aux Oscars (avec Titanic et Ben Hur). Combien de statuettes le film a remporté ? (À 3 près)',
+        answer: '11',
+        answerComment: 'Meilleur film, Meilleur réalisateur, Meilleur scénario adapté, Meilleure musique de film, Meilleure chanson originale, Meilleurs décors, Meilleurs costumes, Meilleurs effets visuels, Meilleur montage, Meilleur maquillage, et Meilleur mixage de son',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -276,10 +282,10 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Qui fut le premier bras droit de méchants à changer de camps dans un film d\'animation Disney ?',
-        answer: 'Le chasseur Humbert dans Blanche-Neige et les Sept nains',
-        answerComment: 'En même temps, c\'est pas mal le premier film d\'animation de Disney',
+        title: 'Ces premières fois dont on se souvient',
+        question: 'Qui a été la première actrice asiatique à remporter l\'Oscar de la Meilleure Actrice ?',
+        answer: 'Michelle Yeoh',
+        answerComment: 'Pour Everything, Everywhere, All at once (le film a aussi remporté Meilleur film, Meilleure réalisation, Meilleur acteur dans un rôle secondaire, Meilleure actrice dans un rôle secondaire, Meilleur scénario original, et Meilleur montage',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -294,10 +300,10 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Dans quel film Aladdin, Iago laisse définitivement tomber Jafar ?',
-        answer: 'Aladdin II, Le retour de Jafar',
-        answerComment: 'Il se sacrifie pour arrêter Jafar, mais survit et devient un bon ami d\'Aladdin (et part avec son père dans le 3, le prince des voleurs)',
+        title: 'Ces premières fois dont on se souvient',
+        question: 'Pour quel film Rihanna a-t\'elle été nominée pour la première fois pour meilleure chanson originale en 2023 ?',
+        answer: 'Black Panther 2: Wakanda Forever',
+        answerComment: 'Pour le titre Lift me up',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -312,9 +318,10 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Pour quelle raison Kronk décide de trahir Yzma dans Kuzco ?',
-        answer: 'Parce qu\'elle n\'aime pas les gougères aux épinards de Kronk',
+        title: 'Ces premières fois dont on se souvient',
+        question: 'Pour quel film l\'actrice Hattie McDaniel fut la première afro-américaine à gagner un Oscar ?',
+        answer: 'Gone with the Wind',
+        answerComment: 'Hattie McDaniel joua Mammy et remporta l\'oscar du meilleure rôle secondaire féminin en 1939. Elle dû cependant s\'assoir à part des autres invités car c\'était encore la ségrégation',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -326,13 +333,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 1,
-        group: 2,
+        group: 3,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'V ou F, à la base, Kaa était sensé trahir Shere Khan dans le Livre de la jungle en sauvant Mowgli ?',
-        answer: 'Faux',
-        answerComment: 'Dans le livre originel de Rudyard Kipling, Le Livre de la jungle, Kaa est un ami de Mowgli. En effet, il vient en aide à Baloo et Bagheera pour récupérer Mowgli enlevé par les Bandar-Log et plus tard se lie d\'amitié avec le petit homme.',
+        title: 'La cérémonie de remise des oscars de 1929',
+        question: 'Dans quel hôtel s\'est tenu cette première cérémonie ?',
+        answer: 'The Hollywood Roosevelt Hotel',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -347,10 +353,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Qui est la méchante dans Cendrillon 3, Le sortilège de Cendrillon ?',
-        answer: 'Anastasie',
-        answerComment: 'La sœur de Cendrillon, qui vole la baguette de la Fée pour remonter dans le temps',
+        title: 'La cérémonie de remise des oscars de 1929',
+        question: 'Quel était le prix du ticket pour assister à cette cérémonie ? ',
+        answer: '5$ de l\'époque, 79$ avec les prix de 2021',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -365,9 +370,10 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'De quel livre est adapté Taram et le chaudron magique, film où le seigneur des ténèbres cherche une truie divinatoire ?',
-        answer: 'Le deuxième tome des Chroniques de Prydain de Lloyd Chudley Alexander',
+        title: 'La cérémonie de remise des oscars de 1929',
+        question: 'D\'ailleurs, combien y avait-il de personne lors de cette soirée ? ',
+        answer: 'Autour de 270',
+        answerComment: 'Hattie McDaniel joua Mammy et remporta l\'oscar du meilleure rôle secondaire féminin en 1939. Elle dû cependant s\'assoir à part des autres invités car c\'était encore la ségrégation',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -382,9 +388,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Pourquoi la mère de Milo a été enlevée dans Milo sur Mars ?',
-        answer: 'Pour élever des petits Martiens',
+        title: 'La cérémonie de remise des oscars de 1929',
+        question: 'Combien de temps à l\'avance les noms des gagnants ont été dévoilé aux médias ?',
+        answer: '3 mois',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -393,23 +399,6 @@ export class QuestionsService {
     },
     {
         id: 23,
-        type: 'Menu',
-        speed: false,
-        round: 1,
-        group: 3,
-        points: 1,
-
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Quelle est la véritable identité de l’homme au chapeau melon dans Bienvenue chez les Robinson ?',
-        answer: 'Michael "Goob" Yagoobian',
-        
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
-    {
-        id: 24,
         type: 'Addition',
         speed: true,
         round: 1,
@@ -425,7 +414,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 25,
+        id: 24,
         type: 'Addition',
         speed: true,
         round: 1,
@@ -441,7 +430,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 26,
+        id: 25,
         type: 'Addition',
         speed: true,
         round: 1,
@@ -457,7 +446,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 27,
+        id: 26,
         type: 'Addition',
         speed: true,
         round: 1,
@@ -473,7 +462,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 28,
+        id: 27,
         type: 'Addition',
         speed: true,
         round: 1,
@@ -489,14 +478,33 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 29,
-        type: 'Tips',
+        id: 28,
+        type: 'Nugget',
         speed: false,
-        round: 1,
-        points: 0,
+        round: 2,
+        points: 1,
 
-        question: 'Pour quel méchant Disney la chanson Snuff Out the Light a été créée ?',
-        answer: 'Yzma (Kuzco l\'empereur mégalo)',
+        question: 'Ou est le coeur des crevettes ?',
+        propositionsDetailed: ['Dans sa tête, ça serait malin', 'Dans sa poitrine, ça serait normal', 'Dans son ventre, ça serait peu appétissant', 'Dans son cul, et là j\'ai pas de vannes'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'A. Dans sa tête',
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 29,
+        type: 'Nugget',
+        speed: false,
+        round: 2,
+        points: 1,
+
+        question: 'Lequel de ces Kit-Kat n\'existe pas ?',
+        propositionsDetailed: ['Le Kit-Kat Patate Douce', 'Le Kit-Kat Wasabi', 'Le Kit-Kat Orange et Brandy', 'Le Kit-Kat Pesto'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'D. Le Kit-Kat Pesto',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -510,10 +518,10 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Dans les Simpsons, un Esquilax est:',
-        propositionsDetailed: ['Un chien qui a une tête de chat et une queue de requin', 'Un cochon qui peut tisser des toiles et marcher au plafond', 'Un cheval qui a une tête de lapin et un corps de lapin', 'Un furet avec des cornes de cerf et une langue de serpent'],
+        question: 'Combien de calories brulerait-on si on se frappait la tete contre un mur pendant 1h ?',
+        propositionsDetailed: ['100 calories, ou autant que d\'avoir un fou rire pendant 30-40 min', '150 calories ou autant que de se brosser les dents pendant 45 min', '200 calories ou autant que de rouler des pelles pendant 1h30', '0 calories, ou autant que d\'écouter un discours de Donald Trump pendant trop longtemps'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'C.',
+        answer: 'B. 150 calories',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -527,10 +535,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Quelle sentence le Juge Michael Cicconetti a deja rendu ?',
-        propositionsDetailed: ['Condamné une ado qui n\'a pas payé son taxi à marcher 30 miles à pied', 'Condamné un homme cherchant à se payer une prostitué à défiler en ville déguisé en poulet', 'Condamné une femme qui a abandonné 35 chattons dans une forêt, à passer une nuit dans les bois (il neigeait cette nuit)', 'Tous les châtiments au dessus, et tellement d\'autres'],
+        question: 'Qui est Nick Carter ?',
+        propositionsDetailed: ['Un chien détective qui a rattrapé plus de 600 fugitifs dans sa carrière', 'Un gorille qui parle le langage des signes', 'Un chat qui a survécu au naufrage de 5 navires militaires allemands', 'Un pigeon qui a chié sur plus de 100 parisiens en une journée'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'D.',
+        answer: 'A. Un chien détective qui a rattrapé plus de 600 fugitifs dans sa carrière',
+        answerComment: 'C\'était un Kentucky hound, né en 1899 et son maitre était Captain G.V. Mullikin. Il était célèbre pour pouvoir traquer des pistes vieilles, il a par exemple suivi une piste sur 55 miles, ou a retrouver la trace d\'un arsoniste 100 heures après le feu. Bref c\'était un bon chien.\nLe gorille s\'appelait Koko, a discuté avec Robin Williams, et le chat s\'appelait Sam l\'insubmersible et à survécu au Bismarck, HMS Cossack et HMS Ark Royal. Il est mort tranquillement à 14 ans sur terre',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -544,10 +553,10 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Que peut-on trouver au musee phallologique national d\'Islande ?',
-        propositionsDetailed: ['Une collection de godemichet', 'Un moulage du pénis de Jimi Hendrix', 'Une poivrière en forme de pénis', 'La prothèse de pénis de Justin Bieber'],
+        question: 'Comment s\'appelle le dieu egyptien de l\'infini, et de l\'eternite ?',
+        propositionsDetailed: ['Meh', 'Heh', 'Beh', 'Pascal'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B.',
+        answer: 'B. Heh',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -556,16 +565,16 @@ export class QuestionsService {
     },
     {
         id: 33,
-        type: 'Nugget',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 2,
         points: 1,
 
-        question: 'Qu\'est-ce que le Grolar ?',
-        propositionsDetailed: ['Le résultat d\'un croisement entre un Grizzli et un Ours Polaire', 'Un fromage corse', 'Un champion de concours de mangeurs de l\'extrême', 'Mon état après une raclette'],
-        propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'A.',
-        answerComment: 'Dû au réchauffement climatique, ces deux animaux ont commencés à se croiser, et voilà le résultat',
+        question: 'Le phare du petit Minou',
+        propositionsDetailed: ['Finistère', 'Fistinière'],
+        propositionsShort: ['Finistère', 'Fistinière'],
+        answer: 'Finistère',
+        answerComment: 'Le phare du Petit Minou indique aux bateaux désirant se rendre à Brest, la route à suivre pour entrer dans la rade. Il forme un alignement avec le phare du Portzic. La plage du Minou2, située à proximité, a été le lieu d\'aboutissement, en 1869, de l\'un des premiers câbles télégraphiques reliant l\'Europe aux États-Unis (provenant de Brest, le câble était enterré le long de la route de Brest au Conquet).',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -574,15 +583,16 @@ export class QuestionsService {
     },
     {
         id: 34,
-        type: 'Nugget',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 2,
         points: 1,
 
-        question: 'Combien de Litres d\'eau economiserait-on si on pissait sous la douche tout les jours ?',
-        propositionsDetailed: ['1000 L', '1500 L', '2000 L', '2500 L'],
-        propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'C.',
+        question: 'Le parc d\'attrape-fion',
+        propositionsDetailed: ['Finistère', 'Fistinière'],
+        propositionsShort: ['Finistère', 'Fistinière'],
+        answer: 'Fistinière',
+        answerComment: 'Le parc "d\'Attrap\'Fion", un lieu aménagé, où tu peux t\'adonner au plaisir de t\'amuser en plein air',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -596,10 +606,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Harry, t\'es vivant... Et tu tires comme un gland !',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        question: 'La Chappelle Sainte-Barbe du Faouët',
+        propositionsDetailed: ['Finistère', 'Fistinière'],
+        propositionsShort: ['Finistère', 'Fistinière'],
+        answer: 'Finistère',
+        answerComment: 'La chapelle Sainte-Barbe est située sur la commune du Faouët dans le Morbihan1, à un kilomètre et demi au nord-est du bourg. Étape sur un des chemins bretons du pèlerinage vers Saint-Jacques-de-Compostelle et sanctuaire attirant de nombreux fidèles lors du pardon de sainte Barbe.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -613,10 +624,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'J\'ai cependant la conviction que la vérité est généralement préférable au mensonge',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (La coupe de feu)',
+        question: 'Saint-Jean du doigt',
+        propositionsDetailed: ['Finistère', 'Fistinière'],
+        propositionsShort: ['Finistère', 'Fistinière'],
+        answer: 'Finistère',
+        answerComment: 'Saint-Jean-du-Doigt est une commune littorale de la Manche située dans le département du Finistère, dans la région Bretagne, en France. Le nom vient d\'une relique supposée être l\'index de saint Jean-Baptiste.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -630,10 +642,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'À présent, Harry, sortons dans la nuit noire à la poursuite de cette fantasque tentatrice, l\'aventure. ',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (Prince de Sang-mêlé)',
+        question: 'La Chappelle Fistine',
+        propositionsDetailed: ['Finistère', 'Fistinière'],
+        propositionsShort: ['Finistère', 'Fistinière'],
+        answer: 'Fistinière',
+        answerComment: 'Pour citer des commentaires: "Formidable moment, mais un peu mal au cul quand même..."\n"Excellent ! La meilleure après-midi de toute ma vie, je ne me suis jamais senti aussi détendu et plein à la fois :)"\n"Si jamais vous retrouver ma montre ça serait sympa de me la renvoyer par la poste..."',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -642,15 +655,15 @@ export class QuestionsService {
     },
     {
         id: 38,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
+        group: 1,
         points: 1,
 
-        question: 'Dites... mais c\'est vrai ! Ouais, ce qu\'on raconte à la télé, qu\'il faut toujours être gentil avec les ptites vieilles. C\'est vrai qu\'elles sont pas complètement nulles',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        title: 'C\'est normal au Japon!',
+        question: 'Quel célèbre jeu tv japonais voyais des candidats affronter une série d\'épreuves humoristique pour tenter de gagner 1 million de yen ?',
+        answer: 'Takeshi\'s Castle',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -659,15 +672,15 @@ export class QuestionsService {
     },
     {
         id: 39,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
+        group: 1,
         points: 1,
 
-        question: 'Une fois de plus, je vais t\'en demander trop Harry',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (Le prince de Sang-mêlé)',
+        title: 'C\'est normal au Japon!',
+        question: 'V ou F, il existe un jeu tv où les candidats doivent chanter une chanson sans se laisser déconcentrer par une hôtesse particulièrement charmante et entreprenante ?',
+        answer: 'V',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -676,15 +689,16 @@ export class QuestionsService {
     },
     {
         id: 40,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
+        group: 1,
         points: 1,
 
-        question: 'Je rêve désespérément de faire l\'amour à un petit écolier',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        title: 'C\'est normal au Japon!',
+        question: 'D\'après une publicité pour un opérateur mobile, en combien de temps leur machine peut faire des raviolis ? (À 10 secondes près)',
+        answer: '2-3 secondes',
+        answerComment: 'La pub est une parodie pour vanter la rapidité du réseau mobile de l\'opérateur',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -699,10 +713,9 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'D\'après vous, comment s\'appelle le documentaire où le mot F*** est dit le plus ?',
-        answer: 'Fuck',
-        answerComment: 'C\'est un documentaire sur le mot F***, où il est dit 9.21 fois par minutes',
+        title: 'C\'est normal au Japon!',
+        question: 'Quel produit est vendue par cette pub ?',
+        answer: 'Du Lait',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -715,11 +728,12 @@ export class QuestionsService {
         speed: false,
         round: 2,
         group: 1,
-        points: 1,
+        points: 0,
 
-        title: 'Mots en F- dans les films',
-        question: 'À votre avis, combien de films utilisent plus de fois le mot F*** que le film The Wolf of Wall Street ? (À 5 près)',
-        answer: '2',
+        title: 'C\'est normal au Japon!',
+        question: 'V ou F, Les japonais célèbre la fin de la période de la gastro en vénérant une statue géante de crotte doré ?',
+        answer: 'Faux',
+        answerComment: 'mais ils vénèrent une statue de penis rose pour célébrer la fertilité',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -731,13 +745,13 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 1,
+        group: 2,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'D\'ailleurs combien de fois le mot F*** est dit dans ce film (The Wolf of Wall street) ? Plus ou moins que 200 ?',
-        answer: 'Plus',
-        answerComment: '569 fois, ou environ 3.16 fois par minute',
+        title: 'America, F*** Yeah!!',
+        question: 'V ou F, il est légal pour un enfant de fumer une cigarette ?',
+        answer: 'Vrai',
+        answerComment: 'Il est cependant illégal d\'en vendre avant les 21 ans',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -749,12 +763,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 1,
+        group: 2,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'De quel pays vient le film le plus vulgaire, le film aux 935 F*** pour 112 minutes: Swearnet: The Movie ?',
-        answer: 'Du Canada',
+        title: 'America, F*** Yeah!!',
+        question: 'Quel est le budget de l\'armée américaine pour 2023 ? (À 50 milliards près)',
+        answer: '797.7 milliards de dollars',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -769,10 +783,9 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'V ou F, un foutriquet est un homme qui n\'aspire pas confiance, soit par manque de sérieux, soit par manque d\'intelligence ?',
-        answer: 'Faux',
-        answerComment: 'c\'est un homme chétif, de petite taille, ou une personne insignifiante',
+        title: 'America, F*** Yeah!!',
+        question: 'Comment a réagi Buzz Aldrin lorsqu\'un conspirationniste insista que l\'alunissage est un coup monté ? ',
+        answer: 'Il lui a mis un poing dans la face',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -787,10 +800,9 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Est-ce bien avisé de demander de l\'argent à un Fesse-Mathieu ?',
-        answer: 'Non',
-        answerComment: 'Car c\'est quelqu\'un d\'avare, de radin',
+        title: 'America, F*** Yeah!!',
+        question: 'Dans Inglorious Basterds, que se passe-t\'il pendant la projection du film de propagande «Stolz der Nation» (Nation\'s Pride) ?',
+        answer: 'Hitler et Goebbels sont tués, le cinéma est incendié, et beaucoup de Nazis sont tués dans l\'incendie, un beau moment America Fuck Yeah',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -802,13 +814,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 2,
+        group: 3,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Que veut dire flagorner dans la phrase «Autant j\'aime qu\'on me flagorne, autant je méprise ceux qui s\'y adonnent» ?',
-        answer: 'complimente',
-        answerComment: 'Autant j\'apprécie me faire complimenter, autant je méprise les lèche-culs',
+        title: 'L\'autruche d\'Afrique du Nord',
+        question: 'Sur combien de mois s\'étends la période de reproduction ?',
+        answer: '7 mois',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -820,12 +831,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 2,
+        group: 3,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Que recevait-on quand on se prenait un coup de férule à l\'école ?',
-        answer: 'Un coup de baton sur les doigts',
+        title: 'L\'autruche d\'Afrique du Nord',
+        question: 'Quels sont ces mois ?',
+        answer: 'Mars à Octobre',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -840,9 +851,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Qu\'est-ce qu\'un Flibou-chauve ?',
-        answer: 'Un Flibou-Chauve',
+        title: 'L\'autruche d\'Afrique du Nord',
+        question: 'Pouvez-vous me décrire en quelques mots la danse nuptiale de l\'Autruche d\'Afrique du Nord mâle ?',
+        answer: 'Il bat des ailes dans un mouvement rotatif en se mettant à genoux. Il plie son cou en forme de S et il balance la tête de droite à gauche.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -857,9 +868,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'À combien est vendu un Fjällkuback à IKEA ?',
-        answer: 'Pour Felycka $',
+        title: 'L\'autruche d\'Afrique du Nord',
+        question: 'Combien d\'œufs pond la femelle au cours de la 1ère saison de ponte ?',
+        answer: '3 mois',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -868,40 +879,6 @@ export class QuestionsService {
     },
     {
         id: 51,
-        type: 'Menu',
-        speed: false,
-        round: 2,
-        group: 3,
-        points: 1,
-
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Que peut-on dire d\'un homme qui est Funivare ?',
-        answer: 'C\'est un homme qui a 2 couilles et demi',
-        
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
-    {
-        id: 52,
-        type: 'Menu',
-        speed: false,
-        round: 2,
-        group: 3,
-        points: 1,
-
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Combien d\'œufs est une ferviche ?',
-        answer: 'Entre 10 et 30 oeufs',
-        
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
-    {
-        id: 53,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -918,7 +895,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 54,
+        id: 52,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -935,7 +912,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 55,
+        id: 53,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -952,7 +929,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 56,
+        id: 54,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -969,7 +946,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 57,
+        id: 55,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -986,7 +963,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 58,
+        id: 56,
         type: 'Addition',
         speed: true,
         round: 2,
@@ -1002,23 +979,23 @@ export class QuestionsService {
         locked: false,
         showAnswer: false
     },
-    {
-        id: 59,
-        type: 'Tips',
-        speed: false,
-        round: 2,
-        points: 0,
+    // {
+    //     id: 57,
+    //     type: 'Tips',
+    //     speed: false,
+    //     round: 2,
+    //     points: 0,
 
-        question: 'Dessin de Guillaume: En moyenne, 10sec par point parié',
-        answer: 'Avoir du pain sur la planche',
+    //     question: 'test de question de tips',
+    //     answer: 'NA',
         
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
+    //     showQuestion: false,
+    //     propositionsStep: 0,
+    //     locked: false,
+    //     showAnswer: false
+    // },
     {
-        id: 60,
+        id: 57,
         type: 'PoutineDeLaMort',
         speed: false,
         round: 3,

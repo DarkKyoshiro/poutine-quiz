@@ -74,7 +74,7 @@
 
         <ng-container *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
             <mat-card-header>
-                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}}</mat-card-subtitle>
+                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}} <ng-container *ngIf="questions[this.questionID - 1].type === 'Tips'">| Mean bet points: {{getMeanPoints() | number: '1.0-1'}}</ng-container></mat-card-subtitle>
                 <mat-card-title [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
                     <p class="comment" *ngIf="questions[this.questionID - 1].type === 'SelOuPoivre'"><ng-container *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i"><ng-container *ngIf="i>0">, </ng-container><ng-container *ngIf="i + 1 === questions[this.questionID - 1].propositionsDetailed?.length">ou </ng-container>{{proposition}}</ng-container></p>
                     <p>{{questions[this.questionID - 1].question}}</p>
@@ -83,7 +83,7 @@
             </mat-card-header>
             
             <mat-card-content *ngIf="questions[this.questionID - 1].type === 'Nugget'" style="white-space: pre-wrap">
-                <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{i+1}}. {{proposition}}</p>
+                <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i])}}% {{questions[this.questionID - 1]?.propositionsShort[i]}}. {{proposition}}</p> 
             </mat-card-content>
 
             <mat-card-content style="white-space: pre-wrap">

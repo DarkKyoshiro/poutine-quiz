@@ -424,6 +424,39 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     return numberAnswers
   }
 
+  getPercentAnswer(propositionsShort: string): number {
+    let totalAnswers: number = 0
+    let numberAnswers: number = 0
+
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID) {
+        totalAnswers += 1
+        if(answer.answer === propositionsShort) {
+          numberAnswers += 1
+        }
+      }
+    })
+
+    return 100 * numberAnswers / totalAnswers;
+  }
+
+  
+
+  getMeanPoints(): number {
+    let totalPoints: number = 0
+    let numberPoints: number = 0
+
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID) {
+        totalPoints += answer.pointsBet
+        numberPoints += 1
+      }
+    })
+
+    
+    return totalPoints / numberPoints;
+  }
+
   //Timer management
   onStartTimer(): void {
     this.socket.emit("startTimer")
