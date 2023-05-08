@@ -415,9 +415,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Quel honneur',
-        question: 'Je voudrais remercier le jury des oscars pour m\'avoir nominé non pas une fois, pas deux fois, pas trois fois, pas quatre fois mais bien cinq fois sans m\'accorder l\'oscar avant de m\'offrir l\'honneur de recevoir ce trophée ! Il aura fallu que je me fasse massacrer par un grizzli, que je dorme dans une carcasse de cheval et pire que tout, que je me laisse pousser la barbe bien trop longtemps, mais on l\'a eu! Merci',
-        answer: 'Leonardo DiCaprio dans the revenant',
+        title: 'Sorti de son contexte',
+        question: 'Un peu gluant, mais appétissant',
+        answer: 'Le Roi Lion, Simba',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -431,9 +431,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Quel honneur',
-        question: 'Je voudrais féliciter les autres nominés, Antonio Banderas dans Douleur et Gloire, Leonardo DiCaprio dans Once upon a time… in Hollywood, Adam Driver dans Marriage Story et Jonathan Pryce dans Les deux papes pour leur incroyable performance, pas aussi bonne que la mienne lorsque je me maquille, mais incroyable. Merci aux escaliers que j\'ai pu dévaler avec autant de grâce, et à mon rire incontrôlable qui a pourri la vie déjà pas fun de mon personnage. Merci',
-        answer: 'Joaquin Phoenixdans Joker',
+        title: 'Sorti de son contexte',
+        question: 'Patati, Patata, toute la journée ça n\'arrête pas',
+        answer: 'Cendrillon, Jaq',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -447,9 +447,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Quel honneur',
-        question: 'Merci, merci, merci beaucoup! Tellement d\'émotions, mon dieu, merci. Quel honneur, interpréter un tel monument de la culture française et recevoir un oscar pour ça, merci. Lorsqu\'on m\'a proposé le rôle, j\'ai tout de suite su que ça allait le rôle d\'une vie, non, je ne regrette rien, si vous saviez comme je vois la vie en rose sous le ciel de Paris, j\'en aurais presque envie de vous chanter un hymne, un hymne à l\'amour',
-        answer: 'Marion Cotillard dans La mome',
+        title: 'Sorti de son contexte',
+        question: 'Tu connais les hommes. Ils croient que "non" veut dire "oui" et "laisse tomber" veut dire "je t\'aimerais toujours"',
+        answer: 'Hercule, Mégara',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -463,9 +463,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Quel honneur',
-        question: 'Si on m\'avait dit un jour que je gagnerais un oscar pour avoir dansé, chanté et joué des claquettes avec le ténébreux Ryan, j\'y aurais jamais cru ',
-        answer: 'Emma Stone dans La La Land',
+        title: 'Sorti de son contexte',
+        question: 'Maintenant tais-toi et finis ton crouton',
+        answer: 'Ratatouille, Django (le père)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -479,9 +479,10 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Quel honneur',
-        question: 'Après Million Dollar Baby, Chariots of Fire, Rocky ou encore The Fighter, il était temps que l\'on s\'intéresse au Tennis, et quel meilleur rôle que ce rôle de père et de coach de ce duo de tenniswomen légendaire. Un script de 78 pages pour un plan de 78 pages',
-        answer: 'Will Smith dans King Richard',
+        title: 'Sorti de son contexte',
+        question: 'Mieux vaut demander pardon que la permission',
+        answer: 'Le Bossu de Notre dame, La Muraille',
+        answerComment: 'Les deux autres sont La Rocaille et La Volière',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -907,10 +908,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'Alors lui il joue le rôle d\'un animateur radio pendant la guerre du Vietnam qui raconte l\'histoire d\'un professeur de littérature aux méthodes pédagogiques plutôt originales. Ce professeur est ami avec le psychologue Sean Maguire qui suit un jeune homme brillant mais en difficulté. Ce jeune homme est aidé par un Génie au pouvoirs cosmiques phénoménaux dans un vrai mouchoir de poche qui l\'aide a surmonté son traumatisme d\'enfance et à trouver le bonheur.',
-        answer: 'Robin Williams',
-        answerComment: '(Good Morning Vietnam, Le cercle des poètes disparus, good will hunting, Aladdin)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'film d\'espionnage de 1995 qui suit les aventures d\'un agent secret britannique. Le film commence par l\'attaque du complexe de surveillance de la Russie par des criminels inconnus, qui volent un satellite contrôlé par un système appelé comme le film d\'ailleurs. Le personnage principal est chargé de récupérer le satellite volé et d\'empêcher son utilisation pour des attaques terroristes. Au cours de sa mission, il rencontre une programmatrice informatique russe et découvre qu\'un ancien agent du MI6 est impliqué dans le vol du satellite. Il doit alors affronter l\'ancien agent du MI6 dans un combat final épique pour empêcher le satellite de détruire Londres.',
+        answer: 'Golden Eye (Golden Ass 007)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -924,10 +924,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'Après avoir quitté son mari et son fils pour poursuivre sa carrière, cette femme le regrette rapidement et revient réclamer la garde du fils qu\'elle avait pourtant abandonné. Ce que personne ne savait, c\'est que cette femme est une survivante de l\'holocauste qui a dû faire un choix déchirant pour sauver la vie d\'un de ses enfants. Soit devenir une éditrice tyrannique d\'un magasine de mode, ou devenir mère célibataire propriétaire d\'un hôtel sur une ile grecque et qui doit faire face à l\'arrivée soudaine de son ancien amant et père de sa fille. ',
-        answer: 'Meryl Streep',
-        answerComment: '(Kramer vs Kramer, Sophie\'s choice, The devil wears prada, Mamma Mia)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'Roman publié en 1870, qui suit les aventures du professeur Aronnax, de son fidèle serviteur Conseil et du harponneur Ned Land alors qu\'ils sont capturés par le mystérieux capitaine Nemo à bord du sous-marin futuriste "Nautilus". Au cours de leur voyage sous les mers, le capitaine Nemo leur fait découvrir les merveilles et les dangers des fonds marins, mais aussi sa propre histoire douloureuse et sa quête de vengeance contre les impérialistes qui ont tué sa famille. Malgré les efforts d\'Aronnax pour convaincre Nemo de renoncer à sa vengeance, les trois captifs finissent par s\'échapper du Nautilus après une série d\'aventures et de rebondissements.',
+        answer: '20 000 lieux sous les mères (20 000 vieux sous mémère)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -941,10 +940,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'C\'est un inspecteur de police de Hong Kong qui est envoyé à Los Angeles pour apprendre à un jeune garçon la discipline et la maitrise de soi grâce aux arts martiaux. Au cours d\'un de ses voyages, il fait l\'acquisition d\'un costume high-tech qui le transforme en espion quand il le porte, et il s\'en est servi pour voyager dans l\'ouest américain pour sauver une princesse d\'une guerre des gangs de New York',
-        answer: 'Jackie Chan',
-        answerComment: '(Rush Hour, Karaté Kid, The Tuxedo, Shanghai Noon, Rumble in the Bronx)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'Film de science-fiction de 1982. Le film suit l\'histoire d\'un jeune garçon nommé Elliott qui rencontre un extraterrestre égaré et décide de l\'aider à rentrer chez lui. Elliott et ses amis le cachent dans leur maison, le nourrissent et l\'aident à construire une balise pour appeler son vaisseau spatial. Pendant ce temps, les autorités cherchent l\'Extra-terrestre et les enfants doivent travailler ensemble pour le protéger et le ramener chez lui avant qu\'il ne soit trop tard.',
+        answer: 'ET l\'Extra-terrestre (ET l\'Extra-testicule)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -958,10 +956,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'Lorelei Lee, une chanteuse de cabaret blonde et espiègle cherche à épouser un millionnaire. Pour ça elle devient chanteuse de Jazz, mais tombe amoureuse d\'un musicien déguisé en femme. Malheureusement pour lui, elle était tout autant séduisante que manipulatrice et après l\'avoir épousé, elle décida de le tuer avec l\'aide d\'un cow-boy qui l\'avait enlevé dans le passé car il pensait que c\'était la femme de sa vie',
-        answer: 'Marilyn Monroe',
-        answerComment: '(Gentlemen prefers blondes, Some like it hot, Niagara, Bus Stop)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'Film de guerre de 1998. Le film suit un groupe de soldats américains pendant la Seconde Guerre mondiale qui sont chargés de retrouver et de ramener sain et sauf un soldat, dont les trois frères ont été tués au combat. Le groupe de soldats traverse les lignes ennemies pour trouver le soldat et doit faire face à de nombreux obstacles et pertes en cours de route. Finalement, ils le trouvent, mais sont attaqués par les forces allemandes, ce qui entraîne une bataille épique et coûteuse pour défendre leur position et protéger le soldat.',
+        answer: 'Il faut sauver le soldat Ryan (Il faut sauter la sœur de Ryan)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -975,10 +972,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'C\'est l\'histoire d\'une femme forte et indépendante ayant survécu à des extraterrestres mortels, s\'étant battu pour la sauvegarde des gorilles du Rwanda qu\'elle étudie, et ayant affronté le sexisme et la concurrence pour réussir dans le monde de la finance. D\'ailleurs, les gorilles ne sont pas les seules espèces qu\'elle étudie, elle étudia aussi une espèces humanoïde bleue vivant sur une autre planète tout en ayant un fantôme hantant son appartement, la forçant à appeler une équipe d\'exorcistes modernes.',
-        answer: 'Sigourney Weavers',
-        answerComment: '(Alien, Gorilles dans la brume, Working Girl, Avatar, Ghostbusters)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'Western spaghetti de 1966. Le film suit trois hommes, un chasseur de primes, un tueur à gages et un voleur, alors qu\'ils poursuivent une fortune en pièces d\'or pendant la guerre civile américaine. Les trois hommes, qui se méprisent mutuellement, font face à de nombreux obstacles et ennemis en cours de route, notamment l\'armée et les bandits. Cependant, leur quête les mène finalement à un cimetière, où les pièces d\'or sont enterrées. Les trois hommes se battent alors à mort pour s\'emparer de la fortune, mais seul l\'un d\'entre eux réussit à s\'en sortir.',
+        answer: 'Le bon, la brute et le truand (Le bon, la brute et le trou béant)',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -992,10 +988,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Personnalité multiple',
-        question: 'Alors c\'est un alcoolique suicidaire qui part à Las Vegas pour boire jusqu\'à la mort car il n\'arrive pas à adapter un livre difficile en film. Dans son état d\'alcoolémie avancé, il vola la déclaration d\'indépendance des états-unis, a vendu son ame au diable pour sauver son père adoptif, s\'est retrouvé pris dans un avion avec pleins de criminels dangereux, a aidé un ancien prisonnier à s\'échapper d\'Alcatraz, a volé 50 voitures en une nuit pour sauver son frère, à trafiqué des armes pendant un conflit en Afrique, et à découvert une prophétie terrifiante sur la fin du monde dans une capsule temporelle d\'une jeune enfant. Bref on peut dire qu\'il n\'a pas l\'alcool facile',
-        answer: 'Nicolas Cage',
-        answerComment: '(Leaving Las Vegas, Adaptation, National Treasure, Ghost Rider, Con air, The Rock, Gone in 60 seconds, Lord of War, Knowing)',
+        title: 'Toutes les reponses sont des titres de films X',
+        question: 'film de 1990. L\'histoire suit le lieutenant John Dunbar de l\'armée américaine pendant la Guerre de Sécession, qui est envoyé dans un poste de traite isolé dans les Grandes Plaines. Là-bas, il rencontre une tribu de Sioux et se lie d\'amitié avec eux, apprenant leur langue et leur culture. Dunbar est ensuite confronté aux tensions entre l\'armée américaine et les tribus indigènes, et doit choisir de quel côté il se tiendra. Au fil du temps, Dunbar devient de plus en plus intégré à la tribu Sioux et s\'éloigne de son ancienne vie d\'homme blanc. Cependant, la guerre et le racisme persistent, entraînant des conflits violents entre les différentes factions.',
+        answer: 'Danse avec les loups (Danse avec mes burnes)',
 
         showQuestion: false,
         propositionsStep: 0,
@@ -1024,7 +1019,7 @@ export class QuestionsService {
         round: 3,
         points: 0,
 
-        question: '1. Avez-vous déjà vu un cycliste respecter un feu rouge ?\n\n2. À qui donneriez vous l\'Oscar de la meilleure patate frite ?\n\n3. D\'après le film, À l\'ouest rien de nouveau. Mais qu\'en est-il de l\'Est ?\n\n4. En terme d\'ambiance, vous préférez la gilfe de Will Smith ou le coup de boule de Zizou ?\n\n5. V ou F, tous les ans, des centaines de noeud papillons migrent vers la cérémonie des oscars afin de se reproduire ?\n\n6. Vous préférez siffler une chanson ou un fut de bière ?\n\n7. V ou F, le film nominé en 2022 "Don\'t look up" raconte l\'histoire surréaliste d\'un homme qui refuse de regarde le film Up ?\n\n8. À votre avis, est-ce que la nommination du film Dune a eu un impact sur le nombre de visite de la dune du pilat près de Bordeaux ?\n\n9. Dans le film Spider-Man No way Home, combien d\'arraignées faisaient partis des figurants ?\n\n10. V ou F, après avatar dans la forêt et avatar 2 dans l\'eau, avatar 3 verra la nation du feu passer à l\'attaque et Jack Sully qui va disparaitre pendant 100 ans avant d\'être retrouvé par deux gamins ?',
+        question: '1. Pensez-vous que Georges soit un bon choix de prénom pour le 8ème nain ?\n\n2. V ou F, la bonne fée avait d\'autres intentions en faisant grandir le nez de Pinocchio à chaque mensonge ?\n\n3. Citez une personne qui n\'a jamais couché avec Zeus\n\n4. Alors certes à notre époque Lady Tremaine (la belle mère de Cendrillon) serait qualifiée de grosse pute, mais à leur époque, grosse pute ou pas grosse pute ?\n\n5. Nommez-moi une émission de télé-réalité à laquelle Gaston pourrait participer\n\n6. Quel est votre méchant de Disney préféré ? Si vous ne savez pas ou que vous n\'avez pas de gout, répondez Scar.\n\n7. Dans Alice au pays des merveilles, une Reine de cœur vaut plus ou moins qu\'un flush royal ?\n\n8. Avec l\'augmentation du coût de la vie, combien de jambes pouvez-vous maintenant avoir en échange de votre voix auprès d\'Ursula ?\n\n9. Que pensez-vous que le Capitaine Crochet fait réellement quand il dit qu\'il part s\'astiquer le crochet ?\n\n10. Si vous n\'aviez plus qu\'un vœu à demander au génie, le libéreriez-vous, ou demanderiez-vous à gagner la Poutine de la mort ?',
         answer: 'NA',
         
         showQuestion: false,
