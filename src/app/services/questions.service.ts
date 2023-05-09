@@ -529,9 +529,10 @@ export class QuestionsService {
         points: 1,
 
         question: 'Quelle sentence le Juge Michael Cicconetti a deja rendu ?',
-        propositionsDetailed: ['Condamné une ado qui n\'a pas payé son taxi à marcher 30 miles à pied', 'Condamné un homme cherchant à se payer une prostitué à défiler en ville déguisé en poulet', 'Condamné une femme qui a abandonné 35 chattons dans une forêt, à passer une nuit dans les bois (il neigeait cette nuit)', 'Tous les châtiments au dessus, et tellement d\'autres'],
+        propositionsDetailed: ['Condamné un homme cherchant à se payer une prostitué à défiler en ville déguisé en poulet', 'Condamné une femme qui a abandonné 35 chattons dans une forêt, à passer une nuit dans les bois (il neigeait cette nuit)', 'Tous les châtiments au dessus, et tellement d\'autres', 'Condamné à de la prison... Oui la justice c\'est pas toujours drôle'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'D.',
+        answer: 'C.',
+        answerComment: 'Un homme ayant commis des abus sur des enfants a été envoyé dans une école en tenue de chien et a dû parler de la sécurité des enfants.\n\nLors de fortes tempêtes de neige, il a ordonné aux prévenus de déneiger une maison de retraite.\n\nLes adolescents qui ont crevé les pneus des bus scolaires ont été forcés d\'organiser un pique-nique pour les enfants de l\'école primaire dont la sortie a été annulée à cause de la farce.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -581,7 +582,7 @@ export class QuestionsService {
         points: 1,
 
         question: 'Combien de Litres d\'eau economiserait-on si on pissait sous la douche tout les jours ?',
-        propositionsDetailed: ['1000 L', '1500 L', '2000 L', '2500 L'],
+        propositionsDetailed: ['1000 L', '1500 L', '2000 L', 'Pas assez pour justifier les engueulades par sa blonde'],
         propositionsShort: ['A', 'B', 'C', 'D'],
         answer: 'C.',
         
@@ -648,7 +649,7 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Dites... mais c\'est vrai ! Ouais, ce qu\'on raconte à la télé, qu\'il faut toujours être gentil avec les ptites vieilles. C\'est vrai qu\'elles sont pas complètement nulles',
+        question: 'Oh oui Harry, il a le droit, et il l\'a fait... Alors dorénavent, on viendra jouer à Donkey Kong',
         propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
         propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
         answer: 'Dumb & Dumber',
