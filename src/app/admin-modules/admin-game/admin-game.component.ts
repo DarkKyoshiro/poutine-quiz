@@ -109,6 +109,19 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     //------------------------------------------------------------------------------------
     this.socket.emit('refresh-answers')
     this.socket.on('get-answers', (data: any) => {
+      this.answers = [];
+      this.answers = data;
+      // this.answers = this.answers.sort((a, b) => a.timestamp - b.timestamp);
+      //this.answers = this.answers.sort((a, b) => b.correct - a.correct);
+
+      // if(this.getNumberAnswers() >= this.teams.length / this.divider  && this.getNumberAnswers() - 1 < this.teams.length / 3  && (this.questions[this.questionID - 1].type === 'Addition' || this.questions[this.questionID - 1].type === 'SelOuPoivre')) {
+      //   this._snackBar.open("Au moins un tier des équipes ont répondus. Vous pouvez arrêter ici.", "OK", {
+      //     duration: this.durationInSeconds * 1000
+      //   });
+      // }
+    })
+
+    this.socket.on('get-answers-team', (data: any) => {
       let answerState: number = 0;
       let tempAnswer!: Answer;
       // this.answers = [];
@@ -471,6 +484,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
   }
 
   onExtendTimer(): void {
+    if(this.questions[this.questionID-1].locked) {this.socket.emit('question-correction')}
     this.socket.emit("extendTimer", 10)
   }
 }

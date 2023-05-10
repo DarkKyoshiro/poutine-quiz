@@ -76,12 +76,15 @@
             <mat-card-header>
                 <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}} <ng-container *ngIf="questions[this.questionID - 1].type === 'Tips'">| Mean bet points: {{getMeanPoints() | number: '1.0-1'}}</ng-container></mat-card-subtitle>
                 <mat-card-title [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
-                    <p class="comment" *ngIf="questions[this.questionID - 1].type === 'SelOuPoivre'"><ng-container *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i"><ng-container *ngIf="i>0">, </ng-container><ng-container *ngIf="i + 1 === questions[this.questionID - 1].propositionsDetailed?.length">ou </ng-container>{{proposition}}</ng-container></p>
+                    <!-- Sel ou poivre categories -->
+                    <p class="comment" *ngIf="questions[this.questionID - 1].type === 'SelOuPoivre'"><ng-container *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i"><ng-container *ngIf="i>0">, </ng-container><ng-container *ngIf="i + 1 === questions[this.questionID - 1].propositionsDetailed?.length">ou </ng-container>{{proposition}} ({{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i])}}%)</ng-container></p>
+                    <!-- Question -->
                     <p>{{questions[this.questionID - 1].question}}</p>
                     <p class="comment">{{questions[this.questionID - 1].questionComment}}</p>
                 </mat-card-title>
             </mat-card-header>
             
+            <!-- Propositions -->
             <mat-card-content *ngIf="questions[this.questionID - 1].type === 'Nugget'" style="white-space: pre-wrap">
                 <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i])}}% {{questions[this.questionID - 1]?.propositionsShort[i]}}. {{proposition}}</p> 
             </mat-card-content>

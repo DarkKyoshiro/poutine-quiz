@@ -55,6 +55,7 @@ export class GameComponent implements OnInit, OnDestroy {
       if(this.timerActive && this.timer > 0) { 
         this.timer-- 
         if(this.timer === 0) { 
+          this.timerActive = false
           if(!this.getReponse()) { this.onAnswer('#!Timeout!#') }
         };
       };
@@ -127,6 +128,11 @@ export class GameComponent implements OnInit, OnDestroy {
 
     this.socket.emit('refresh-answers')
     this.socket.on('get-answers', (data: any[]) => {
+      this.answers = []
+      this.answers = data
+    })
+
+    this.socket.on('get-answers-team', (data: any[]) => {
       this.answers = []
       this.answers = data
     })

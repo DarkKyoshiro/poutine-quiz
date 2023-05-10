@@ -347,7 +347,7 @@ io.on("connection", socket => {
       }
     })
     if(!control) {answers.push(data)}
-    io.emit('get-answers', answers)
+    io.emit('get-answers-team', answers)
   })
 
   socket.on("validate-answers", (data) => {
@@ -390,7 +390,7 @@ io.on("connection", socket => {
       }
     })
     io.emit('send-teams', getScores())
-    io.emit('get-answers', answers)
+    io.emit('get-answers-team', answers)
   })
 
   socket.on('get-team-scores', teamName => {
