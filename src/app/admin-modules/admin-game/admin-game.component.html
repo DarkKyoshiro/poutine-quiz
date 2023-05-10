@@ -22,10 +22,11 @@
             <button mat-icon-button aria-label="Start quiz" (click)="onStartQuiz()" *ngIf="this.questions.length === 0">
                 <mat-icon>play_arrow</mat-icon>
             </button>
-            <br>
 
-            <p class="comment" *ngIf="this.questions.length > 0">
-                <span [style.color]="timer <= 5 ? 'red' : ''">{{timer}} sec</span>
+            <ng-container *ngIf="this.questions.length > 0 && this.questionID > 0">| </ng-container>
+
+            <span class="comment" *ngIf="this.questions.length > 0 && this.questionID > 0">
+                <span [style.color]="timer <= 5 ? 'red' : (timer <= 15 ? 'yellow' : '')">{{timer}} sec</span>
                 <button mat-icon-button aria-label="Start timer" (click)="onStartTimer()" *ngIf="!this.timerActive">
                     <mat-icon>timer</mat-icon>
                 </button>
@@ -38,7 +39,7 @@
                 <button mat-icon-button aria-label="Extend timer" (click)="onExtendTimer()">
                     <mat-icon>timer_10_alt_1</mat-icon>
                 </button>
-            </p>
+            </span>
 
             <!-- Steps management -->
             <!-- <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
