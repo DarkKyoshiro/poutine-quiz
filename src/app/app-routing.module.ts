@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'rejected', component: HomeComponent },
   { path: 'disconnected', component: HomeComponent },
   { path: 'qform', component: QuestionFormComponent}, 
-  { path: 'admin', component: AdminComponent}, 
+  { path: 'grandefrite', component: AdminComponent}, 
   { path: 'display', component: DisplayComponent}, 
   { path: 'game/:team', component: GameComponent }, 
   { path: '*', component: HomeComponent }
