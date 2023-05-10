@@ -2,12 +2,20 @@
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Data backup options
+                Save data
             </mat-panel-title>
         </mat-expansion-panel-header>
         <button mat-raised-button aria-label="Save data" (click)="onSave()">
             <mat-icon>save</mat-icon>
         </button>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Restore data
+            </mat-panel-title>
+        </mat-expansion-panel-header>
         <button mat-raised-button aria-label="Reload data" (click)="onReload()">
             <mat-icon>download</mat-icon>
         </button>

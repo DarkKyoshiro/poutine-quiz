@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Socket } from 'ngx-socket-io';
+import { CourseDialogComponent } from 'src/app/course-dialog/course-dialog.component';
 
 @Component({
   selector: 'app-admin-settings',
@@ -20,6 +22,7 @@ export class AdminSettingsComponent implements OnInit {
   columnsToDisplay2: string[] = ['round', 'menuNb', 'teamGroup', 'groupManagement'];
 
   constructor(private socket: Socket,
+    private dialog: MatDialog, 
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -46,10 +49,27 @@ export class AdminSettingsComponent implements OnInit {
   }
 
   onReload(): void {
-    this.socket.emit('reload')
-    this._snackBar.open("Data reloaded!", "OK", {
-      duration: this.durationInSeconds * 1000
-    });
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      text: 'Vous êtes sur le point de restaurer les réponses sauvegardées, effaçant par la même occasions les réponses actuelles. Voulez-vous continuer ?'
+    }
+
+    const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if(data) {
+          this.socket.emit('reload')
+          this._snackBar.open("Data reloaded!", "OK", {
+            duration: this.durationInSeconds * 1000
+          });
+        }
+      }
+    )
   }
 
   onChangeLockSpeed(): void {
