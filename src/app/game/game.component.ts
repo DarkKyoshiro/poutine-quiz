@@ -82,7 +82,7 @@ export class GameComponent implements OnInit, OnDestroy {
     //---------------------- Team management ---------------------------------------------
     //------------------------------------------------------------------------------------
     //Initiate variables
-    this.teamName = this.route.snapshot.params['team'];
+    this.teamName = this.route.snapshot.params['team'].trim();
 
     //User management
     this.socket.emit('new-connection', this.teamName);
