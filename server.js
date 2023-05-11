@@ -15,7 +15,9 @@ const app = express();
 
 //For HerokuApp
 //-----------------------------------------------------------------
-mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/poutinequiz?retryWrites=true&w=majority',
+//! Change quizID for each quiz
+var quizID = 'poutinequizS02E03'
+mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/' + quizID + '?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
