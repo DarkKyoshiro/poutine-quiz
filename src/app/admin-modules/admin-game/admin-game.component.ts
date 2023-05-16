@@ -215,11 +215,10 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     }
 
     // Save when changing question type
-    console.log(this.questions[this.questionID - 1].type !== this.questions[this.questionID].type, this.questions[this.questionID - 1].type, this.questions[this.questionID].type)
     // if(this.questions[this.questionID - 1].type !== this.questions[this.questionID].type) {
       this.socket.emit('save')
       this._snackBar.open("Data saved!", "OK", {
-        duration: this.durationInSeconds * 1000
+        duration: this.durationInSeconds * 200
       });
     // }
   }
