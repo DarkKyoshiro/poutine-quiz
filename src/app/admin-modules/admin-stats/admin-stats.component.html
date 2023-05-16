@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider><br>
         
         <h4>Average</h4>
         <div class="Stats">
@@ -37,7 +37,7 @@
             </p>
         </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider><br>
 
         <h4>Accumulated</h4>
         <div class="Stats">
@@ -55,18 +55,33 @@
             </p>
         </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider><br>
 
         <h4>Remontada/Degringolada</h4>
         <div class="Stats">
-            <p>
-                <mat-icon>trending_up</mat-icon><br>
-                {{remontada()}}
-            </p>
-            <p>
-                <mat-icon>trending_down</mat-icon><br>
-                {{degringolada()}}
-            </p>
+            <table>
+                <tr>
+                    <th>Rang</th>
+                    <th>Équipe</th>
+                    <th class="separator-left">Rd 1 - Rank</th>
+                    <th>Rd 2 - Rank</th>
+                    <th>Diff - Rank</th>
+                    <th class="separator-left">Rd 1 - Score</th>
+                    <th>Rd 2 - Score</th>
+                    <th>Ratio - Score</th>
+                </tr>
+            
+                <tr *ngFor="let team of remontadaTable(); let i=index">
+                    <td>{{i+1}}.</td>
+                    <td>{{team.name}}</td>
+                    <td class="separator-left">{{team.rd1Rank}}</td>
+                    <td>{{team.rd2Rank}}</td>
+                    <td>{{team.rd1Rank - team.rd2Rank}}</td>
+                    <td class="separator-left">{{team.rd1Score}}</td>
+                    <td>{{team.rd2Score - team.rd1Score}}</td>
+                    <td>{{(team.rd2Score - team.rd1Score) / team.rd1Score | number: '1.1-1'}}</td>
+                </tr>
+            </table>
         </div>
     </mat-expansion-panel>
 
@@ -79,7 +94,7 @@
 
         <table>
             <tr>
-                <th >Rang</th>
+                <th>Rang</th>
                 <th>Équipe</th>
                 <th>Score</th>
             </tr>
