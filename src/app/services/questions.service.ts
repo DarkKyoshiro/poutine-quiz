@@ -13,10 +13,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Quel est le nom de la méchante reine dans Blanche-Neige et les Sept Nains ?',
-        propositionsDetailed: ['Morgause', 'Grimhilde', 'Amara', 'Valérie'],
+        question: 'Quelle est la particularité du village de Suloszowa en Pologne ?',
+        propositionsDetailed: ['Personne ne parle le Polonais', 'Le maire est un chien', 'Elle n\'a qu\'une rue', 'Il n\'y a qu\'une femme dans le village'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Grimhilde',
+        answer: 'C.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -30,10 +30,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Dans quel film apparait Scar ?',
-        propositionsDetailed: ['Aladdin', 'Hercules', 'La Petite Sirène', 'Avengers: End Game'],
+        question: 'Pourquoi la nouvelle-zelandaise Chloe Phillips-Harris s’est fait refuse l’entree au Kazakhstan ?',
+        propositionsDetailed: ['Parce qu’elle avait oublié son passeport', 'Parce que la carte dans le bureau des douaniers n’avait pas la Nouvelle-Zélande dessus', 'Parce qu’elle essayait d’importer illégalement des araignées de collection', 'Parce que les douaniers pensaient que la Nouvelle-Zélande était une pure invention de J.R.R. Tolkien'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Hercules',
+        answer: 'B.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -47,10 +47,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Mais que fume la chenille dans Alice au pays des merveilles ?',
-        propositionsDetailed: ['De la Weed', 'Un Narguilé', 'La Pipe', 'Du Vermifuge'],
+        question: 'Quel est le plus proche parent relatif du T-Rex ?',
+        propositionsDetailed: ['Roger la poule', 'Herbert le lézard', 'Barnabé le crocodile', 'Jacques le dragon'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Un Narguilé',
+        answer: 'A.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -64,12 +64,11 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Dans merlin l\'enchanteur, en quoi se transforme Merlin pour vaincre MIM ?',
-        propositionsDetailed: ['En Bouc', 'En Morse', 'En Souris', 'En Virus'],
+        question: 'Comment appelle-t’on un groupe de panda ?',
+        propositionsDetailed: ['Un embarras', 'Un échec', 'Une honte', 'Une école de dragon guerrier'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'D. En Virus',
-        answerComment: 'Mim en Crocodile -> Merlin en tortue -> Merlin en lièvre -> Mim en renard -> Merlin en chenille -> Mim en poule -> Merlin en morse -> Mim en elephant -> Merlin en souris -> Mim en chat -> Mim en serpent -> Merlin en crabe -> Mim en rhinocéros -> Merlin en bouc -> Mim en dragon -> Merlin en virus -> KO technique, merlin l\'emporte',
-         
+        answer: 'A.',
+        
         showQuestion: false,
         propositionsStep: 0,
         locked: false,
@@ -82,10 +81,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Quelle est la meilleure chanson de méchant de Disney ?',
-        propositionsDetailed: ['Soyez prêtes, du Roi Lion', 'Pauvres âmes infortunées, de La Petite Sirène', 'Mes amis de l\'au-delà, de la Princesse et la Grenouille', 'Infernale, du Bossu de Notre-Dame'],
+        question: 'Quelle Barbie est mentionnee dans le film recemment sorti ?',
+        propositionsDetailed: ['Barbie en fauteuil roulant', 'Barbie ramasseuse de caca', 'Barbie Proust', 'Barbie Chauve'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'En fonction des réponses des équipes, en cas d\'égalité, A.',
+        answer: 'C.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -94,16 +93,15 @@ export class QuestionsService {
     },
     {
         id: 6,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Nugget',
+        speed: false,
         round: 1,
         points: 1,
 
-        question: 'Syndrome',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Pixar (Les indestructibles, 2004)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Avec quelle manette insolite le joueur gbbearzly a fini Dark Souls ?',
+        propositionsDetailed: ['Une guitare de Rock Band', 'Les Bongos de Donkey Kong Jungle Beat', 'Le Power Glove de la NES', 'Sa bite'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'B. Grimhilde',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -117,10 +115,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Edgar Balthazar',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Disney (Les aristochats)',
+        question: 'Kallax',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'IKEA',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -134,10 +132,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Capitaine Rourke',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Disney (Atlantis)',
+        question: 'Utby',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'Les deux',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -151,11 +149,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Mor\'Du',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Les deux (Rebelle, 2012)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Bolmen',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'Les deux',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -169,11 +166,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Randall Boggs',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Pixar (Monstres et Companie, 2001)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Rövhalet',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'Lieu Suédois',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -187,11 +183,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Ercole Visconti',
-        propositionsDetailed: ['Disney', 'Pixar', 'Les deux'],
-        propositionsShort: ['Disney', 'Pixar', 'Les deux'],
-        answer: 'Les deux (Luca, 2021)',
-        answerComment: 'Rachat de Pixar par Disney en 2006',
+        question: 'Lövbacken',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'IKEA',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -200,16 +195,15 @@ export class QuestionsService {
     },
     {
         id: 12,
-        type: 'Menu',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 1,
-        group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'V ou F, dans le livre Peter Pan et Wendy de James Matthew Barrie, Peter tue les enfants perdus dès qu\'ils grandissent trop ?',
-        answer: 'Vrai',
-        answerComment: 'Peter Pan est né de la plume de James Matthew Barrie, écrivain né en 1860 en Écosse. Lorsqu\'il a 7 ans, il perd son grand frère David, chouchou de la famille. À sa mort J.M Barrie prend la place de ce frère disparu, il porte ses vêtements, imite sa voix, réécrit son histoire. On raconte même qu\'il s\'était tellement mis dans son personnage, que des médecins constatent un arrêt de croissance. Comme s\'il était bloqué dans la vie qu\'il inventait pour David. Cette histoire hante tous ses textes.\n\nL\'histoire est celle d\'un enfant qui ne veut pas grandir et qui récupère les enfants morts, tombés du berceau ou abandonnés pour les envoyer au pays de “Neverland”. Ce personnage, loin d\'être un enfant de chœur, est habité par une haine profonde des adultes. Un adage de l\'île raconte qu\'à chaque respiration, un adulte meurt. Alors Peter Pan s\'amuse à respirer fort et haleter le plus possible pour tuer le maximum d\'adultes. Il tue aussi les enfants perdus. Dès qu\'ils grandissent, il ne veut plus d\'eux sur cette île. Profondément égoïste, le héros a aussi perdu la notion de temps en étant bloqué depuis des années sur cette île.',
+        question: 'Godmorgen',
+        propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
+        answer: 'IKEA',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -224,16 +218,32 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'Quelle œuvre classique de la littérature britanique a inspiré le Roi Lion ? ',
-        answer: 'Hamlet',
-        answerComment: 'Les deux intrigues ont un méchant assoiffé de pouvoir qui assassine son frère pour prendre le trône. Il exile ensuite son neveu et essaye de le détruire. Il appartient alors au prince, en proie à des conflits intérieurs émotifs et intellectuels, de récupérer ce qui lui est légitime.',
+        title: 'Stupide mais fonctionnel',
+        question: 'Durant la première guerre mondiale, les Allemands ont déguisé un de leur navire pour le faire passer pour le RMS Carmania, un navire anglais.\n C’était un plan malin, mais qui n’a pas marché.\n Pourquoi ?',
+        answer: 'Parce qu\'ils ont croisé le vrai RMS Carmania',
         
         showQuestion: false,
         propositionsStep: 0,
         locked: false,
         showAnswer: false
     },
+    // {
+    //     id: 14,
+    //     type: 'Menu',
+    //     speed: false,
+    //     round: 1,
+    //     group: 1,
+    //     points: 1,
+
+    //     title: 'Stupide mais fonctionnel',
+    //     question: 'V ou F\n Un général en mauvaise position a décidé d’envoyer des danseuses et des musiciens vers le campement ennemi pour faire diversion ?',
+    //     answer: 'Vrai',
+        
+    //     showQuestion: false,
+    //     propositionsStep: 0,
+    //     locked: false,
+    //     showAnswer: false
+    // },
     {
         id: 14,
         type: 'Menu',
@@ -242,9 +252,10 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'À quel âge la vraie Pocahontas est morte après avoir été faite prisonnière, convertie au catholicisme, et mariée à un producteur de tabac en Angleterre ? (À deux ans près)',
-        answer: '22 ans',
+        title: 'Stupide mais fonctionnel',
+        question: 'V ou F\n Les Égyptiens ont déjà perdus une guerre à cause de chats ?',
+        answer: 'Vrai',
+        answerComment: 'En 525 BC, lors de la bataille de Pélusium, le roi perse Cambyse II ordonne à ses guerriers de peindre des chats sur leurs boucliers pour dissuader les Égyptiens d\'attaquer. Lorsque les Perses se sont lancés dans la bataille, ils l\'ont fait derrière un grand groupe de chats.\n\n Les forces égyptiennes ne voulaient pas risquer d\'attirer la colère de leurs dieux et se sont rapidement rendues aux Perses. La victoire s\'est avérée décisive et, peu de temps après, les Perses sont devenus les nouveaux maîtres de l\'Égypte. Cette bataille est souvent décrite comme l\'un des premiers exemples de guerre psychologique.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -259,9 +270,9 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Bye bye notre enfance',
-        question: 'Comment se fini l\'histoire du Bossu de Notre-Dame dans le livre ?',
-        answer: 'Frollo tue Phoebus, Frollo fait tuer Esmeralda, Quasimodo tue Frollo, et il se laisse mourir avec le cadavre d\'Esmeralda',
+        title: 'Stupide mais fonctionnel',
+        question: 'Qu’apprenaient les brochures écrites par Sefton Delmer aux soldats Allemands pendant la seconde guerre mondiale afin d’Aider les alliés ?',
+        answer: 'À faker des maladies pour ne pas aller au combat',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -273,13 +284,13 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 1,
-        group: 2,
+        group: 1,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Qui fut le premier bras droit de méchants à changer de camps dans un film d\'animation Disney ?',
-        answer: 'Le chasseur Humbert dans Blanche-Neige et les Sept nains',
-        answerComment: 'En même temps, c\'est pas mal le premier film d\'animation de Disney',
+        title: 'Stupide mais fonctionnel',
+        question: 'Le 23 Janvier 1795, la France a remporté une bataille navale contre la flotte néerlandaise, avec une unité assez inattendue.\nQuel type d’unités la France a utilisée pour gagner cette guerre ?',
+        answer: 'Vrai',
+        answerComment: "Le 23 janvier 1795, pendant les guerres de la Révolution française, un grand nombre de navires de guerre néerlandais étaient amarrés à Den Helder, une ville portuaire des Pays-Bas. Au cours d'un hiver particulièrement froid, le quai gèle soudainement et les navires sont pris au piège. Un régiment de cavalerie français s'en aperçut et décida de charger les navires. Ils ont enroulé du tissu autour des sabots des chevaux afin d'adoucir leur coup contre la glace et ont chargé les Néerlandais pendant qu'ils dormaient. Ils s'emparèrent de tous les navires sans aucune perte.\nC'est le seul cas dans l'histoire d'une charge de cavalerie contre une flotte navale.",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -294,10 +305,9 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Dans quel film Aladdin, Iago laisse définitivement tomber Jafar ?',
-        answer: 'Aladdin II, Le retour de Jafar',
-        answerComment: 'Il se sacrifie pour arrêter Jafar, mais survit et devient un bon ami d\'Aladdin (et part avec son père dans le 3, le prince des voleurs)',
+        title: 'Internet est magnifique, ou pas',
+        question: 'En 2010, un sondage en ligne a demandé aux internautes dans quel pays Justin Bieber devrait faire sa prochaine tournée.\nQuel pays est arrivé en tête du sondage ?',
+        answer: 'Corée du Nord',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -312,9 +322,9 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'Pour quelle raison Kronk décide de trahir Yzma dans Kuzco ?',
-        answer: 'Parce qu\'elle n\'aime pas les gougères aux épinards de Kronk',
+        title: 'Internet est magnifique, ou pas',
+        question: 'Combien de temps a-t’il fallu à internet pour transformé « Tay », l’IA de Google, en gros Nazi voulant exterminé l’humanité ? à 3h près',
+        answer: '16h',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -329,10 +339,10 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Hommes de main ambidextres',
-        question: 'V ou F, à la base, Kaa était sensé trahir Shere Khan dans le Livre de la jungle en sauvant Mowgli ?',
-        answer: 'Faux',
-        answerComment: 'Dans le livre originel de Rudyard Kipling, Le Livre de la jungle, Kaa est un ami de Mowgli. En effet, il vient en aide à Baloo et Bagheera pour récupérer Mowgli enlevé par les Bandar-Log et plus tard se lie d\'amitié avec le petit homme.',
+        title: 'Internet est magnifique, ou pas',
+        question: 'V ou F\nQuand Mountain Dew a demandé à internet de choisir le nom de sa nouvelle saveur, l\'un des noms les plus populaires était « Zelda\'s juice » ?',
+        answer: 'F',
+        answerComment: 'Il y avait Hitler did nothing wrong par contre',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -344,13 +354,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 1,
-        group: 3,
+        group: 2,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Qui est la méchante dans Cendrillon 3, Le sortilège de Cendrillon ?',
-        answer: 'Anastasie',
-        answerComment: 'La sœur de Cendrillon, qui vole la baguette de la Fée pour remonter dans le temps',
+        title: 'Internet est magnifique, ou pas',
+        question: 'Finissons sur une touche de gaieté, pourquoi ce Fat-Shaming a fait le buzz ?',
+        answer: 'En le retrouvant sur internet pour l\'inviter à un party organiser pour lui avec des stars comme Moby ou Pharell Williams',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -365,9 +374,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'De quel livre est adapté Taram et le chaudron magique, film où le seigneur des ténèbres cherche une truie divinatoire ?',
-        answer: 'Le deuxième tome des Chroniques de Prydain de Lloyd Chudley Alexander',
+        title: 'Sura Kees ou pas Kees',
+        question: 'Par quels autres charmant sobriquets est connu ce doux fromage ?',
+        answer: 'Vorarlberger Sauerkäse, Montafoner Sauerkäse',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -382,9 +391,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Pourquoi la mère de Milo a été enlevée dans Milo sur Mars ?',
-        answer: 'Pour élever des petits Martiens',
+        title: 'Sura Kees ou pas Kees',
+        question: 'Pouvez-vous me décrire rapidement le processus de préparation du Sura Kees ?',
+        answer: 'Pour la production du Montafoner Sura Kees traditionnel, le lait filtré est versé dans des "Brenten" (récipients en bois typiques) pour séparer le lait en crème et en lait écrémé, suivi d\'une période d\'affinage d\'un à deux jours. La crème est utilisée pour la production de beurre, le lait écrémé est la matière première pour la production de fromage aigre.\nLe lait écrémé est acidifié dans la "Zuber" (cuve en bois), puis versé dans la "Kessi" (bouilloire en cuivre) et chauffé à 40°C maximum. 40°C. Le "Bolma" (fromage en grains) est retourné et versé à l\'aide de la "Bolmakelle" (louche) dans le "Käsker" (forme spéciale), pressé par son propre poids. Il y reste jusqu\'à ce qu\'une masse solide se forme (environ 24 heures). Ensuite, il est généralement retourné deux fois pour que le petit-lait excédentaire puisse s\'écouler. La masse est démoulée, frottée avec du sel (parfois avec du paprika) et affinée dans la cave. Après environ 3 semaines, la croûte du fromage est lavée, les pains de fromage sont placés sur des claies en bois et affinés pendant 4 à 6 semaines supplémentaires dans la salle d\'affinage à une température de 18 à 20°C. Pendant cette période, la "Muffna", l\'écorce vitreuse et grasse du fromage aigre, s\'épaissit avec l\'âge et donne au fromage son arôme typique. Les pains de fromage au lait acidulé s\'affinent de l\'extérieur vers l\'intérieur.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -399,9 +408,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Les mechants des films Disney n\'ayant pas reussi',
-        question: 'Quelle est la véritable identité de l’homme au chapeau melon dans Bienvenue chez les Robinson ?',
-        answer: 'Michael "Goob" Yagoobian',
+        title: 'Sura Kees ou pas Kees',
+        question: 'À quel peuple associe-t’on les origines de ce fromage, et de quand ça date ?',
+        answer: 'Les Sumériens, il y a environ 7 000 ans',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -410,14 +419,15 @@ export class QuestionsService {
     },
     {
         id: 24,
-        type: 'Addition',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 1,
-        points: 3,
+        group: 3,
+        points: 1,
 
-        title: 'Sorti de son contexte',
-        question: 'Un peu gluant, mais appétissant',
-        answer: 'Le Roi Lion, Simba',
+        title: 'Sura Kees ou pas Kees',
+        question: 'Pour finir, avec quoi sert-on traditionnellement le Sura Kees ?',
+        answer: 'Le Sura Kees est généralement servi avec du vinaigre, de l\'huile et des oignons, pur sur du pain noir ou mangé avec des pommes de terre.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -431,9 +441,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Sorti de son contexte',
-        question: 'Patati, Patata, toute la journée ça n\'arrête pas',
-        answer: 'Cendrillon, Jaq',
+        title: 'Les réponses ont un gros pif',
+        question: 'Ah ! non ! c’est un peu court, jeune homme !\n On pouvait dire… Oh ! Dieu ! … bien des choses en somme…\nEn variant le ton, – par exemple, tenez :\n Agressif : « Moi, monsieur, si j’avais un tel nez, Il faudrait sur-le-champ que je me l’amputasse ! »\nAmical : « Mais il doit tremper dans votre tasse pour boire, faites-vous fabriquer un hanap ! »\nDescriptif : « C’est un roc ! … c’est un pic ! … c’est un cap ! Que dis-je, c’est un cap ? … C’est une péninsule ! »\nCurieux : « De quoi sert cette oblongue capsule ? D’écritoire, monsieur, ou de boîte à ciseaux ? »\nGracieux : « Aimez-vous à ce point les oiseaux que paternellement vous vous préoccupâtes de tendre ce perchoir à leurs petites pattes ? »\nTruculent : « Ça, monsieur, lorsque vous pétunez, la vapeur du tabac vous sort-elle du nez sans qu’un voisin ne crie au feu de cheminée ? »\nPrévenant : « Gardez-vous, votre tête entraînée Par ce poids, de tomber en avant sur le sol ! »\nTendre : « Faites-lui faire un petit parasol De peur que sa couleur au soleil ne se fane ! »\n Pédant : « L’animal seul, monsieur, qu’Aristophane Appelle Hippocampéléphantocamélos Dut avoir sous le front tant de chair sur tant d’os ! »\nCavalier : « Quoi, l’ami, ce croc est à la mode ? Pour pendre son chapeau, c’est vraiment très commode ! »\nEmphatique : « Aucun vent ne peut, nez magistral, T’enrhumer tout entier, excepté le mistral ! »\nDramatique : « C’est la Mer Rouge quand il saigne ! »\nAdmiratif : « Pour un parfumeur, quelle enseigne ! »\nLyrique : « Est-ce une conque, êtes-vous un triton ? »\nNaïf : « Ce monument, quand le visite-t-on ? »\nRespectueux : « Souffrez, monsieur, qu’on vous salue, C’est là ce qui s’appelle avoir pignon sur rue ! »\nCampagnard : « Hé, ardé ! C’est-y un nez ? Nanain ! C’est queuqu’navet géant ou ben queuqu’melon nain ! »\n Militaire : « Pointez contre cavalerie ! »\nPratique : « Voulez-vous le mettre en loterie ? Assurément, monsieur, ce sera le gros lot ! »\nEnfin parodiant Pyrame en un sanglot : « Le voilà donc ce nez qui des traits de son maître A détruit l’harmonie ! Il en rougit, le traître ! »\n Voilà ce qu’à peu près, mon cher, vous m’auriez dit Si vous aviez un peu de lettres et d’esprit Mais d’esprit, ô le plus lamentable des êtres, Vous n’en eûtes jamais un atome, et de lettres Vous n’avez que les trois qui forment le mot : sot !\nEussiez-vous eu, d’ailleurs, l’invention qu’il faut Pour pouvoir là, devant ces nobles galeries, me servir toutes ces folles plaisanteries, Que vous n’en eussiez pas articulé le quart De la moitié du commencement d’une, car Je me les sers moi-même, avec assez de verve, Mais je ne permets pas qu’un autre me les serve.',
+        answer: 'Cyrano de Bergerac',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -447,9 +457,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Sorti de son contexte',
-        question: 'Tu connais les hommes. Ils croient que "non" veut dire "oui" et "laisse tomber" veut dire "je t\'aimerais toujours"',
-        answer: 'Hercule, Mégara',
+        title: 'Les réponses ont un gros pif',
+        question: 'C\'est un peu un cousin de Ronald McDonald mais au lieu d\'engrosser les gamins, celui là se nourrit de leur peur. Ah et les deux ont un beau ballon rouge.',
+        answer: 'Pennywise de IT',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -463,9 +473,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Sorti de son contexte',
-        question: 'Maintenant tais-toi et finis ton crouton',
-        answer: 'Ratatouille, Django (le père)',
+        title: 'Les réponses ont un gros pif',
+        question: 'Son fils s’appelle Max, il est ami avec Mickey, et c\'est pas toujours le plus allumé de la bande',
+        answer: 'Dingo/Goofy',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -479,10 +489,9 @@ export class QuestionsService {
         round: 1,
         points: 3,
 
-        title: 'Sorti de son contexte',
-        question: 'Mieux vaut demander pardon que la permission',
-        answer: 'Le Bossu de Notre dame, La Muraille',
-        answerComment: 'Les deux autres sont La Rocaille et La Volière',
+        title: 'Les réponses ont un gros pif',
+        question: 'A un pif de compète vu les lignes qu’il s’est enfilé',
+        answer: 'Charlie Sheen',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -491,13 +500,14 @@ export class QuestionsService {
     },
     {
         id: 29,
-        type: 'Tips',
-        speed: false,
+        type: 'Addition',
+        speed: true,
         round: 1,
-        points: 0,
+        points: 3,
 
-        question: 'Pour quel méchant Disney la chanson Snuff Out the Light a été créée ?',
-        answer: 'Yzma (Kuzco l\'empereur mégalo)',
+        title: 'Les réponses ont un gros pif',
+        question: 'Fleuron de l’aviation française, ce modèle vient par ailleurs de ressortir en version LEGO. Malgré une fin tumultueuse, cet avion pas tout à fait supersonique restera dans les légendes',
+        answer: 'Concorde',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -506,15 +516,14 @@ export class QuestionsService {
     },
     {
         id: 30,
-        type: 'Nugget',
-        speed: false,
-        round: 2,
-        points: 1,
+        type: 'Addition',
+        speed: true,
+        round: 1,
+        points: 3,
 
-        question: 'Dans les Simpsons, un Esquilax est:',
-        propositionsDetailed: ['Un chien qui a une tête de chat et une queue de requin', 'Un cochon qui peut tisser des toiles et marcher au plafond', 'Un cheval qui a une tête de lapin et un corps de lapin', 'Un furet avec des cornes de cerf et une langue de serpent'],
-        propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'C.',
+        title: 'Les réponses ont un gros pif',
+        question: 'Bon ok lui c\'est l\'exception à la règle, il a pas de pif. C\'est peut-être pour ça d\'ailleurs qu\'il est aussi méchant. Mais c\'est quand même bizarre qu\'il ne s\'en soit jamais remis un par magie, quel manque de flair',
+        answer: 'Voldemort',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -523,16 +532,14 @@ export class QuestionsService {
     },
     {
         id: 31,
-        type: 'Nugget',
-        speed: false,
-        round: 2,
-        points: 1,
+        type: 'Tips',
+        speed: true,
+        round: 1,
+        points: 0,
 
-        question: 'Quelle sentence le Juge Michael Cicconetti a deja rendu ?',
-        propositionsDetailed: ['Condamné un homme cherchant à se payer une prostitué à défiler en ville déguisé en poulet', 'Condamné une femme qui a abandonné 35 chattons dans une forêt, à passer une nuit dans les bois (il neigeait cette nuit)', 'Tous les châtiments au dessus, et tellement d\'autres', 'Condamné à de la prison... Oui la justice c\'est pas toujours drôle'],
-        propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'C.',
-        answerComment: 'Un homme ayant commis des abus sur des enfants a été envoyé dans une école en tenue de chien et a dû parler de la sécurité des enfants.\n\nLors de fortes tempêtes de neige, il a ordonné aux prévenus de déneiger une maison de retraite.\n\nLes adolescents qui ont crevé les pneus des bus scolaires ont été forcés d\'organiser un pique-nique pour les enfants de l\'école primaire dont la sortie a été annulée à cause de la farce.',
+        question: 'Combien de chevaux peut exercer un cheval à sa puissance maximale ? à 3 près',
+        answer: 'en moyenne 14.9 chevaux',
+        answerComment: 'Le cheval-vapeur est une unité de puissance ne faisant pas partie du Système international d\'unités, qui exprime une équivalence entre la puissance fournie par un cheval tirant une charge et celle fournie par une machine de propulsion à vapeur ou un moteur à combustion. Le cheval était, du fait de son utilisation massive, la référence de puissance des attelages avant l\'avènement de la propulsion mécanique. Ainsi, en 1879, les 38 lignes d\'omnibus de Paris requéraient l\'entretien de 16 500 chevaux',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -546,10 +553,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Que peut-on trouver au musee phallologique national d\'Islande ?',
-        propositionsDetailed: ['Une collection de godemichet', 'Un moulage du pénis de Jimi Hendrix', 'Une poivrière en forme de pénis', 'La prothèse de pénis de Justin Bieber'],
+        question: 'Lequel de ces animaux peu survivre le plus longtemps sans manger?',
+        propositionsDetailed: ['Grenouille des terriers', 'Tarantule', 'Porc', 'Baleine'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B.',
+        answer: 'A',
+        answerComment: 'Grenouille des terriers => 11 ans\nTarantule => 2 ans\nPorc => 48 heures\nBaleine => 6 mois',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -563,11 +571,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Qu\'est-ce que le Grolar ?',
-        propositionsDetailed: ['Le résultat d\'un croisement entre un Grizzli et un Ours Polaire', 'Un fromage corse', 'Un champion de concours de mangeurs de l\'extrême', 'Mon état après une raclette'],
+        question: 'À quels évènements tragiques a survécue Violet Jessop ?',
+        propositionsDetailed: ['A 3 épidémies, le SRAS, le MERS et le COVID', 'A 3 coups de foudre, l’électricité pas l’émotion', 'Au naufrage des 3 beateaux Olympic, Titanic et Britannic', 'A 3 shows d’humour de Gilbert Rozon'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'A.',
-        answerComment: 'Dû au réchauffement climatique, ces deux animaux ont commencés à se croiser, et voilà le résultat',
+        answer: 'C',
+        answerComment: 'Elle était infirmière sur chacun des trois bateaux. L\'Olympic est entré en collision avec un navire militaire, le Titanic, bon on sait tous pour celui là, et le Britanic a été coulé par une torpille. Et elle a survécue',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -581,10 +589,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Combien de Litres d\'eau economiserait-on si on pissait sous la douche tout les jours ?',
-        propositionsDetailed: ['1000 L', '1500 L', '2000 L', 'Pas assez pour justifier les engueulades par sa blonde'],
+        question: 'Qu’est-ce que la Pogonophobie ?',
+        propositionsDetailed: ['La peur des barbes', 'La peur des honnes à lunettes', 'La peur des grandes frites', 'La peur des chauves'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'C.',
+        answer: 'A',
+        answerComment: 'Apollophobie: peur des beaux hommes, Alopophobie: peur des chauves, Maxifritophobie: peur des grandes frites, mais je viens de l\'inventer...',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -593,15 +602,16 @@ export class QuestionsService {
     },
     {
         id: 35,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Nugget',
+        speed: false,
         round: 2,
         points: 1,
 
-        question: 'Harry, t\'es vivant... Et tu tires comme un gland !',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        question: 'Comment dit-on « Remonte-moi le moral » en italien ?',
+        propositionsDetailed: ['Panacotta', 'Bruschetta', 'Tiramisu', 'Choucroute garnie'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'A',
+        answerComment: 'Le mot italien d\'origine est « tirami sù » qui veut dire « remonte-moi le moral » ou « tire-moi vers le haut »',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -610,15 +620,15 @@ export class QuestionsService {
     },
     {
         id: 36,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Nugget',
+        speed: false,
         round: 2,
         points: 1,
 
-        question: 'J\'ai cependant la conviction que la vérité est généralement préférable au mensonge',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (La coupe de feu)',
+        question: '11 mois sur 12, Patrick Dancoisne est un croque-mort comme les autres. Que fait-il le 12eme mois ?',
+        propositionsDetailed: ['Il tue des gens', 'Il fabrique des cercueils', 'Il campe au cimetière', 'Il transforme les bites peintes sur les routes du Tour de France en hiboux'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'D',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -627,15 +637,15 @@ export class QuestionsService {
     },
     {
         id: 37,
-        type: 'SelOuPoivre',
-        speed: true,
+        type: 'Nugget',
+        speed: false,
         round: 2,
         points: 1,
 
-        question: 'À présent, Harry, sortons dans la nuit noire à la poursuite de cette fantasque tentatrice, l\'aventure. ',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (Prince de Sang-mêlé)',
+        question: 'Mais que dit exactement Boromir dans cette scene ?',
+        propositionsDetailed: ['Vous avez notre destin à tous entre les mains petit homme', 'La cité d\'Osgiliath a été reprise par le Gondor, pour le Gondor, et un peu pour papa', 'En ces lieux il y a un mal qui ne dors jamais et le grand oeil est toujours attentif', 'La nuit dernière j\'ai dormi avec Aragorn, j\'ai le trou du cul comme ça ce matin'],
+        propositionsShort: ['A', 'B', 'C', 'D'],
+        answer: 'C',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -649,10 +659,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Oh oui Harry, il a le droit, et il l\'a fait... Alors dorénavent, on viendra jouer à Donkey Kong',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        question: 'Hitman Le Cobra',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film Nanar',
+        answerComment: 'Hitman le Cobra (Hitman the Cobra, aussi connu en tant que Le Terroriste) est un film hongkongais de série Z réalisé par Godfrey Ho, sorti en 1987. Il a peu à peu atteint un statut de film culte grâce au site nanarland.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -666,10 +677,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Une fois de plus, je vais t\'en demander trop Harry',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumbledore (Le prince de Sang-mêlé)',
+        question: 'Maitresse très particulière',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film pour adulte',
+        answerComment: 'Maîtresses très particulières est un film pornographique français, sorti dans les salles françaises en 1980 sous la signature de Burd Tranbaree (pseudonyme de Claude Bernard-Aubert). Il est composé de scènes d\'un film américain réalisé par Chuck Vincent et de scènes additionnelles tournées en France.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -683,10 +695,11 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: 'Je rêve désespérément de faire l\'amour à un petit écolier',
-        propositionsDetailed: ['Dumb & Dumber', 'Dumbledore'],
-        propositionsShort: ['Dumb & Dumber', 'Dumbledore'],
-        answer: 'Dumb & Dumber',
+        question: 'Midnight',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film Nanar',
+        answerComment: '(1989) Midnight Sensuel, hôtesse de films d\'horreur, a l\'émission la mieux notée à la télévision. M. B envisage de voler les droits de la série. Le bras de fer commence et se transforme rapidement en un conflit meurtrier...',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -695,16 +708,16 @@ export class QuestionsService {
     },
     {
         id: 41,
-        type: 'Menu',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 2,
-        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'D\'après vous, comment s\'appelle le documentaire où le mot F*** est dit le plus ?',
-        answer: 'Fuck',
-        answerComment: 'C\'est un documentaire sur le mot F***, où il est dit 9.21 fois par minutes',
+        question: 'Airstrike',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film Nanar',
+        answerComment: '(2003) Une petite force d\'attaque américaine est envoyée dans un pays d\'Europe de l\'Est pour aider le gouvernement à neutraliser un puissant syndicat de la drogue.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -713,15 +726,16 @@ export class QuestionsService {
     },
     {
         id: 42,
-        type: 'Menu',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 2,
-        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'À votre avis, combien de films utilisent plus de fois le mot F*** que le film The Wolf of Wall Street ? (À 5 près)',
-        answer: '2',
+        question: 'Eaux sauvages',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film Nanar',
+        answerComment: 'Eaux sauvages (titre original : Savage Water) est un film américain réalisé par Paul W. Kener sorti en 1979.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -730,16 +744,16 @@ export class QuestionsService {
     },
     {
         id: 43,
-        type: 'Menu',
-        speed: false,
+        type: 'SelOuPoivre',
+        speed: true,
         round: 2,
-        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'D\'ailleurs combien de fois le mot F*** est dit dans ce film (The Wolf of Wall street) ? Plus ou moins que 200 ?',
-        answer: 'Plus',
-        answerComment: '569 fois, ou environ 3.16 fois par minute',
+        question: 'Les nobles de la poche percée',
+        propositionsDetailed: ['Film Nanar', 'Film pour adulte'],
+        propositionsShort: ['Film Nanar', 'Film pour adulte'],
+        answer: 'Film pour adulte',
+        answerComment: 'Apprenant que leur fils a décidé de se marier, un couple se rend ;a la campagne pour rencontrer la famille de la promise. C\'est le choc de deux mondes (',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -754,9 +768,9 @@ export class QuestionsService {
         group: 1,
         points: 1,
 
-        title: 'Mots en F- dans les films',
-        question: 'De quel pays vient le film le plus vulgaire, le film aux 935 F*** pour 112 minutes: Swearnet: The Movie ?',
-        answer: 'Du Canada',
+        title: 'Twit, Twit, Twitter fait Elon',
+        question: 'Qu\'est-ce qu\'un Octothorpe ?',
+        answer: 'Le Hashtag',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -768,13 +782,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 2,
+        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'V ou F, un foutriquet est un homme qui n\'aspire pas confiance, soit par manque de sérieux, soit par manque d\'intelligence ?',
-        answer: 'Faux',
-        answerComment: 'c\'est un homme chétif, de petite taille, ou une personne insignifiante',
+        title: 'Twit, Twit, Twitter fait Elon',
+        question: 'Comment a été renommé Twitter suite au rachat par le célèbre Elon Musk ?',
+        answer: 'X',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -786,13 +799,13 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 2,
+        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Est-ce bien avisé de demander de l\'argent à un Fesse-Mathieu ?',
-        answer: 'Non',
-        answerComment: 'Car c\'est quelqu\'un d\'avare, de radin',
+        title: 'Twit, Twit, Twitter fait Elon',
+        question: 'Vrai ou Faux\nLe nom du fils d’Elon Musk et de la chanteuse Grimes respecte les conditions de sécurité des mots de passe de comptes Twitter ?',
+        answer: 'Faux',
+        answerComment: 'X Æ A-12\n- au moins 10 caractères\n- majuscules\n- minuscules\n- nombre\n- symbole',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -804,13 +817,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 2,
+        group: 1,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Que veut dire flagorner dans la phrase «Autant j\'aime qu\'on me flagorne, autant je méprise ceux qui s\'y adonnent» ?',
-        answer: 'complimente',
-        answerComment: 'Autant j\'apprécie me faire complimenter, autant je méprise les lèche-culs',
+        title: 'Twit, Twit, Twitter fait Elon',
+        question: 'Comment s’appelle la Tequila qu’Elon Musk a commercialisé en 2022 après l’avoir annoncé en 2021 comme une blague ?',
+        answer: 'TeslaQuila',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -825,9 +837,9 @@ export class QuestionsService {
         group: 2,
         points: 1,
 
-        title: 'Mots en F- dans la langue française',
-        question: 'Que recevait-on quand on se prenait un coup de férule à l\'école ?',
-        answer: 'Un coup de baton sur les doigts',
+        title: 'Le point Godwin, vous connaissez ?',
+        question: 'Comment dit-on noix de coco en swahili ?',
+        answer: 'Nazi',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -839,12 +851,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 3,
+        group: 2,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Qu\'est-ce qu\'un Flibou-chauve ?',
-        answer: 'Un Flibou-Chauve',
+        title: 'Le point Godwin, vous connaissez ?',
+        question: 'Dans le film « Le prénom » adapté de la pièce éponyme, un futur père annonce vouloir appeler son fils Adolf. \nÉvidemment c’était une blague. Quel est le vrai prénom choisi ?',
+        answer: 'Henri',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -856,12 +868,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 3,
+        group: 2,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'À combien est vendu un Fjällkuback à IKEA ?',
-        answer: 'Pour Felycka $',
+        title: 'Le point Godwin, vous connaissez ?',
+        question: 'Quelle boisson fut inventée pour nos amis allemands par Coca-Cola durant la 2nde guerre mondiale ?',
+        answer: 'Fanta',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -873,12 +885,12 @@ export class QuestionsService {
         type: 'Menu',
         speed: false,
         round: 2,
-        group: 3,
+        group: 2,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Que peut-on dire d\'un homme qui est Funivare ?',
-        answer: 'C\'est un homme qui a 2 couilles et demi',
+        title: 'Le point Godwin, vous connaissez ?',
+        question: 'Diriez-vous que ce signe est plutôt signe de fortune à venir, d\'un BBQ à venir, ou d’un ninja qui n’a pas de gout pour se trouver un logo ?',
+        answer: 'Fortune à venir',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -893,9 +905,9 @@ export class QuestionsService {
         group: 3,
         points: 1,
 
-        title: 'Mots en F- qu\'on a inventé',
-        question: 'Combien d\'œufs est une ferviche ?',
-        answer: 'Entre 10 et 30 oeufs',
+        title: 'Chateauneuf-sur-loire, ville de patate frites',
+        question: 'Dans quel collège de Chateuneuf sur Loire la Grande Frite a obtenu son brevet ?',
+        answer: 'Le Collège Public Jean-Joudiou',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -904,14 +916,15 @@ export class QuestionsService {
     },
     {
         id: 53,
-        type: 'Addition',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
-        points: 3,
+        group: 3,
+        points: 1,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'film d\'espionnage de 1995 qui suit les aventures d\'un agent secret britannique. Le film commence par l\'attaque du complexe de surveillance de la Russie par des criminels inconnus, qui volent un satellite contrôlé par un système appelé comme le film d\'ailleurs. Le personnage principal est chargé de récupérer le satellite volé et d\'empêcher son utilisation pour des attaques terroristes. Au cours de sa mission, il rencontre une programmatrice informatique russe et découvre qu\'un ancien agent du MI6 est impliqué dans le vol du satellite. Il doit alors affronter l\'ancien agent du MI6 dans un combat final épique pour empêcher le satellite de détruire Londres.',
-        answer: 'Golden Eye (Golden Ass 007)',
+        title: 'Chateauneuf-sur-loire, ville de patate frites',
+        question: 'Dans quelle commune proche de Chateauneuf sur Loire, la Grande Frite a appris le tir à l’arc ?',
+        answer: 'Sigloy',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -920,14 +933,15 @@ export class QuestionsService {
     },
     {
         id: 54,
-        type: 'Addition',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
-        points: 3,
+        group: 3,
+        points: 1,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'Roman publié en 1870, qui suit les aventures du professeur Aronnax, de son fidèle serviteur Conseil et du harponneur Ned Land alors qu\'ils sont capturés par le mystérieux capitaine Nemo à bord du sous-marin futuriste "Nautilus". Au cours de leur voyage sous les mers, le capitaine Nemo leur fait découvrir les merveilles et les dangers des fonds marins, mais aussi sa propre histoire douloureuse et sa quête de vengeance contre les impérialistes qui ont tué sa famille. Malgré les efforts d\'Aronnax pour convaincre Nemo de renoncer à sa vengeance, les trois captifs finissent par s\'échapper du Nautilus après une série d\'aventures et de rebondissements.',
-        answer: '20 000 lieux sous les mères (20 000 vieux sous mémère)',
+        title: 'Chateauneuf-sur-loire, ville de patate frites',
+        question: 'D’ailleurs, comment appelle-t’on les habitants de Chateauneuf sur Loire ?',
+        answer: 'Castleneuviens',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -936,14 +950,15 @@ export class QuestionsService {
     },
     {
         id: 55,
-        type: 'Addition',
-        speed: true,
+        type: 'Menu',
+        speed: false,
         round: 2,
-        points: 3,
+        group: 3,
+        points: 1,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'Film de science-fiction de 1982. Le film suit l\'histoire d\'un jeune garçon nommé Elliott qui rencontre un extraterrestre égaré et décide de l\'aider à rentrer chez lui. Elliott et ses amis le cachent dans leur maison, le nourrissent et l\'aident à construire une balise pour appeler son vaisseau spatial. Pendant ce temps, les autorités cherchent l\'Extra-terrestre et les enfants doivent travailler ensemble pour le protéger et le ramener chez lui avant qu\'il ne soit trop tard.',
-        answer: 'ET l\'Extra-terrestre (ET l\'Extra-testicule)',
+        title: 'Chateauneuf-sur-loire, ville de patate frites',
+        question: 'Quelle manifestation culturelle est fêtée tous les ans dans le parc du château la fin de la semaine de la Pentecôte ?',
+        answer: 'La fête des Rhododendrons',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -957,9 +972,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'Film de guerre de 1998. Le film suit un groupe de soldats américains pendant la Seconde Guerre mondiale qui sont chargés de retrouver et de ramener sain et sauf un soldat, dont les trois frères ont été tués au combat. Le groupe de soldats traverse les lignes ennemies pour trouver le soldat et doit faire face à de nombreux obstacles et pertes en cours de route. Finalement, ils le trouvent, mais sont attaqués par les forces allemandes, ce qui entraîne une bataille épique et coûteuse pour défendre leur position et protéger le soldat.',
-        answer: 'Il faut sauver le soldat Ryan (Il faut sauter la sœur de Ryan)',
+        title: 'Toutes les réponses sont des duos',
+        question: 'Se baladent en collant de nuit dans les rues malfamées',
+        answer: 'Batman et Robin',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -973,9 +988,9 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'Western spaghetti de 1966. Le film suit trois hommes, un chasseur de primes, un tueur à gages et un voleur, alors qu\'ils poursuivent une fortune en pièces d\'or pendant la guerre civile américaine. Les trois hommes, qui se méprisent mutuellement, font face à de nombreux obstacles et ennemis en cours de route, notamment l\'armée et les bandits. Cependant, leur quête les mène finalement à un cimetière, où les pièces d\'or sont enterrées. Les trois hommes se battent alors à mort pour s\'emparer de la fortune, mais seul l\'un d\'entre eux réussit à s\'en sortir.',
-        answer: 'Le bon, la brute et le truand (Le bon, la brute et le trou béant)',
+        title: 'Toutes les réponses sont des duos',
+        question: 'Enqueteurs très spéciaux, ils parcourent le pays à la recherche de réponses, mais trouvent souvent davantage de mystères.',
+        answer: 'Mulder et Scully',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -989,10 +1004,10 @@ export class QuestionsService {
         round: 2,
         points: 3,
 
-        title: 'Toutes les reponses sont des titres de films X',
-        question: 'film de 1990. L\'histoire suit le lieutenant John Dunbar de l\'armée américaine pendant la Guerre de Sécession, qui est envoyé dans un poste de traite isolé dans les Grandes Plaines. Là-bas, il rencontre une tribu de Sioux et se lie d\'amitié avec eux, apprenant leur langue et leur culture. Dunbar est ensuite confronté aux tensions entre l\'armée américaine et les tribus indigènes, et doit choisir de quel côté il se tiendra. Au fil du temps, Dunbar devient de plus en plus intégré à la tribu Sioux et s\'éloigne de son ancienne vie d\'homme blanc. Cependant, la guerre et le racisme persistent, entraînant des conflits violents entre les différentes factions.',
-        answer: 'Danse avec les loups (Danse avec mes burnes)',
-
+        title: 'Toutes les réponses sont des duos',
+        question: 'Duo moustachus qui aiment les champignons',
+        answer: 'Mario et Luigi',
+        
         showQuestion: false,
         propositionsStep: 0,
         locked: false,
@@ -1000,13 +1015,14 @@ export class QuestionsService {
     },
     {
         id: 59,
-        type: 'Tips',
-        speed: false,
+        type: 'Addition',
+        speed: true,
         round: 2,
-        points: 0,
+        points: 3,
 
-        question: 'Dessin de Guillaume: En moyenne, 10sec par point parié',
-        answer: 'Avoir du pain sur la planche',
+        title: 'Toutes les réponses sont des duos',
+        question: 'Duo moustachus à la rivalité légendaire, l\'un veut chasser l\'autre, mais se retrouve souvant la victime des tours du second.',
+        answer: 'Tom et Jerry',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -1015,12 +1031,60 @@ export class QuestionsService {
     },
     {
         id: 60,
+        type: 'Addition',
+        speed: true,
+        round: 2,
+        points: 3,
+
+        title: 'Toutes les réponses sont des duos',
+        question: 'Probablement les boites de conserve les plus célèbres de la galaxie, bien qu\'on ne comprenne pas l\'un des deux.',
+        answer: 'R2D2 et C3P0',
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 61,
+        type: 'Addition',
+        speed: true,
+        round: 2,
+        points: 3,
+
+        title: 'Toutes les réponses sont des duos',
+        question: 'Les Roméo et Juliette des gangsters, et leurs histoires finissent pareil en plus...',
+        answer: 'Bonny et Clyde',
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 62,
+        type: 'Tips',
+        speed: true,
+        round: 2,
+        points: 0,
+
+        title: 'Pictionary ou presque',
+        question: 'Dessin du public, En moyenne, 60sec - 10sec / point',
+        answer: 'Pâté Chinois',
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 63,
         type: 'PoutineDeLaMort',
         speed: false,
         round: 3,
         points: 0,
 
-        question: '1. Pensez-vous que Georges soit un bon choix de prénom pour le 8ème nain ?\n\n2. V ou F, la bonne fée avait d\'autres intentions en faisant grandir le nez de Pinocchio à chaque mensonge ?\n\n3. Citez une personne qui n\'a jamais couché avec Zeus\n\n4. Alors certes à notre époque Lady Tremaine (la belle mère de Cendrillon) serait qualifiée de grosse pute, mais à leur époque, grosse pute ou pas grosse pute ?\n\n5. Nommez-moi une émission de télé-réalité à laquelle Gaston pourrait participer\n\n6. Quel est votre méchant de Disney préféré ? Si vous ne savez pas ou que vous n\'avez pas de gout, répondez Scar.\n\n7. Dans Alice au pays des merveilles, une Reine de cœur vaut plus ou moins qu\'un flush royal ?\n\n8. Avec l\'augmentation du coût de la vie, combien de jambes pouvez-vous maintenant avoir en échange de votre voix auprès d\'Ursula ?\n\n9. Que pensez-vous que le Capitaine Crochet fait réellement quand il dit qu\'il part s\'astiquer le crochet ?\n\n10. Si vous n\'aviez plus qu\'un vœu à demander au génie, le libéreriez-vous, ou demanderiez-vous à gagner la Poutine de la mort ?',
+        question: '1. Combien y-a-t\'il de jours dans la semaine si on enlève ceux où vous êtes déprimés ?\n\n2. V ou F, les Myopes ont les yeux brouillés ?\n\n3. Pensez-vous que Gilbert Montagné ait ses chances au championnat du monde de Cache-Cache ?\n\n4. Comment s\'appellerait Cécile de France si elle était Canadienne ?\n\n5. Honnêtement, on est d\'accord, le gars qui met la charrue avant les boeufs c\'est le même que celui qui cherche midi à quatorze heure ?\n\n6. Combien de lettres faudrait-il changer à votre prénom pour que vous vous appeliez "bite" ?\n\n7. Si vous demandez un autographe à Simone, signoret-elle ou signerait-elle pas ?\n\n8. Préférrez-vous que les gens savent quand vous vous masturbez en pensant à eux, ou savoir quand quelqu\'un se masturbe en pensant à vous ?\n\n9. Faites un signe de main qui ne soutiens pas le troisième Reich\n\n10. V ou F, les acteurs porno à leur compte s\'appellent les indébandants ?',
         answer: 'NA',
         
         showQuestion: false,
