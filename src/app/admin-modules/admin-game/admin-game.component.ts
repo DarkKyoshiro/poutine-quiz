@@ -308,7 +308,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     let score: number = 0;
 
     this.teams.forEach(team => {
-      if(team.name === teamName) {
+      if(team.name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
         score = team.score
       }
     })
@@ -327,7 +327,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     this.answers.forEach(answer => {
       if(answer.questionID === this.questionID) {
         timestampArray.push(answer.timestamp)
-        if(answer.teamName === teamName) { teamIndex = i }
+        if(answer.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) { teamIndex = i }
         i++
       }
     })
@@ -353,7 +353,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
       })
 
       this.teams.forEach(team => {
-        if(team.name === teamName) {
+        if(team.name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
           teamGroup1 = team.group1
           teamGroup2 = team.group2
         }

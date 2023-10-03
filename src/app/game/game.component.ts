@@ -168,7 +168,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getReponse(): boolean {
     this.control = false
     this.answers.forEach(element => {
-      if(element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '') {
+      if(element.questionID === this.questionID && element.teamName.replace(/\s+/g, '').toLowerCase() === this.teamName.replace(/\s+/g, '').toLowerCase() && element.answer !== '') {
         this.control = true
       }
     })
@@ -178,7 +178,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getAnswer(): string {
     let returnedAnswer: string = "Vous n'avez rien répondu encore...";
     this.answers.forEach(element => {
-      if(element.questionID === this.questionID && element.teamName === this.teamName && element.answer !== '' && element.answer !== '#!Timeout!#') {
+      if(element.questionID === this.questionID && element.teamName.replace(/\s+/g, '').toLowerCase() === this.teamName.replace(/\s+/g, '').toLowerCase() && element.answer !== '' && element.answer !== '#!Timeout!#') {
         returnedAnswer = "Vous avez répondu " + element.answer
         if(element.correct === 1) {
           returnedAnswer = returnedAnswer + ' - Correct'
@@ -193,7 +193,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getScore(teamName: string): number {
     let score: number = 0
     this.teams.forEach(team => {
-      if(team.name === teamName) {
+      if(team.name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
         score = team.score
       }
     })
@@ -210,7 +210,7 @@ export class GameComponent implements OnInit, OnDestroy {
   getPoints(): number[] {
     let points: number[] = [0,0,0,0];
     this.answers.forEach(element => {
-      if(element.questionID === this.questionID && element.teamName === this.teamName) {
+      if(element.questionID === this.questionID && element.teamName.replace(/\s+/g, '').toLowerCase() === this.teamName.replace(/\s+/g, '').toLowerCase()) {
         points = [element.points, element.bonusWrongAnswers, element.bonus, element.pointsBet]
       }
     })
@@ -237,8 +237,8 @@ export class GameComponent implements OnInit, OnDestroy {
   onScoreDetailTrigger(): void {
     this.matBottomSheet.open(TeamScoreDetailComponent, {
       data: {
-        teamName: this.teamName,
-        score: this.getScore(this.teamName)
+        teamName: this.teamName.replace(/\s+/g, '').toLowerCase(),
+        score: this.getScore(this.teamName.replace(/\s+/g, '').toLowerCase())
       }
     });
   }
@@ -253,7 +253,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
     this.teams.forEach(team => {
       teamsArray.push(team.score)
-      if(team.name === teamName) { teamIndex = i }
+      if(team.name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) { teamIndex = i }
       i++
     })
 

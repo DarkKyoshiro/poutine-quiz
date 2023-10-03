@@ -100,7 +100,7 @@ io.on("connection", socket => {
     } else { //team not existing
       questions.forEach(question => {
         answers.push({
-          teamName: teamName.replace(/\s+/g, '').toLowerCase(),
+          teamName: teamName,
           questionID: question.id,
           answer: '',
           timestamp: 1989811953988,
@@ -143,7 +143,7 @@ io.on("connection", socket => {
         delete teams[key]
       }
     }
-    answers = answers.filter(answer => answer.teamName !== teamName.replace(/\s+/g, '').toLowerCase())
+    answers = answers.filter(answer => answer.teamName.replace(/\s+/g, '').toLowerCase() !== teamName.replace(/\s+/g, '').toLowerCase())
     
     io.emit('team-disconnection', teamName);
     io.emit('send-teams', getScores());
@@ -339,7 +339,7 @@ io.on("connection", socket => {
   socket.on('send-answer', (data) => {
     control = false
     answers.forEach(element => {
-      if(element.teamName === data.teamName && element.questionID === data.questionID) {
+      if(element.teamName.replace(/\s+/g, '').toLowerCase() === data.teamName.replace(/\s+/g, '').toLowerCase() && element.questionID === data.questionID) {
         if(element.answer !== data.answer || element.timestamp !== data.timestamp || element.pointsBet !== data.pointsBet) {
           element.answer = data.answer
           element.timestamp = data.timestamp
@@ -381,7 +381,7 @@ io.on("connection", socket => {
 
   socket.on('clear-answer', (teamName, questionID) => {
     answers.forEach(element => {
-      if(element.teamName === teamName && element.questionID === questionID) {
+      if(element.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase() && element.questionID === questionID) {
         element.answer = ''
         element.timestamp = 1989811953988
         element.correct = -1
@@ -399,7 +399,7 @@ io.on("connection", socket => {
     let teamScores = []
     let total = 0
     answers.forEach(answer => {
-      if(answer.teamName === teamName) {
+      if(answer.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
         total += answer.points + answer.bonus + answer.bonusWrongAnswers
         teamScores.push({
           questionID: answer.questionID,
