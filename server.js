@@ -91,17 +91,16 @@ io.on("connection", socket => {
 
   // User connection
   socket.on('new-connection', (teamName) => {
-    let teamNameLower = teamName.toLowerCase();
-    if(teams[teamNameLower] && teams[teamNameLower].logged) { //team already existing and logged
+    if(teams[teamName.replace(/\s+/g, '').toLowerCase()] && teams[teamName.replace(/\s+/g, '').toLowerCase()].logged) { //team already existing and logged
       socket.emit('user-rejected')
-    } else if(teams[teamNameLower] && !teams[teamNameLower].logged) { //team already existing but not logged
-      teams[teamNameLower].socketId = socket.id
-      teams[teamNameLower].logged = true
+    } else if(teams[teamName.replace(/\s+/g, '').toLowerCase()] && !teams[teamName.replace(/\s+/g, '').toLowerCase()].logged) { //team already existing but not logged
+      teams[teamName.replace(/\s+/g, '').toLowerCase()].socketId = socket.id
+      teams[teamName.replace(/\s+/g, '').toLowerCase()].logged = true
       io.emit('send-teams', teams)
     } else { //team not existing
       questions.forEach(question => {
         answers.push({
-          teamName: teamNameLower,
+          teamName: teamName.replace(/\s+/g, '').toLowerCase(),
           questionID: question.id,
           answer: '',
           timestamp: 1989811953988,
@@ -113,9 +112,9 @@ io.on("connection", socket => {
         })
       })
 
-      teams[teamNameLower] = {
+      teams[teamName.replace(/\s+/g, '').toLowerCase()] = {
         socketId: socket.id,
-        name: teamNameLower,
+        name: teamName,
         group1: 0,
         group2: 0,
         score: 0,
@@ -128,11 +127,10 @@ io.on("connection", socket => {
 
   //Forced disconnection
   socket.on('disconnect-team', (teamName) => {
-    let teamNameLower = teamName.toLowerCase();
     for(const key in teams) {
-      if(teams[key].name === teamNameLower) {
+      if(teams[key].name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
         teams[key].logged = false
-        io.emit('team-disconnection', teamNameLower)
+        io.emit('team-disconnection', teamName)
         io.emit('send-teams', teams);
       }
     }
@@ -140,15 +138,14 @@ io.on("connection", socket => {
 
   //Ejection
   socket.on('eject-team', (teamName) => {
-    let teamNameLower = teamName.toLowerCase();
     for(const key in teams) {
-      if(teams[key].name === teamNameLower) {
+      if(teams[key].name.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {
         delete teams[key]
       }
     }
-    answers = answers.filter(answer => answer.teamName !== teamNameLower)
+    answers = answers.filter(answer => answer.teamName !== teamName.replace(/\s+/g, '').toLowerCase())
     
-    io.emit('team-disconnection', teamNameLower);
+    io.emit('team-disconnection', teamName);
     io.emit('send-teams', getScores());
     io.emit('get-answers', answers)
   })
@@ -171,16 +168,14 @@ io.on("connection", socket => {
 
   //Group update
   socket.on('refresh-group', (teamName) => {
-    let teamNameLower = teamName.toLowerCase();
-    socket.emit('send-group', teams[teamNameLower].group1, teams[teamNameLower].group2)
+    socket.emit('send-group', teams[teamName.replace(/\s+/g, '').toLowerCase()].group1, teams[teamName.replace(/\s+/g, '').toLowerCase()].group2)
   })
 
   socket.on('update-team-group', (round, teamName, teamGroup) => {
-    let teamNameLower = teamName.toLowerCase();
-    if(round === 1) {teams[teamNameLower].group1 = teamGroup;}
-    if(round === 2) {teams[teamNameLower].group2 = teamGroup;}
+    if(round === 1) {teams[teamName.replace(/\s+/g, '').toLowerCase()].group1 = teamGroup;}
+    if(round === 2) {teams[teamName.replace(/\s+/g, '').toLowerCase()].group2 = teamGroup;}
     io.emit('send-teams', teams)
-    io.to(teams[teamNameLower].socketId).emit('send-group', teams[teamNameLower].group1, teams[teamNameLower].group2)
+    io.to(teams[teamName.replace(/\s+/g, '').toLowerCase()].socketId).emit('send-group', teams[teamName.replace(/\s+/g, '').toLowerCase()].group1, teams[teamName.replace(/\s+/g, '').toLowerCase()].group2)
   })
 
   //------------------------------------------------------------------------------------
@@ -640,19 +635,19 @@ function getScores() {
           incorrectAnswers = incorrectAnswers + 1
         }
 
-        teams[answer.teamName].score = teams[answer.teamName].score + answer.points + answer.bonus
+        teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score = teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score + answer.points + answer.bonus
 
-        if(teams[answer.teamName].score < firstSmallestScore) {
+        if(teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score < firstSmallestScore) {
           thirdSmallestScore = secondSmallestScore
           secondSmallestScore = firstSmallestScore
-          firstSmallestScore = teams[answer.teamName].score
+          firstSmallestScore = teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score
         }
-        if(teams[answer.teamName].score < secondSmallestScore && teams[answer.teamName].score > firstSmallestScore) {
+        if(teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score < secondSmallestScore && teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score > firstSmallestScore) {
           thirdSmallestScore = secondSmallestScore
-          secondSmallestScore = teams[answer.teamName].score
+          secondSmallestScore = teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score
         }
-        if(teams[answer.teamName].score < thirdSmallestScore && teams[answer.teamName].score > secondSmallestScore) {
-          thirdSmallestScore = teams[answer.teamName].score
+        if(teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score < thirdSmallestScore && teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score > secondSmallestScore) {
+          thirdSmallestScore = teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score
         }
       }
     })

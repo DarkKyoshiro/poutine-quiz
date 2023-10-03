@@ -100,7 +100,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
     //Forced disconnection
     this.socket.on('team-disconnection', (teamName: string) => {
-      if(this.teamName.toLowerCase() === teamName) {this.router.navigateByUrl('/disconnected');}
+      if(this.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()) {this.router.navigateByUrl('/disconnected');}
     })
 
     //Teams refreshment
