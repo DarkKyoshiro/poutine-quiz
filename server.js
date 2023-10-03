@@ -91,16 +91,17 @@ io.on("connection", socket => {
 
   // User connection
   socket.on('new-connection', (teamName) => {
-    if(teams[teamName] && teams[teamName].logged) { //team already existing and logged
+    let teamNameLower = teamName.toLowerCase();
+    if(teams[teamNameLower] && teams[teamNameLower].logged) { //team already existing and logged
       socket.emit('user-rejected')
-    } else if(teams[teamName] && !teams[teamName].logged) { //team already existing but not logged
-      teams[teamName].socketId = socket.id
-      teams[teamName].logged = true
+    } else if(teams[teamNameLower] && !teams[teamNameLower].logged) { //team already existing but not logged
+      teams[teamNameLower].socketId = socket.id
+      teams[teamNameLower].logged = true
       io.emit('send-teams', teams)
     } else { //team not existing
       questions.forEach(question => {
         answers.push({
-          teamName: teamName,
+          teamName: teamNameLower,
           questionID: question.id,
           answer: '',
           timestamp: 1989811953988,
@@ -112,9 +113,9 @@ io.on("connection", socket => {
         })
       })
 
-      teams[teamName] = {
+      teams[teamNameLower] = {
         socketId: socket.id,
-        name: teamName,
+        name: teamNameLower,
         group1: 0,
         group2: 0,
         score: 0,
@@ -127,10 +128,11 @@ io.on("connection", socket => {
 
   //Forced disconnection
   socket.on('disconnect-team', (teamName) => {
+    let teamNameLower = teamName.toLowerCase();
     for(const key in teams) {
-      if(teams[key].name === teamName) {
+      if(teams[key].name === teamNameLower) {
         teams[key].logged = false
-        io.emit('team-disconnection', teams[key].name)
+        io.emit('team-disconnection', teamNameLower)
         io.emit('send-teams', teams);
       }
     }
@@ -138,14 +140,15 @@ io.on("connection", socket => {
 
   //Ejection
   socket.on('eject-team', (teamName) => {
+    let teamNameLower = teamName.toLowerCase();
     for(const key in teams) {
-      if(teams[key].name === teamName) {
+      if(teams[key].name === teamNameLower) {
         delete teams[key]
       }
     }
-    answers = answers.filter(answer => answer.teamName !== teamName)
+    answers = answers.filter(answer => answer.teamName !== teamNameLower)
     
-    io.emit('team-disconnection', teamName);
+    io.emit('team-disconnection', teamNameLower);
     io.emit('send-teams', getScores());
     io.emit('get-answers', answers)
   })
@@ -168,14 +171,16 @@ io.on("connection", socket => {
 
   //Group update
   socket.on('refresh-group', (teamName) => {
-    socket.emit('send-group', teams[teamName].group1, teams[teamName].group2)
+    let teamNameLower = teamName.toLowerCase();
+    socket.emit('send-group', teams[teamNameLower].group1, teams[teamNameLower].group2)
   })
 
   socket.on('update-team-group', (round, teamName, teamGroup) => {
-    if(round === 1) {teams[teamName].group1 = teamGroup;}
-    if(round === 2) {teams[teamName].group2 = teamGroup;}
+    let teamNameLower = teamName.toLowerCase();
+    if(round === 1) {teams[teamNameLower].group1 = teamGroup;}
+    if(round === 2) {teams[teamNameLower].group2 = teamGroup;}
     io.emit('send-teams', teams)
-    io.to(teams[teamName].socketId).emit('send-group', teams[teamName].group1, teams[teamName].group2)
+    io.to(teams[teamNameLower].socketId).emit('send-group', teams[teamNameLower].group1, teams[teamNameLower].group2)
   })
 
   //------------------------------------------------------------------------------------
