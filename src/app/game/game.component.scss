@@ -84,8 +84,10 @@ button.detail {
 
 div.Proposition {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
     width: 80%;
+    height: 50vh;
     margin: auto;
 }
 @media screen and (min-width: 750px) {
@@ -95,7 +97,7 @@ div.Proposition {
 }
 
 button.Proposition {
-    flex: 1 0 45%;
+    flex: 1 0;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -107,6 +109,10 @@ button.Proposition {
     button.Proposition {
         font-size: 45px;
     }
+}
+
+button.Proposition.selected {
+    background-color:chocolate;
 }
 
 button.Proposition:active {
@@ -127,6 +133,22 @@ input {
     }
 }
 
+textarea {
+    max-width: 90%;
+    width: 90%;
+    height: 40vh;
+    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+    font-size: 8vw;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0;
+}
+@media screen and (min-width: 750px) {
+    input {
+       font-size: 60px;
+    }
+}
+
 button.Repondre {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -134,6 +156,8 @@ button.Repondre {
     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
     font-size: 6vw;
     margin: 5px 5px;
+    padding: 5px;
+    width: 90%;
 }
 @media screen and (min-width: 750px) {
     button.Repondre {

@@ -397,8 +397,8 @@ export class AdminStatsComponent implements OnInit {
         })
       }
 
-      finalTeams = finalTeams.slice().sort((a,b) => { return (b.rd2Rank - b.rd1Rank) - (a.rd2Rank - a.rd1Rank) })
       finalTeams = finalTeams.slice().sort((a,b) => { return (b.rd2Score - b.rd1Score)/b.rd1Score - (a.rd2Score - a.rd1Score)/a.rd1Score })
+      finalTeams = finalTeams.slice().sort((a,b) => { return  (a.rd2Rank - a.rd1Rank) - (b.rd2Rank - b.rd1Rank) })
 
       return finalTeams;
     }

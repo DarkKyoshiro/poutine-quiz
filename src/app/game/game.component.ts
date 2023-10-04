@@ -149,6 +149,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   onAnswer(sentAnswer: any): void {
     //if(sentAnswer) {
+      this.answer = sentAnswer;
       this.fullAnswer = {
         teamName: this.teamName,
         questionID: this.questionID,
