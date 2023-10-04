@@ -507,7 +507,7 @@ io.on("connection", socket => {
                 TeamDB.find()
                   .then(teamsDB => {
                     teamsDB.forEach(teamDB => {
-                      teams[teamDB.name] = {
+                      teams[teamDB.name.replace(/\s+/g, '').toLowerCase()] = {
                         socketId: '',
                         name: teamDB.name,
                         group1: teamDB.group1,
@@ -634,7 +634,7 @@ function getScores() {
           if(negativePoints) {answer.points = - questions[answer.questionID-1].points}
           incorrectAnswers = incorrectAnswers + 1
         }
-
+        
         teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score = teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score + answer.points + answer.bonus
 
         if(teams[answer.teamName.replace(/\s+/g, '').toLowerCase()].score < firstSmallestScore) {
