@@ -104,6 +104,14 @@
                         <span>{{i + 1}}. {{result.result}}</span>
                     </p>
                 </div>
+
+                <mat-divider *ngIf="this.questions[this.questionID - 1].speed"></mat-divider>
+                <p>Bonuses pour mauvaises réponses:</p>
+                <div class="speedResults" *ngIf="this.questions[this.questionID - 1].speed">
+                    <p class="comment" *ngFor="let result of getBonusWrongAnswersString(); index as i">
+                        {{result.team}} ({{result.points}})
+                    </p>
+                </div>
             </mat-card-content>
         </ng-container>
     </mat-card>

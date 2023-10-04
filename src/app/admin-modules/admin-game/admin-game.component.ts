@@ -435,6 +435,24 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     return timeStrings;
   }
 
+  getBonusWrongAnswersString(): {team: string; points: number;}[] {
+    let bonusStrings: {team: string; points: number;}[] = [];
+    let answers: Answer[] = [];
+
+    this.answers.forEach(answer => {
+      if(answer.questionID === this.questionID && answer.bonusWrongAnswers > 0) {
+        answers.push(answer);
+      }
+    })
+    answers = answers.sort((a, b) => b.bonusWrongAnswers < a.bonusWrongAnswers ? 1 : -1);
+
+    answers.forEach((answer) => {
+      bonusStrings.push({ team: answer.teamName, points: answer.bonusWrongAnswers})
+    })
+    
+    return bonusStrings;
+  }
+
   getNumberAnswers(): number {
     let numberAnswers: number = 0;
 

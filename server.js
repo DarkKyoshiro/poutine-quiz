@@ -16,7 +16,7 @@ const app = express();
 //For HerokuApp
 //-----------------------------------------------------------------
 //! Change quizID for each quiz
-var quizID = 'poutinequiz-test' //poutinequizS02E04-2023Oct03
+var quizID = 'poutinequizS02E04-2023Oct03' //poutinequizS02E04-2023Oct03
 mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/' + quizID + '?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
@@ -727,7 +727,7 @@ function getScores() {
 
         if(bonusWrongAnswers > 0) {
           answers.forEach(answer => {
-            if(answer.teamName === key && answer.questionID === i) {answer.bonusWrongAnswers = bonusWrongAnswers}
+            if(answer.teamName.replace(/\s+/g, '').toLowerCase() === key && answer.questionID === i) {answer.bonusWrongAnswers = bonusWrongAnswers}
           })
         }
       }
