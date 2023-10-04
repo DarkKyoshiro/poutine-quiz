@@ -16,7 +16,7 @@ const app = express();
 //For HerokuApp
 //-----------------------------------------------------------------
 //! Change quizID for each quiz
-var quizID = 'poutinequizS02E04-2023Oct03' //poutinequizS02E04-2023Oct03
+var quizID = 'poutinequiz-test' //poutinequizS02E04-2023Oct03
 mongoose.connect('mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/' + quizID + '?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
