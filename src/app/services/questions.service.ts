@@ -101,7 +101,7 @@ export class QuestionsService {
         question: 'Avec quelle manette insolite le joueur gbbearzly a fini Dark Souls ?',
         propositionsDetailed: ['Une guitare de Rock Band', 'Les Bongos de Donkey Kong Jungle Beat', 'Le Power Glove de la NES', 'Sa bite'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'B. Grimhilde',
+        answer: 'A.',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -166,7 +166,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Rövhalet',
+        question: 'Göteborg',
         propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
         propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
         answer: 'Lieu Suédois',
@@ -183,7 +183,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Lövbacken',
+        question: 'Billy',
         propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
         propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
         answer: 'IKEA',
@@ -200,7 +200,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: 'Godmorgen',
+        question: 'Smabit',
         propositionsDetailed: ['IKEA', 'Lieu Suédois', 'Les deux'],
         propositionsShort: ['IKEA', 'Lieu Suédois', 'Les deux'],
         answer: 'IKEA',
@@ -289,7 +289,7 @@ export class QuestionsService {
 
         title: 'Stupide mais fonctionnel',
         question: 'Le 23 Janvier 1795, la France a remporté une bataille navale contre la flotte néerlandaise, avec une unité assez inattendue.\nQuel type d’unités la France a utilisée pour gagner cette guerre ?',
-        answer: 'Vrai',
+        answer: 'La cavalerie',
         answerComment: "Le 23 janvier 1795, pendant les guerres de la Révolution française, un grand nombre de navires de guerre néerlandais étaient amarrés à Den Helder, une ville portuaire des Pays-Bas. Au cours d'un hiver particulièrement froid, le quai gèle soudainement et les navires sont pris au piège. Un régiment de cavalerie français s'en aperçut et décida de charger les navires. Ils ont enroulé du tissu autour des sabots des chevaux afin d'adoucir leur coup contre la glace et ont chargé les Néerlandais pendant qu'ils dormaient. Ils s'emparèrent de tous les navires sans aucune perte.\nC'est le seul cas dans l'histoire d'une charge de cavalerie contre une flotte navale.",
         
         showQuestion: false,
@@ -458,7 +458,7 @@ export class QuestionsService {
         points: 3,
 
         title: 'Les réponses ont un gros pif',
-        question: 'C\'est un peu un cousin de Ronald McDonald mais au lieu d\'engrosser les gamins, celui là se nourrit de leur peur. Ah et les deux ont un beau ballon rouge.',
+        question: 'C\'est un peu un cousin de Ronald McDonald mais au lieu d\'engraisser les gamins, celui là se nourrit de leur peur. Ah et les deux ont un beau ballon rouge.',
         answer: 'Pennywise de IT',
         
         showQuestion: false,
@@ -610,7 +610,7 @@ export class QuestionsService {
         question: 'Comment dit-on « Remonte-moi le moral » en italien ?',
         propositionsDetailed: ['Panacotta', 'Bruschetta', 'Tiramisu', 'Choucroute garnie'],
         propositionsShort: ['A', 'B', 'C', 'D'],
-        answer: 'A',
+        answer: 'C',
         answerComment: 'Le mot italien d\'origine est « tirami sù » qui veut dire « remonte-moi le moral » ou « tire-moi vers le haut »',
         
         showQuestion: false,
@@ -855,8 +855,8 @@ export class QuestionsService {
         points: 1,
 
         title: 'Le point Godwin, vous connaissez ?',
-        question: 'Dans le film « Le prénom » adapté de la pièce éponyme, un futur père annonce vouloir appeler son fils Adolf. \nÉvidemment c’était une blague. Quel est le vrai prénom choisi ?',
-        answer: 'Henri',
+        question: 'Dans le film « Le prénom » adapté de la pièce éponyme, une grosse dispute éclate suite au nom qu’un futur père veut donner à son enfant.\n Quel est ce prénom ?',
+        answer: 'Adolf',
         
         showQuestion: false,
         propositionsStep: 0,
@@ -1070,7 +1070,7 @@ export class QuestionsService {
 
         title: 'Pictionary ou presque',
         question: 'Dessin du public, En moyenne, 60sec - 10sec / point',
-        answer: 'Pâté Chinois',
+        answer: '1. Pâté Chinois\n2. Pikachu\n3. Excalibur',
         
         showQuestion: false,
         propositionsStep: 0,
