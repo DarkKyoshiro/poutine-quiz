@@ -31,6 +31,7 @@ export class GameComponent implements OnInit, OnDestroy {
   interval$!: Observable<number>;
   timer: number = 30;
   timerActive: boolean = false;
+  betActive: boolean = true;
   private destroy$!: Subject<boolean>;
 
   constructor(
@@ -77,6 +78,10 @@ export class GameComponent implements OnInit, OnDestroy {
     
     this.socket.on("extendTimer", (duration: number) => {
       this.timer += duration;
+    })
+
+    this.socket.on("betLocked", (betActive: boolean) => {
+      this.betActive = betActive;
     })
 
     //------------------------------------------------------------------------------------

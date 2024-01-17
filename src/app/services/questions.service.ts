@@ -220,8 +220,8 @@ export class QuestionsService {
         points: 1,
 
         title: "L'art du Discours",
-        question: "Qui a prononcé ce discours ?",
-        answer: "Martin Luther King",
+        question: "Qui a prononcé ce discours et dans quel film ?",
+        answer: "Aragorn (Vigo Mortensen) dans Le seigneur des anneaux le retour du roi",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -237,8 +237,8 @@ export class QuestionsService {
         points: 1,
 
         title: "L'art du Discours",
-        question: "Qui a prononcé ce discours et où ?",
-        answer: "Le Général de Gaule à Montréal",
+        question: "Qui a prononcé ce discours et dans quel film ?",
+        answer: "Hunter 'Patch' Adams (Robin Williams) dans Patch Adams (Docteur Patch)",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -1063,8 +1063,8 @@ export class QuestionsService {
         round: 2,
         points: 0,
 
-        question: "Vitoo: Fatal, assieds-toi faut que j'te parle\nJ'ai passé ma soirée à boire\nFatal, j'la sens pas, je sais pas, elle doute de moi\n\nFatal: Mais Vitoo arrête, tu sais ta meuf t'aime, ta meuf m'a dit\nTu sais avec Vitoo la confiance règne, et c'est mon p'tit choux à la crème\nFaut pas que tu paniques j'te jure\nTa meuf est cool, ta meuf est bonne, Vitoo\nT'en niques des tonnes, elle s'doute de rien, elle est trop conne\n\nVitoo: Non mais qu'est-ce t'en sais toi?\nÇa fait deux mois qu'elle me fait trop peur\n\nFatal: Ah bon?\n\nVitoo: Qu'elle check mes messages tout les quarts d'heure\n\n Fatal: Change ton code PIN\n\nVitoo: Elle a infiltré mon répondeur\nMa meuf est devenue une autre femme, ouais\n\nFatal: Mais t'es sûr de toi? T'en as la preuve par trois?\n\nVitoo: Elle devient zarbi\nToutes les nuits, elle me fait suivre par son frère Denis\nQu'a même prévu de me casser la gueule mardi\nÇa d'vient l'angoisse, un vrai cauchemar\nJ'ai tellement peur d'elle, le soir je dors à l'hôtel\n\nFatal: Elle est à côté de la plaque, tu kiffes de ken des autres nanas toi\nTous les trucs bizarres, les plans à trois, et les pétasses quoi\nTous tes bobards pour tes 5 à 7 pénards\nT'as un python dans slibard, Vitoo, t'es un bon queutard\n\nVitoo: Je t'aime moi\n\nFatal: Et bah voilà, dis-lui ça\n\nVitoo: Excuse-moi\n\nFatal: Voilà, ça c'est bien ça\n\nVitoo: C'est arrivé qu'16 fois\n\nFatal: Euh non ça lui dis pas\n\nVitoo: Mais j'sais pas si j'assume de n'coucher qu'avec elle",
-        answer: "Mauvaise Foi Nocturne de Fatal et Vitoo (aka Michael Young et Pascal Obispo",
+        question: "1 point, Français:\nAprès quelques incantations de druides et de magie\nToute la tribu, le glaive en main, courait vers l'ennemi\nLa lutte était terrible et je ne voyais que les ombres\nTranchant l'ennemi qui revenait toujours en surnombre\nMes frères tombaient l'un après l'autre devant mon regard\nSous le poids des armes que possédaient tous ces barbares\nDes lances, des haches et des épées dans le jardin d'Éden\nQui écoulaient du sang sur l'herbe verte de la plaine\n Comme ces jours de peine où l'homme se traîne\nÀ la limite du règne, du mal et de la haine\nFallait-il continuer ce combat déjà perdu\nMais telle était la fierté de toute la tribu\nLa lutte a continué comme ça jusqu'au soleil couchant\nDe férocité extrême en plus d'acharnement\nFallait défendre la terre de nos ancêtres enterrés là\nEt pour toutes les lois de la tribu de Dana\n\n\n1-2 points, Anglais:\nAfter a few incantations of druid and magic\nThe whole tribe, sword in hand, ran towards the enemy.\nThe struggle was terrible, and all I could see were shadows\nSlashing the enemy, who always came back outnumbered\nMy brothers fell one by one before my very eyes\nUnder the weight of the weapons possessed by all these barbarians\nSpears, axes and swords in the Garden of Eden\nDripping blood on the green grass of the plain\nLike those days of sorrow when man drags himself\nOn the edge of reign, evil and hatred\nWas it necessary to continue this fight already lost\nBut such was the pride of the whole tribe\nThe fight went on until the setting sun\nWith extreme ferocity and fierce determination\nWe had to defend the land of our ancestors buried there\nAnd for all the laws of Dana's tribe\n\n\n3 points, Allemand:\nNach einigen Druiden- und Zauberbeschwörungen\nrannte der ganze Stamm mit dem Schwert in der Hand auf den Feind zu.\nDer Kampf war furchtbar und ich sah nur die Schatten\nSchlitzte den Feind auf, der immer in der Überzahl zurückkehrte.\nMeine Brüder fielen einer nach dem anderen vor meinen Augen.\nUnter dem Gewicht der Waffen, die all diese Barbaren besaßen\nSpeere, Äxte und Schwerter im Garten Eden.\nDie Blut auf das grüne Gras der Ebene tropften.\nWie jene Tage der Mühsal, an denen der Mensch sich schleppt.\nAn der Grenze der Herrschaft, des Bösen und des Hasses.\nSollte man den bereits verlorenen Kampf fortsetzen.\nDoch so war der Stolz des ganzen Stammes.\nDer Kampf ging so weiter bis zur untergehenden Sonne.\nVon extremer Grausamkeit zu mehr Verbissenheit\nMusste das Land unserer dort begrabenen Vorfahren verteidigen\nUnd für alle Gesetze des Stammes von Dana\n\n\n4-5 points, Japonais:\nIkutsu ka no doruido to mahō no jumon no ato\nBuzoku zen'in ga ken o te ni teki ni mukatte hashitta\nTatakai wa susamajiku, kage shika mienakatta\nKanarazu kuroji de modotte kuru teki o kiru\nKyōdai-tachi ga tsugitsugi to watashi no shisen no mae ni taoreta\nKorera subete no yaban hito ga shoyū shite ita buki no omomi no shita de\nEden'nosono no yari, ono, ken\nHeigen no midori no kusa ni chi o nagashita no wa\nHito ga mi o hikizuru kurushimi no hibi no yō ni\nTōchi, aku to nikushimi no hate ni\nMō maketa tatakai o tsudzukerubeki ka\nShikashi sore ga buzoku zentai no hokoridatta\nTatakai wa kōshite higakureru made tsudzuita\nYōsha no nai kyokudo no kyōbō-sei\nWatashitachi wa soko ni maisō sa reta senzo no tochi o mamoranakereba narimasendeshita\nSoshite dāna buzoku no subete no hōritsu ni tsuite\n",
+        answer: "La Tribu de Dana de Manau",
         
         showQuestion: false,
         propositionsStep: 0,

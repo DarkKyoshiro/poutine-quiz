@@ -41,6 +41,17 @@
                 </button>
             </span>
 
+            <ng-container *ngIf="this.questions.length > 0 && this.questionID > 0">| </ng-container>
+
+            <span class="comment" *ngIf="this.questions.length > 0 && this.questionID > 0">
+                <button mat-icon-button aria-label="Lock bets" (click)="onLockBets()" *ngIf="this.betActive">
+                    <mat-icon>vpn_key</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Lock bets" (click)="onLockBets()" *ngIf="!this.betActive">
+                    <mat-icon>lock_reset</mat-icon>
+                </button>
+            </span>
+
             <!-- Steps management -->
             <!-- <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
                 <br>

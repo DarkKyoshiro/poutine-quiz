@@ -45,6 +45,7 @@
                     step="1"
                     thumbLabel="true"
                     [(ngModel)]="pointsBet"
+                    [disabled]="!betActive"
                     aria-labelledby="Nombre de points que vous souhaitez parier">
                 </mat-slider> 
             </p>

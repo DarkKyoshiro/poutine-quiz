@@ -28,6 +28,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
   timerDuration: number = 30;
   timer!: number;
   timerActive: boolean = false;
+  betActive: boolean = true;
   private destroy$!: Subject<boolean>;
 
   constructor(private socket: Socket, 
@@ -512,5 +513,10 @@ export class AdminGameComponent implements OnInit, OnDestroy {
   onExtendTimer(): void {
     if(this.questions[this.questionID-1].locked) {this.socket.emit('question-correction')}
     this.socket.emit("extendTimer", 10)
+  }
+
+  onLockBets(): void {
+    this.betActive = this.betActive ? false : true;
+    this.socket.emit("lockBets", this.betActive)
   }
 }
