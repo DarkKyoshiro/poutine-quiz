@@ -98,7 +98,7 @@
             
             <!-- Propositions -->
             <mat-card-content *ngIf="questions[this.questionID - 1].type === 'Nugget'" style="white-space: pre-wrap">
-                <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i])}}% {{questions[this.questionID - 1]?.propositionsShort[i]}}. {{proposition}}</p> 
+                <p class="comment" *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i">{{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i]) | number: '1.0-1'}}% {{questions[this.questionID - 1]?.propositionsShort[i]}}. {{proposition}}</p> 
             </mat-card-content>
 
             <mat-card-content style="white-space: pre-wrap">

@@ -151,4 +151,34 @@
             </tr>
         </table>
     </mat-expansion-panel> -->
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Detailed scores for Excel
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table>
+            <tr>
+                <th>Question #</th>
+                <th>Question type</th>
+                <th>Round</th>
+                <th>Team</th>
+                <th>Status</th>
+                <th>Points</th>
+                <th>Bonus</th>
+                <th>Wrong answer bonus</th>
+            </tr>
+            <tr *ngFor="let answer of answers">
+                <td>{{answer.questionID}}</td>
+                <td>{{questions[answer.questionID - 1].type}}</td>
+                <td>{{questions[answer.questionID - 1].round}}</td>
+                <td>{{answer.teamName}}</td>
+                <td>{{answer.correct ? "Y" : "N"}}</td>
+                <td>{{answer.points}}</td>
+                <td>{{answer.bonus}}</td>
+                <td>{{answer.bonusWrongAnswers}}</td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
 </mat-accordion>
