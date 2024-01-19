@@ -150,7 +150,7 @@
                 <td class="separator-left">{{fullScore.key}}</td>
             </tr>
         </table>
-    </mat-expansion-panel> -->
+    </mat-expansion-panel>
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -174,11 +174,11 @@
                 <td>{{questions[answer.questionID - 1].type}}</td>
                 <td>{{questions[answer.questionID - 1].round}}</td>
                 <td>{{answer.teamName}}</td>
-                <td>{{answer.correct ? "Y" : "N"}}</td>
+                <td>{{answer.correct === 1 ? "Y" : answer.correct === 0 ? "N" : "?"}}</td>
                 <td>{{answer.points}}</td>
                 <td>{{answer.bonus}}</td>
                 <td>{{answer.bonusWrongAnswers}}</td>
             </tr>
         </table>
-    </mat-expansion-panel>
+    </mat-expansion-panel> -->
 </mat-accordion>
