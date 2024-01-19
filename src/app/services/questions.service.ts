@@ -439,7 +439,7 @@ export class QuestionsService {
         points: 3,
 
         title: "Mash up",
-        question: "Artistes et Titres des deux morceaux",
+        question: "Titres des deux morceaux",
         answer: "Eminem Lose - Yourself vs Lou Bega - Mambo n°5",
         
         showQuestion: false,
@@ -455,7 +455,7 @@ export class QuestionsService {
         points: 3,
 
         title: "Mash up",
-        question: "Artistes et Titres des deux morceaux",
+        question: "Titres des deux morceaux",
         answer: "Linkin Park - Numb vs Ariana Grande - Into You",
         
         showQuestion: false,
@@ -471,7 +471,7 @@ export class QuestionsService {
         points: 3,
 
         title: "Mash up",
-        question: "Artistes et Titres des deux morceaux",
+        question: "Titres des deux morceaux",
         answer: "Daft Punk (ft Pharell Williams et Nile Rodgers) - Get Lucky vs Bee Gees - You Should be Dancing",
         
         showQuestion: false,
@@ -487,7 +487,7 @@ export class QuestionsService {
         points: 3,
 
         title: "Mash up",
-        question: "Artistes et Titres des deux morceaux",
+        question: "Titres des deux morceaux",
         answer: "Earth, Wind & Fire - September vs Post Malone - Congratulations",
         
         showQuestion: false,
