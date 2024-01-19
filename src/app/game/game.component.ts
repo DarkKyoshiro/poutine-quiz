@@ -57,7 +57,7 @@ export class GameComponent implements OnInit, OnDestroy {
         this.timer-- 
         if(this.timer === 0) { 
           this.timerActive = false
-          if(!this.getReponse()) { this.onAnswer(this.answer === '' ? '#!Timeout!#' : '#!Timeout!# - ' + this.answer) }
+          if(!this.getReponse()) { this.onAnswer(this.answer === '' ? '#!Timeout!#' : '#!Timeout!# - (' + this.answer + ')') }
         };
       };
     })
