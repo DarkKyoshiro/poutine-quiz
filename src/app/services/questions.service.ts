@@ -13,10 +13,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "À quel genre de musique cet extrait appartient ?",
-        propositionsDetailed: ["Bubblegum Pop", "Lousiana Swamp Pop", "Sophisti-Pop", "Poupi Poupi Poupi Pop"],
+        question: "Quel groupe chante cette chanson de noel un peu particulière ?",
+        propositionsDetailed: ["Sabaton", "Black Sabbath", "Metallica", "Maria Carey"],
         propositionsShort: ["A", "B", "C", "D"],
-        answer: "C",
+        answer: "A",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -25,6 +25,23 @@ export class QuestionsService {
     },
     {
         id: 2,
+        type: 'Nugget',
+        speed: false,
+        round: 1,
+        points: 1,
+
+        question: "Dans cet extrait, on entend un rire au début, qui rit et pourquoi ?",
+        propositionsDetailed: ["Le batteur après avoir jeté une de ses baguettes sur le guitariste par erreur", "Le chanteur après s’être assis par erreur sur le piano", "Le pianist après avoir lâché un bon gros pet silencieux mais fatal", "Le guitariste après s’être rendu compte qu’il n’avait pas rejoint le bon groupe"],
+        propositionsShort: ["A", "B", "C", "D"],
+        answer: "B",
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 3,
         type: 'Nugget',
         speed: false,
         round: 1,
@@ -42,33 +59,16 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 3,
-        type: 'Nugget',
-        speed: false,
-        round: 1,
-        points: 1,
-
-        question: "Quel groupe chante cette chanson de noel un peu particulière ?",
-        propositionsDetailed: ["Sabaton", "Black Sabbath", "Metallica", "Maria Carey"],
-        propositionsShort: ["A", "B", "C", "D"],
-        answer: "A",
-        
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
-    {
         id: 4,
         type: 'Nugget',
         speed: false,
         round: 1,
         points: 1,
 
-        question: "Dans cet extrait, on entend un rire au début, qui rit et pourquoi ?",
-        propositionsDetailed: ["Le batteur après avoir jeté une de ses baguettes sur le guitariste par erreur", "Le chanteur après s’être assis par erreur sur le piano", "Le pianist après avoir lâché un bon gros pet silencieux mais fatal", "Le guitariste après s’être rendu compte qu’il n’avait pas rejoint le bon groupe"],
+        question: "Quel est le titre de cette chanson ?",
+        propositionsDetailed: ["I'll take everything", "Wordplay", "Better Man", "Supercalifragilisticexpialidocious"],
         propositionsShort: ["A", "B", "C", "D"],
-        answer: "B",
+        answer: "A",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -99,10 +99,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "Quel est le titre de cette chanson ?",
-        propositionsDetailed: ["I'll take everything", "Wordplay", "Better Man", "Supercalifragilisticexpialidocious"],
+        question: "À quel genre de musique cet extrait appartient ?",
+        propositionsDetailed: ["Bubblegum Pop", "Lousiana Swamp Pop", "Sophisti-Pop", "Poupi Poupi Poupi Pop"],
         propositionsShort: ["A", "B", "C", "D"],
-        answer: "A",
+        answer: "C",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -558,23 +558,6 @@ export class QuestionsService {
         round: 2,
         points: 1,
 
-        question: "Laquelle de ces chansons a gagnée le MTV Europe Music Award for Best Act Ever en 2008 ?",
-        propositionsDetailed: ["Tokyo Hotel avec Schrei", "Thirty Second To Mars avec A Beautiful Lie", "Pink avec So What", "Rick Astley avec Never Gonna Give You Up"],
-        propositionsShort: ["A", "B", "C", "D"],
-        answer: "D",
-        
-        showQuestion: false,
-        propositionsStep: 0,
-        locked: false,
-        showAnswer: false
-    },
-    {
-        id: 34,
-        type: 'Nugget',
-        speed: false,
-        round: 2,
-        points: 1,
-
         question: "Quel jeu n'est pas présent dans ce medley joué aux Games Award 2023 ?",
         propositionsDetailed: ["Baldur's Gate 3", "Final Fantasy XVI", "Super Mario Bros Wonders", "Alan's Wake 2"],
         propositionsShort: ["A", "B", "C", "D"],
@@ -587,7 +570,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 35,
+        id: 34,
         type: 'Nugget',
         speed: false,
         round: 2,
@@ -604,7 +587,7 @@ export class QuestionsService {
         showAnswer: false
     },
     {
-        id: 36,
+        id: 35,
         type: 'Nugget',
         speed: false,
         round: 2,
@@ -614,6 +597,23 @@ export class QuestionsService {
         propositionsDetailed: ["Käärijä avec Cha Cha Cha", "La Zarra avec Évidemment", "Loreen avec Tattoo", "Sunstroke Project & Olia Tira avec Run Away, aussi connu pour l'epix Sax Guy"],
         propositionsShort: ["A", "B", "C", "D"],
         answer: "C",
+        
+        showQuestion: false,
+        propositionsStep: 0,
+        locked: false,
+        showAnswer: false
+    },
+    {
+        id: 36,
+        type: 'Nugget',
+        speed: false,
+        round: 2,
+        points: 1,
+
+        question: "Laquelle de ces chansons a gagnée le MTV Europe Music Award for Best Act Ever en 2008 ?",
+        propositionsDetailed: ["Tokyo Hotel avec Schrei", "Thirty Second To Mars avec A Beautiful Lie", "Pink avec So What", "Rick Astley avec Never Gonna Give You Up"],
+        propositionsShort: ["A", "B", "C", "D"],
+        answer: "D",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -748,8 +748,8 @@ export class QuestionsService {
         points: 1,
 
         title: "ASMR",
-        question: "Titre et Artiste de la chanson",
-        answer: "Tove Lo - Glad He's Gone",
+        question: "V ou F, il existe une chanson de Rap ASMR appelée The Quiet Song ?",
+        answer: "Vrai",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -765,8 +765,8 @@ export class QuestionsService {
         points: 1,
 
         title: "ASMR",
-        question: "V ou F, il existe une chanson de Rap ASMR appelée The Quiet Song ?",
-        answer: "Vrai",
+        question: "Quelle est al personnalité interviewvé en mode ASMR ?",
+        answer: "Arnold Schwarzenegger",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -782,8 +782,8 @@ export class QuestionsService {
         points: 1,
 
         title: "ASMR",
-        question: "Quelle est al personnalité interviewvé en mode ASMR ?",
-        answer: "Arnold Schwarzenegger",
+        question: "Titre et Artiste de la chanson",
+        answer: "Tove Lo - Glad He's Gone",
         
         showQuestion: false,
         propositionsStep: 0,
