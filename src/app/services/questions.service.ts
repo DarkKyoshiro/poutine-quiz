@@ -48,7 +48,7 @@ export class QuestionsService {
         points: 1,
 
         question: "Dans le livre 2, Arthur offre une rose particuliere a une paysanne. Que fait-elle avec ?",
-        propositionsDetailed: ["Elle s'en fait une infusion", "Elle se la met dans les cheveux", "Elle la mange", "Elle ne comprend pas le principe, se sent insultée et gifle Arthur"],
+        propositionsDetailed: ["Elle ne comprend pas le principe et s'en fait une infusion", "Elle ne comprend pas le principe et se la met dans les cheveux", "Elle ne comprend pas le principe et la mange", "Elle ne comprend pas le principe, se sent insultée et gifle Arthur"],
         propositionsShort: ["A", "B", "C", "D"],
         answer: "C",
         
@@ -289,7 +289,9 @@ export class QuestionsService {
 
         title: "Sorts et Potions",
         question: "Comment Perceval et Karadoc choisissent les ingrédients à utiliser lorsqu'ils tentent de préparer une potion de puissance ?",
+        questionComment: "Bonus si vous me dite l'effet de la potion qu'ils ont préparé",
         answer: "À l'odeur, selon si ça sent les pieds ou pas",
+        answerComment: "Ça leur donne une voix nasillarde, comme de l'Hélium",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -322,8 +324,8 @@ export class QuestionsService {
         points: 1,
 
         title: "Sorts et Potions",
-        question: "Pourquoi est-ce qu'Arthur demande à Merlin de lui créer des plaques de dissimulation ?",
-        answer: "Parce que Merlin ne sait pas rendre les gens invisibles",
+        question: "D'après Merlin, quelle est la première étape pour créer une plaque de dissimulation",
+        answer: "Il faut bien traiter le bois, car sinon dès qu'il pleut ça gonfle et ça tiens moins",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -518,7 +520,7 @@ export class QuestionsService {
         round: 1,
         points: 0,
 
-        question: "Écrivons la légendre",
+        question: "Écrivons la légende",
         answer: "Éléments à voir apparaitre: \n- Le roi Arthur requiert l’aide de son peuple pour une quête\n- Le peuple est formé à titre d’ecuyer dans la cour du Roi où ils apprennent les rouages de la cour.\n- Puis ils sont formés par deux prestigieux instructeurs (Kadok et Karadok)\n- Un choix important est ensuite à faire, vont-ils s’en remettre à leur destinée, ou vont-ils se donner un petit coup de pouce magique ?\n- Enfin, le temps est venu pour leur première quête donnée par la dame du lac en compagnie d’Yvain et Gauvain, où ils devront infiltrer le camp de Lancelot pour délivrer un message à Guenièvre. Bien que cette quête ait été réussi, ce n’est pas sans mal suite à la confrontation avec Méléagant , mais l’intervention suspecte de Venec leur a sauvé la mise.",
         
         showQuestion: false,
