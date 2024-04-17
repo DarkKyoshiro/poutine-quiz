@@ -441,7 +441,7 @@ export class QuestionsService {
         points: 3,
 
         title: "Les vieux c'est mysterieux",
-        question: "Alors que vous veniez de trouver votre Guide, vous êtes vite rejoins par deux petits vieux clopinant à pied. \nIl semblerait que ce soient des renforts, mais vous n’avez pas bien compris leurs surnoms, quelque chose avec un animal ou un organe, c’était un peu bizarre. \nEt bien que leurs visages vous soient familiers et que vous reconnaissez en eux de vrais chevaliers, leur inexpérience et naïveté apparente ne vous rassure guère… \nMais bon, vous prenez toute l’aide qu’on vous offre.",
+        question: "Alors que vous veniez de trouver votre Guide, vous êtes vite rejoins par deux petits vieux clopinant à pied. \nIl semblerait que ce soient des renforts, mais vous n’avez pas bien compris leurs surnoms, quelque chose avec un animal ou un organe, c’était un peu bizarre. \nEt bien que vous êtes sur que ce sont de vrais chevaliers, les entendre dire qu'ils étaient pétrifiés de peur devant un Fakir qui a enroulé sa bite autour d'un baton et qui a soulevé des poids avec ses couilles ne vous a guère rassuré... \nMais bon, vous prenez toute l’aide qu’on vous offre.",
         answer: "Yvain et Gauvain",
         
         showQuestion: false,
