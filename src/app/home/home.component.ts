@@ -36,7 +36,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onFillTeam(teamName: string): void {
-    this.router.navigateByUrl('game/' + teamName);
+  onFillTeam(teamName: string, logged: boolean): void {
+    if(!logged) {
+      this.router.navigateByUrl('game/' + teamName);
+    }
   }
 }

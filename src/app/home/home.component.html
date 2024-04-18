@@ -12,8 +12,8 @@
 <br>
 
 <div *ngIf="teams.length > 0">
-    <h1>Votre équipe est déjà inscrite, retrouvez la ici:</h1><br>
-    <p><span *ngFor="let team of teams"><button (click)="onFillTeam(team.name)">{{team.name}}</button> </span></p>
+    <h1>Votre équipe est déjà inscrite, retrouvez la ici:</h1>
+    <p><span *ngFor="let team of teams"><button (click)="onFillTeam(team.name, team.logged)" [style.background-color]="team.logged ? 'red' : '#4CAF50'">{{team.name}}</button> </span></p>
 </div>
 
 <br>
