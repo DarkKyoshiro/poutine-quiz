@@ -132,7 +132,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "Eh oui mémé, t'es bien mouchée!",
+        question: "Lorsqu’on le tient par la partie sporadique, ou boulière, le fenouil est un objet redondant",
         propositionsDetailed: ["Kadoc", "Karadoc"],
         propositionsShort: ["Kadoc", "Karadoc"],
         answer: "Karadoc",
@@ -149,7 +149,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "Vous dites pas : « Qu'est ce qu'il fait chaud... », vous dites : « La chaleur est un plat qui se mange froid",
+        question: "La neige qui poudroie dans la solitude de notre enfance",
         propositionsDetailed: ["Kadoc", "Karadoc"],
         propositionsShort: ["Kadoc", "Karadoc"],
         answer: "Karadoc",
@@ -166,7 +166,7 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "Il faut pas respirer la compote, ça fait tousser",
+        question: "Des fois on n'a pas le choix faut sacrifier des jeunes, c'est le grand qu'a dit.",
         propositionsDetailed: ["Kadoc", "Karadoc"],
         propositionsShort: ["Kadoc", "Karadoc"],
         answer: "Kadoc",
@@ -183,10 +183,10 @@ export class QuestionsService {
         round: 1,
         points: 1,
 
-        question: "La politique de l'autruche, c'est une politique qui court vite, une politique qui fait des gros œufs, c'est tout",
+        question: "J'te présente vos hommages au roi arthur",
         propositionsDetailed: ["Kadoc", "Karadoc"],
         propositionsShort: ["Kadoc", "Karadoc"],
-        answer: "Karadoc",
+        answer: "Kadoc",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -521,7 +521,7 @@ export class QuestionsService {
         points: 0,
 
         question: "Écrivons la légende",
-        answer: "Éléments à voir apparaitre: \n- Le roi Arthur requiert l’aide de son peuple pour une quête\n- Le peuple est formé à titre d’ecuyer dans la cour du Roi où ils apprennent les rouages de la cour.\n- Puis ils sont formés par deux prestigieux instructeurs (Kadok et Karadok)\n- Un choix important est ensuite à faire, vont-ils s’en remettre à leur destinée, ou vont-ils se donner un petit coup de pouce magique ?\n- Enfin, le temps est venu pour leur première quête donnée par la dame du lac en compagnie d’Yvain et Gauvain, où ils devront infiltrer le camp de Lancelot pour délivrer un message à Guenièvre. Bien que cette quête ait été réussi, ce n’est pas sans mal suite à la confrontation avec Méléagant , mais l’intervention suspecte de Venec leur a sauvé la mise.",
+        answer: "Bon en fait on s'en fou un peu ça va finir aux archive et personne va lire ce truc. Allé pour l'effort je donne les points à tout le monde.",
         
         showQuestion: false,
         propositionsStep: 0,
