@@ -171,7 +171,7 @@
             </tr>
             <tr *ngFor="let answer of answers">
                 <td>{{answer.questionID}}</td>
-                <td>{{questions[answer.questionID - 1].type}}</td>
+                <td>{{questions[answer.questionID - 1].type}}{{questions[answer.questionID - 1].type === "Menu" ? "-" + questions[answer.questionID - 1].group : ""}}</td>
                 <td>{{questions[answer.questionID - 1].round}}</td>
                 <td>{{answer.teamName}}</td>
                 <td>{{answer.correct === 1 ? "Y" : answer.correct === 0 ? "N" : "?"}}</td>
