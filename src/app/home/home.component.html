@@ -10,6 +10,13 @@
     </form>
 </div>
 <br>
+
+<div *ngIf="teams.length > 0">
+    <h1>Votre équipe est déjà inscrite, retrouvez la ici:</h1><br>
+    <p><span *ngFor="let team of teams"><button (click)="onFillTeam(team.name)">{{team.name}}</button> </span></p>
+</div>
+
+<br>
 <button routerLink="qform">Proposer une question</button>
 
 <div id="leaderboard">
