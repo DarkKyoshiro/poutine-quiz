@@ -1044,8 +1044,8 @@ export class QuestionsService {
         points: 3,
 
         title: "La réponse est un titre de chanson",
-        question: "C’est aussi un métier",
-        answer: "The Scientist – Coldplay, Tiny Dancer – Elton John, Joe le Taxi – Vanessa Paradis, L’aventurier – Indochine",
+        question: "Ca pourrait aussi désigner la masturbation",
+        answer: "Beat it - Michael Jackson, Let it go - Idina Menzel, Formidable - Stromae, Ça fait mal - Christophe Maé",
         
         showQuestion: false,
         propositionsStep: 0,
@@ -1074,7 +1074,16 @@ export class QuestionsService {
         round: 3,
         points: 0,
 
-        question: "1. V ou F, la série Kaamelott a été écrite par Crétin de Troyes ? \n\n2. D’après Merlin, que dit le dragon quand il se fait marcher sur la patte ? Si vous ne savez pas, dites Dis donc, tu ne manques pas de toupet?\n\n3. Diriez-vous que regarder tous les épisodes de Kaamelott d’une traite est plutôt une bonne ou une bonne idée ?\n\n4. Si le chevalier Malcolum devait rejoindre la table ronde, le metteriez-vous plutôt à gauche, à droite ou au milieu ?\n\n5. À votre avis, je serais meilleurs en Karadoc ou en Perceval ?\n\n6. Chantez-moi chante Sloubi jusqu’à Sloubi 1\n\n7. Que faut-il faire si vous avez mordu ?\n\n8. Est-ce que vous êtes assez brave pour manger les tartes cuisinées par Dame Seli ?\n\n9. Si vous deviez former un clan de chevalier, comment l’appeleriez vous ?\n\n10. Allé, ça vous tente on vous adoube la maintenant en tant que Sir Patate Frite de la Sauce Brune ?",
+        question: "1. V ou F, la série Kaamelott a été écrite par un Crétin de Troyes ? \n\n" + 
+                    "2. D’après Merlin, que dit le dragon quand il se fait marcher sur la patte ? Si vous ne savez pas, dites Dis donc, tu ne manques pas de toupet?\n\n" + 
+                    "3. Diriez-vous que regarder tous les épisodes de Kaamelott d’une traite est plutôt une bonne ou une bonne idée ?\n\n" + 
+                    "4. Si le chevalier Malcolum devait rejoindre la table ronde, le metteriez-vous plutôt à gauche, à droite ou au milieu ?\n\n" + 
+                    "5. À votre avis, peux-t'on dire d'un fenouil qu'il est sporadique ?\n\n" + 
+                    "6. Si je vous chante à la volette là de suite, ça vous restera dans la tête pendant combien de temps à peu près ?\n\n" + 
+                    "7. Je me ferais bien une petite partie de Sloubi, vous auriez pas 50 bouts de bois de 2 pouces, 50 de 3 pouces et 50 de 4 pouces ? J'ai déjà le reste\n\n" + 
+                    "8. Est-ce que vous êtes assez brave pour manger les tartes cuisinées par Dame Seli ?\n\n" + 
+                    "9. Si vous deviez former un clan de chevalier, comment l’appeleriez vous ?\n\n" + 
+                    "10. Allé, ça vous tente on vous adoube la maintenant en tant que Sire Patate Frite de la Sauce Brune ?",
         answer: 'NA',
         
         showQuestion: false,
