@@ -215,10 +215,10 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   getPoints(): number[] {
-    let points: number[] = [0,0,0,0];
+    let points: number[] = [0,0,0,0,0];
     this.answers.forEach(element => {
       if(element.questionID === this.questionID && element.teamName.replace(/\s+/g, '').toLowerCase() === this.teamName.replace(/\s+/g, '').toLowerCase()) {
-        points = [element.points, element.bonusWrongAnswers, element.bonus, element.pointsBet]
+        points = [element.points, element.bonusSpeed, element.bonusWrongAnswers, element.bonus, element.pointsBet]
       }
     })
     return points

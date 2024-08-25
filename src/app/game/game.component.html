@@ -75,8 +75,9 @@
             <p>
                 {{this.getAnswer()}} <br>
                 <span *ngIf="getQuestion(this.questionID - 1).locked">Pour votre réponse: {{getPoints()[0]}}<img src="assets/frite.png" alt="Frites"><br></span>
-                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[1] != 0">Pour les mauvaises réponses des autres: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"><br></span>
-                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[2] != 0">Et en bonus (ou malus): {{getPoints()[2]}}<img src="assets/frite.png" alt="Frites"></span>
+                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[1] != 0">Pour votre rapidité: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"><br></span>
+                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[2] != 0">Pour les mauvaises réponses des autres: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"><br></span>
+                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[3] != 0">Et en bonus (ou malus): {{getPoints()[2]}}<img src="assets/frite.png" alt="Frites"></span>
             </p>
         </div>
     </div>
