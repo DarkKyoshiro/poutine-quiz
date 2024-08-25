@@ -779,9 +779,9 @@ function getScores() {
     if (questions[i - 1].speed) {
       times = answers
         .filter((answer) => (answer.questionID === i) * (answer.correct === 1))
-        .sort((a, b) => {
-          a.timestamp - b.timestamp;
-        });
+        .sort((a, b) => a.timestamp - b.timestamp);
+      console.log(i)
+      console.log(times)
     }
 
     answers
