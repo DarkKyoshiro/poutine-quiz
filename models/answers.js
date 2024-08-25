@@ -9,7 +9,8 @@ const answerSchema = mongoose.Schema({
   pointsBet: { type: Number, required: true},
   points: { type: Number, required: true },
   bonusWrongAnswers: { type: Number, required: true },
-  bonus: { type: Number, required: false }
+  bonus: { type: Number, required: false },
+  bonusSpeed: { type: Number, required: false }
 });
 
 module.exports = mongoose.model('Answer', answerSchema);

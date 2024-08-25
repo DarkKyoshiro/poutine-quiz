@@ -409,8 +409,8 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     return timestamp;
   }
 
-  getTimeString(): {result: string; correct: number;}[] {
-    let timeStrings: {result: string; correct: number;}[] = [];
+  getTimeString(): {result: string; correct: number; bonus: number;}[] {
+    let timeStrings: {result: string; correct: number; bonus: number;}[] = [];
     let tempString: string = "";
     let minutes: number = 0;
     let seconds: number = 0;
@@ -430,7 +430,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
 
       minutes === 0 ? tempString = answer.teamName + ": " + seconds + "sec" : tempString = answer.teamName + ": " + minutes + "mins " + seconds + "sec";
       
-      timeStrings.push({ result: tempString, correct: answer.correct})
+      timeStrings.push({ result: tempString, correct: answer.correct, bonus: answer.bonusSpeed})
     })
     
     return timeStrings;

@@ -9,7 +9,8 @@ const paramSchema = mongoose.Schema({
   teamThresholdModifier: { type: Number, required: true },
   percentErrorsTiers: { type: Array, required: true },
   bonusWrong: { type: Array, required: true },
-  lockSpeed: { type: Boolean, required: true }
+  lockSpeed: { type: Boolean, required: true },
+  bonusSpeed: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Params', paramSchema);

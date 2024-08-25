@@ -164,6 +164,7 @@ export class GameComponent implements OnInit, OnDestroy {
         pointsBet: this.pointsBet,
         points: 0,
         bonusWrongAnswers: 0,
+        bonusSpeed: 0,
         bonus: 0
       }
       

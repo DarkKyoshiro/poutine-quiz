@@ -86,8 +86,8 @@
 
         <ng-container *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
             <mat-card-header>
-                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | Answered: {{getNumberAnswers()}}/{{teams.length}} <ng-container *ngIf="questions[this.questionID - 1].type === 'Tips'">| Mean bet points: {{getMeanPoints() | number: '1.0-1'}}</ng-container></mat-card-subtitle>
-                <mat-card-title [matBadge]="questions[this.questionID - 1].points" matBadgeOverlap="false" matBadgePosition="before">
+                <mat-card-subtitle>Round #{{questions[this.questionID - 1].round}} | {{questions[this.questionID - 1].type}}<span *ngIf="questions[this.questionID - 1].group">-{{questions[this.questionID - 1].group}}</span> | Question n°{{questions[this.questionID - 1].id}} | {{questions[this.questionID - 1].points}} Pts | Answered: {{getNumberAnswers()}}/{{teams.length}} <ng-container *ngIf="questions[this.questionID - 1].type === 'Tips'">| Mean bet points: {{getMeanPoints() | number: '1.0-1'}}</ng-container></mat-card-subtitle>
+                <mat-card-title>
                     <!-- Sel ou poivre categories -->
                     <p class="comment" *ngIf="questions[this.questionID - 1].type === 'SelOuPoivre'"><ng-container *ngFor="let proposition of questions[this.questionID - 1].propositionsDetailed; index as i"><ng-container *ngIf="i>0">, </ng-container><ng-container *ngIf="i + 1 === questions[this.questionID - 1].propositionsDetailed?.length">ou </ng-container>{{proposition}} ({{getPercentAnswer(questions[this.questionID - 1]?.propositionsShort[i])}}%)</ng-container></p>
                     <!-- Question -->
@@ -108,7 +108,7 @@
 
                 <mat-divider *ngIf="this.questions[this.questionID - 1].speed"></mat-divider>
                 <div class="speedResults" *ngIf="this.questions[this.questionID - 1].speed">
-                    <p class="comment" *ngFor="let result of getTimeString(); index as i" [ngClass]="result.correct > 0 ? 'green' : (result.correct === 0 ? 'red' : 'yellow')">
+                    <p class="comment" *ngFor="let result of getTimeString(); index as i" [ngClass]="result.correct > 0 ? 'green' : (result.correct === 0 ? 'red' : 'yellow')" [matBadge]="result.bonus" [matBadgeHidden]="result.bonus === 0" matBadgeOverlap="false" matBadgePosition="after">
                         <mat-icon *ngIf="result.correct === 0">close</mat-icon>
                         <mat-icon *ngIf="result.correct < 0">question_mark</mat-icon>
                         <mat-icon *ngIf="result.correct > 0">check</mat-icon>

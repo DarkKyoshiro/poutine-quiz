@@ -1,144 +1,191 @@
 <mat-accordion multi="true">
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Save data
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <button mat-raised-button aria-label="Save data" (click)="onSave()">
-            <mat-icon>save</mat-icon>
-        </button>
-    </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Save data </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button mat-raised-button aria-label="Save data" (click)="onSave()">
+      <mat-icon>save</mat-icon>
+    </button>
+  </mat-expansion-panel>
 
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Restore data
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <button mat-raised-button aria-label="Reload data" (click)="onReload()">
-            <mat-icon>download</mat-icon>
-        </button>
-    </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Restore data </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button mat-raised-button aria-label="Reload data" (click)="onReload()">
+      <mat-icon>download</mat-icon>
+    </button>
+  </mat-expansion-panel>
 
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Score calculation settings
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Score calculation settings </mat-panel-title>
+    </mat-expansion-panel-header>
 
-        <p><mat-slide-toggle [(ngModel)]="lockSpeed" (change)="onChangeLockSpeed()">Verrouiller réponses de vitesse ?</mat-slide-toggle><br>
-        <mat-slide-toggle [(ngModel)]="negativePoints" (change)="onChangeNegPoints()">Negative points ?</mat-slide-toggle><br>
-        <mat-slide-toggle [(ngModel)]="bonusesWrongAnswers" (change)="onChangeBonusesWrongAnswers()">Bonuses for wrong answers ?</mat-slide-toggle></p>
-    </mat-expansion-panel>
+    <p>
+      <mat-slide-toggle [(ngModel)]="lockSpeed" (change)="onChangeLockSpeed()"
+        >Verrouiller réponses de vitesse ?</mat-slide-toggle
+      ><br />
+      <mat-slide-toggle
+        [(ngModel)]="negativePoints"
+        (change)="onChangeNegPoints()"
+        >Negative points ?</mat-slide-toggle
+      ><br />
+      <mat-slide-toggle
+        [(ngModel)]="bonusesWrongAnswers"
+        (change)="onChangeBonusesWrongAnswers()"
+        >Bonuses for wrong answers ?</mat-slide-toggle
+      ><br />
+      Number of teams getting the speed bonus: {{ bonusSpeedNumberTeams }} <br>
+      <mat-slider
+        max="10"
+        min="0"
+        step="1"
+        thumbLabel="true"
+        [(ngModel)]="bonusSpeedNumberTeams"
+        (change)="onChangeBonusSpeed()"
+        aria-labelledby="Number of teams to give the speed bonus to"
+      >
+      </mat-slider>
+    </p>
+  </mat-expansion-panel>
 
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Error bonus settings
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Error bonus settings </mat-panel-title>
+    </mat-expansion-panel-header>
 
-        <p>Team threshold: {{teamThreshold}}
-            <mat-slider
-                max="100"
-                min="0"
-                step="5"
-                thumbLabel="true"
-                [(ngModel)]="teamThreshold"
-                (change)="onChangeTreshold()" 
-                aria-labelledby="Threshold of team at minimum score (%)">
-            </mat-slider>
-        <br>
-        Team threshold modifier: {{teamThresholdModifier}}
-            <mat-slider
-                max="3"
-                min="0"
-                step="0.25"
-                thumbLabel="true"
-                [(ngModel)]="teamThresholdModifier"
-                (change)="onChangeTresholdModifier()" 
-                aria-labelledby="Threshold modifier">
-            </mat-slider>
-        </p>
-        <table class="material">
-            <tr>
-                <th>Position</th>
-                <th>1% Errors</th>
-                <th>{{percentErrorsTiers[0]}}% Errors</th>
-                <th>{{percentErrorsTiers[1]}}% Errors</th>
-                <th>Team percentage (%)</th>
-            </tr>
-            <tr>
-                <td>Last</td>
-                <td>{{bonusWrong[2]}}</td>
-                <td>{{bonusWrong[1]}}</td>
-                <td>{{bonusWrong[0]}}</td>
-                <td>NA</td>
-            </tr>
-            <tr>
-                <td>Last-1</td>
-                <td>0</td>
-                <td>{{bonusWrong[2]}}</td>
-                <td>{{bonusWrong[1]}}</td>
-                <td>{{teamThreshold}}</td>
-            </tr>
-            <tr>
-                <td>Last-2</td>
-                <td>0</td>
-                <td>0</td>
-                <td>{{bonusWrong[2]}}</td>
-                <td>{{teamThreshold * teamThresholdModifier}}</td>
-            </tr>
-        </table>
+    <p>
+      Team threshold: {{ teamThreshold }}
+      <mat-slider
+        max="100"
+        min="0"
+        step="5"
+        thumbLabel="true"
+        [(ngModel)]="teamThreshold"
+        (change)="onChangeTreshold()"
+        aria-labelledby="Threshold of team at minimum score (%)"
+      >
+      </mat-slider>
+      <br />
+      Team threshold modifier: {{ teamThresholdModifier }}
+      <mat-slider
+        max="3"
+        min="0"
+        step="0.25"
+        thumbLabel="true"
+        [(ngModel)]="teamThresholdModifier"
+        (change)="onChangeTresholdModifier()"
+        aria-labelledby="Threshold modifier"
+      >
+      </mat-slider>
+    </p>
+    <table class="material">
+      <tr>
+        <th>Position</th>
+        <th>1% Errors</th>
+        <th>{{ percentErrorsTiers[0] }}% Errors</th>
+        <th>{{ percentErrorsTiers[1] }}% Errors</th>
+        <th>Team percentage (%)</th>
+      </tr>
+      <tr>
+        <td>Last</td>
+        <td>{{ bonusWrong[2] }}</td>
+        <td>{{ bonusWrong[1] }}</td>
+        <td>{{ bonusWrong[0] }}</td>
+        <td>NA</td>
+      </tr>
+      <tr>
+        <td>Last-1</td>
+        <td>0</td>
+        <td>{{ bonusWrong[2] }}</td>
+        <td>{{ bonusWrong[1] }}</td>
+        <td>{{ teamThreshold }}</td>
+      </tr>
+      <tr>
+        <td>Last-2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>{{ bonusWrong[2] }}</td>
+        <td>{{ teamThreshold * teamThresholdModifier }}</td>
+      </tr>
+    </table>
 
-        <p>Team error percentage threshold: 0 -> {{percentErrorsTiers[0]}} -> {{percentErrorsTiers[1]}}
-            <mat-slider
-                max="100"
-                min="0"
-                step="5"
-                thumbLabel="true"
-                [(ngModel)]="percentErrorsTiers[0]"
-                (change)="onChangePercentError()" 
-                aria-labelledby="Threshold of team at minimum score (%)">
-            </mat-slider> 
-            <mat-slider
-                max="100"
-                min="0"
-                step="5"
-                thumbLabel="true"
-                [(ngModel)]="percentErrorsTiers[1]"
-                (change)="onChangePercentError()" 
-                aria-labelledby="Threshold of team at minimum score (%)">
-            </mat-slider>
-        </p>
-        <p>Max bonus: 
-            <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(2, bonusWrong[2]-1)">
-                <mat-icon>do_not_disturb_on</mat-icon>
-            </button>
-            {{bonusWrong[2]}}
-            <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(2, bonusWrong[2]+1)">
-                <mat-icon>add_circle</mat-icon>
-            </button>
-        <br>
-            Max bonus-1: 
-            <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(1, bonusWrong[1]-1)">
-                <mat-icon>do_not_disturb_on</mat-icon>
-            </button>
-            {{bonusWrong[1]}}
-            <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(1, bonusWrong[1]+1)">
-                <mat-icon>add_circle</mat-icon>
-            </button>
-        <br>
-            Max bonus-2: 
-            <button mat-icon-button aria-label="Previous group" (click)="onChangeBonuses(0, bonusWrong[0]-1)">
-                <mat-icon>do_not_disturb_on</mat-icon>
-            </button>
-            {{bonusWrong[0]}}
-            <button mat-icon-button aria-label="Next group" (click)="onChangeBonuses(0, bonusWrong[0]+1)">
-                <mat-icon>add_circle</mat-icon>
-            </button>
-        </p>
-    </mat-expansion-panel>
+    <p>
+      Team error percentage threshold: 0 -> {{ percentErrorsTiers[0] }} ->
+      {{ percentErrorsTiers[1] }}
+      <mat-slider
+        max="100"
+        min="0"
+        step="5"
+        thumbLabel="true"
+        [(ngModel)]="percentErrorsTiers[0]"
+        (change)="onChangePercentError()"
+        aria-labelledby="Threshold of team at minimum score (%)"
+      >
+      </mat-slider>
+      <mat-slider
+        max="100"
+        min="0"
+        step="5"
+        thumbLabel="true"
+        [(ngModel)]="percentErrorsTiers[1]"
+        (change)="onChangePercentError()"
+        aria-labelledby="Threshold of team at minimum score (%)"
+      >
+      </mat-slider>
+    </p>
+    <p>
+      Max bonus:
+      <button
+        mat-icon-button
+        aria-label="Previous group"
+        (click)="onChangeBonuses(2, bonusWrong[2] - 1)"
+      >
+        <mat-icon>do_not_disturb_on</mat-icon>
+      </button>
+      {{ bonusWrong[2] }}
+      <button
+        mat-icon-button
+        aria-label="Next group"
+        (click)="onChangeBonuses(2, bonusWrong[2] + 1)"
+      >
+        <mat-icon>add_circle</mat-icon>
+      </button>
+      <br />
+      Max bonus-1:
+      <button
+        mat-icon-button
+        aria-label="Previous group"
+        (click)="onChangeBonuses(1, bonusWrong[1] - 1)"
+      >
+        <mat-icon>do_not_disturb_on</mat-icon>
+      </button>
+      {{ bonusWrong[1] }}
+      <button
+        mat-icon-button
+        aria-label="Next group"
+        (click)="onChangeBonuses(1, bonusWrong[1] + 1)"
+      >
+        <mat-icon>add_circle</mat-icon>
+      </button>
+      <br />
+      Max bonus-2:
+      <button
+        mat-icon-button
+        aria-label="Previous group"
+        (click)="onChangeBonuses(0, bonusWrong[0] - 1)"
+      >
+        <mat-icon>do_not_disturb_on</mat-icon>
+      </button>
+      {{ bonusWrong[0] }}
+      <button
+        mat-icon-button
+        aria-label="Next group"
+        (click)="onChangeBonuses(0, bonusWrong[0] + 1)"
+      >
+        <mat-icon>add_circle</mat-icon>
+      </button>
+    </p>
+  </mat-expansion-panel>
 </mat-accordion>

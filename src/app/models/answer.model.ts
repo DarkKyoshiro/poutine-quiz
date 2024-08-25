@@ -8,4 +8,5 @@ export class Answer {
   points!: number;
   bonusWrongAnswers!: number;
   bonus!: number;
+  bonusSpeed!: number;
 }
