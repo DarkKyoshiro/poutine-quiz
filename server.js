@@ -780,8 +780,6 @@ function getScores() {
       times = answers
         .filter((answer) => (answer.questionID === i) * (answer.correct === 1))
         .sort((a, b) => a.timestamp - b.timestamp);
-      console.log(i)
-      console.log(times)
     }
 
     answers
@@ -813,9 +811,7 @@ function getScores() {
 
         //TODO Add speed bonus point
         if (questions[i - 1].speed && times.findIndex(time => time.teamName === answer.teamName && time.questionID === answer.questionID) >= 0 && times.findIndex(time => time.teamName === answer.teamName && time.questionID === answer.questionID) <= bonusSpeed - 1) {
-          // console.log('question #' + (i - 1) + ' team: ' + answer.teamName, times.findIndex(time => time.teamName === answer.teamName && time.questionID === answer.questionID));
           answer.bonusSpeed = 1
-          // console.log(bonusSpeed - 1, answer.teamName + ' got 1 bonus point for speed')
         }
 
         teams[answer.teamName.replace(/\s+/g, "").toLowerCase()].score =
