@@ -423,7 +423,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     let answers: Answer[] = [];
 
     this.answers.forEach((answer) => {
-      if (answer.questionID === this.questionID && answer.correct === 1) {
+      if (answer.questionID === this.questionID) {
         answers.push(answer);
       }
     });

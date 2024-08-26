@@ -220,7 +220,7 @@
           </p>
           <!-- Question -->
           <p>{{ questions[this.questionID - 1].question }}</p>
-          <p class="comment">
+          <p class="comment" *ngIf="questions[this.questionID - 1].questionComment">
             {{ questions[this.questionID - 1].questionComment }}
           </p>
         </mat-card-title>
@@ -251,54 +251,54 @@
       <mat-card-content style="white-space: pre-wrap">
         <mat-divider></mat-divider>
         <p>{{ questions[this.questionID - 1].answer }}</p>
-        <p class="comment">
+        <p class="comment" *ngIf="questions[this.questionID - 1].answerComment">
           {{ questions[this.questionID - 1].answerComment }}
         </p>
 
-        <mat-divider
-          *ngIf="this.questions[this.questionID - 1].speed"
-        ></mat-divider>
         <div
-          class="speedResults"
           *ngIf="this.questions[this.questionID - 1].speed"
+          style="display: flex; flex-direction: row"
         >
-          <p
-            class="comment"
-            *ngFor="let result of getTimeString(); index as i"
-            [ngClass]="
-              result.correct > 0
-                ? 'green'
-                : result.correct === 0
-                ? 'red'
-                : 'yellow'
-            "
-            [matBadge]="result.bonus"
-            [matBadgeHidden]="result.bonus === 0"
-            matBadgeOverlap="false"
-            matBadgePosition="after"
-          >
-            <mat-icon *ngIf="result.correct === 0">close</mat-icon>
-            <mat-icon *ngIf="result.correct < 0">question_mark</mat-icon>
-            <mat-icon *ngIf="result.correct > 0">check</mat-icon>
-            <span>{{ i + 1 }}. {{ result.result }}</span>
-          </p>
-        </div>
+          <div id="speed" style="flex-grow: 1;">
+            <mat-divider></mat-divider>
+            <p>Rapidité:</p>
+            <div class="speedResults">
+              <p
+                class="comment"
+                *ngFor="let result of getTimeString(); index as i"
+                [ngClass]="
+                  result.correct > 0
+                    ? 'green'
+                    : result.correct === 0
+                    ? 'red'
+                    : 'yellow'
+                "
+                [matBadge]="result.bonus"
+                [matBadgeHidden]="result.bonus === 0"
+                matBadgeOverlap="false"
+                matBadgePosition="after"
+              >
+                <mat-icon *ngIf="result.correct === 0">close</mat-icon>
+                <mat-icon *ngIf="result.correct < 0">question_mark</mat-icon>
+                <mat-icon *ngIf="result.correct > 0">check</mat-icon>
+                <span>{{ i + 1 }}. {{ result.result }}</span>
+              </p>
+            </div>
+          </div>
 
-        <span *ngIf="this.questions[this.questionID - 1].speed"
-          ><mat-divider></mat-divider>
-          <p>Bonuses pour mauvaises réponses:</p>
-          <div
-            class="speedResults"
-            *ngIf="this.questions[this.questionID - 1].speed"
-          >
-            <p
-              class="comment"
-              *ngFor="let result of getBonusWrongAnswersString(); index as i"
-            >
-              {{ result.team }} ({{ result.points }})
-            </p>
-          </div></span
-        >
+          <div id="bonus" style="flex-grow: 1;">
+            <mat-divider></mat-divider>
+            <p>Mauvaises réponses:</p>
+            <div class="speedResults">
+              <p
+                class="comment red"
+                *ngFor="let result of getBonusWrongAnswersString(); index as i"
+              >
+                {{ result.team }} ({{ result.points }})
+              </p>
+            </div>
+          </div>
+        </div>
       </mat-card-content>
     </ng-container>
   </mat-card>
