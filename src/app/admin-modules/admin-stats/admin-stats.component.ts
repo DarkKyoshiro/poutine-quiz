@@ -358,7 +358,7 @@ export class AdminStatsComponent implements OnInit {
     this.answers.forEach(answer => {
       if(!teamsRd1.has(answer.teamName)) { teamsRd1.set(answer.teamName, 0) }
       if(!teamsRd2.has(answer.teamName)) { teamsRd2.set(answer.teamName, 0) }
-      if(this.questions[answer.questionID - 1].round === 1) {
+      if(this.questions[answer.questionID - 1]?.round === 1) {
         teamsRd1.set(answer.teamName, teamsRd1.get(answer.teamName) + answer.points + answer.bonus + answer.bonusWrongAnswers)
         teamsRd2.set(answer.teamName, teamsRd2.get(answer.teamName) + answer.points + answer.bonus + answer.bonusWrongAnswers)
       } else {

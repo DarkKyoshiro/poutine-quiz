@@ -1,179 +1,5 @@
 <div id="question">
-  <mat-card>
-    <mat-card-actions>
-      <!-- Slides management -->
-      <button
-        mat-icon-button
-        aria-label="Previous question"
-        (click)="onPrevious(this.questionID - 1)"
-        *ngIf="this.questions.length !== 0 && this.questionID > 0"
-      >
-        <mat-icon>fast_rewind</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        aria-label="Unlock/Lock question"
-        (click)="onCorrection()"
-        *ngIf="
-          this.questions.length !== 0 &&
-          this.questionID > 0 &&
-          this.questionID <= this.questions.length
-        "
-      >
-        <mat-icon *ngIf="this.questions[this.questionID - 1].locked"
-          >lock</mat-icon
-        >
-        <mat-icon *ngIf="!this.questions[this.questionID - 1].locked"
-          >lock_open</mat-icon
-        >
-      </button>
-      <button
-        mat-icon-button
-        aria-label="Validate answers"
-        (click)="onValidate()"
-        *ngIf="
-          this.questions.length !== 0 &&
-          this.questionID > 0 &&
-          this.questionID <= this.questions.length &&
-          this.questions[this.questionID - 1].locked
-        "
-      >
-        <mat-icon>published_with_changes</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        aria-label="Reset answers scores"
-        (click)="onResetScores()"
-        *ngIf="
-          this.questions.length !== 0 &&
-          this.questionID > 0 &&
-          this.questionID <= this.questions.length
-        "
-      >
-        <mat-icon>restart_alt</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        aria-label="Next question"
-        (click)="onNext(this.questionID + 1)"
-        *ngIf="
-          this.questions.length !== 0 &&
-          this.questionID <= this.questions.length - 1
-        "
-      >
-        <mat-icon>fast_forward</mat-icon>
-      </button>
-
-      <button
-        mat-icon-button
-        aria-label="Start quiz"
-        (click)="onStartQuiz()"
-        *ngIf="this.questions.length === 0"
-      >
-        <mat-icon>play_arrow</mat-icon>
-      </button>
-
-      <ng-container *ngIf="this.questions.length > 0 && this.questionID > 0"
-        >|
-      </ng-container>
-
-      <span
-        class="comment"
-        *ngIf="this.questions.length > 0 && this.questionID > 0"
-      >
-        <span [style.color]="timer <= 5 ? 'red' : timer <= 15 ? 'yellow' : ''"
-          >{{ timer }} sec</span
-        >
-        <button
-          mat-icon-button
-          aria-label="Start timer"
-          (click)="onStartTimer()"
-          *ngIf="!this.timerActive"
-        >
-          <mat-icon>timer</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          aria-label="Pause timer"
-          (click)="onPauseTimer()"
-          *ngIf="this.timerActive"
-        >
-          <mat-icon>timer_off</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          aria-label="Reset timer"
-          (click)="onResetTimer()"
-        >
-          <mat-icon>restart_alt</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          aria-label="Extend timer"
-          (click)="onExtendTimer()"
-        >
-          <mat-icon>timer_10_alt_1</mat-icon>
-        </button>
-      </span>
-
-      <ng-container *ngIf="this.questions.length > 0 && this.questionID > 0"
-        >|
-      </ng-container>
-
-      <span
-        class="comment"
-        *ngIf="this.questions.length > 0 && this.questionID > 0"
-      >
-        <button
-          mat-icon-button
-          aria-label="Lock bets"
-          (click)="onLockBets()"
-          *ngIf="this.betActive"
-        >
-          <mat-icon>vpn_key</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          aria-label="Lock bets"
-          (click)="onLockBets()"
-          *ngIf="!this.betActive"
-        >
-          <mat-icon>lock_reset</mat-icon>
-        </button>
-      </span>
-
-      <!-- Steps management -->
-      <!-- <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
-                <br>
-                <button mat-icon-button aria-label="Show Question" (click)="onShowQuestion()">
-                    <mat-icon *ngIf="questions[this.questionID-1].showQuestion">hide_source</mat-icon>
-                    <mat-icon *ngIf="!questions[this.questionID-1].showQuestion">question_mark</mat-icon>
-                </button>
-                <ng-container *ngIf="questions[this.questionID-1].propositionsDetailed">
-                    <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)">
-                        <mat-icon>arrow_left</mat-icon>
-                    </button>
-                    <span class="step">{{questions[this.questionID-1].propositionsStep}}</span>
-                    <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)">
-                        <mat-icon>arrow_right</mat-icon>
-                    </button>
-                </ng-container>
-                <ng-container *ngIf="questions[this.questionID-1].locked">
-                    <button mat-icon-button aria-label="Hide answer" (click)="onShowAnswer()">
-                        <mat-icon *ngIf="questions[this.questionID-1].showAnswer">hide_source</mat-icon>
-                        <mat-icon *ngIf="!questions[this.questionID-1].showAnswer">done_all</mat-icon>
-                    </button>
-                </ng-container>
-            </ng-container> -->
-
-      <mat-progress-bar
-        color="primary"
-        mode="determinate"
-        [value]="(100 * questionID) / (questions.length + 1)"
-      >
-      </mat-progress-bar>
-    </mat-card-actions>
-
+  <mat-card class="details">
     <ng-container
       *ngIf="this.questionID > 0 && this.questionID <= this.questions.length"
     >
@@ -190,8 +16,14 @@
           <ng-container *ngIf="questions[this.questionID - 1].type === 'Tips'"
             >| Mean bet points:
             {{ getMeanPoints() | number : "1.0-1" }}</ng-container
-          ></mat-card-subtitle
-        >
+          >
+          <mat-progress-bar
+            color="primary"
+            mode="determinate"
+            [value]="(100 * questionID) / (questions.length + 1)"
+          >
+          </mat-progress-bar>
+        </mat-card-subtitle>
         <mat-card-title>
           <!-- Sel ou poivre categories -->
           <p
@@ -220,7 +52,10 @@
           </p>
           <!-- Question -->
           <p>{{ questions[this.questionID - 1].question }}</p>
-          <p class="comment" *ngIf="questions[this.questionID - 1].questionComment">
+          <p
+            class="comment"
+            *ngIf="questions[this.questionID - 1].questionComment"
+          >
             {{ questions[this.questionID - 1].questionComment }}
           </p>
         </mat-card-title>
@@ -259,7 +94,7 @@
           *ngIf="this.questions[this.questionID - 1].speed"
           style="display: flex; flex-direction: row"
         >
-          <div id="speed" style="flex-grow: 1;">
+          <div id="speed" style="flex-grow: 1">
             <mat-divider></mat-divider>
             <p>Rapidité:</p>
             <div class="speedResults">
@@ -286,7 +121,7 @@
             </div>
           </div>
 
-          <div id="bonus" style="flex-grow: 1;">
+          <div id="bonus" style="flex-grow: 1">
             <mat-divider></mat-divider>
             <p>Mauvaises réponses:</p>
             <div class="speedResults">
@@ -301,6 +136,188 @@
         </div>
       </mat-card-content>
     </ng-container>
+  </mat-card>
+
+  <mat-card class="controller">
+    <!-- Slides management -->
+    <div id="question-management">
+      <p>Questions</p>
+      <mat-divider></mat-divider>
+
+      <button
+        mat-icon-button
+        aria-label="Previous question"
+        (click)="onPrevious(this.questionID - 1)"
+        *ngIf="this.questions.length !== 0 && this.questionID > 0"
+      >
+        <mat-icon>fast_rewind</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Unlock/Lock question"
+        (click)="onCorrection()"
+        *ngIf="
+          this.questions.length !== 0 &&
+          this.questionID > 0 &&
+          this.questionID <= this.questions.length
+        "
+      >
+        <mat-icon *ngIf="this.questions[this.questionID - 1].locked">
+          lock
+        </mat-icon>
+        <mat-icon *ngIf="!this.questions[this.questionID - 1].locked">
+          lock_open
+        </mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Validate answers"
+        (click)="onValidate()"
+        *ngIf="
+          this.questions.length !== 0 &&
+          this.questionID > 0 &&
+          this.questionID <= this.questions.length &&
+          this.questions[this.questionID - 1].locked
+        "
+      >
+        <mat-icon>published_with_changes</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Reset answers scores"
+        (click)="onResetScores()"
+        *ngIf="
+          this.questions.length !== 0 &&
+          this.questionID > 0 &&
+          this.questionID <= this.questions.length
+        "
+      >
+        <mat-icon>restart_alt</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Next question"
+        (click)="onNext(this.questionID + 1)"
+        *ngIf="
+          this.questions.length !== 0 &&
+          this.questionID <= this.questions.length - 1
+        "
+      >
+        <mat-icon>fast_forward</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Start quiz"
+        (click)="onStartQuiz()"
+        *ngIf="this.questions.length === 0"
+      >
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>
+
+    <div
+      id="timer-management"
+      *ngIf="this.questions.length > 0 && this.questionID > 0"
+    >
+      <p>Timer</p>
+      <mat-divider></mat-divider>
+
+      <span style="font-size: 1.4rem;" [style.color]="timer <= 5 ? 'red' : timer <= 15 ? 'yellow' : ''">
+        {{ timer }} sec </span
+      ><br />
+
+      <button
+        mat-icon-button
+        aria-label="Start timer"
+        (click)="onStartTimer()"
+        *ngIf="!this.timerActive"
+      >
+        <mat-icon>timer</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Pause timer"
+        (click)="onPauseTimer()"
+        *ngIf="this.timerActive"
+      >
+        <mat-icon>timer_off</mat-icon>
+      </button>
+
+      <button mat-icon-button aria-label="Reset timer" (click)="onResetTimer()">
+        <mat-icon>restart_alt</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Extend timer"
+        (click)="onExtendTimer()"
+      >
+        <mat-icon>timer_10_alt_1</mat-icon>
+      </button>
+    </div>
+
+    <div
+      id="tips-management"
+      *ngIf="this.questions[this.questionID - 1]?.type === 'Tips'"
+    >
+      <p>Tips</p>
+      <mat-divider></mat-divider>
+      <span
+        class="comment"
+        *ngIf="this.questions.length > 0 && this.questionID > 0"
+      >
+        <button
+          mat-icon-button
+          aria-label="Lock bets"
+          (click)="onLockBets()"
+          *ngIf="this.betActive"
+        >
+          <mat-icon>vpn_key</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Lock bets"
+          (click)="onLockBets()"
+          *ngIf="!this.betActive"
+        >
+          <mat-icon>lock_reset</mat-icon>
+        </button>
+      </span>
+    </div>
+
+    <!-- <mat-divider *ngIf="this.questions.length > 0 && this.questionID > 0"></mat-divider>
+
+    <div id="slide-management">
+      !Steps management
+      <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
+            <br>
+            <button mat-icon-button aria-label="Show Question" (click)="onShowQuestion()">
+                <mat-icon *ngIf="questions[this.questionID-1].showQuestion">hide_source</mat-icon>
+                <mat-icon *ngIf="!questions[this.questionID-1].showQuestion">question_mark</mat-icon>
+            </button>
+            <ng-container *ngIf="questions[this.questionID-1].propositionsDetailed">
+                <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)">
+                    <mat-icon>arrow_left</mat-icon>
+                </button>
+                <span class="step">{{questions[this.questionID-1].propositionsStep}}</span>
+                <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)">
+                    <mat-icon>arrow_right</mat-icon>
+                </button>
+            </ng-container>
+            <ng-container *ngIf="questions[this.questionID-1].locked">
+                <button mat-icon-button aria-label="Hide answer" (click)="onShowAnswer()">
+                    <mat-icon *ngIf="questions[this.questionID-1].showAnswer">hide_source</mat-icon>
+                    <mat-icon *ngIf="!questions[this.questionID-1].showAnswer">done_all</mat-icon>
+                </button>
+            </ng-container>
+        </ng-container>
+    </div> -->
   </mat-card>
 </div>
 

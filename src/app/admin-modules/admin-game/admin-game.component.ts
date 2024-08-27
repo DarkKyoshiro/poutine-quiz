@@ -47,6 +47,11 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     this.destroy$ = new Subject<boolean>();
     this.interval$ = timer(0, 1000);
 
+    this.socket.on('resetTimer', (duration: number) => {
+      this.timer = duration;
+      this.timerActive = false;
+    });
+
     //------------------------------------------------------------------------------------
     //---------------------- Teams management --------------------------------------------
     //------------------------------------------------------------------------------------
@@ -545,8 +550,6 @@ export class AdminGameComponent implements OnInit, OnDestroy {
   onResetTimer(): void {
     this.socket.emit('resetTimer', this.timerDuration);
     this.destroy$.next(true);
-    this.timerActive = false;
-    this.timer = this.timerDuration;
   }
 
   onExtendTimer(): void {
