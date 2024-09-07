@@ -128,6 +128,23 @@ export class QuestionsService {
         },
         {
             id: 7,
+            type: "SelOuPoivre",
+            speed: true,
+            round: 1,
+            points: 1,
+
+            question: "Miss c’est pas avec moi que tu vas réussir tes exams",
+            propositionsDetailed: ["Super Hero", "Super Zero"],
+            propositionsShort: ["Super Hero", "Super Zero"],
+            answer: "Super Zero (La note 0)",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 8,
             type: "Menu",
             speed: false,
             round: 1,
@@ -145,7 +162,25 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 8,
+            id: 9,
+            type: "Menu",
+            speed: false,
+            round: 1,
+            group: 1,
+            points: 1,
+
+            title: "L'olympic des buzz 2024",
+            question:
+                "Quel plat servi aux athlètes a fait un buzz et s’est retrouvé importé et vendu à NY après une attente de 2h ?",
+            answer: "Les muffins au chocolat du CROUS",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 10,
             type: "Menu",
             speed: false,
             round: 1,
@@ -164,7 +199,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 9,
+            id: 11,
             type: "Menu",
             speed: false,
             round: 1,
@@ -182,7 +217,28 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 10,
+            id: 12,
+            type: "Menu",
+            speed: false,
+            round: 1,
+            group: 2,
+            points: 1,
+
+            title: "Nos amis à 8 bras",
+            question:
+                "Si on était au XVIIème, pourrait-on dire que les pieuvres sont de sang royal ?",
+            questionComment: "Improvisation - Les bras experts",
+            answer: "Oui car ils ont le sang bleu",
+            answerComment:
+                "Dû au cuivre impliqué dans le transport de l'oxygène (fer chez l'homme)",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 13,
             type: "Menu",
             speed: false,
             round: 1,
@@ -200,7 +256,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 11,
+            id: 14,
             type: "Menu",
             speed: false,
             round: 1,
@@ -217,7 +273,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 12,
+            id: 15,
             type: "Menu",
             speed: false,
             round: 1,
@@ -235,7 +291,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 13,
+            id: 16,
             type: "Menu",
             speed: false,
             round: 1,
@@ -253,7 +309,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 14,
+            id: 17,
             type: "Menu",
             speed: false,
             round: 1,
@@ -271,7 +327,24 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 15,
+            id: 18,
+            type: "Menu",
+            speed: false,
+            round: 1,
+            group: 3,
+            points: 1,
+
+            title: "Points vitaux au karate",
+            question: "Quel est le terme japonais pour désigner le point Naso-Frontal ?",
+            answer: "Choto",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 19,
             type: "Menu",
             speed: false,
             round: 1,
@@ -289,7 +362,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 16,
+            id: 20,
             type: "Addition",
             speed: true,
             round: 1,
@@ -307,7 +380,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 17,
+            id: 21,
             type: "Addition",
             speed: true,
             round: 1,
@@ -324,7 +397,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 18,
+            id: 22,
             type: "Addition",
             speed: true,
             round: 1,
@@ -341,7 +414,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 19,
+            id: 23,
             type: "Addition",
             speed: true,
             round: 1,
@@ -357,7 +430,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 20,
+            id: 24,
             type: "Tips",
             speed: true,
             round: 1,
@@ -374,7 +447,7 @@ export class QuestionsService {
         },
 
         {
-            id: 21,
+            id: 25,
             type: "Nugget",
             speed: false,
             round: 2,
@@ -397,7 +470,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 22,
+            id: 26,
             type: "Nugget",
             speed: false,
             round: 2,
@@ -417,7 +490,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 23,
+            id: 27,
             type: "Nugget",
             speed: false,
             round: 2,
@@ -440,7 +513,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 24,
+            id: 28,
             type: "SelOuPoivre",
             speed: true,
             round: 2,
@@ -457,7 +530,24 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 25,
+            id: 29,
+            type: "SelOuPoivre",
+            speed: true,
+            round: 2,
+            points: 1,
+
+            question: "La Grande Frite",
+            propositionsDetailed: ["Debout", "Assis", "Allongé"],
+            propositionsShort: ["Debout", "Assis", "Allongé"],
+            answer: "En ce moment, plutôt debout",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 30,
             type: "SelOuPoivre",
             speed: true,
             round: 2,
@@ -474,7 +564,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 26,
+            id: 31,
             type: "SelOuPoivre",
             speed: true,
             round: 2,
@@ -491,7 +581,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 27,
+            id: 32,
             type: "SelOuPoivre",
             speed: true,
             round: 2,
@@ -508,7 +598,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 28,
+            id: 33,
             type: "Menu",
             speed: false,
             round: 2,
@@ -525,7 +615,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 29,
+            id: 34,
             type: "Menu",
             speed: false,
             round: 2,
@@ -543,7 +633,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 30,
+            id: 35,
             type: "Menu",
             speed: false,
             round: 2,
@@ -553,7 +643,6 @@ export class QuestionsService {
             title: "Pardon, vous faites quoi ?",
             question:
                 "Alors on pourrait croire que oui, mais non, un conchyculteur ne cultive pas l’art d’envoyer chier des cons, il cultive autre chose, quoi donc ?",
-            questionComment: "Improvisation - Libre",
             answer: "Les coquillages",
 
             showQuestion: false,
@@ -562,7 +651,26 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 31,
+            id: 36,
+            type: "Menu",
+            speed: false,
+            round: 2,
+            group: 1,
+            points: 1,
+
+            title: "Pardon, vous faites quoi ?",
+            question:
+                "On sait tous qu’il existe des baby-sitters pour chiens ou chats, mais à votre avis, existe-t’il des baby-sitters pour autruche ?",
+            questionComment: "Improvisation - Libre",
+            answer: "Vrai, leur principale tâche est de s’assurer qu’elles ne se battent pas entre elles",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 37,
             type: "Menu",
             speed: false,
             round: 2,
@@ -581,7 +689,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 32,
+            id: 38,
             type: "Menu",
             speed: false,
             round: 2,
@@ -599,7 +707,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 33,
+            id: 39,
             type: "Menu",
             speed: false,
             round: 2,
@@ -608,7 +716,6 @@ export class QuestionsService {
 
             title: "Mais pourquoi on dit ca ",
             question: "Que veut dire l’expression « aller faire téter les puces » ?",
-            questionComment: "Improvisation - Libre",
             answer: "Aller dormir",
             answerComment:
                 "À une époque où on avait une moins bonne hygiène, les lits étaient remplis de puces",
@@ -619,7 +726,25 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 34,
+            id: 40,
+            type: "Menu",
+            speed: false,
+            round: 2,
+            group: 2,
+            points: 1,
+
+            title: "Mais pourquoi on dit ca ",
+            question: "Que fait quelqu’un qui nous chie une pendule ? (à part avoir mal)",
+            questionComment: "Improvisation - Libre",
+            answer: "Elle nous fait chier pour quelque chose sans importance",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 41,
             type: "Menu",
             speed: false,
             round: 2,
@@ -637,7 +762,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 35,
+            id: 42,
             type: "Menu",
             speed: false,
             round: 2,
@@ -654,7 +779,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 36,
+            id: 43,
             type: "Menu",
             speed: false,
             round: 2,
@@ -664,7 +789,6 @@ export class QuestionsService {
             title: "Le bidet a travers les âges",
             question:
                 "Quel empereur français a déclaré dans son testament qu’il possédait plusieurs spécimens de bidet ?",
-            questionComment: "Improvisation - Libre",
             answer: "Napoléon",
 
             showQuestion: false,
@@ -673,7 +797,42 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 37,
+            id: 44,
+            type: "Menu",
+            speed: false,
+            round: 2,
+            group: 3,
+            points: 1,
+
+            title: "Le bidet a travers les âges",
+            question: "V ou F, Philippe Starck a déjà designé de super bidets revisités ?",
+            questionComment: "Improvisation - Libre",
+            answer: "Vrai",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 45,
+            type: "Addition",
+            speed: true,
+            round: 2,
+            points: 3,
+
+            title: "La réponse commence par M",
+            question: "A gagné l'oscar de la meilleure actrice",
+            questionComment: "Improvisation - ABCDaire",
+            answer: "2023 Michelle Yeoh\n1997/2018/2021 Frances McDormand\n2015 Julianne Moore\n2012/1983 Meryl Streep\n2008 Marion Cotillard\n2007 Helen Mirren\n1987 Marlee Matlin\n1984 Shirley MacLaine\n1970 Maggie Smith\n1956 Anna Magnani\n1931 Marie Dressler\n1930 Mary Pickford",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 46,
             type: "Addition",
             speed: true,
             round: 2,
@@ -681,7 +840,6 @@ export class QuestionsService {
 
             title: "La réponse commence par D",
             question: "Vous n'aimeriez pas vous battre contre lui",
-            questionComment: "Improvisation - ABCDaire",
             answer: "David Douillet\nDark Vador\nDepardieu\nUn dragon\nLe diable",
 
             showQuestion: false,
@@ -690,7 +848,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 38,
+            id: 47,
             type: "Addition",
             speed: true,
             round: 2,
@@ -706,7 +864,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 39,
+            id: 48,
             type: "Addition",
             speed: true,
             round: 2,
@@ -722,7 +880,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 40,
+            id: 49,
             type: "Addition",
             speed: true,
             round: 2,
@@ -738,7 +896,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 41,
+            id: 50,
             type: "Tips",
             speed: true,
             round: 2,
@@ -755,7 +913,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 42,
+            id: 51,
             type: "Nugget",
             speed: false,
             round: 2,
@@ -789,7 +947,7 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 43,
+            id: 52,
             type: "PoutineDeLaMort",
             speed: false,
             round: 3,
