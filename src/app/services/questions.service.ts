@@ -359,7 +359,7 @@ export class QuestionsService {
         {
             id: 20,
             type: "Tips",
-            speed: true,
+            speed: false,
             round: 1,
             points: 0,
 
@@ -407,7 +407,7 @@ export class QuestionsService {
             questionComment: "Minoxil sert à faire pousser les cheveux",
             propositionsDetailed: ["La pénicilline", "L'aspirine", "Le viagra", "Le Minoxil"],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "D",
+            answer: "B",
             answerComment:
                 "Pénicilline: petite erreur de culture de champignon et de staphylocoques, viagra a d'abord été développé pour soigner l'angine, et le minoxidil traitait à la base l'hypertension artérielle",
 
@@ -740,7 +740,7 @@ export class QuestionsService {
         {
             id: 41,
             type: "Tips",
-            speed: true,
+            speed: false,
             round: 2,
             points: 0,
 
