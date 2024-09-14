@@ -797,7 +797,7 @@ export class QuestionsService {
 
             question:
                 "1. Pensez-vous que l'impro sierra à Roberto ?\n2. Jusqu'à quelle lettre de l'alphabet seriez-vous allé pendant l'ABCDaire ?\n3. V ou F, la catégorie d'improvastion préféré d'Hannibal Lecteur est le cadavre exquis ?\n4. Combien de temps pensez-vous pouvoir rester dans la même pièce que Captain Tension Sexuelle sans craquer ?\n5. Si en impro on embrasse l'erreur, on en la sanctionne pas, que pensez-vous des french kiss ?\n6. V ou F, le nom Whose line is it anyway a été trouvé pendant une soirée où trop de lignes ont été consommées ?\n7. Je cherche un nom pour une ligue d'impro du Poutine Quiz. J'ai pensé à la Ligue d'Improutine Quiz, vous avez une autre idée ?\n8. Pas de pression sur cette question. Pour vous... Qui a été le meilleur improvisateur ou la meilleure improvisatrice ce soir ? Si vous avez oublié les noms des improvisateurs et improvisatrices, dites \n9. Pouvez-vous m'improviser une question ?\n10. Et si vous répondiez à la question que vous venez d'improviser ?",
-            answer: "",
+            answer: "1",
 
             showQuestion: false,
             propositionsStep: 0,
