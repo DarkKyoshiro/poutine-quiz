@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Team } from '../models/team.model';
+import { Injectable, OnInit } from "@angular/core"
+import { Team } from "../models/team.model"
+import { Socket } from "ngx-socket-io"
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: "root",
 })
 export class TeamsService {
-  private teams!: Team[];
+    private teams!: Team[]
 
-  constructor() {
-    //TODO: Retrieve teams from MongoDB
-   }
+    constructor() {
+        //TODO: Retrieve teams from MongoDB
+    }
 
-
+    ngOnInit(): void {}
 }
