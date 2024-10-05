@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
         {
             titre: "S03E03 - Spécial Impro (Rediffusion)",
             teams: [
-                { rang: 1, nom: "Nofred", score: 53 },
-                { rang: 2, nom: "Les nuls", score: 48 },
-                { rang: 2, nom: "Les 4 doigts de la main", score: 46 },
-                { rang: 4, nom: "Equipe Rocco", score: 45 },
+                { rang: 1, nom: "Nofred", score: 51 },
+                { rang: 2, nom: "Equipe Rocco", score: 46 },
+                { rang: 2, nom: "Les 4 doigts de la main", score: 45 },
+                { rang: 4, nom: "Les nuls", score: 43 },
                 { rang: 5, nom: "Les beguines", score: 41 },
                 { rang: 6, nom: "Pain au Chocolatine", score: 38 },
                 { rang: 7, nom: "Les éperdues", score: 35 },
