@@ -380,6 +380,23 @@
                     (click)="onClear(answer.teamName, answer.questionID)">
                     <mat-icon>refresh</mat-icon>
                 </button>
+
+                <button
+                    mat-mini-fab
+                    color="accent"
+                    aria-label="Like"
+                    *ngIf="!answer.favorite"
+                    (click)="onFavorite(answer.teamName, answer.questionID)">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button
+                    mat-mini-fab
+                    color="warn"
+                    aria-label="Unlike"
+                    *ngIf="answer.favorite"
+                    (click)="onFavorite(answer.teamName, answer.questionID)">
+                    <mat-icon>heart_broken</mat-icon>
+                </button>
             </mat-card-actions>
         </mat-card>
     </ng-container>

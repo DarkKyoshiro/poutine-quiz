@@ -16,7 +16,7 @@ const app = express()
 //For HerokuApp
 //-----------------------------------------------------------------
 //! Change quizID for each quiz
-var quizID = "poutinequizS03E04-test"
+var quizID = "poutinequizS04E01-test"
 mongoose
     .connect(
         "mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/" +
@@ -123,6 +123,7 @@ io.on("connection", (socket) => {
                     bonusWrongAnswers: 0,
                     bonusSpeed: 0,
                     bonus: 0,
+                    favorite: false,
                 })
             })
 
@@ -264,6 +265,7 @@ io.on("connection", (socket) => {
                     bonusWrongAnswers: 0,
                     bonusSpeed: 0,
                     bonus: 0,
+                    favorite: false,
                 })
             }
         })
@@ -411,6 +413,7 @@ io.on("connection", (socket) => {
                     element.answer = data.answer
                     element.timestamp = data.timestamp
                     element.pointsBet = data.pointsBet
+                    element.favorite = false
                 }
                 control = true
             }
@@ -463,10 +466,22 @@ io.on("connection", (socket) => {
                 element.bonusWrongAnswers = 0
                 element.bonusSpeed = 0
                 element.bonus = 0
+                element.favorite = false
             }
         })
         io.emit("send-teams", getScores())
         io.emit("get-answers-team", answers)
+    })
+
+    socket.on("love-answer", (teamName, questionID) => {
+        let answerID = answers.findIndex(
+            (answer) => answer.teamName === teamName && answer.questionID === questionID
+        )
+
+        answers[answerID].favorite = !answers[answerID].favorite
+
+        io.emit("send-teams", getScores())
+        io.emit("get-answers", answers)
     })
 
     socket.on("get-team-scores", (teamName) => {

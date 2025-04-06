@@ -277,6 +277,10 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         this.socket.emit("clear-answer", teamName, questionID)
     }
 
+    onFavorite(teamName: string, questionID: number) {
+        this.socket.emit("love-answer", teamName, questionID)
+    }
+
     getAnswers(questionID: number): Answer[] {
         let newAnswers: Answer[] = []
         this.answers.forEach((answer) => {

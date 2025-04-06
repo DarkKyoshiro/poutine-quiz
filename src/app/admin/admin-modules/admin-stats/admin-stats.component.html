@@ -2,42 +2,40 @@
 <mat-accordion multi="true">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
-            <mat-panel-title>
-                Stats
-            </mat-panel-title>
+            <mat-panel-title> Stats </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <h4>Most answers</h4>
+        <h4>Plus de réponses</h4>
         <div class="Stats">
             <p>
-                <mat-icon>check</mat-icon><br>
-                {{mostCorrectAnswers()}}
+                Correctes<br />
+                {{ mostCorrectAnswers() }}
             </p>
             <p>
-                <mat-icon>close</mat-icon><br>
-                {{mostIncorrectAnswers()}}
+                Incorrectes<br />
+                {{ mostIncorrectAnswers() }}
             </p>
         </div>
 
-        <mat-divider></mat-divider><br>
-        
-        <h4>Average</h4>
+        <mat-divider></mat-divider><br />
+
+        <h4>Moyenne</h4>
         <div class="Stats">
             <p>
-                <mat-icon>fast_forward</mat-icon><br>
-                {{fastestTeamAverage()}}
+                Rapide<br />
+                {{ fastestTeamAverage() }}
             </p>
             <p>
-                <mat-icon>close</mat-icon><mat-icon>fast_forward</mat-icon><br>
-                {{fastestTeamWrongAverage()}}
+                Rapide mais faux<br />
+                {{ fastestTeamWrongAverage() }}
             </p>
             <p>
-                <mat-icon>front_hand</mat-icon><br>
-                {{slowestTeamAverage()}}
+                Lente<br />
+                {{ slowestTeamAverage() }}
             </p>
         </div>
 
-        <mat-divider></mat-divider><br>
+        <!-- <mat-divider></mat-divider><br>
 
         <h4>Accumulated</h4>
         <div class="Stats">
@@ -53,9 +51,9 @@
                 <mat-icon>front_hand</mat-icon><br>
                 {{slowestTeamAdded()}}
             </p>
-        </div>
+        </div> -->
 
-        <mat-divider></mat-divider><br>
+        <mat-divider></mat-divider><br />
 
         <h4>Remontada/Degringolada</h4>
         <div class="Stats">
@@ -66,20 +64,22 @@
                     <th class="separator-left">Rd 1 - Rank</th>
                     <th>Rd 2 - Rank</th>
                     <th>Diff - Rank</th>
-                    <th class="separator-left">Rd 1 - Score</th>
+                    <!-- <th class="separator-left">Rd 1 - Score</th>
                     <th>Rd 2 - Score</th>
-                    <th>Ratio - Score</th>
+                    <th>Ratio - Score</th> -->
                 </tr>
-            
-                <tr *ngFor="let team of remontadaTable(); let i=index">
-                    <td>{{i+1}}.</td>
-                    <td>{{team.name}}</td>
-                    <td class="separator-left">{{team.rd1Rank}}</td>
-                    <td>{{team.rd2Rank}}</td>
-                    <td>{{team.rd1Rank - team.rd2Rank}}</td>
-                    <td class="separator-left">{{team.rd1Score}}</td>
-                    <td>{{team.rd2Score - team.rd1Score}}</td>
-                    <td>{{(team.rd2Score - team.rd1Score) / team.rd1Score | number: '1.1-1'}}</td>
+
+                <tr *ngFor="let team of remontadaTable(); let i = index">
+                    <td>{{ i + 1 }}.</td>
+                    <td>{{ team.name }}</td>
+                    <td class="separator-left">{{ team.rd1Rank }}</td>
+                    <td>{{ team.rd2Rank }}</td>
+                    <td>{{ team.rd1Rank - team.rd2Rank }}</td>
+                    <!-- <td class="separator-left">{{ team.rd1Score }}</td>
+                    <td>{{ team.rd2Score - team.rd1Score }}</td>
+                    <td>
+                        {{ (team.rd2Score - team.rd1Score) / team.rd1Score | number : "1.1-1" }}
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -87,9 +87,27 @@
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
-            <mat-panel-title>
-                Classement
-            </mat-panel-title>
+            <mat-panel-title> Réponses qu'on aime </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <table>
+            <tr>
+                <th>Équipe</th>
+                <th>Question</th>
+                <th>Réponse</th>
+            </tr>
+
+            <tr *ngFor="let answer of getLovedAnswers(); let i = index">
+                <td>{{ answer.teamName }}.</td>
+                <td>{{ answer.questionID }} - {{ answer.questionText }}</td>
+                <td>{{ answer.answerText }}</td>
+            </tr>
+        </table>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Classement </mat-panel-title>
         </mat-expansion-panel-header>
 
         <table>
@@ -98,11 +116,11 @@
                 <th>Équipe</th>
                 <th>Score</th>
             </tr>
-        
-            <tr *ngFor="let team of this.teams; let i=index">
-                <td>{{getRanks(team.name)}}.</td>
-                <td>{{team.name}}</td>
-                <td>{{team.score}}</td>
+
+            <tr *ngFor="let team of this.teams; let i = index">
+                <td>{{ getRanks(team.name) }}.</td>
+                <td>{{ team.name }}</td>
+                <td>{{ team.score }}</td>
             </tr>
         </table>
     </mat-expansion-panel>
@@ -154,9 +172,7 @@
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
-            <mat-panel-title>
-                Detailed scores for Excel
-            </mat-panel-title>
+            <mat-panel-title> Detailed scores for Excel </mat-panel-title>
         </mat-expansion-panel-header>
         <table>
             <tr>
@@ -170,14 +186,21 @@
                 <th>Wrong answer bonus</th>
             </tr>
             <tr *ngFor="let answer of answers">
-                <td>{{answer.questionID}}</td>
-                <td>{{questions[answer.questionID - 1].type}}{{questions[answer.questionID - 1].type === "Menu" ? "-" + questions[answer.questionID - 1].group : ""}}</td>
-                <td>{{questions[answer.questionID - 1].round}}</td>
-                <td>{{answer.teamName}}</td>
-                <td>{{answer.correct === 1 ? "Y" : answer.correct === 0 ? "N" : "?"}}</td>
-                <td>{{answer.points}}</td>
-                <td>{{answer.bonus}}</td>
-                <td>{{answer.bonusWrongAnswers}}</td>
+                <td>{{ answer.questionID }}</td>
+                <td>
+                    {{ questions[answer.questionID - 1].type
+                    }}{{
+                        questions[answer.questionID - 1].type === "Menu"
+                            ? "-" + questions[answer.questionID - 1].group
+                            : ""
+                    }}
+                </td>
+                <td>{{ questions[answer.questionID - 1].round }}</td>
+                <td>{{ answer.teamName }}</td>
+                <td>{{ answer.correct === 1 ? "Y" : answer.correct === 0 ? "N" : "?" }}</td>
+                <td>{{ answer.points }}</td>
+                <td>{{ answer.bonus }}</td>
+                <td>{{ answer.bonusWrongAnswers }}</td>
             </tr>
         </table>
     </mat-expansion-panel>

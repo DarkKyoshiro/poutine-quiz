@@ -176,6 +176,7 @@ export class GameComponent implements OnInit, OnDestroy {
             bonusWrongAnswers: 0,
             bonusSpeed: 0,
             bonus: 0,
+            favorite: false,
         }
 
         this.socket.emit("send-answer", this.fullAnswer)
