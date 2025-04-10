@@ -1028,7 +1028,7 @@ export class QuestionsService {
 
             title: "Titre cochon",
             question:
-                "Deux puissances s’affrontent dans une guerre où l’acier claque autant que les reins. D’un côté, des créatures féroces et lubriques, menées par un chef bien raide. De l’autre, une poignée de résistants, sales, fatigués… mais avec de grandes ambitions et de très longs bâtons. Au milieu, une forteresse imprenable, qui va pourtant être bien prise. Dans cette bataille moite, chacun cherche à pénétrer les lignes ennemies. Des cris, des larmes, et beaucoup de choses qui coulent. L’un d’eux commence à sentir un étrange appel, comme un frisson interdit. Et dans les ténèbres… certains liens deviennent très, très serrés.",
+                "Deux puissances s’affrontent dans une guerre où l’acier claque autant que les reins. D’un côté, des créatures féroces et lubriques, menées par un chef bien raide. De l’autre, une poignée de résistants, sales, fatigués… mais avec de grandes ambitions et de très longs bâtons. Au milieu, une forteresse imprenable, qui va pourtant bien se faire exploser le trou. Dans cette bataille moite, chacun cherche à pénétrer les lignes ennemies. Des cris, des larmes, et beaucoup de choses qui coulent. L’un d’eux commence à sentir un étrange appel, comme un frisson interdit. Et dans les ténèbres… certains liens deviennent très, très serrés.",
             answer: "Le seigneur des anneaux, les deux tours -> Le seigneur des anus, les deux trous",
 
             showQuestion: false,
