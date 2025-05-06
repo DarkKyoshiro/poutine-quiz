@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { Question } from "../models/question.model"
+import { Question } from "../../models/question.model"
 
 @Injectable({
     providedIn: "root",
@@ -13,16 +13,15 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "À quel age ai-je décidé d'assumer la calvitie ?",
+            question: "Qui n'a jamais partagé le lit du roi Arthur ?",
             propositionsDetailed: [
-                "22 ans",
-                "29 ans",
-                "32 ans",
-                "Mais non c’est pas une calvitie, juste une petite carence en vitamine, ça va repousser",
+                "Perceval",
+                "Le Duc d'Acquitaine",
+                "Monseigneur Boniface, êveque de Germanie",
+                "La Reine Guenièvre",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "B",
-            answerComment: "C'était la pandémie, ça commence à dater ça",
+            answer: "A",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -36,11 +35,10 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Où suis-je ?",
-            propositionsDetailed: ["A", "B", "C", "D"],
+            question: "Quel interval musical est de la merde d'après le Père Blaise ?",
+            propositionsDetailed: ["L'Unisson", "La Tierce", "La Quinte", "L'Auto-tune"],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "C",
-            answerComment: "J'ai été un peu batard, les deux autres sont mon frère et ma soeur",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -54,15 +52,16 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Quel poste avais-je dans la liste BDE ASSO’LD UP ?",
+            question:
+                "Dans le livre 2, Arthur offre une rose particuliere a une paysanne. Que fait-elle avec ?",
             propositionsDetailed: [
-                "Tréz, parce que l’argent c’est cool",
-                "Prez Kfet, parce que la bouffe c’est mieux",
-                "Tréz Kfet, parce pourquoi pas les deux ?",
-                "Respo Gras, parce que soyons réalistes…",
+                "Elle ne comprend pas le principe et s'en fait une infusion",
+                "Elle ne comprend pas le principe et se la met dans les cheveux",
+                "Elle ne comprend pas le principe et la mange",
+                "Elle ne comprend pas le principe, se sent insultée et gifle Arthur",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "C, mais on a perdu",
+            answer: "C",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -76,17 +75,15 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Mais ou est la carte ?",
-            questionComment:
-                "Faire un tour de magie avant la question. Donner une enveloppe fermée avec une prédiction à quelqu'un, et demander à une autre main innocente de piocher une carte",
+            question: "Quel roi de clan breton maitrise la Foudre ?",
             propositionsDetailed: [
-                "Dans ton cul ! Voilà, ça c’est fait",
-                "Au dessus du paquet !",
-                "Dans l’enveloppe donné au début de la question !",
-                "Quelque part perdue dans le paquet parce que je suis nul en magie…",
+                "Arthur, roi de Bretagne",
+                "Ketchatar, roi d'Irlande",
+                "Loth, roi d'Orcanie",
+                "Couillière, roi Burgonde",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "D",
+            answer: "C",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -100,16 +97,15 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Dans quelle Escape game ai-je travaille ?",
+            question: "Quel surnom ne désigne pas le chevalier Yvain ?",
             propositionsDetailed: [
-                "A-Maze",
-                "Échappe-toi",
-                "Immersia",
-                "Charles River, et ça fait 7 ans que je cherche la sortie...",
+                "Le chevalier au lion",
+                "L'orphelin de Carmélide",
+                "Le chevalier au pancréas",
+                "Le chevalier de mes deux",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "A",
-            answerComment: "J'y suis resté pour faire les salles gratos et après je suis parti",
+            answer: "C",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -123,15 +119,15 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Quel scenario ne s’est jamais produit aux Megagames ?",
+            question: "Quelle insulte le maitre d'armes n'a jamais dit au roi Arthur ?",
             propositionsDetailed: [
-                "Le Japon a construit une cité sous-marine et a mis en place de l’immigration sélective",
-                "McDonald est devenu une superpuissance mondiale, prenant le contrôle des USA et a convaincu les aliens d’exporter les Big Macs sur leur planète",
-                "Les humains ont nuked les aliens qui essayaient de les aider",
-                "Les joueurs ont décidé de la jouer Meta et que la seule façon de gagner était de physiquement quitter les lieux, forçant le jeu à s’arrêter",
+                "HAHA, Sire ! Je vous attends ! À moins que vous préfériez que l'on dise partout que le roi est une petite pédale qui pisse dans son froc à l'idée de se battre !",
+                "En garde, espèce de vieille pute dégarnie !",
+                "Mais allez-y bon sang, magnez-vous le fion, espèce de grosse dinde !",
+                "En garde, ma biquette ! Je vais vous découper le gras du cul, ça vous fera ça de moins à trimbaler !",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "B",
+            answer: "C",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -145,10 +141,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Photo du gros tas",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Mon chat",
+            question:
+                "Pour savoir s’il va y avoir du vent, il faut mettre son doigt dans le cul du coq",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Kadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -162,10 +159,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Photo du poster de film",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Mon chat",
+            question:
+                "Lorsqu’on le tient par la partie sporadique, ou boulière, le fenouil est un objet redondant",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Karadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -179,10 +177,10 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Bruits de miaulements",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Pas mon chat",
+            question: "La neige qui poudroie dans la solitude de notre enfance",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Karadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -196,10 +194,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Photo de cul de chat",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Pas mon chat",
+            question:
+                "Des fois on n'a pas le choix faut sacrifier des jeunes, c'est le grand qu'a dit.",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Kadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -213,10 +212,10 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Vidéo du gros tas",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Mon chat",
+            question: "J'te présente vos hommages au roi arthur",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Kadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -230,10 +229,10 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Image GPT d'un chat",
-            propositionsDetailed: ["Mon Chat", "Pas mon chat"],
-            propositionsShort: ["Mon Chat", "Pas mon chat"],
-            answer: "Pas mon chat",
+            question: "On met du beurre dans le fond du plat pour pas que le gratin colle",
+            propositionsDetailed: ["Kadoc", "Karadoc"],
+            propositionsShort: ["Kadoc", "Karadoc"],
+            answer: "Kadoc",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -248,9 +247,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Thème Mystère du Nom de l'Équipe",
-            question: "Question",
-            answer: "Réponse",
+            title: "Un destin exceptionnel",
+            question: "Comment Arthur a découvert que Perceval a une exceptionnelle destinée ?",
+            answer: "En donnant Excalibur à Perceval et en voyant que l'aura magique ne disparait pas",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -265,9 +264,10 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Thème Mystère du Nom de l'Équipe",
-            question: "Question",
-            answer: "Réponse",
+            title: "Un destin exceptionnel",
+            question:
+                "Quel objet Perceval a rapporté au roi Arthur lorsqu'il est passé au travers d'un portail dimensionnel ?",
+            answer: "Un sabre-laser",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -282,9 +282,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Thème Mystère du Nom de l'Équipe",
-            question: "Question",
-            answer: "Réponse",
+            title: "Un destin exceptionnel",
+            question: "Quel est le nom du clan que Perceval a fondé avec Karadoc ?",
+            answer: "Les semi-croustillants",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -299,9 +299,11 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Thème Mystère du Nom de l'Équipe",
-            question: "Question",
-            answer: "Réponse",
+            title: "Un destin exceptionnel",
+            question:
+                "Quelle relique sacrée Perceval a balancé dans la forêt ou une rivière après l'avoir récupéré auprès d'un vieux clodo lors d'une de ces quêtes ?",
+            questionComment: "Il y en a deux mais juste un seul suffit",
+            answer: "Les clous de la sainte croix et le saint-suaire",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -316,9 +318,12 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Thème Mystère de Romain",
-            question: "Question",
-            answer: "Réponse",
+            title: "Sorts et Potions",
+            question:
+                "Comment Perceval et Karadoc choisissent les ingrédients à utiliser lorsqu'ils tentent de préparer une potion de puissance ?",
+            questionComment: "Bonus si vous me dite l'effet de la potion qu'ils ont préparé",
+            answer: "À l'odeur, selon si ça sent les pieds ou pas",
+            answerComment: "Ça leur donne une voix nasillarde, comme de l'Hélium",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -333,9 +338,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Thème Mystère de Romain",
-            question: "Question",
-            answer: "Réponse",
+            title: "Sorts et Potions",
+            question:
+                "Quelle potion Merlin a créé par erreur pour Dame Mevanwi au lieu de préparer une potion pour le mal de gorge ?",
+            answer: "La potion d'invincibilité",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -350,9 +356,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Thème Mystère de Romain",
-            question: "Question",
-            answer: "Réponse",
+            title: "Sorts et Potions",
+            question:
+                "D'après Merlin, quelle est la première étape pour créer une plaque de dissimulation",
+            answer: "Il faut bien traiter le bois, car sinon dès qu'il pleut ça gonfle et ça tiens moins",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -367,9 +374,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Thème Mystère de Romain",
-            question: "Question",
-            answer: "Réponse",
+            title: "Sorts et Potions",
+            question:
+                "À l'instar de la pierre philosophale, que permet de transmuter la pierre de lune inventée par Merlin, et en quoi ?",
+            answer: "Petite pierre ronde qui permet de transformer de la viande de chèvre en eau",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -384,9 +392,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Theme mystere que vous voulez pas prendre mais que je vous laisserais totalement prendre parce que qui suis-je pour bloquer votre curiosite…",
-            question: "Question",
-            answer: "Réponse",
+            title: "Traditions ludiques Galloises",
+            question: "Au jeu de la Grelottine, que fait-on lorsqu’on tente une Grelottine ?",
+            answer: "tenter une grelottine : parier qu’il va monter de 6 ou 7. Il ne joue pas et au tour suivant, si le total des mises des 2 autres joueurs ne suffit pas à combler l’écart, il remporte la grelottine, et on change de manche. Il annonce donc les mises de la manche suivante.",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -401,9 +409,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Theme mystere que vous voulez pas prendre mais que je vous laisserais totalement prendre parce que qui suis-je pour bloquer votre curiosite…",
-            question: "Question",
-            answer: "Réponse",
+            title: "Traditions ludiques Galloises",
+            question: "Au jeu du Robobrole, quelles sont les 9 actions possibles ?",
+            answer: "Les actions possibles sont : 'boubin', 'broube', 'roubou', 'brobinle', 'robourle', 'roubourle', 'passe gagnante', 'ratou-robole' et 'robobrole'",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -418,9 +426,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Theme mystere que vous voulez pas prendre mais que je vous laisserais totalement prendre parce que qui suis-je pour bloquer votre curiosite…",
-            question: "Question",
-            answer: "Réponse",
+            title: "Traditions ludiques Galloises",
+            question: "De quoi a-t’on besoin pour jouer au Sloubi ?",
+            answer: "50 bouts de bois de 2 pouces, 50 bouts de bois de 3 pouces, 50 bouts de bois de 4 pouces, 50 poutres de la longueur de la pièce dans laquelle vous jouez, 120 dés, mais ça peut aussi se faire avec juste 3 dés en les lançant 40 fois",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -435,9 +443,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Theme mystere que vous voulez pas prendre mais que je vous laisserais totalement prendre parce que qui suis-je pour bloquer votre curiosite…",
-            question: "Question",
-            answer: "Réponse",
+            title: "Traditions ludiques Galloises",
+            question: "Que doit faire le vainqueur d’une donne du jeu du pélican ?",
+            answer: "Le vainqueur de la donne doit classer ses artichauts du plus lisse au plus râpeux. Ça peut être long, c'est pour ça qu'il faut tenter de diminuer son nombre d’artichauts soit :\n- en faisant un tour de troque ou on peut refiler jusqu'à 17% pour de ses artichauts\n- en achetant la banque, ce qui double les points de votre voisin et diminue de moitié votre nombre d’artichauts, c'est la raitournelle.\n\nLa 2ème possibilité n'est possible que s'il n y a plus d'artichauts dans la banque, si cette condition n'est pas vérifiée on peut faire artichette.\nSi c'est votre voisin de gauche qui achète la banque il doit refourguer 17% des artichauts qu'il a gagné dans la donne précédente, vous pouvez alors faire artichette et coller le banquier a -6 pour tenter à votre tour la raitournelle.\n\nSi ça passe, vous balancez les annonces : artichette, tichette de 2, tichette de 3, tichette de 21, michette, tchiledeque, mique , sganabadarlane, résiné et raitournelle.",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -451,12 +459,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                '🟢 Facile : \nSon prénom, je le connais, il est ultra courant, mais là… ça bloque. Je sais juste qu’il y en a un qui fait de la musique, un gars un peu perché, qui se fait appeler par une lettre. Il saute partout sur scène avec sa guitare, et son père est un grand chanteur aussi. Un autre est plus sombre, plus nerveux — réalisateur, acteur aussi, il a signé un film très fort en noir et blanc, avec des jeunes en colère dans une cité. Tu sais, ce film où l’un dit "jusqu’ici tout va bien…" ? Et puis y’a aussi une chanteuse avec une coupe au bol légendaire, la voix toute vibrante, qui chante la France avec un grand F. Chez elle, c’est son nom de famille, mais ça colle quand même. Toutes ces personnalités ont ce prénom si familier, un peu rétro, mais toujours dans les parages. C’est pas Michel, ni Maxime… mais je sens qu’on y est presque. Allez, ça commence par un M, ça se finit dans tous les albums de famille.\n\n🟡 Moyen :\nC’est marrant, ce prénom revient souvent dans des univers très différents. Un chanteur-éclair, avec une lettre pour nom de scène, et des mélodies pleines de poésie électrique. Un réalisateur qui a frappé fort avec un film dur et cru dans les années 90, et qui joue parfois lui-même des rôles intenses. Et une voix, très connue en France, qui a traversé les décennies avec sa coupe figée et ses chansons d’un autre temps. Chez l’une, c’est un nom de famille ; chez les deux autres, un prénom bien ancré. C’est un nom passe-partout et pourtant toujours attaché à des personnalités marquantes. On l’entend souvent, mais on y pense rarement. Peut-être parce qu’il semble évident, ou justement parce qu’il l’est trop. Moi, en tout cas, il m’échappe… Il est là, juste derrière la mémoire.\n\n🔴 Difficile :\nIl revient sans cesse, ce prénom — discret, solide, presque banal, et pourtant… Trois figures me le rappellent. L’un se cache sous une lettre, mais sa musique déborde d’inventivité. Il sautille sur scène avec une grâce étrange, comme une onde colorée. L’autre a capté la rage sociale dans un film en noir et blanc devenu culte, et sa présence à l’écran est toujours tendue, prête à éclater. Et puis cette femme, figée dans le souvenir collectif avec sa voix vibrante et sa coupe d’un autre temps. Leurs trajectoires n’ont rien en commun, et pourtant elles se rejoignent sur ce prénom. Un prénom presque invisible dans sa banalité, mais porteur d’art, de lutte, de tradition. Il a traversé les chansons, les caméras et les générations. Et moi, je tourne autour sans parvenir à le dire.',
-            answer: "Mathieu",
-            answerComment:
-                "Mathieu Chedid, Mathieu Kassovitz, Mireille Mathieu, et Mathieu Grisard dont l'anniversaire est le 16!\nPROMO POUR SON QUIZ",
+                "Dans un premier temps, il vous faudra retrouver une vieille bien mystérieuse, c’est elle qui vous donnera plus d’informations et vous guidera. \nAttention ce ne sera pas une tâche aisée. En effet, il parait que pas tout le monde puisse la voir, en fait il y a que notre bon roi qui l’ait vu… \nMais bon, vous ne devriez pas avoir de soucis. \nCommencez par chercher près des points d’eau. Pas les plus grands, mais pas les plus petits…",
+            answer: "La Dame du Lac",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -470,12 +476,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                "🟢 Facile :\nAlors là, j’ai un bug. Ce prénom est si joli, si doux, je le connais… mais impossible de le retrouver. Y’en a une qui vient de Belgique, elle joue dans plein de films français, elle a un sourire incroyable et un naturel qui marque. Une autre joue de la harpe — ouais, un vrai instrument de fée. Elle a même bossé pour un dessin animé japonais, un de ceux de Ghibli, tout en finesse et en magie. Et la troisième, elle dessine. Des gens ronds, des scènes de vie pleines de couleurs et de bonne humeur. Elle est québécoise, et son style, tu le reconnais tout de suite, dans les pubs, dans les livres. Elles ont un prénom qui flotte comme une mélodie douce, avec une petite touche rétro. C’est pas Camille… pas Chloé… c’est… mince, ça va me revenir.\n\n🟡 Moyen :\nC’est un prénom féminin qui semble flotter entre les arts. L’une vient du plat pays, lumineuse, présente dans les films européens avec une authenticité rare. L’autre façonne des atmosphères féeriques avec sa harpe et sa voix fragile, entre la Bretagne et le Japon. Et la dernière donne vie au quotidien avec des personnages tout en rondeur, des scènes tendres, dessinées comme des sourires. Trois femmes, trois univers — le cinéma, la musique, l’illustration. Et pourtant, un seul prénom, plein de douceur. Il n’est pas bruyant, pas clinquant, mais il s’impose doucement, sûrement. Il évoque l’élégance tranquille, la tendresse, la lumière. Et moi je bute dessus comme si c’était la première fois que je le croisais. Tu le vois, toi ?\n\n🔴 Difficile :\nC’est un prénom discret, presque effacé, et pourtant… Je le vois se répéter dans des visages très différents. Une actrice belge qui ne joue jamais faux, ancrée dans des rôles à fleur de peau. Une harpiste au souffle aérien, choisie par un studio japonais pour chanter des bruissements de feuilles et des silences. Une illustratrice venue du Québec, qui dessine comme on célèbre les instants simples. Leurs mondes ne se croisent pas, mais leurs prénoms s’accordent. Un prénom doux, presque murmuré, aux accents anciens. On le croirait sorti d’un poème oublié. Et pourtant, il est encore là, vivant, porté par la voix, par le trait, par l’image. Ce prénom… il m’échappe dans sa simplicité même.",
-            answer: "Cécile",
-            answerComment:
-                "Cécile de France, Cécile Corbel, Cécile Gariépy et Cécile Charles dont c'était l'anniversaire le 2 avril",
+                "Alors que vous veniez de trouver votre Guide, vous êtes vite rejoins par deux petits vieux clopinant à pied. \nIl semblerait que ce soient des renforts, mais vous n’avez pas bien compris leurs surnoms, quelque chose avec un animal ou un organe, c’était un peu bizarre. \nEt bien que vous êtes sur que ce sont de vrais chevaliers, les entendre dire qu'ils étaient pétrifiés de peur devant un Fakir qui a enroulé sa bite autour d'un baton et qui a soulevé des poids avec ses couilles ne vous a guère rassuré... \nMais bon, vous prenez toute l’aide qu’on vous offre.",
+            answer: "Yvain et Gauvain",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -489,12 +493,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                "🟢 Facile :\nAttends, c’est un prénom super simple, super connu… mais là, j’ai un bug. Y’en a une qui l’a porté au journal télé pendant des années, avec cette voix douce et sérieuse, tu vois ? Une vraie figure de l’info à la française. Une autre a incarné la reine d’Angleterre dans The Crown — jeune Élisabeth II, regard froid, port droit, un jeu royal, quoi. Et puis la troisième, je la vois dans des séries fantastiques : des sirènes, des vampires, des ados beaux et tristes… l’ambiance quoi. Elles ont toutes ce prénom limpide, féminin, presque transparent. Ça se glisse partout, comme une évidence. Pas Carine, pas Chloé… mais c’est dans ce style. Tu l’as, hein ?\n\n🟡 Moyen :\nCe prénom m’échappe alors qu’il est partout. Dans les journaux télévisés du dimanche soir, dans les robes royales sur Netflix, et dans les séries surnaturelles que les ados binge-watchaient. L’une parlait aux Français comme une grande sœur calme. L’autre régnait sur l’écran avec un calme impressionnant. Et la dernière nageait entre deux mondes, mi-humaine mi-légende, dans des histoires d’eau salée et de sentiments flous. Trois femmes, trois univers, mais un seul prénom. Un prénom doux mais tranchant, discret mais présent. Je sens qu’il est là, presque sorti, et pourtant, rien.\n\n🔴 Difficile :\nCe prénom se faufile comme une évidence oubliée. Il est porté par une figure rassurante de la télévision, par une actrice au port royal et par une créature de fiction venue des abysses. Il traverse le réel, l’Histoire, et les récits fantastiques. Il est clair, presque trop, au point qu’on le voit à peine. Ce prénom s’inscrit dans les mémoires comme une lumière douce, sans jamais s’imposer. Il est fluide, familier, et pourtant insaisissable quand on cherche à le dire. Trois femmes, trois époques, trois mondes. Et ce prénom unique qui les relie sans bruit. Mais moi, je bute dessus comme sur un mot trop évident pour qu’on le remarque. Tu l’as deviné ?",
-            answer: "Claire",
-            answerComment:
-                "Claire Chazal, Claire Foy, Claire Holt et Claire Pilssonneau dont l'anniversaire est le 17 avril",
+                "Après un pénible trajet en forêt, ayant dû rebrousser chemin plusieurs fois dû aux indications un peu vagues de votre guide, vous arrivez à l’orée d’une clairière, et on vous informe de la teneur de votre quête. \nVous devrez infiltrer le camp champêtre d’un vieux. Mais attention, on ne parle pas de n’importe quel vieux, nooooon, ce vieux était le plus fidèle chevalier de notre bon roi. \nQuelle tragédie toute cette histoire, et quelle trahison. Lui qui devait pourtant retrouver le Graal… \nMais cessons de ressasser le passé, ce qui est fait est fait et vous avez une quête à remplir.",
+            answer: "Lancelot",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -508,12 +510,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                "🟢 Facile :\nC’est un prénom un peu magique, non ? Je suis sûr qu’il y avait une sorcière ou une magicienne avec… Dans les légendes, là, autour du roi Arthur — une femme puissante, un peu inquiétante parfois. Ensuite y’a une actrice, fille d’un réalisateur célèbre, qui joue dans des séries d’époque, genre Vikings. Et puis bien sûr, y’a celle avec les cheveux rouges, l’héroïne complètement barrée de HPI. Hyper intelligente, hyper bordélique, hyper tout, quoi. Ces trois femmes ont ce prénom entre fable et folie douce. C’est pas Marine, ni Marion… Mais je l’ai presque ! Un prénom qui pourrait être un sort.\n\n🟡 Moyen :\nJe tourne autour de ce prénom sans l’attraper. Il évoque une femme mythique, sorcière ou sœur selon les histoires, capable d’enchanter ou de détruire. Une autre, bien réelle, actrice au regard franc, s’impose doucement dans les séries sombres. Et la dernière traverse les écrans dans un feu d’artifice de QI et de chaos. Trois femmes, trois formes d’intelligence, trois types de pouvoir. Un prénom ancien, étrange, mais bien vivant aujourd’hui. Il est fort sans être dur, mystérieux sans être obscur. Je le sens presque sur ma langue. Mais dès que je veux le dire, il s’efface.\n\n🔴 Difficile :\nCe prénom habite les frontières. Il résonne dans les contes, flotte dans les légendes, éclate dans la fiction moderne. On le chuchotait dans les grottes de Brocéliande, et maintenant on le crie dans les commissariats télévisés. Une magicienne, une actrice de sang noble, et une tornade à paillettes. Trois femmes, trois visages d’un même mot. Ce prénom, ancien et actuel à la fois, résiste à la banalité. Il tourbillonne, s’insinue, se dérobe. Il pourrait être un lieu, un personnage, un charme. Et là, il se cache dans un coin de mon esprit, comme un mystère qu’on croit élucidé… mais pas tout à fait.",
-            answer: "Morgane",
-            answerComment:
-                "Fée Morgane, Morgane Polanski, Morgane Alvaro et Morgane Baxter dont l'anniversaire est le 21 avril\nPROMO DU LUNDI DES PATATES",
+                "Vous étant fait passer par des gardes du camps à l’aide d’habits trouvés ici et là, vous êtes maintenant infiltrés, et vous allez pouvoir rechercher la vieille qui a rejoint le traitre. \nLes deux chevaliers vous ont apporté un message de notre roi à lui transmettre. Le roi a beaucoup réfléchi, a changé d’avis pour l’échange, et espère qu’elle retrouvera la raison. \nAh justement la voilà qui rentre dans la tente du traitre. \nVous aurez besoin de ruse et de patience pour essayer de contourner les gardes qui la protège et faire passer votre missive.",
+            answer: "La reine Guenièvre",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -527,12 +527,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                "🟢 Facile :\nBon, c’est un prénom très connu… mais ça m’échappe. Je pense à une reine, ou plutôt une régente, dans l’Histoire de France. Une femme de pouvoir, de stratégie, de poison aussi peut-être. Une autre est actrice, une icône du cinéma français, très élégante, très mystérieuse, presque glaciale. Et puis il y a celle qui dansait dans Chicago, l’Américaine avec le regard de feu. Trois femmes très différentes, mais un même prénom, fort, presque royal. C’est pas Carole, ni Christine… mais ça y ressemble. Allez, aide-moi, c’est évident pourtant !\n\n🟡 Moyen :\nC’est un prénom lourd d’histoire. Il a traversé les siècles sur les épaules de femmes qui ne se laissent pas oublier. L’une régnait depuis l’ombre, mariée à un roi, mère de trois autres. Une autre faisait frissonner les salles obscures, dans des rôles de femmes froides et fières. Et la dernière transformait les cabarets en champs de bataille chorégraphiés. Elles ne se ressemblent pas, et pourtant, elles partagent quelque chose. Ce prénom, solide, tranchant, presque sculpté dans la pierre. Il ne se donne pas, il s’impose. Et moi, je l’ai en bouche, mais il refuse de sortir.\n\n🔴 Difficile :\nCe prénom s’écrit dans les marges du pouvoir. Une femme aux origines italiennes, plongée dans les guerres de religion, dont les décisions ont pesé plus lourd que celles des rois. Une actrice, souveraine d’un cinéma distant, au regard de porcelaine blindée. Une autre, flamboyante, entre claquements de talons et sourires assassins. Trois reines de leur domaine, unies par un prénom qui rime avec destin. Il n’a rien de discret. Il est ancien, ancré, presque architectural. Mais même lui peut se faire oublier… une seconde. Jusqu’à ce qu’on s’en souvienne comme d’un coup de sceptre.",
-            answer: "Catherine",
-            answerComment:
-                "Catherine de Médicis, Catherine Deneuve, Catherine Zeta-Jones et Catherine Gauthier dont l'anniversaire est le 28 avril",
+                "Ayant fait passer le message avec succès, et ayant récupéré la réponse de votre ancienne reine, vous tentez de repartir aussi discrètement que vous êtes arrivé, mais horreur, vous n’étiez pas les seuls à tourner autour du camp. \nUn imposant vieillard entièrement vêtu de noir avec un capuche rabaissée lui masquant le visage vous barre la route. \nTout son être dégage une aura sombre, et vos sens vous crie de ne pas l’affronter, que c’est inutile et que la seule réponse que vous obtiendrez de lui sera définitive. \nD’une voix rauque et puissante, il avertit les gardes et un combat intense s’en suit, ce qui permis au vieillard de s’éclipser subtilement pour aller retrouver le traitre",
+            answer: "Méléagant",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -546,12 +544,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Ça a ken en juillet",
+            title: "Les vieux c'est mysterieux",
             question:
-                '🟢 Facile :\nCe prénom, franchement, je le connais. Mais mon cerveau fait grève. Y’en a un qui joue dans des films français et qui adore monter à cheval, même dans la vraie vie. Il a réalisé aussi, parfois avec des chanteurs célèbres dedans. Un autre, je crois qu’il était suisse, il a tiré une flèche dans une pomme posée sur la tête de son propre fils. Et le dernier a carrément envahi l’Angleterre au XIe siècle. On l’appelait "le Conquérant", c’est dire. Trois mecs, un prénom simple, solide, un vrai classique. C’est pas Gérard, pas Gaspard… mais on y est. Allez, tu vois de qui je parle ?\n\n🟡 Moyen :\nC’est un prénom qui traverse les siècles. D’abord un acteur-réalisateur, passionné de chevaux, qui oscille entre drames contemporains et fresques épiques. Puis un héros légendaire de l’indépendance suisse, qui vise juste, très juste, même sous pression. Enfin, un stratège médiéval, dont la traversée de la Manche a changé la face du trône anglais. Ces trois hommes ne partagent rien, sinon ce prénom, stable et sérieux. Il a quelque chose de martial, mais sans brutalité. Un prénom d’hommes décidés. Moi, il me file entre les neurones. Tu l’as ?\n\n🔴 Difficile :\nCe prénom a foulé les planches, les montagnes et les champs de bataille. Il s’est glissé dans les scripts de cinéma, dans les légendes nationales, et dans les livres d’Histoire. L’un l’a porté au sommet des palmarès du box-office. L’autre en a fait un symbole de résistance et de précision. Le dernier l’a inscrit à jamais dans la monarchie britannique, armé d’ambition et d’un sens aigu de la conquête. Trois figures, trois mythes, une seule sonorité. Ce prénom n’est pas rare, mais il sait se rendre remarquable. Je le connais par cœur… mais là, il se dérobe. Peut-être parce qu’il est trop évident pour être vu.',
-            answer: "Guillaume",
-            answerComment:
-                "Guillaume Canet, Guillaume Tell, Guillaume Le Conquérant et Guillaume Dubois",
+                "Bien que victorieux, vous n’en êtes pas ressorti indemne et peinez à rentrer au château. \nAlors que vous êtes évanoui sur le chemin, un étrange petit vieux vient à votre aide et vous emmène à l’abris où vous allez pouvoir reprendre des forces. \nL’ayant vite reconnu, vous savez très bien que ce geste aura un prix et qu’il ne se privera pas d’utiliser votre dette pour ses nombreuses magouilles dans la cour du château. \nCombat de chien, esclavagisme, contrefaçon, vous ne savez pas encore quels ennuis vous allez-vous attirez, mais vous savez que vous n’y échapperez pas. \nMais bon, au moins vous êtes en vie et vous allez pouvoir rentrer à Kaamelott faire votre rapport, et qui sait, peut-être que ce petit vieux a un bon cœur et que si il vous a sauvé vous, il sauvera quelqu’un d’autre de plus important plus tard. \nMais ceci est une autre histoire...",
+            answer: "Venec",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -561,13 +557,12 @@ export class QuestionsService {
         {
             id: 31,
             type: "Tips",
-            speed: false,
+            speed: true,
             round: 1,
             points: 0,
 
-            question:
-                "Sur les 3400 dernieres annees, combien en ai-je passe sur terre ? (arrondi à l'inférieur)",
-            answer: "Je suis né le 12 avril à 15:16, donc à 09:16 ici, donc 33 ans",
+            question: "Écrivons la légende",
+            answer: "Bon en fait on s'en fou un peu ça va finir aux archive et personne va lire ce truc. Allé pour l'effort je donne les points à tout le monde.",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -582,10 +577,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Comment s’appelait le cheval gris truite de Napoleon ?",
-            propositionsDetailed: ["Reblochon", "Emmental", "Cantal", "Georges"],
+            question: "Quel pays a eu son independance sans le vouloir ?",
+            propositionsDetailed: ["Andorre", "Tuvalu", "Singapour", "Le Québec"],
             propositionsShort: ["A", "B", "C", "D"],
             answer: "C",
+            answerComment:
+                "Singapour a gagné son indépendance non pas parce qu'ils le voulait, mais parce que le parlement Malaysien a voté à l'unanimité (sans représentants de Singapour) l'expulsion de la Malaysie",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -599,15 +596,18 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Qui a fonde la brasserie Tsingtao ?",
+            question:
+                "Qu'est-il arrivé lorsqu'un scientifique a voulu tester le paradoxe du singe savant ?",
+            questionComment:
+                "Ce paradoxe dit que si on laisse un singe devant une machine à écrire, au bout d'un moment il y a une chance que ce singe écrire une oeuvre de Shakespear",
             propositionsDetailed: [
-                "Un groupe chinois, ça ferait du sens",
-                "Un groupe allemand, pourquoi pas, ils ont l’expertise",
-                "Un groupe japonais, bizarre quand on connait la relation chine-japon… ",
-                "Un groupe de Nazis, parce que bon, on parlait allemand juste avant et qui dit allemand dans un Poutine quiz dit point Godwin…",
+                "Le singe a écrit 5 pages remplies de S",
+                "Le singe a détruit le clavier avec une pierre",
+                "Le singe a chié sur le clavier",
+                "A, B, C et donc D",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "B",
+            answer: "D",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -621,15 +621,15 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Quel est le nom du titre et du groupe que vous venez d’entendre ?",
+            question: "Comment s'appelle cet insecte ?",
             propositionsDetailed: [
-                "Banana Hammock of Doom de Barbecue Apocalypse",
-                "Death Metal de Ninja Sex Party",
-                "Slam Dunk your Grandma de Napalm Cupcake",
-                "Cuddlepocalypse Now de Symphony of Flatulence and Fire",
+                "Agathidium Vaderi en hommage à Darth Vador",
+                "Agra Katewinsletae en hommage à Kate",
+                "Agra Schwarzeneggeri en hommage à Schwarzenegger",
+                "Anophthalmus Hitleri en hommage à Hitler",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "B",
+            answer: "D",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -643,13 +643,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question:
-                "La liberte guidant le peuple est un celebre tableau francais expose au Louvre. Mais que represente t'il ?",
+            question: "Combien de pages prends la démonstration mathématique que 1+1=2 ?",
             propositionsDetailed: [
-                "La prise de la bastille",
-                "La prise des tuileries",
-                "La révolution des 3 glorieuses",
-                "L’arrivée au McDo à 3h du mat un samedi de cuite",
+                "1 page... Normal...",
+                "16 pages... C'est un peu plus long...",
+                "162 pages... Ça commence à faire beaucoup...",
+                "0 page... On n'a pas encore réussi à le prouver... C'est un peu la honte...",
             ],
             propositionsShort: ["A", "B", "C", "D"],
             answer: "C",
@@ -666,13 +665,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question:
-                "Quel championnat officiel n’existe pas mais devrait mis en place tres vite parce qu’il est cool ?",
+            question: "Quels sont les derniers mots dits sur la lune ?",
             propositionsDetailed: [
-                "Le championnat allemand de repassage de vêtements extrême",
-                "Le championnat français d’insultes au volant",
-                "Le championnat américain de lutte libre contre alligators",
-                "Le championnat chinois de portage d’abeilles",
+                "God willing, we shall return: Si Dieu le veut, nous reviendrons",
+                "All right, let's get this mother out of here and go home: Très bien, sortons cette maman d'ici et rentrons chez nous",
+                "Houston, we have a problem: Houston, nous avons un problème",
+                "Chewie, we’re going home: Chewie, on renter à la maison",
             ],
             propositionsShort: ["A", "B", "C", "D"],
             answer: "B",
@@ -689,16 +687,15 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question:
-                "Quel est le numero qui a valu a Roland le Peteur d’obtenir les faveurs du roi Henri II ?",
+            question: "Dans la pub de quel jeu-vidéo voit-on Alexandre Astier ?",
             propositionsDetailed: [
-                "Saltatio Flatus Magistralis = La Danse Magistrale des Flatuosités, Une chorégraphie alliant mouvements de danse et émissions sonores contrôlées.",
-                "Sonitus Ventorum Variabilis = Le son des vents changeants, Une performance explorant une gamme variée de sons produits par des techniques maîtrisées de flatulences.​",
-                "Unum saltum et siffletum et unum bumbulum = un saut, un sifflet et un pet, Une prestation physique et artistique où le saut, le sifflet et le pet sont effectué en même temps",
-                "Saltatio Carioca Flatulens = La danse Carioca Flatulente",
+                "Dark Age of Camelot",
+                "World of Warcraft",
+                "Guild Wars",
+                "Bob l'éponge: Bataille pour Bikini Bottom",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "C",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -712,10 +709,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Philipe Etchebest",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Cordon bleu",
+            question: "Like a virgin - Madonna",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle pas de Cul",
+            answerComment:
+                "Like A Virgin est une chanson qui décrit l'état émotionnel de Steinberg après qu'une relation ratée l'a laissé dans les bras de quelqu'un d'autre. Cette nouvelle relation l'a fait se sentir brillant et nouveau. Vous savez, comme une vierge",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -729,10 +728,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Teddy Riner",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Ceinture noire",
+            question: "In the air tonight - Phil Collins",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle pas de Cul",
+            answerComment:
+                "En fait Phil ne sait même pas de quoi ça parle vraiment, c'est juste cool",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -746,10 +747,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Thomas Keller",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Cordon bleu",
+            question: "La Macarena - Los Del Rio",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle de Cul",
+            answerComment:
+                "C'est à propos d'une femme qui trompe son copain avec deux de ses amis... En même temps... Si vous voyez ce que je veux dire...",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -763,10 +766,11 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Maitre Gims",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Ceinture noire",
+            question: "If you seek Amy - Britney Spears",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle de Cul",
+            answerComment: "F U C K Me",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -780,10 +784,11 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Bob l'éponge",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Les deux",
+            question: "Like a prayer - Madonna",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle de Cul",
+            answerComment: "La chanson parle de fellation",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -797,10 +802,11 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Père dodu",
-            propositionsDetailed: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            propositionsShort: ["Cordon bleu", "Ceinture noire", "Les deux"],
-            answer: "Cordon bleu",
+            question: "Every Breath You Take - The Police",
+            propositionsDetailed: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            propositionsShort: ["Ça parle de Cul", "Ça parle pas de Cul"],
+            answer: "Ça parle pas de Cul",
+            answerComment: "La chanson est à propos d'un stalker, donc pas super sexy",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -815,10 +821,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Les dessous de la 24eme lettre",
-            question:
-                "Combien a couté la production du film « Pirates II, la revanche de Stagnetti » ?",
-            answer: "Environ 10 000 000 à 10% près",
+            title: "Parlons boules",
+            question: "Quel fruit est nommé à partir du mot aztec pour testicule ?",
+            answer: "L'avocat",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -833,10 +838,10 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Les dessous de la 24eme lettre",
-            question: "Comment s’appelle le plus ancien cinéma X de Montréal ?",
-            answer: "Le Cinéma l'amour",
-            answerComment: "depuis 1981 (appelé d’abord Le Globe, puis Hollywood, puis Pussycat)",
+            title: "Parlons boules",
+            question:
+                "Quel pourcentage de son corps, les testicules de la decticelle côtière représentent ? (à 5% près)",
+            answer: "14 %",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -851,11 +856,12 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Les dessous de la 24eme lettre",
+            title: "Parlons boules",
             question:
-                "V ou F, le documentaire sur la Fistinière s’appelle « Là où bat le Poing » ?",
-            answer: "Faux",
-            answerComment: "c’était « le cœur au centre »",
+                "D’après les croyances du moyen-âge, quel testicule produirait des filles exclusivement ? Le testicule droit ou le gauche ?",
+            answer: "Gauche",
+            answerComment:
+                "Comme tous ce qui est signe de malheur à l'époque. Certains se le faisait enlever parait-il...",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -870,9 +876,10 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "Les dessous de la 24eme lettre",
-            question: "Que veut dire le mot grec Pornographos dont découle le terme Pornographie ?",
-            answer: "Écrire ou peindre à propos des prostituée",
+            title: "Parlons boules",
+            question:
+                "Chez les singes hurleurs, comment peut-on savoir qui a les plus petites boules ?",
+            answer: "C'est celui qui gueule le plus fort",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -887,10 +894,12 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Le spoil, y a prescription",
+            title: "GOAT",
             question:
-                "Après 10 saisons et 236 épisodes, qui demande où est-ce que le groupe irait prendre un dernier café avant de se séparer ?",
-            answer: "Chandler",
+                "Quelle est la BOAT (Boisson La plus bue of all time) ? (Après l’eau bien sûr)",
+            answer: "Le Thé",
+            answerComment:
+                "Le Thé est la boisson la plus bue dans le monde après l’Eau. 500 millions de tasses de thés sont bues chaque jour.",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -905,9 +914,11 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Le spoil, y a prescription",
-            question: "Comment se finissent les aventures de Dr. House ?",
-            answer: "House se fait passer pour mort et part avec Wilson en moto pour être avec lui pour ses derniers jours",
+            title: "GOAT",
+            question: "Quel est lo LOAT ? Le livre le plus vendu of all time ?",
+            answer: "La Bible",
+            answerComment:
+                "Patrick Sébastien, le vrai gout des tomates mûres. Juste devant la Bible. Non je déconne c’est la Bible.",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -922,9 +933,11 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Le spoil, y a prescription",
-            question: "Comment se termine Tom & Jerry ?",
-            answer: "Déprimé d’avoir perdu leur amour, Tom et Jerry s’assoient sur les rails d’un train et attendent la mort… Glauque",
+            title: "GOAT",
+            question: "Quelle est la COAT, la chanson la plus streamée of all time sur Spotify ?",
+            answer: "Blinding Lights de The Weeknd ",
+            answerComment:
+                "Blinding Lights de The Weeknd suivi de près par Shape of You de Ed Sheeran (en date du 31 mars 2024). Bon j’ai un peu aidé en l’écoutant en boucle pendant 3 semaines",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -939,9 +952,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Le spoil, y a prescription",
-            question: "V ou F, à la fin de Marcelino, il meurt !",
-            answer: "Vrai, le jour du sixième anniversaire de Marcelino. Le gamin a l’air un peu déprimé, alors il va voir la statue du Christ qui est posée dans le grenier du monastère. Le Christ se met à parler (normal) et propose à Marcelino d’exaucer un de ses souhaits et l’enfant demande à retrouver sa mère. Le Christ accepte sans préciser qu’il rejoindra sa mère au Paradis, causant ainsi la mort de l’enfant.",
+            title: "GOAT",
+            question:
+                "Et enfin… Ah non merde. Un auteur a cru que c’était un menu sur les chèvres, du coup il y a une question qui n’a rien à voir… Je vous la pose quand même. Quel est le temps de gestation d’une chèvre ? (à 1 mois près)",
+            answer: "5 mois",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -956,10 +970,10 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "La megafaune de l'Artinskien",
+            title: "Uniforme SS",
             question:
-                "Quelles sont les dimensions exactes du plus grand insecte connu qui n'ait jamais vécu, le Meganeuropsis permiana ?",
-            answer: "une longueur de l'aile reconstruite de 33 centimètres, une envergure d'environ jusqu'à 71 centimètres, et une longueur de corps de la tête à la queue de près de 43 centimètres",
+                "Question très simple pour se mettre en jambe, qui a designé et fabriqué les uniformes nazis ?",
+            answer: "Hugo Ferdinand Boss",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -974,9 +988,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "La megafaune de l'Artinskien",
-            question: "Quel est le plus gros mammifère terrestre connu ?",
-            answer: "Le Paraceratherium",
+            title: "Uniforme SS",
+            question: "D’ailleurs, l’a-t-il fait sous la contrainte ou pas du tout ?",
+            answer: "Pas du tout, dès 1931 il adhère au parti Nazi",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -991,10 +1005,10 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "La megafaune de l'Artinskien",
+            title: "Uniforme SS",
             question:
-                "Mesurant jusqu’à 3.5 mètres de long, et possédant un voile dorsal, probablement utilisée pour la thermorégulation ou l’intimidation, il était l’un des prédateurs dominant de cette époque. Quel est le nom de ce mégaprédateur ?",
-            answer: "Le dimetrodong",
+                "Qui a eu l’idée de la couleur noire des uniforme SS, pour se différencier des autres soldats ?",
+            answer: "Himmler, qui n'avait pas que des mauvaises idées finalement",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1009,10 +1023,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "La megafaune de l'Artinskien",
-            question:
-                "Quel pourcentage des espèces marines et terrestres fut éradiqué à la fin du permien ?",
-            answer: "95 % des espèces marines et 70 % des espèces terrestres, donc 82.5 % au total",
+            title: "Uniforme SS",
+            question: "V ou F, on pouvait acheter son uniforme SS chez IKKSS ?",
+            answer: "Faux",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1026,10 +1039,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
+            title: "La réponse est un titre de chanson",
             question:
-                "Deux puissances s’affrontent dans une guerre où l’acier claque autant que les reins. D’un côté, des créatures féroces et lubriques, menées par un chef bien raide. De l’autre, une poignée de résistants, sales, fatigués… mais avec de grandes ambitions et de très longs bâtons. Au milieu, une forteresse imprenable, qui va pourtant bien se faire exploser le trou. Dans cette bataille moite, chacun cherche à pénétrer les lignes ennemies. Des cris, des larmes, et beaucoup de choses qui coulent. L’un d’eux commence à sentir un étrange appel, comme un frisson interdit. Et dans les ténèbres… certains liens deviennent très, très serrés.",
-            answer: "Le seigneur des anneaux, les deux tours -> Le seigneur des anus, les deux trous",
+                "C’est soit-disant un sport noble entre un animal et un homme, mais c’est pas mal surtout un massacre publique.",
+            answer: "La Corrida - Francis Cabrel",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1043,10 +1056,9 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
-            question:
-                "Un garçon découvre qu’il est spécial, différent, doté d’un pouvoir qu’il ne comprend pas encore. Il est envoyé dans un lieu étrange, immense, rempli de secrets et de tentations. Les couloirs sont sombres, les escaliers mouvants, et les chambres communes très mal isolées. Il apprend à manier des baguettes, à dire des formules, et à s’ouvrir à de nouveaux plaisirs... mentaux et physiques. L’ambiance est électrique, les potions excitantes, les professeurs... troublants. Très vite, il sent que quelque chose se réveille en lui, quelque chose de magique et de très intime. Et dans ce monde de sortilèges, il faudra bien plus qu’un sort de désarmement pour contenir ses pulsions. Car parfois, la magie... c’est juste une bonne excuse pour tout tester.",
-            answer: "Harry Potter à l’école des sorciers -> Hardy Pineur à l’école des suceurs",
+            title: "La réponse est un titre de chanson",
+            question: "C'est aussi en lien avec la Météo",
+            answer: "Mistral Gagnant – Renaud\nIt’s Raining Men – Geri Halliwell\nUmbrella – Rihanna\nSinging in the Rain – Gene Kelly",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1060,10 +1072,9 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
-            question:
-                "Elle vit seule, discrète, dans son univers à elle, fait de couleurs douces et de fantasmes silencieux. Elle touche les choses du bout des doigts, avec une délicatesse presque sensuelle. Autour d’elle, le monde s’éveille à son contact : un fruit devient un objet de désir, un inconnu une obsession à explorer. Elle regarde sans se montrer, elle désire sans se livrer. Mais plus le jeu avance, plus le feu grandit. Les murs de sa chambre ne suffisent plus à contenir ses élans. Elle veut sentir, goûter, vibrer. Et parfois, un petit coup de pouce du destin suffit à transformer une caresse imaginaire en vraie explosion charnelle",
-            answer: "Le fabuleux destin d’Amélie Poulain -> Le plantureux fessier d’Amélie Plus qu’un",
+            title: "La réponse est un titre de chanson",
+            question: "C'est un mois de l'année",
+            answer: "September – Earth, Wind and Fire\nLaisse Avril – Julien Doré\nNovember Rain – Guns n’Roses\nWake me up when September Ends – Green Day",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1077,9 +1088,9 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
-            question: "Edward aux mains d’argent -> Edward aux bites d’argent",
-            answer: "Il vit dans un coin perdu, isolé, avec des mains peu communes. Mais malgré ses gestes maladroits, il attire, fascine, excite sans le vouloir. Chacune de ses caresses coupe le souffle, chacune de ses erreurs fait gémir. On l’approche, on le teste, on veut tout connaître de lui, même ses lames. Il devient l’objet de toutes les convoitises. Et même s’il blesse parfois, on revient toujours vers lui. Car certaines sensations ne s’oublient jamais, même quand elles laissent des marques",
+            title: "La réponse est un titre de chanson",
+            question: "C’est ce qu’on dit après avoir fait l’amour",
+            answer: "Baby one more time – Britney Spears, Que je t’aime – Johnny Halliday, Prendre un enfant par la main – Yves Duteil",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1093,10 +1104,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
+            title: "La réponse est un titre de chanson",
             question:
-                "Il se cache dans l’ombre des cloches, solitaire, musclé, et bien trop discret. Son regard doux contraste avec la bête qui sommeille en lui. Elle, jeune et vive, pénètre dans son univers de pierres froides et d’arcs tendus. Il l’observe, il tremble, il lutte contre ses instincts… mais ils sont trop puissants. Les autres la veulent, la convoitent, l’enferment. Lui, il la protège, mais rêve aussi de la dévorer. Les cloches sonnent, le désir monte, et le clocher tremble sous les coups. Parfois, l’amour ne se chante pas… il se hurle",
-            answer: "Le bossu de notre dame -> Le pineux de notre dame",
+                "C’est à propos d’une princesse Disney, mais c’est pas une chanson de Disney, et c’est pas une princesse, fin bref c’est aussi le nom d’une princesse Disney, c’est plus simple dit comme ça.",
+            answer: "Cendrillon - Téléphone",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1110,10 +1121,9 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Titre cochon",
-            question:
-                "Ils sont amis, ou du moins ils le croyaient. Un événement dramatique les réunit, puis les déborde. Les tensions s’accumulent, les couples s’échauffent, les corps se frôlent sous les draps d’amitié. L’alcool coule, les vérités éclatent, et les pulsions refont surface. Chacun cherche du réconfort là où il peut, et souvent là où il ne devrait pas. Les frontières se brouillent, les sentiments se mêlent aux sensations. Et quand les mouchoirs sont tous utilisés, il ne reste que les soupirs. Ce qui devait apaiser… finit par tout embraser.",
-            answer: "Les petits mouchoirs -> Les mouchoirs souillés",
+            title: "La réponse est un titre de chanson",
+            question: "Ca pourrait aussi désigner la masturbation",
+            answer: "Beat it - Michael Jackson, Let it go - Idina Menzel, Formidable - Stromae, Ça fait mal - Christophe Maé",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1123,20 +1133,18 @@ export class QuestionsService {
         {
             id: 62,
             type: "Tips",
-            speed: false,
+            speed: true,
             round: 2,
             points: 0,
 
-            question:
-                "Sachant que la moyenne de la taille du pénis en érection est de 13.12 cm, combien ici en ont une plus petite ?",
-            answer: "En fonction des joueurs",
+            question: "Le mime",
+            answer: "Dumb & Dumber\nJurassic Park\nBatman",
 
             showQuestion: false,
             propositionsStep: 0,
             locked: false,
             showAnswer: false,
         },
-
         {
             id: 63,
             type: "PoutineDeLaMort",
@@ -1145,7 +1153,16 @@ export class QuestionsService {
             points: 0,
 
             question:
-                '1. Quel est le meilleur prénom ? Un indice, ça commence par G\n2. À votre avis, combien y-a-t’il de petites frites dans un Poutine Quiz ?\n3. Vous me voyez plus bois de noyer, de cerisier ou de pin ?\n4. V ou F, Si vous étiez né demain, vous ne pourriez pas être ici en ce moment ?\n5. Complète la phrase : "Une bonne poutine, c’est comme un bon quiz : ça commence par des questions et ça finit par..." \n6. Quel est le nom de l’équipe qui a remporté 4 fois le Poutine Quiz ? Cherchez pas trop loin, la réponse est dans la question.\n7. Selon la légende, combien de souhaits exauce mon magnifique crâne lisse s’il est caressé en silence un soir de pleine lune ?\n8. Complétez ce groupe de 4 potes: Guillaume, Guillaume, Guilhem et…\n9. Sur quel thème voudriez-vous que je fasse le prochain Poutine Quiz ?\n10. Si vous gagnez tous les chocolats, vous partagez avec tout le monde ou vous faites votre gros chacal ?',
+                "1. V ou F, la série Kaamelott a été écrite par un Crétin de Troyes ? \n\n" +
+                "2. D’après Merlin, que dit le dragon quand il se fait marcher sur la patte ? Si vous ne savez pas, dites Dis donc, tu ne manques pas de toupet?\n\n" +
+                "3. Diriez-vous que regarder tous les épisodes de Kaamelott d’une traite est plutôt une bonne ou une bonne idée ?\n\n" +
+                "4. Si le chevalier Malcolum devait rejoindre la table ronde, le metteriez-vous plutôt à gauche, à droite ou au milieu ?\n\n" +
+                "5. À votre avis, peux-t'on dire d'un fenouil qu'il est sporadique ?\n\n" +
+                "6. Si je vous chante à la volette là de suite, ça vous restera dans la tête pendant combien de temps à peu près ?\n\n" +
+                "7. Je me ferais bien une petite partie de Sloubi, vous auriez pas 50 bouts de bois de 2 pouces, 50 de 3 pouces et 50 de 4 pouces ? J'ai déjà le reste\n\n" +
+                "8. Est-ce que vous êtes assez brave pour manger les tartes cuisinées par Dame Seli ?\n\n" +
+                "9. Si vous deviez former un clan de chevalier, comment l’appeleriez vous ?\n\n" +
+                "10. Allé, ça vous tente on vous adoube la maintenant en tant que Sire Patate Frite de la Sauce Brune ?",
             answer: "NA",
 
             showQuestion: false,
