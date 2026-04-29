@@ -16,13 +16,13 @@ const app = express()
 //For HerokuApp
 //-----------------------------------------------------------------
 //! Change quizID for each quiz
-var quizID = "poutinequizS03E01-02Juillet2025"
+var quizID = "poutinequizS05E01-07Mai2026"
 mongoose
     .connect(
         "mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/" +
             quizID +
             "?retryWrites=true&w=majority",
-        { useNewUrlParser: true, useUnifiedTopology: true }
+        { useNewUrlParser: true, useUnifiedTopology: true },
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"))
@@ -167,7 +167,7 @@ io.on("connection", (socket) => {
         answers = answers.filter(
             (answer) =>
                 answer.teamName.replace(/\s+/g, "").toLowerCase() !==
-                teamName.replace(/\s+/g, "").toLowerCase()
+                teamName.replace(/\s+/g, "").toLowerCase(),
         )
 
         io.emit("team-disconnection", teamName)
@@ -196,7 +196,7 @@ io.on("connection", (socket) => {
         socket.emit(
             "send-group",
             teams[teamName.replace(/\s+/g, "").toLowerCase()].group1,
-            teams[teamName.replace(/\s+/g, "").toLowerCase()].group2
+            teams[teamName.replace(/\s+/g, "").toLowerCase()].group2,
         )
     })
 
@@ -211,7 +211,7 @@ io.on("connection", (socket) => {
         io.to(teams[teamName.replace(/\s+/g, "").toLowerCase()].socketId).emit(
             "send-group",
             teams[teamName.replace(/\s+/g, "").toLowerCase()].group1,
-            teams[teamName.replace(/\s+/g, "").toLowerCase()].group2
+            teams[teamName.replace(/\s+/g, "").toLowerCase()].group2,
         )
     })
 
@@ -306,7 +306,7 @@ io.on("connection", (socket) => {
             teamThresholdModifier,
             percentErrorsTiers,
             bonusWrong,
-            bonusSpeed
+            bonusSpeed,
         )
     })
 
@@ -475,7 +475,7 @@ io.on("connection", (socket) => {
 
     socket.on("love-answer", (teamName, questionID) => {
         let answerID = answers.findIndex(
-            (answer) => answer.teamName === teamName && answer.questionID === questionID
+            (answer) => answer.teamName === teamName && answer.questionID === questionID,
         )
 
         answers[answerID].favorite = !answers[answerID].favorite
@@ -531,7 +531,7 @@ io.on("connection", (socket) => {
                     })
                     .catch((error) => {
                         console.log(error)
-                    })
+                    }),
             )
             .catch((error) => {
                 console.log(error)
@@ -545,7 +545,7 @@ io.on("connection", (socket) => {
                     })
                     .catch((error) => {
                         console.log(error)
-                    })
+                    }),
             )
             .catch((error) => {
                 console.log(error)
@@ -563,7 +563,7 @@ io.on("connection", (socket) => {
                     })
                     .catch((error) => {
                         console.log(error)
-                    })
+                    }),
             )
             .catch((error) => {
                 console.log(error)
@@ -577,7 +577,7 @@ io.on("connection", (socket) => {
                     })
                     .catch((error) => {
                         console.log(error)
-                    })
+                    }),
             )
             .catch((error) => {
                 console.log(error)
@@ -591,7 +591,7 @@ io.on("connection", (socket) => {
                     })
                     .catch((error) => {
                         console.log(error)
-                    })
+                    }),
             )
             .catch((error) => {
                 console.log(error)
@@ -664,7 +664,7 @@ io.on("connection", (socket) => {
                                                     teamThresholdModifier,
                                                     percentErrorsTiers,
                                                     bonusWrong,
-                                                    bonusSpeed
+                                                    bonusSpeed,
                                                 )
                                             })
                                             .catch((error) => {
@@ -823,12 +823,12 @@ function getScores() {
                     times.findIndex(
                         (time) =>
                             time.teamName === answer.teamName &&
-                            time.questionID === answer.questionID
+                            time.questionID === answer.questionID,
                     ) >= 0 &&
                     times.findIndex(
                         (time) =>
                             time.teamName === answer.teamName &&
-                            time.questionID === answer.questionID
+                            time.questionID === answer.questionID,
                     ) <=
                         bonusSpeed - 1
                 ) {

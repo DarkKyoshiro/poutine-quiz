@@ -13,10 +13,18 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Quel groupe chante cette chanson de noel un peu particulière ?",
-            propositionsDetailed: ["Sabaton", "Black Sabbath", "Metallica", "Maria Carey"],
+            question:
+                "Quelle musique de jeux-video s'est retrouvé dans le top 50 des musiques les plus écoutées",
+            propositionsDetailed: [
+                "Hollow Knight",
+                "Zelda Tears of the Kingdom",
+                "Halo 4",
+                "Bob l'éponge: Les titans des marées",
+            ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "A",
+            answer: "C",
+            answerComment:
+                "Le seul autre jeu est Clair Obscur Expédition 33 (29ème le 21 février 2026)",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -30,12 +38,12 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Dans cet extrait, on entend un rire au début, qui rit et pourquoi ?",
+            question: "De quel film est issu cet extrait de femme qui interagissent ensemble?",
             propositionsDetailed: [
-                "Le batteur après avoir jeté une de ses baguettes sur le guitariste par erreur",
-                "Le chanteur après s’être assis par erreur sur le piano",
-                "Le pianist après avoir lâché un bon gros pet silencieux mais fatal",
-                "Le guitariste après s’être rendu compte qu’il n’avait pas rejoint le bon groupe",
+                "Star Wars",
+                "Le seigneur des anneaux",
+                "Harry Potter",
+                "Friends",
             ],
             propositionsShort: ["A", "B", "C", "D"],
             answer: "B",
@@ -52,16 +60,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Dans 'What does the Fox say ?' que ne dis pas le renard ?",
-            propositionsDetailed: [
-                "Ring-ding-ding-ding-dingeringgeding",
-                "Joff-tchoff-tchoffo-tchoffo-tchoff",
-                "Chacha-chacha-chacha-chow",
-                "Wouki-wouki-wouki-yop",
-            ],
+            question:
+                "Écoutez bien cet extrait audio.\nQuel animal fait semblant d’etre mort pour ne pas avoir de relation avec un partenaire qui ne lui plait pas ?",
+            propositionsDetailed: ["La lionne", "La libellule", "Le panda", "L'humain"],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "D",
-            answerComment: "Le renard glappit, ou il jappe",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -75,15 +78,15 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Quel est le titre de cette chanson ?",
+            question: "Quelles sont les paroles de cet extrait ?\nAudio après les propositions",
             propositionsDetailed: [
-                "I'll take everything",
-                "Wordplay",
-                "Better Man",
-                "Supercalifragilisticexpialidocious",
+                "Celebrate and dance softly",
+                "Celebrate and dance so free",
+                "Saloperie de Dannette au fruits",
+                "Sell a braid in dusk's debris",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "A",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -97,10 +100,17 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Quelle chanteuse a pour premier titre 'Batches & Cookies' sorti en 2013 ?",
-            propositionsDetailed: ["Nicky Minaj", "Lizzo", "Cardi B", "Gordon Ramsey"],
+            question: "De quelle comedie musicale est extrait ce morceau ?",
+            propositionsDetailed: [
+                "Casanova: Opéra pop",
+                "Mozart L'opéra rock",
+                "Molière, l'Opéra urbain",
+                "Jésus, de Nazareth à Jérusalem",
+            ],
             propositionsShort: ["A", "B", "C", "D"],
             answer: "B",
+            answerComment:
+                "La comédie musicale Jésus existe vraiment et a été produite entre autre par Pascal Obispo, avec Aimez-vous les uns les autres comme titre",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -114,15 +124,10 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "À quel genre de musique cet extrait appartient ?",
-            propositionsDetailed: [
-                "Bubblegum Pop",
-                "Lousiana Swamp Pop",
-                "Sophisti-Pop",
-                "Poupi Poupi Poupi Pop",
-            ],
+            question: "Qui chante dans cet extrait ?",
+            propositionsDetailed: ["Toad", "Titi", "Mickey", "La Grande Frite"],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "C",
+            answer: "A",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -136,10 +141,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Beyond Rangoon",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Hans Zimmer",
+            question: "Extrait 1",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Punk",
+            answerComment: "Derezzed, de la BO de TRON Legacy, par les Daft Punk",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -153,10 +159,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "The Creator",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Hans Zimmer",
+            question: "Extrait 2",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Les Deux",
+            answerComment: "Remix des Daft Punk par Pentatonix",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -170,10 +177,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Uncharted 4",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Pas Hans Zimmer",
+            question: "Extrait 3",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Pas Punk",
+            answerComment: "La Serenissima (1984) par Rondo Veneziano (orchestre italien)",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -187,10 +195,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Gravity",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Pas Hans Zimmer",
+            question: "Extrait 4",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Pas Punk",
+            answerComment: "La Lune par L'impératrice",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -204,10 +213,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "The Usual Suspects",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Pas Hans Zimmer",
+            question: "Extrait 5",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Punk",
+            answerComment: "Veridis Quo par les Daft Punk",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -221,10 +231,11 @@ export class QuestionsService {
             round: 1,
             points: 1,
 
-            question: "Days of Thunder",
-            propositionsDetailed: ["Hans Zimmer", "Pas Hans Zimmer"],
-            propositionsShort: ["Hans Zimmer", "Pas Hans Zimmer"],
-            answer: "Hans Zimmer",
+            question: "Extrait 6",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Punk",
+            answerComment: "Star Boy de The Weekend et Daft Punk",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -233,15 +244,17 @@ export class QuestionsService {
         },
         {
             id: 13,
-            type: "Menu",
-            speed: false,
+            type: "SelOuPoivre",
+            speed: true,
             round: 1,
-            group: 1,
             points: 1,
 
-            title: "L'art du Discours",
-            question: "Qui a prononcé ce discours et dans quel film ?",
-            answer: "Aragorn (Vigo Mortensen) dans Le seigneur des anneaux le retour du roi",
+            question: "Extrait 6",
+            propositionsDetailed: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            propositionsShort: ["Daft Punk", "Daft Pas Punk", "Daft Les Deux"],
+            answer: "Daft Punk ou Daft Les Deux",
+            answerComment:
+                "C'est un morceau de Daft Punk mais remixé par Thomas Bangalter, l'un des deux Daft Punk, sans son frère",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -256,9 +269,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "L'art du Discours",
-            question: "Qui a prononcé ce discours et dans quel film ?",
-            answer: "Hunter 'Patch' Adams (Robin Williams) dans Patch Adams (Docteur Patch)",
+            title: "Et au menu nous avons...",
+            question: "Au menu de quel jeu peut-on entendre cette musique ?",
+            answer: "Golden Eye 007 sur la Nintendo 64",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -273,9 +286,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "L'art du Discours",
-            question: "Qui a prononcé ce discours et dans quel film ?",
-            answer: "Le Roi Georges VI ou Colin Firth dans King's Speech",
+            title: "Et au menu nous avons...",
+            question: "Au menu de quel jeu peut-on entendre cette musique ?",
+            answer: "Age of Empire II",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -290,9 +303,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "L'art du Discours",
-            question: "Qui a prononcé ce discours et dans quel film ?",
-            answer: "Rocky ou Stalone dans Rocky Balboa",
+            title: "Et au menu nous avons...",
+            question: "Au menu de quel jeu peut-on entendre cette musique ?",
+            answer: "Clair Obscur Expédition 33",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -304,12 +317,12 @@ export class QuestionsService {
             type: "Menu",
             speed: false,
             round: 1,
-            group: 2,
+            group: 1,
             points: 1,
 
-            title: "À la façon de nos ancêtres",
-            question: "Titre et Groupe",
-            answer: "Blue de Eiffel 65",
+            title: "Et au menu nous avons...",
+            question: "Au menu de quel jeu peut-on entendre cette musique ?",
+            answer: "Mirror's Edge",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -324,9 +337,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "À la façon de nos ancêtres",
-            question: "Titre et Groupe",
-            answer: "We will Rock You de Queen",
+            title: "Icones toutes seules",
+            question: "De quel titre est tiré ce solo incroyable ?",
+            questionComment: "3min d'audio, à arrêter manuellement",
+            answer: "Sultan of Swings - Dire Straits",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -341,9 +355,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "À la façon de nos ancêtres",
-            question: "Titre et Groupe",
-            answer: "Sombody That I Used To Know de Gotye (ft Kimbra)",
+            title: "Icones toutes seules",
+            question: "De quel titre est tiré ce solo incroyable ?",
+            questionComment: "1min d'audio, à arrêter manuellement",
+            answer: "Stairway to Heaven - Led Zeppelin",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -358,9 +373,9 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "À la façon de nos ancêtres",
-            question: "Titre et Groupe",
-            answer: "Dragostea Din Tei de O-Zone",
+            title: "Icones toutes seules",
+            question: "Dans quelle série peut-on entendre ce solo incroyable ?",
+            answer: "Stranger Things",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -372,12 +387,12 @@ export class QuestionsService {
             type: "Menu",
             speed: false,
             round: 1,
-            group: 3,
+            group: 2,
             points: 1,
 
-            title: "Vie et Oeuvre de Carl Nielsen",
-            question: "Quel est le nom de ce morceau composé par Carl Nielsen ?",
-            answer: "Fantasy for Klarinet and Piano",
+            title: "Icones toutes seules",
+            question: "De quel film est tiré ce solo incroyable ?",
+            answer: "Whiplash",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -392,9 +407,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Vie et Oeuvre de Carl Nielsen",
-            question: "Quel est le nom de ce morceau composé par Carl Nielsen ?",
-            answer: "Tagen Letter (The fog is lifting)",
+            title: "La turlute",
+            question: "Quelles sont les cultures qui ont influencé la naissance de la turlutte ?",
+            answer: "Québécoise et Irlandaise",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -409,9 +424,10 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Vie et Oeuvre de Carl Nielsen",
-            question: "Quel est le nom de ce morceau composé par Carl Nielsen ?",
-            answer: "Helios Overture",
+            title: "La turlute",
+            question:
+                "Comment s’appelle la chanteuse de turlute que l’on entend dans cet extrait ?",
+            answer: "Mary Travers dite La Bolduc – Ça va venir découragez-vous pas (1930s)",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -426,9 +442,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Vie et Oeuvre de Carl Nielsen",
-            question: "Quel est le nom de ce morceau composé par Carl Nielsen ?",
-            answer: "Maskarade Overture",
+            title: "La turlute",
+            question: "Dans quel titre peut-on entendre ce passage turluté ?",
+            answer: "Reel turluté",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -437,14 +453,15 @@ export class QuestionsService {
         },
         {
             id: 25,
-            type: "Addition",
-            speed: true,
+            type: "Menu",
+            speed: false,
             round: 1,
-            points: 3,
+            group: 3,
+            points: 1,
 
-            title: "Mash up",
-            question: "Titre des deux franchises de film",
-            answer: "James Bond - Mission Impossible",
+            title: "La Turlute",
+            question: "Qui a composé cet extrait de turlute acadienne montréalaise ?",
+            answer: "Marie-Claire Saindon",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -458,9 +475,9 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Mash up",
-            question: "Titres des deux morceaux",
-            answer: "Eminem Lose - Yourself vs Lou Bega - Mambo n°5",
+            title: "Changeons de style",
+            question: "Quel est le chanteur original de cette chanson reprise au style baroque ?",
+            answer: "Jean-Jacques Goldman - Je marche seul",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -474,9 +491,9 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Mash up",
-            question: "Titres des deux morceaux",
-            answer: "Linkin Park - Numb vs Ariana Grande - Into You",
+            title: "Changeons de style",
+            question: "Quel est le titre de cette chanson reprise en gospel ?",
+            answer: "Stayin' Alive - Bee Gees",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -490,9 +507,9 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Mash up",
-            question: "Titres des deux morceaux",
-            answer: "Daft Punk (ft Pharell Williams et Nile Rodgers) - Get Lucky vs Bee Gees - You Should be Dancing",
+            title: "Changeons de style",
+            question: "Quel est le titre de cette chanson reprise en dark country ?",
+            answer: "In the air tonight - Phil collins",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -506,9 +523,9 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Mash up",
-            question: "Titres des deux morceaux",
-            answer: "Earth, Wind & Fire - September vs Post Malone - Congratulations",
+            title: "Changeons de style",
+            question: "Quel est le titre de cette chanson reprise en mode « opéra rock » ?",
+            answer: "Ooops I did it again - Britney Spears",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -522,9 +539,10 @@ export class QuestionsService {
             round: 1,
             points: 3,
 
-            title: "Mash up",
-            question: "Titres des deux morceaux (Bonus compositeur)",
-            answer: "Nikolai Rimsky-Korsakov - Flight of the Bumblebee vs John Williams - Imperial March",
+            title: "Changeons de style",
+            question:
+                "Quel est le titre de cette chanson reprise en mode Soul Jazz des années 50s?",
+            answer: "Baby Shark",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -533,13 +551,29 @@ export class QuestionsService {
         },
         {
             id: 31,
+            type: "Addition",
+            speed: true,
+            round: 1,
+            points: 3,
+
+            title: "Changeons de style",
+            question: "Quel est le titre de cette chanson reprise en mode Reggae ?",
+            answer: "Lose Yourself - Eminem",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 32,
             type: "Tips",
             speed: true,
             round: 1,
             points: 0,
 
-            question: "Artiste et Titre du morceau à l'envers",
-            answer: "Miley Cirus - Flowers",
+            question: "Complétez les paroles",
+            answer: "AAAAAAAAH",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -547,23 +581,6 @@ export class QuestionsService {
             showAnswer: false,
         },
 
-        {
-            id: 32,
-            type: "Nugget",
-            speed: false,
-            round: 2,
-            points: 1,
-
-            question: "Quel est l'instrument de musique que vous entendez jouer ?",
-            propositionsDetailed: ["Hydrophone", "Pyrophone", "Yaybahar", "Mon cul"],
-            propositionsShort: ["A", "B", "C", "D"],
-            answer: "C",
-
-            showQuestion: false,
-            propositionsStep: 0,
-            locked: false,
-            showAnswer: false,
-        },
         {
             id: 33,
             type: "Nugget",
@@ -571,17 +588,15 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Quel jeu n'est pas présent dans ce medley joué aux Games Award 2023 ?",
+            question: "Qui est Victor Borge ?",
             propositionsDetailed: [
-                "Baldur's Gate 3",
-                "Final Fantasy XVI",
-                "Super Mario Bros Wonders",
-                "Alan's Wake 2",
+                "Un célèbre chef d'orchestre",
+                "Un célèbre pianiste",
+                "Un célèbre humoriste",
+                "Les trois à la fois",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "B",
-            answerComment:
-                "Bien que FF XVI soit absent, il a quand même remporté le prix de la meilleure musique.",
+            answer: "D",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -595,10 +610,18 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "De quel animé cette chanson est l'opening ?",
-            propositionsDetailed: ["One Punch Man", "Bleach", "My Hero Academia", "One Piece"],
+            question:
+                "Quelle chanson représentant la France a l’eurovision a eu le meilleur classement?",
+            propositionsDetailed: [
+                "Je n'ai que mon âme - Natasha St-Pier (2001)",
+                "Mon amour - Slimane (2024)",
+                "Voilà - Barbara Pavi (2021)",
+                "L'amour à la française - Fatals Picards (2007)",
+            ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "A",
+            answer: "C",
+            answerComment:
+                "Fatal Picard – 22ème\nNatasha St Pier – 4ème\nSlimane – 4ème\nBarbara Pavi – 3ème",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -612,15 +635,11 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Quel artiste a remporté l'eurovision en 2023 ?",
-            propositionsDetailed: [
-                "Käärijä avec Cha Cha Cha",
-                "La Zarra avec Évidemment",
-                "Loreen avec Tattoo",
-                "Sunstroke Project & Olia Tira avec Run Away, aussi connu pour l'epix Sax Guy",
-            ],
+            question:
+                "Pour la cérémonie d’ouverture du championnat du monde de quel jeux-video cette chanson a été chanté ?",
+            propositionsDetailed: ["Pokemon", "League of Legends", "Dota 2", "Microsoft Excel"],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "C",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -635,15 +654,15 @@ export class QuestionsService {
             points: 1,
 
             question:
-                "Laquelle de ces chansons a gagnée le MTV Europe Music Award for Best Act Ever en 2008 ?",
+                "Vous vous rappelez de l'extrait que vous avez entendu dans la première partie avant la question sur la lib.lulle ?\nEt bien qui c'était ?",
             propositionsDetailed: [
-                "Tokyo Hotel avec Schrei",
-                "Thirty Second To Mars avec A Beautiful Lie",
-                "Pink avec So What",
-                "Rick Astley avec Never Gonna Give You Up",
+                "Un jeune Samuel L Jackson",
+                "Un jeune Morgan Freeman",
+                "Un jeune James Earl Jones",
+                "Un jeune Robert Downey Junior",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "D",
+            answer: "B",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -657,15 +676,16 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Quel groupe québécois chante cette chanson ?",
+            question:
+                "Quelle est la particularite de l’homme que l’on entend jouer de la flute de pan ?",
             propositionsDetailed: [
-                "Les Colocs",
-                "Les Cowboys Fringuants",
-                "Les Trois Accords",
-                "K-Maro",
+                "Il lui manque un poumon",
+                "Il n'existe pas (IA)",
+                "Il n'as pas de mains",
+                "Il est champion du monde de Beatbox",
             ],
             propositionsShort: ["A", "B", "C", "D"],
-            answer: "A",
+            answer: "C",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -674,15 +694,22 @@ export class QuestionsService {
         },
         {
             id: 38,
-            type: "SelOuPoivre",
-            speed: true,
+            type: "Nugget",
+            speed: false,
             round: 2,
             points: 1,
 
-            question: "Pokemon Theme",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique de Pokemon",
+            question: "Pour quel produit cette parodie de pub a ete faite ?",
+            propositionsDetailed: [
+                "Du PQ avec la moustache d’Hitler",
+                "Un tapis de toilette avec la moustache d’Hitler",
+                "Une brosse à toilette avec la moustache d’Hitler",
+                "Un rasoir designé spécifiquement pour se faire la moustache de Charlie Chaplin dans le film Le Dictateur",
+            ],
+            propositionsShort: ["A", "B", "C", "D"],
+            answer: "C",
+            answerComment:
+                "Petit clin d'oeil à Arisch Weiss (blanc aryen), Eva Braun (marron Eva) et Himmler Blau (bleu himmler)",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -696,10 +723,12 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Pokemon Diamand & Perle - Meeting Cynthia",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique de Pokemon",
+            question: "Ernst Gräfenberg",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Point G",
+            answerComment:
+                "Médecin obstétricien allemand juif, le point G est nommé après lui pour ses recherches",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -713,10 +742,10 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Piano Sonata de Mozart",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique Classique",
+            question: "Intro de Pornhub",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Point G",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -730,10 +759,10 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Pokemon Diamand & Perle - Eterna Forest",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique de Pokemon",
+            question: "Se cache dans des endroits sombres",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Les deux",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -747,10 +776,10 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Moonlight Sonata - Beethoven",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique Classique",
+            question: "Musique de la liste de Schindler",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Point Godwin",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -764,10 +793,11 @@ export class QuestionsService {
             round: 2,
             points: 1,
 
-            question: "Pokemon Red & Blue",
-            propositionsDetailed: ["Musique Classique", "Musique de Pokemon"],
-            propositionsShort: ["Musique Classique", "Musique de Pokemon"],
-            answer: "Musique de Pokemon",
+            question: "Extrait de Inglorious bastards",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Les deux",
+            answerComment: "Petit passage de scène de cul dans l'extrait",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -776,15 +806,15 @@ export class QuestionsService {
         },
         {
             id: 44,
-            type: "Menu",
-            speed: false,
+            type: "SelOuPoivre",
+            speed: true,
             round: 2,
-            group: 1,
             points: 1,
 
-            title: "ASMR",
-            question: "V ou F, il existe une chanson de Rap ASMR appelée The Quiet Song ?",
-            answer: "Vrai",
+            question: "Fifty shades of grey",
+            propositionsDetailed: ["Point G", "Point Godwin", "Les deux"],
+            propositionsShort: ["Point G", "Point Godwin", "Les deux"],
+            answer: "Point G",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -799,9 +829,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "ASMR",
-            question: "Quelle est al personnalité interviewvé en mode ASMR ?",
-            answer: "Arnold Schwarzenegger",
+            title: "What does the fox say",
+            question: "Comment s’appelle le cri du renard ?",
+            answer: "Le glapissement",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -816,9 +846,9 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "ASMR",
-            question: "Titre et Artiste de la chanson",
-            answer: "Tove Lo - Glad He's Gone",
+            title: "What does the fox say",
+            question: "De quel film est tiré cet extrait ?",
+            answer: "Robin des bois de Disney",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -833,9 +863,12 @@ export class QuestionsService {
             group: 1,
             points: 1,
 
-            title: "ASMR",
-            question: "Allé une petite dernière, quelle est cette chanson et quel est l'artiste ?",
-            answer: "Bohemian Rhapsody de Queen",
+            title: "What does the fox say",
+            question:
+                "Complétez les paroles\n\nEt tout ces moments entre nous, m’apprendrons le prix…",
+            answer: "Bonheur",
+            answerComment:
+                "Tiré de la comédie musicale Le petit prince, dialogue entre le prince et le renard dans le titre Apprivoise-moi",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -847,12 +880,14 @@ export class QuestionsService {
             type: "Menu",
             speed: false,
             round: 2,
-            group: 2,
+            group: 1,
             points: 1,
 
-            title: "Ah que les génériques",
-            question: "Quel est le titre de l'émission dont Johnny reprends le générique ?",
-            answer: "Code Lyoko",
+            title: "What does the fox say",
+            question:
+                "V ou F, Mike « Tails » Power est un acteur de film pour adulte qui a choisi son nom en hommage à l’acolyte aux deux « queue » de Sonic le hérisson ?",
+            answer: "Faux",
+            answerComment: "Le nom complet du renard est Mike Tails Prower",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -867,9 +902,9 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Ah que les génériques",
-            question: "Quel est le titre de l'émission dont Johnny reprends le générique ?",
-            answer: "Denver le dernier Dinosaure",
+            title: "La Magie d'Internet",
+            question: "De quel film vient l’extrait qui a servi à faire cette musique ?",
+            answer: "Le Seigneur des Anneaux: Les Deux Tours",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -884,9 +919,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Ah que les génériques",
-            question: "Quel est le titre de l'émission dont Johnny reprends le générique ?",
-            answer: "One Piece",
+            title: "La Magie d'Internet",
+            question:
+                "De quelle série vient l’extrait qui a servi à faire cette musique ? Et de quelle saison",
+            answer: "Stranger Things - saison 4",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -901,9 +937,10 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Ah que les génériques",
-            question: "Quel est le titre de l'émission dont Johnny reprends le générique ?",
-            answer: "Rahan",
+            title: "La Magie d'Internet",
+            question:
+                "Dans la parodie Seagull, Stop it now, qu’a trouvé Yoda sous cette grosse buche ?",
+            answer: "Un petit bout de bois",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -918,9 +955,9 @@ export class QuestionsService {
             group: 2,
             points: 1,
 
-            title: "Ah que les génériques",
-            question: "Quel est le titre de l'émission dont Johnny reprends le générique ?",
-            answer: "Tchoupi",
+            title: "La Magie d'Internet",
+            question: "De quel film vient les paroles de cette chanson ?",
+            answer: "Star Wars episode 3: La revanche des Siths",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -932,12 +969,12 @@ export class QuestionsService {
             type: "Menu",
             speed: false,
             round: 2,
-            group: 3,
+            group: 2,
             points: 1,
 
-            title: "Blind test pour les sourds",
-            question: "Qui a chanté cette chanson et quel est le titre de la chanson ?",
-            answer: "K-Maro - Femme Like U",
+            title: "Blind Test pour aveugle",
+            question: "Question en braille",
+            answer: "K-Maro, Femme like U",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -952,9 +989,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Blind test pour les sourds",
-            question: "En 2004, qui a chanté ce morceau extrêmement connu ?",
-            answer: "K-Maro - Femme Like You",
+            title: "Blind Test pour aveugle",
+            question: "Question en braille",
+            answer: "K-Maro, Let’s go",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -969,10 +1006,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Blind test pour les sourds",
-            question:
-                "Quel est le premier titre de cet artiste, et qui est l'artiste en question ?",
-            answer: "I am à l'ancienne de K-Maro",
+            title: "Blind Test pour aveugle",
+            question: "Question en braille",
+            answer: "K-Maro, sous l’œil de l’ange",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -987,9 +1023,9 @@ export class QuestionsService {
             group: 3,
             points: 1,
 
-            title: "Blind test pour les sourds",
-            question: "Qui a sorti ce titre en 2010 ?",
-            answer: "Belle Trentaine de K-Maro",
+            title: "Blind Test pour aveugle",
+            question: "Question en braille",
+            answer: "Gilbert Montagné - On va s'aimer",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1003,9 +1039,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "Scatman de Scatman John",
+            title: "Toutes les réponses sont chauves",
+            question: "Acteur célèbre ayant joué dans la série Fast and furious",
+            questionComment: "La bonne réponse la plus fréquente est éliminée",
+            answer: "Vin diesel\nDwayne Johnson\nJason Statham\nTyrese Gibson\nDjimon Hounsou",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1019,9 +1056,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "Total Eclipse of the Heart de Bonnie Tyler",
+            title: "Toutes les réponses sont chauves",
+            question: "Méchant de disney",
+            questionComment: "La bonne réponse la plus fréquente est éliminée",
+            answer: "Hades - Hercule\nStomboli – Pinocchio\nChef skinner – Ratatouille\nEdgar Balthazar – Les aristochats",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1035,9 +1073,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "Fireflies de Owl City",
+            title: "Toutes les réponses sont chauves",
+            question: "Mentors chauves",
+            questionComment: "La bonne réponse la plus fréquente est éliminée",
+            answer: "Charles Xavier – X-men\nMorpheus – Matrix\nMace Windu/Yoda – Star Wars\nOncle Iroh - Avatar",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1051,9 +1090,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "Fly me to the Moon de Frank Sinatra",
+            title: "Toutes les réponses sont chauves",
+            question: "Un animateur",
+            questionComment: "La bonne réponse la plus fréquente est éliminée",
+            answer: "La Grande Frite\nHowie Mandel\nSteve Harvey\nPhilippe Etchebest\nVincent Lagaffe",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1067,9 +1107,10 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "Look What You Made Me Do de Taylor Swift",
+            title: "Toutes les réponses sont chauves",
+            question: "Acteur de film pour adulte",
+            questionComment: "Plus de pénalitée de réponse fréquente",
+            answer: "Johnny Sins",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1083,9 +1124,11 @@ export class QuestionsService {
             round: 2,
             points: 3,
 
-            title: "Otamatone",
-            question: "Toutes les réponses ont été reprises à l'Otamatone (Titre et Artiste)",
-            answer: "The Final CountDown de Europe",
+            title: "Toutes les réponses sont chauves",
+            question:
+                "Un jeu de mot pourri sur les chauves que j’ai jamais entendu, bonus si on me fait rire",
+            questionComment: "La bonne réponse la plus fréquente est éliminée",
+            answer: "tbd",
 
             showQuestion: false,
             propositionsStep: 0,
@@ -1100,8 +1143,8 @@ export class QuestionsService {
             points: 0,
 
             question:
-                "1 point, Français:\nAprès quelques incantations de druides et de magie\nToute la tribu, le glaive en main, courait vers l'ennemi\nLa lutte était terrible et je ne voyais que les ombres\nTranchant l'ennemi qui revenait toujours en surnombre\nMes frères tombaient l'un après l'autre devant mon regard\nSous le poids des armes que possédaient tous ces barbares\nDes lances, des haches et des épées dans le jardin d'Éden\nQui écoulaient du sang sur l'herbe verte de la plaine\n Comme ces jours de peine où l'homme se traîne\nÀ la limite du règne, du mal et de la haine\nFallait-il continuer ce combat déjà perdu\nMais telle était la fierté de toute la tribu\nLa lutte a continué comme ça jusqu'au soleil couchant\nDe férocité extrême en plus d'acharnement\nFallait défendre la terre de nos ancêtres enterrés là\nEt pour toutes les lois de la tribu de Dana\n\n\n1-2 points, Anglais:\nAfter a few incantations of druid and magic\nThe whole tribe, sword in hand, ran towards the enemy.\nThe struggle was terrible, and all I could see were shadows\nSlashing the enemy, who always came back outnumbered\nMy brothers fell one by one before my very eyes\nUnder the weight of the weapons possessed by all these barbarians\nSpears, axes and swords in the Garden of Eden\nDripping blood on the green grass of the plain\nLike those days of sorrow when man drags himself\nOn the edge of reign, evil and hatred\nWas it necessary to continue this fight already lost\nBut such was the pride of the whole tribe\nThe fight went on until the setting sun\nWith extreme ferocity and fierce determination\nWe had to defend the land of our ancestors buried there\nAnd for all the laws of Dana's tribe\n\n\n3 points, Allemand:\nNach einigen Druiden- und Zauberbeschwörungen\nrannte der ganze Stamm mit dem Schwert in der Hand auf den Feind zu.\nDer Kampf war furchtbar und ich sah nur die Schatten\nSchlitzte den Feind auf, der immer in der Überzahl zurückkehrte.\nMeine Brüder fielen einer nach dem anderen vor meinen Augen.\nUnter dem Gewicht der Waffen, die all diese Barbaren besaßen\nSpeere, Äxte und Schwerter im Garten Eden.\nDie Blut auf das grüne Gras der Ebene tropften.\nWie jene Tage der Mühsal, an denen der Mensch sich schleppt.\nAn der Grenze der Herrschaft, des Bösen und des Hasses.\nSollte man den bereits verlorenen Kampf fortsetzen.\nDoch so war der Stolz des ganzen Stammes.\nDer Kampf ging so weiter bis zur untergehenden Sonne.\nVon extremer Grausamkeit zu mehr Verbissenheit\nMusste das Land unserer dort begrabenen Vorfahren verteidigen\nUnd für alle Gesetze des Stammes von Dana\n\n\n4-5 points, Japonais:\nIkutsu ka no doruido to mahō no jumon no ato\nBuzoku zen'in ga ken o te ni teki ni mukatte hashitta\nTatakai wa susamajiku, kage shika mienakatta\nKanarazu kuroji de modotte kuru teki o kiru\nKyōdai-tachi ga tsugitsugi to watashi no shisen no mae ni taoreta\nKorera subete no yaban hito ga shoyū shite ita buki no omomi no shita de\nEden'nosono no yari, ono, ken\nHeigen no midori no kusa ni chi o nagashita no wa\nHito ga mi o hikizuru kurushimi no hibi no yō ni\nTōchi, aku to nikushimi no hate ni\nMō maketa tatakai o tsudzukerubeki ka\nShikashi sore ga buzoku zentai no hokoridatta\nTatakai wa kōshite higakureru made tsudzuita\nYōsha no nai kyokudo no kyōbō-sei\nWatashitachi wa soko ni maisō sa reta senzo no tochi o mamoranakereba narimasendeshita\nSoshite dāna buzoku no subete no hōritsu ni tsuite\n",
-            answer: "La Tribu de Dana de Manau",
+                "Je pourrais vous demander le compositeur et la reponse serait Hans Zimmer mais vous resteriez sur votre faim et on aime pas ca au poutine quiz alors je vais vous demander qui chante a la place… Cette question est beaucoup trop longue pour ce que c’est…",
+            answer: "Raye - Titre Click Clack",
 
             showQuestion: false,
             propositionsStep: 0,

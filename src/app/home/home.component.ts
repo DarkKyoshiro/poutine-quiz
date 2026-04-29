@@ -17,6 +17,18 @@ export class HomeComponent implements OnInit {
 
     leaderboards: Leaderboard[] = [
         {
+            titre: "S04E01 - Spécial Anniversaire",
+            teams: [
+                { rang: 1, nom: "Les hobbits joufflues", score: 68 },
+                { rang: 2, nom: "Les fleurs en bouquet fanent", score: 66 },
+                { rang: 3, nom: "Tubercule ou tu pointes", score: 60 },
+                { rang: 4, nom: "Nom de l'équipe", score: 58 },
+                { rang: 4, nom: "Equipe Rocco", score: 58 },
+                { rang: 4, nom: "Le père à manger", score: 58 },
+                { rang: 7, nom: "Les miou miou", score: 57 },
+            ],
+        },
+        {
             titre: "S03E03 - Spécial Impro (Rediffusion)",
             teams: [
                 { rang: 1, nom: "Nofred", score: 51 },
@@ -306,7 +318,10 @@ export class HomeComponent implements OnInit {
         },
     ]
 
-    constructor(private socket: Socket, private router: Router) {}
+    constructor(
+        private socket: Socket,
+        private router: Router,
+    ) {}
 
     ngOnInit(): void {
         this.state = this.router.url
