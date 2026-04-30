@@ -1,5 +1,4 @@
-<!-- <p><mat-slide-toggle [(ngModel)]="showDetails" (change)="onChangeDetailsDisplay()">Show details</mat-slide-toggle></p> -->
-<mat-accordion multi="true">
+<!-- <mat-accordion multi="true">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title> Stats </mat-panel-title>
@@ -35,24 +34,6 @@
             </p>
         </div>
 
-        <!-- <mat-divider></mat-divider><br>
-
-        <h4>Accumulated</h4>
-        <div class="Stats">
-            <p>
-                <mat-icon>fast_forward</mat-icon><br>
-                {{fastestTeamAdded()}}
-            </p>
-            <p>
-                <mat-icon>close</mat-icon><mat-icon>fast_forward</mat-icon><br>
-                {{fastestTeamWrongAdded()}}
-            </p>
-            <p>
-                <mat-icon>front_hand</mat-icon><br>
-                {{slowestTeamAdded()}}
-            </p>
-        </div> -->
-
         <mat-divider></mat-divider><br />
 
         <h4>Remontada/Degringolada</h4>
@@ -64,9 +45,6 @@
                     <th class="separator-left">Rd 1 - Rank</th>
                     <th>Rd 2 - Rank</th>
                     <th>Diff - Rank</th>
-                    <!-- <th class="separator-left">Rd 1 - Score</th>
-                    <th>Rd 2 - Score</th>
-                    <th>Ratio - Score</th> -->
                 </tr>
 
                 <tr *ngFor="let team of remontadaTable(); let i = index">
@@ -75,11 +53,6 @@
                     <td class="separator-left">{{ team.rd1Rank }}</td>
                     <td>{{ team.rd2Rank }}</td>
                     <td>{{ team.rd1Rank - team.rd2Rank }}</td>
-                    <!-- <td class="separator-left">{{ team.rd1Score }}</td>
-                    <td>{{ team.rd2Score - team.rd1Score }}</td>
-                    <td>
-                        {{ (team.rd2Score - team.rd1Score) / team.rd1Score | number : "1.1-1" }}
-                    </td> -->
                 </tr>
             </table>
         </div>
@@ -125,51 +98,6 @@
         </table>
     </mat-expansion-panel>
 
-    <!-- <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Detailed scores
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <table>
-            <tr>
-                <th rowspan="2">Question</th>
-                <th class="separator-left" [attr.colspan]="showDetails ? 6 : 2" *ngFor="let team of detailedScores.get(1)">{{team.team}}</th>
-                <th class="separator-left" rowspan="2">Question</th>
-            </tr>
-            <tr>
-                <ng-container *ngFor="let team of detailedScores.get(1)">
-                    <th class="separator-left" *ngIf="showDetails"><mat-icon>question_mark</mat-icon></th>
-                    <th *ngIf="showDetails"><mat-icon>timeline</mat-icon></th>
-                    <th *ngIf="showDetails"><mat-icon>exposure_plus_1</mat-icon></th>
-                    <th *ngIf="showDetails"><mat-icon>rule</mat-icon></th>
-                    <th colspan="2" class="separator-left"><mat-icon>functions</mat-icon></th>
-                </ng-container>
-            </tr>
-        
-            <tr *ngFor="let fullScore of detailedScores | keyvalue">
-                <td>{{fullScore.key}}</td>
-                <ng-container *ngFor="let score of fullScore.value">
-                    <td class="separator-left" [ngClass]="score.isCorrected > 0 ? 'green' : (score.isCorrected === 0 ? 'red' : '')" *ngIf="showDetails">
-                        <mat-icon *ngIf="score.isCorrected === -1">question_mark</mat-icon>
-                        <mat-icon *ngIf="score.isCorrected === 0">close</mat-icon>
-                        <mat-icon *ngIf="score.isCorrected === 1">check</mat-icon>
-                    </td>
-                    <td [ngClass]="score.points > 0 ? 'green' : (score.points < 0 ? 'red' : '')" *ngIf="showDetails">{{score.points}}</td>
-                    <td [ngClass]="score.bonus > 0 ? 'green' : (score.bonus < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonus}}</td>
-                    <td [ngClass]="score.bonusWrongAnswers > 0 ? 'green' : (score.bonusWrongAnswers < 0 ? 'red' : '')" *ngIf="showDetails">{{score.bonusWrongAnswers}}</td>
-                    <td class="separator-left">{{score.total}}</td>
-                    <td>
-                        <mat-icon style="color:red;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers < 0">trending_down</mat-icon>
-                        <mat-icon style="color:yellow;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers === 0">trending_flat</mat-icon>
-                        <mat-icon style="color:green;" *ngIf="score.points + score.bonus + score.bonusWrongAnswers > 0">trending_up</mat-icon>
-                    </td>
-                </ng-container>
-                <td class="separator-left">{{fullScore.key}}</td>
-            </tr>
-        </table>
-    </mat-expansion-panel> -->
-
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title> Detailed scores for Excel </mat-panel-title>
@@ -203,5 +131,156 @@
                 <td>{{ answer.bonusWrongAnswers }}</td>
             </tr>
         </table>
+    </mat-expansion-panel>
+</mat-accordion> -->
+
+<mat-accordion multi="true" class="stats-accordion">
+    <!-- SECTION : STATS GLOBALES -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Statistiques générales </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="stats-section">
+            <mat-card class="stat-card">
+                <h3>Réponses correctes</h3>
+                <p class="value">{{ mostCorrectAnswers() }}</p>
+            </mat-card>
+
+            <mat-card class="stat-card">
+                <h3>Réponses incorrectes</h3>
+                <p class="value">{{ mostIncorrectAnswers() }}</p>
+            </mat-card>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h3 class="section-title">Temps moyen</h3>
+
+        <div class="stats-section">
+            <mat-card class="stat-card">
+                <h4>Rapide</h4>
+                <p class="value">{{ fastestTeamAverage() }}</p>
+            </mat-card>
+
+            <mat-card class="stat-card">
+                <h4>Rapide mais faux</h4>
+                <p class="value">{{ fastestTeamWrongAverage() }}</p>
+            </mat-card>
+
+            <mat-card class="stat-card">
+                <h4>Lente</h4>
+                <p class="value">{{ slowestTeamAverage() }}</p>
+            </mat-card>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- REMONTADA -->
+        <h3 class="section-title">Remontada / Dégringolada</h3>
+
+        <div class="table-wrapper">
+            <table class="stats-table">
+                <tr>
+                    <th>Rang</th>
+                    <th>Équipe</th>
+                    <th class="separator-left">Rd 1</th>
+                    <th>Rd 2</th>
+                    <th>Diff</th>
+                </tr>
+
+                <tr *ngFor="let team of remontadaTable(); let i = index">
+                    <td>{{ i + 1 }}.</td>
+                    <td>{{ team.name }}</td>
+                    <td class="separator-left">{{ team.rd1Rank }}</td>
+                    <td>{{ team.rd2Rank }}</td>
+                    <td>{{ team.rd1Rank - team.rd2Rank }}</td>
+                </tr>
+            </table>
+        </div>
+    </mat-expansion-panel>
+
+    <!-- SECTION : RÉPONSES AIMÉES -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Réponses favorites </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="table-wrapper">
+            <table class="stats-table">
+                <tr>
+                    <th>Équipe</th>
+                    <th>Question</th>
+                    <th>Réponse</th>
+                </tr>
+
+                <tr *ngFor="let answer of getLovedAnswers()">
+                    <td>{{ answer.teamName }}</td>
+                    <td>{{ answer.questionID }} - {{ answer.questionText }}</td>
+                    <td>{{ answer.answerText }}</td>
+                </tr>
+            </table>
+        </div>
+    </mat-expansion-panel>
+
+    <!-- SECTION : CLASSEMENT -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Classement général </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="table-wrapper">
+            <table class="stats-table">
+                <tr>
+                    <th>Rang</th>
+                    <th>Équipe</th>
+                    <th>Score</th>
+                </tr>
+
+                <tr *ngFor="let team of teams">
+                    <td>{{ getRanks(team.name) }}</td>
+                    <td>{{ team.name }}</td>
+                    <td>{{ team.score }}</td>
+                </tr>
+            </table>
+        </div>
+    </mat-expansion-panel>
+
+    <!-- SECTION : EXPORT EXCEL -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Détails pour Excel </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="table-wrapper">
+            <table class="stats-table">
+                <tr>
+                    <th>Question</th>
+                    <th>Type</th>
+                    <th>Round</th>
+                    <th>Équipe</th>
+                    <th>Status</th>
+                    <th>Points</th>
+                    <th>Bonus</th>
+                    <th>Bonus erreurs</th>
+                </tr>
+
+                <tr *ngFor="let answer of answers">
+                    <td>{{ answer.questionID }}</td>
+                    <td>
+                        {{ questions[answer.questionID - 1].type }}
+                        <span *ngIf="questions[answer.questionID - 1].type === 'Menu'">
+                            - {{ questions[answer.questionID - 1].group }}
+                        </span>
+                    </td>
+                    <td>{{ questions[answer.questionID - 1].round }}</td>
+                    <td>{{ answer.teamName }}</td>
+                    <td>{{ answer.correct === 1 ? "Y" : answer.correct === 0 ? "N" : "?" }}</td>
+                    <td>{{ answer.points }}</td>
+                    <td>{{ answer.bonus }}</td>
+                    <td>{{ answer.bonusWrongAnswers }}</td>
+                </tr>
+            </table>
+        </div>
     </mat-expansion-panel>
 </mat-accordion>

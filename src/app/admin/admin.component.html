@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="center" mat-stretch-tabs>
+<!-- <mat-tab-group mat-align-tabs="center" mat-stretch-tabs>
     <mat-tab label="Teams" *ngIf="this.teams.length !== 0">
         <app-admin-teams></app-admin-teams>
     </mat-tab>
@@ -18,4 +18,36 @@
     <mat-tab label="Settings">
         <app-admin-settings></app-admin-settings>
     </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
+
+<div class="admin">
+    <!-- <h1 class="title admin-title">
+        <span class="title-blue">Poutine </span>
+        <span class="title-red">Q</span>
+        <span class="title-yellow">u</span>
+        <span class="title-red">i</span>
+        <span class="title-yellow">z</span> – Admin
+    </h1> -->
+
+    <mat-tab-group mat-align-tabs="center" mat-stretch-tabs class="admin-tabs">
+        <mat-tab label="Teams" *ngIf="teams.length > 0">
+            <app-admin-teams></app-admin-teams>
+        </mat-tab>
+
+        <mat-tab label="Questions" *ngIf="questions.length > 0">
+            <app-admin-questions></app-admin-questions>
+        </mat-tab>
+
+        <mat-tab label="Game">
+            <app-admin-game></app-admin-game>
+        </mat-tab>
+
+        <mat-tab label="Résultats">
+            <app-admin-stats></app-admin-stats>
+        </mat-tab>
+
+        <mat-tab label="Settings">
+            <app-admin-settings></app-admin-settings>
+        </mat-tab>
+    </mat-tab-group>
+</div>

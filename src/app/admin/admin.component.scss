@@ -1,0 +1,40 @@
+.admin {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+    padding: var(--space);
+    text-align: center;
+}
+
+.admin-title {
+    font-size: clamp(40px, 10vw, 80px);
+    margin-bottom: var(--space);
+}
+
+.admin-tabs {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: var(--space);
+}
+
+/* Style des onglets Angular Material */
+::ng-deep .mat-tab-label {
+    font-family: var(--font-body);
+    font-size: clamp(16px, 3vw, 24px);
+    color: white !important;
+    font-weight: normal;
+}
+
+::ng-deep .mat-tab-label.mat-tab-label-active {
+    color: var(--color-yellow) !important;
+    font-weight: normal;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: var(--color-yellow) !important;
+}
+
+/* Contenu des onglets */
+::ng-deep .mat-tab-body-content {
+    padding: var(--space);
+}

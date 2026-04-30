@@ -1,100 +1,184 @@
-.mat-expansion-panel-header-title {
-  font-size: 4vw;
-}
-@media screen and (min-width: 750px) {
-  .mat-expansion-panel-header-title {
-      font-size: 30px;
-  }
+// .mat-expansion-panel-header-title {
+//   font-size: 4vw;
+// }
+// @media screen and (min-width: 750px) {
+//   .mat-expansion-panel-header-title {
+//       font-size: 30px;
+//   }
+// }
+
+// p {
+//     font-size: 3vw;
+//     line-height: 3vw;
+// }
+// @media screen and (min-width: 750px) {
+//     p {
+//         font-size: 22.5px;
+//         line-height: 22.5px;
+//     }
+// }
+
+// table {
+//   margin: auto;
+//   font-size: 3vw;
+//   min-width: 90%;
+//   // text-align: justify;
+//   background-color: #424242;
+//   border-radius: 0px 0px 4px 4px;
+// }
+// @media screen and (min-width: 750px) {
+//   table {
+//       font-size: 22.5px;
+//   }
+// }
+
+// table tr {
+// display: flex;
+// border-bottom-width: 1px;
+// border-bottom-style: solid;
+// align-items: center;
+// min-height: 48px;
+// padding: 0 24px;
+// }
+
+// table tr:last-of-type {
+// border-bottom-width: 0px;
+// }
+
+// table td, th{
+// flex: 1;
+// }
+
+// .separator-left {
+//   border-left-width: 1px;
+//   border-left-style: solid;
+// }
+
+// .material-icons {
+//     font-size: 3vw;
+// }
+// @media screen and (min-width: 750px) {
+//     .material-icons {
+//         font-size: 22.5px;
+//     }
+// }
+
+// .red {
+//   background-color: red;
+// }
+
+// .green {
+//   background-color: green;
+// }
+
+// .mat-icon {
+//   height: 4vw;
+//   width: 4vw;
+//   font-size: 4vw;
+// }
+// @media screen and (min-width: 750px) {
+//   .mat-icon {
+//       height: 30px;
+//       width: 30px;
+//       font-size: 30px;
+//     }
+// }
+
+// .material-icons {
+//   line-height: 1.4;
+// }
+
+// div.Stats {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 5vw;
+
+//   .material-icons {
+//     line-height: 1.0;
+//   }
+// }
+
+.stats-accordion {
+    padding: var(--space);
 }
 
-p {
-    font-size: 3vw;
-    line-height: 3vw;
-}
-@media screen and (min-width: 750px) {
-    p {
-        font-size: 22.5px;
-        line-height: 22.5px;
-    }
+/* TITRES */
+.section-title {
+    font-size: clamp(22px, 5vw, 32px);
+    margin: 20px 0 10px;
+    text-align: center;
+    color: var(--color-yellow);
 }
 
-table {
-  margin: auto;
-  font-size: 3vw;
-  min-width: 90%;
-  // text-align: justify;
-  background-color: #424242;
-  border-radius: 0px 0px 4px 4px;
-}
-@media screen and (min-width: 750px) {
-  table {
-      font-size: 22.5px;
-  }
+/* CARTES DE STATS */
+.stats-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space);
+    margin-bottom: var(--space);
 }
 
-table tr {
-display: flex;
-border-bottom-width: 1px;
-border-bottom-style: solid;
-align-items: center;
-min-height: 48px;
-padding: 0 24px;
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space);
+    border-radius: 12px;
+    min-width: 200px;
+    text-align: center;
 }
 
-table tr:last-of-type {
-border-bottom-width: 0px;
+.stat-card h3,
+.stat-card h4 {
+    font-size: clamp(18px, 4vw, 26px);
+    margin-bottom: 8px;
 }
 
-table td, th{
-flex: 1;
+.stat-card .value {
+    font-size: clamp(20px, 5vw, 32px);
+    font-weight: bold;
+}
+
+/* TABLEAUX */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: var(--space);
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #424242;
+    border-radius: 8px;
+    font-size: clamp(14px, 3vw, 22px);
+}
+
+.stats-table tr {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    align-items: center;
+}
+
+.stats-table tr:last-child {
+    border-bottom: none;
+}
+
+.stats-table th,
+.stats-table td {
+    flex: 1;
+    text-align: center;
 }
 
 .separator-left {
-  border-left-width: 1px;
-  border-left-style: solid;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.material-icons {
-    font-size: 3vw;
-}
-@media screen and (min-width: 750px) {
-    .material-icons {
-        font-size: 22.5px;
-    }
-}
-
+/* COULEURS */
 .red {
-  background-color: red;
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 .green {
-  background-color: green;
-}
-
-.mat-icon {
-  height: 4vw;
-  width: 4vw;
-  font-size: 4vw;
-}
-@media screen and (min-width: 750px) {
-  .mat-icon {
-      height: 30px;
-      width: 30px;
-      font-size: 30px;
-    }
-}
-
-.material-icons {
-  line-height: 1.4;
-}
-
-div.Stats {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5vw; 
-  
-  .material-icons {
-    line-height: 1.0;
-  }
+    background-color: rgba(0, 255, 0, 0.3);
 }
