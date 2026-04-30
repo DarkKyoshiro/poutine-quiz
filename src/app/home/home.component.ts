@@ -11,8 +11,8 @@ import { Leaderboard } from "../models/leaderboard.model"
     styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-    teamName!: string
-    state!: string
+    teamName = ""
+    state = ""
     teams: Team[] = []
 
     leaderboards: Leaderboard[] = [
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
                 { rang: 6, nom: "Gravy", score: 31 },
                 { rang: 7, nom: "3 Girls 1 Cup", score: 28 },
                 { rang: 8, nom: "C'est nous!", score: 25 },
-                { rang: 9, nom: "Pompom... Pompom... Pompompompompompompom", score: 23 },
+                { rang: 9, nom: "Pompom... Pompom... Pom pom pom pom pom pom pom", score: 23 },
             ],
         },
         {
@@ -331,7 +331,7 @@ export class HomeComponent implements OnInit {
 
         //Teams refreshment
         this.socket.on("send-teams", (data: any) => {
-            this.teams = Object.keys(data).map((key) => data[key])
+            this.teams = Object.values(data)
         })
     }
 

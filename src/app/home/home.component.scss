@@ -1,73 +1,161 @@
+// label {
+//     display: inline-block;
+//     margin-bottom: 15px;
+// }
+
+// input {
+//     max-width: 400px;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 8vw;
+//     text-align: center;
+//     margin-bottom: 15px;
+//     padding: 0;
+// }
+// @media screen and (min-width: 750px) {
+//     input {
+//        font-size: 60px;
+//     }
+// }
+
+// button {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 5px 20px;
+//     margin: 10px;
+//     // text-align: center;
+//     // text-decoration: none;
+//     // display: inline-block;
+//     font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
+//     font-size: 6vw;
+//   }
+//   @media screen and (min-width: 750px) {
+//       button {
+//          font-size: 45px;
+//       }
+//   }
+
+// #leaderboard {
+//     margin-top: 20px;
+// }
+
+// #scoreTables {
+//     display: flex;
+//     gap: 1vw;
+//     justify-content: center;
+//     flex-wrap: wrap;
+//     align-items: flex-start;
+
+//     table {
+//         border: 1px white solid;
+//     }
+// }
+
+// .styled-table {
+//     border-collapse: collapse;
+//     margin: 25px 0;
+//     font-size: 0.9em;
+//     min-width: 400px;
+// }
+
+// .styled-table thead tr {
+//     background-color: #4CAF50;
+//     color: #ffffff;
+// }
+
+// .styled-table th,
+// .styled-table td {
+//     padding: 12px 15px;
+// }
+
+// .styled-table tbody tr {
+//     border-bottom: 1px solid #dddddd;
+// }
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+    padding-bottom: 40px;
+}
+
+/* HEADER */
+.home-header {
+    margin-bottom: var(--space);
+}
+
+/* FORMULAIRE */
+.join form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space);
+}
+
 label {
-    display: inline-block;
-    margin-bottom: 15px;
+    font-size: clamp(20px, 5vw, 40px);
 }
 
 input {
-    max-width: 400px;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 8vw;
-    text-align: center;
-    margin-bottom: 15px;
-    padding: 0;
-}
-@media screen and (min-width: 750px) {
-    input {
-       font-size: 60px;
-    }
-}
-
-button {
-    background-color: #4CAF50; /* Green */
+    width: min(90%, 400px);
+    font-family: var(--font-body);
+    font-size: clamp(24px, 6vw, 50px);
+    padding: 10px;
+    border-radius: 12px;
     border: none;
-    color: white;
-    padding: 5px 20px;
-    margin: 10px;
-    // text-align: center;
-    // text-decoration: none;
-    // display: inline-block;
-    font-family: 'HooliganJF', Arial, Helvetica, sans-serif;
-    font-size: 6vw;
-  }
-  @media screen and (min-width: 750px) {
-      button {
-         font-size: 45px;
-      }
-  }
-
-#leaderboard {
-    margin-top: 20px;
+    text-align: center;
 }
 
-#scoreTables {
+/* BOUTONS D'ÉQUIPES EXISTANTES */
+.team-buttons {
     display: flex;
-    gap: 1vw;
-    justify-content: center;
     flex-wrap: wrap;
-    align-items: flex-start;
-
-    table {
-        border: 1px white solid;
-    }
+    justify-content: center;
+    gap: var(--space);
 }
 
-.styled-table {
+.team-buttons button {
+    background: #4caf50;
+}
+
+.team-buttons button.logged {
+    background: #d32f2f;
+}
+
+/* LEADERBOARD */
+#leaderboard {
+    margin-top: 40px;
+}
+
+.leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space);
+}
+
+.leaderboard-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leaderboard-card h3 {
+    margin-bottom: var(--space);
+    font-size: clamp(22px, 5vw, 40px);
+}
+
+table {
+    width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    min-width: 400px;
 }
 
-.styled-table thead tr {
-    background-color: #4CAF50;
-    color: #ffffff;
+thead {
+    background: #4caf50;
 }
 
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }

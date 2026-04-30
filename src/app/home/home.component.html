@@ -1,22 +1,44 @@
+<!-- <div id="header">
+    <h1 class="title">
+        <span class="title-blue">Poutine</span><br /><span class="title-red">Q</span
+        ><span class="title-yellow">u</span><span class="title-red">i</span
+        ><span class="title-yellow">z</span>
+    </h1>
+
+</div>
+
 <div>
-    <p *ngIf="state === '/rejected'">Ce nom d'équipe est déjà pris. Merci d'en choisir un autre ou de contacter la Grande Frite !</p>
-    <p *ngIf="state === '/disconnected'">Vous venez d'être déconnecté de force. Veuillez vous reconnecter ou contactez la Grande Frite !</p>
+    <p *ngIf="state === '/rejected'">
+        Ce nom d'équipe est déjà pris. Merci d'en choisir un autre ou de contacter la Grande Frite !
+    </p>
+    <p *ngIf="state === '/disconnected'">
+        Vous venez d'être déconnecté de force. Veuillez vous reconnecter ou contactez la Grande
+        Frite !
+    </p>
 
     <form #loginForm="ngForm" (ngSubmit)="onJoin(loginForm)">
-        <label for="teamName">Nom de l'équipe: </label><br>
-        <input type="text" id="teamName" name="teamName" [(ngModel)]="teamName"><br>
+        <label for="teamName">Nom de l'équipe: </label><br />
+        <input type="text" id="teamName" name="teamName" [(ngModel)]="teamName" /><br />
 
         <button type="submit">Rejoindre</button>
     </form>
 </div>
-<br>
+<br />
 
 <div *ngIf="teams.length > 0">
     <h1>Votre équipe est déjà inscrite, retrouvez la ici:</h1>
-    <p><span *ngFor="let team of teams"><button (click)="onFillTeam(team.name, team.logged)" [style.background-color]="team.logged ? 'red' : '#4CAF50'">{{team.name}}</button> </span></p>
+    <p>
+        <span *ngFor="let team of teams"
+            ><button
+                (click)="onFillTeam(team.name, team.logged)"
+                [style.background-color]="team.logged ? 'red' : '#4CAF50'">
+                {{ team.name }}
+            </button>
+        </span>
+    </p>
 </div>
 
-<br>
+<br />
 <button routerLink="qform">Proposer une question</button>
 
 <div id="leaderboard">
@@ -26,7 +48,7 @@
         <table *ngFor="let leaderboard of leaderboards" class="styled-table">
             <thead>
                 <tr>
-                    <th colspan="3">{{leaderboard.titre}}</th>
+                    <th colspan="3">{{ leaderboard.titre }}</th>
                 </tr>
                 <tr>
                     <th>Rang</th>
@@ -36,1095 +58,96 @@
             </thead>
             <tbody>
                 <tr *ngFor="let team of leaderboard.teams">
-                    <td>{{team.rang}}</td>
-                    <td>{{team.nom}}</td>
-                    <td>{{team.score}}</td>
+                    <td>{{ team.rang }}</td>
+                    <td>{{ team.nom }}</td>
+                    <td>{{ team.score }}</td>
                 </tr>
             </tbody>
         </table>
-
-
-
-
-
-        <!-- <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S03E02 - Spécial Kaamelott</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les petits pédestres</td>
-                    <td>73</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Last and very much least</td>
-                    <td>65</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les cons qui st'adorent</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les gros faisans dont une à la dinde</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les fleurs en bouquet fanent</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Les culs de chouette</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Pays de Galle indépendant!</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Le caca des pigeons c'est caca</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Pain au chocolatine</td>
-                    <td>49</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>Quolifichet</td>
-                    <td>42</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>Les semi-croustillants</td>
-                    <td>40</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S03E01 - Juste pour vos oreilles (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Chépa</td>
-                    <td>66</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Martine à la plage</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les Pascal au bistro</td>
-                    <td>61</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Clo-eh</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>LOREM IPSUM</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les Janine's</td>
-                    <td>59</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S03E01 - Juste pour vos oreilles</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Last and very much least</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Nom de l'équipe</td>
-                    <td>58</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les lobe-sters</td>
-                    <td>58</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>La tribu de Vincent</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les concombres de mer</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Sympatouchs</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>La fièvre du mercredi soir</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Le haut du Florent Pagny</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Pain au Chocolatine</td>
-                    <td>54</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>Dingdengue</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>Les 2 dennavent</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>12.</td>
-                    <td>Les pétillants</td>
-                    <td>48</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E04 (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les Barakis</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Les Brestois</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Les croquants</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les Maximes</td>
-                    <td>63</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Sky is the limit</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Jean-Pierre</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>CerealKillers</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Les inconnus</td>
-                    <td>55</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E04</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Le Nom 2 l'Équipe</td>
-                    <td>66</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>A.b.c et donc d.</td>
-                    <td>65</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les canneverges</td>
-                    <td>65</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Pas de thème, pas de nom de team</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Lesmoumebons</td>
-                    <td>63</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Noix de coucouille</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Popoyo</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Martine à la plage</td>
-                    <td>58</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Les jalapeños</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>John et ses drôles de dames</td>
-                    <td>52</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E03 - Spécial Disney (Réseautage)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Tiagoteam</td>
-                    <td>71</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les Gauloisesn</td>
-                    <td>63</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Disneyland Paris</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Hakuna Matata</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les Chapeliers Fou</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les inconnus</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Peine et Panique</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Lilo et les Bitches</td>
-                    <td>55</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Winnie bourbon</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>Les léopards fleuris</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>MC</td>
-                    <td>51</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E03 - Spécial Disney (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Pinocchu</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Des Mandales ou Rien</td>
-                    <td>61</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Sky is the Limit</td>
-                    <td>61</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Nom de l'équipe</td>
-                    <td>55</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Hakuna Meta</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Vétéran CRL</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les aristochats</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Qui Pro Quo</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Les Torch Bears</td>
-                    <td>48</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E03 - Spécial Disney</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Le LAB</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les Croquants Bouches</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Tanguy's Angels</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les bébés Yoda</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les deux font la paire</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Gérard, Bernard et Bianca</td>
-                    <td>55</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Pain au chocolatine</td>
-                    <td>49</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Walt The Fuck</td>
-                    <td>48</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Les Chewies</td>
-                    <td>44</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>Les Ratatatouilles</td>
-                    <td>42</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E02 - Spécial Cérémonie des Oscars (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les serial quizzer</td>
-                    <td>54</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les fauxmages en grain</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les Prix Nobels</td>
-                    <td>37</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les jeudis Roberto</td>
-                    <td>34</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E02 - Spécial Cérémonie des Oscars</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Pain au chocolatine</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Le commandant des batardes</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les rapides et dangereux 4</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Danse Lassive</td>
-                    <td>48</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Le LAB</td>
-                    <td>48</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Nom de l'équipe</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Papy fait de la résistance</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Wild</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>John</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Les Einsteins</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>La bolée toulousaine</td>
-                    <td>44</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>Tanguy's Angels</td>
-                    <td>44</td>
-                </tr>
-                <tr>
-                    <td>13.</td>
-                    <td>Sky is the limit</td>
-                    <td>43</td>
-                </tr>
-                <tr>
-                    <td>14.</td>
-                    <td>Pegrilosos</td>
-                    <td>29</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S02E01 - Spécial Astérix et Obélix</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Nom de l'équipe</td>
-                    <td>65</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Laurix et ses amix</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Equipe Rocco</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les invaincus</td>
-                    <td>42</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Cékoile-coduwifix</td>
-                    <td>40</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Les Sangliers flamboyants</td>
-                    <td>39</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Rizabolix</td>
-                    <td>37</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Floyacéka</td>
-                    <td>37</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>Hibiscus</td>
-                    <td>33</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>M&M's</td>
-                    <td>33</td>
-                </tr>
-                <tr>
-                    <td>11.</td>
-                    <td>C'est la fête à Célia</td>
-                    <td>31</td>
-                </tr>
-                <tr>
-                    <td>12.</td>
-                    <td>John</td>
-                    <td>26</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E04 - Spécial Enquête Spéciale</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les croustillants</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Usual suspects</td>
-                    <td>43.5</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les experts roses</td>
-                    <td>42.5</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les voyageurs</td>
-                    <td>39.5</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Jour du Chabat</td>
-                    <td>39</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Tâche de gras</td>
-                    <td>38.5</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les Patatulacci (agent de la paix avant tout)</td>
-                    <td>36</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Team Cloé</td>
-                    <td>35.5</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E03 - Spécial Harry Potter (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Team Harry Poutine</td>
-                    <td>78</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>The three teachers</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Romain</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Pour ou contre Souffle ?</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les POUFs d'Or</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Random Gryffondor Students n°4</td>
-                    <td>49</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Estelle & Lucile</td>
-                    <td>39</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>On fait ce qu'on peut</td>
-                    <td>35</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E03 - Spécial Harry Potter</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les anglophones</td>
-                    <td>83</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Havada pas de bras</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Les hermionettes</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les AFFREUX GRYFFONS</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les Weasley presque pas roux (mais presque!)</td>
-                    <td>50.5</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Les belles couettes</td>
-                    <td>46.5</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les Gris Condors</td>
-                    <td>17.5</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E02 - Spécial Alain Chabat (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Nom d'équipe</td>
-                    <td>72</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Avec Laura</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Guigui's groupies</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Le grand collisionneur</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Les Affreux</td>
-                    <td>65</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Les moutons en boite</td>
-                    <td>64</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>La team Hortons</td>
-                    <td>63.5</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Il s'en phalus de peu</td>
-                    <td>63</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E02 - Spécial Alain Chabat</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Chabateam</td>
-                    <td>82</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>LES BOLOSSSSSS</td>
-                    <td>76</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Srirecha</td>
-                    <td>71</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les Beautés</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Maiiiis Noooon...!</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>BECHAMEL</td>
-                    <td>66.5</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les chocolatines</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>Les nuls</td>
-                    <td>49</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E01 (Rediffusion)</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les oreilles de crisse</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Samouraï</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>L'équipe Rocco</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>cool&#64;gmail.com</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Sauce brune</td>
-                    <td>50.5</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Les Saucisses</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les relishes de la mort</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>THOMAS/ROMAIN/GAËTAN</td>
-                    <td>44</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th colspan="3">S01E01</th>
-                </tr>
-                <tr>
-                    <th>Rang</th>
-                    <th>Équipe</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Les affreux</td>
-                    <td>56.5</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Les cookies masqués</td>
-                    <td>56</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Poutine tartiflette</td>
-                    <td>54</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Les 100/100 tord</td>
-                    <td>53.5</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>Mayo-Harissa</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>Kas Kuy</td>
-                    <td>49</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les Ostis de Francis</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>Les Cariocas</td>
-                    <td>46</td>
-                </tr>
-            </tbody>
-        </table> -->
     </div>
+</div> -->
+
+<div class="home">
+    <!-- HEADER -->
+    <header class="home-header">
+        <h1 class="title">
+            <span class="title-blue">Poutine</span><br />
+            <span class="title-red">Q</span><span class="title-yellow">u</span
+            ><span class="title-red">i</span><span class="title-yellow">z</span>
+        </h1>
+    </header>
+
+    <!-- MESSAGES D'ÉTAT -->
+    <section class="status" *ngIf="state === '/rejected' || state === '/disconnected'">
+        <p *ngIf="state === '/rejected'">
+            Ce nom d'équipe est déjà pris. Merci d'en choisir un autre ou de contacter la Grande
+            Frite !
+        </p>
+        <p *ngIf="state === '/disconnected'">
+            Vous venez d'être déconnecté de force. Veuillez vous reconnecter ou contactez la Grande
+            Frite !
+        </p>
+    </section>
+
+    <!-- FORMULAIRE -->
+    <section class="join">
+        <form #loginForm="ngForm" (ngSubmit)="onJoin(loginForm)">
+            <label for="teamName">Nom de l'équipe</label>
+            <input
+                type="text"
+                id="teamName"
+                name="teamName"
+                [(ngModel)]="teamName"
+                placeholder="Votre équipe" />
+            <button type="submit">Rejoindre</button>
+        </form>
+    </section>
+
+    <!-- ÉQUIPES EXISTANTES -->
+    <section class="existing-teams" *ngIf="teams.length > 0">
+        <h2>Votre équipe est déjà inscrite :</h2>
+
+        <div class="team-buttons">
+            <button
+                *ngFor="let team of teams"
+                (click)="onFillTeam(team.name, team.logged)"
+                [class.logged]="team.logged">
+                {{ team.name }}
+            </button>
+        </div>
+    </section>
+
+    <!-- LIEN QUESTION -->
+    <!-- <section class="question-link">
+      <h2>Vous souhaitez proposer une question ?</h2>
+        <button routerLink="qform">Proposer une question</button>
+    </section> -->
+
+    <!-- LEADERBOARD -->
+    <section id="leaderboard">
+        <h2>Leader Board</h2>
+
+        <div class="leaderboard-grid">
+            <div class="leaderboard-card" *ngFor="let lb of leaderboards">
+                <h3>{{ lb.titre }}</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rang</th>
+                            <th>Équipe</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let team of lb.teams">
+                            <td>{{ team.rang }}</td>
+                            <td>{{ team.nom }}</td>
+                            <td>{{ team.score }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </div>
