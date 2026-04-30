@@ -1,4 +1,4 @@
-<div id="question">
+<!-- <div id="question">
     <mat-card class="details">
         <ng-container *ngIf="this.questionID > 0 && this.questionID <= this.questions.length">
             <mat-card-header>
@@ -20,9 +20,9 @@
                         [value]="(100 * questionID) / (questions.length + 1)">
                     </mat-progress-bar>
                 </mat-card-subtitle>
-                <mat-card-title>
-                    <!-- Sel ou poivre categories -->
-                    <p
+                <mat-card-title> -->
+<!-- Sel ou poivre categories -->
+<!-- <p
                         class="comment"
                         *ngIf="questions[this.questionID - 1].type === 'SelOuPoivre'">
                         <ng-container
@@ -44,17 +44,17 @@
                                 ) | number : "1.0-1"
                             }}%)</ng-container
                         >
-                    </p>
-                    <!-- Question -->
-                    <p>{{ questions[this.questionID - 1].question }}</p>
+                    </p> -->
+<!-- Question -->
+<!-- <p>{{ questions[this.questionID - 1].question }}</p>
                     <p class="comment" *ngIf="questions[this.questionID - 1].questionComment">
                         {{ questions[this.questionID - 1].questionComment }}
                     </p>
                 </mat-card-title>
-            </mat-card-header>
+            </mat-card-header> -->
 
-            <!-- Propositions -->
-            <mat-card-content
+<!-- Propositions -->
+<!-- <mat-card-content
                 *ngIf="questions[this.questionID - 1].type === 'Nugget'"
                 style="white-space: pre-wrap">
                 <p
@@ -121,10 +121,9 @@
                 </div>
             </mat-card-content>
         </ng-container>
-    </mat-card>
-
+    </mat-card> -->
+<!--
     <mat-card class="controller">
-        <!-- Slides management -->
         <div id="question-management">
             <p>Questions</p>
             <mat-divider></mat-divider>
@@ -247,34 +246,6 @@
                 </button>
             </span>
         </div>
-
-        <!-- <mat-divider *ngIf="this.questions.length > 0 && this.questionID > 0"></mat-divider>
-
-    <div id="slide-management">
-      !Steps management
-      <ng-container *ngIf="this.questions.length !== 0 && this.questionID > 0 && this.questionID <= this.questions.length">
-            <br>
-            <button mat-icon-button aria-label="Show Question" (click)="onShowQuestion()">
-                <mat-icon *ngIf="questions[this.questionID-1].showQuestion">hide_source</mat-icon>
-                <mat-icon *ngIf="!questions[this.questionID-1].showQuestion">question_mark</mat-icon>
-            </button>
-            <ng-container *ngIf="questions[this.questionID-1].propositionsDetailed">
-                <button mat-icon-button aria-label="Previous step" (click)="onPreviousStep(questions[this.questionID-1].propositionsStep - 1)">
-                    <mat-icon>arrow_left</mat-icon>
-                </button>
-                <span class="step">{{questions[this.questionID-1].propositionsStep}}</span>
-                <button mat-icon-button aria-label="Previous step" (click)="onNextStep(questions[this.questionID-1].propositionsStep + 1)">
-                    <mat-icon>arrow_right</mat-icon>
-                </button>
-            </ng-container>
-            <ng-container *ngIf="questions[this.questionID-1].locked">
-                <button mat-icon-button aria-label="Hide answer" (click)="onShowAnswer()">
-                    <mat-icon *ngIf="questions[this.questionID-1].showAnswer">hide_source</mat-icon>
-                    <mat-icon *ngIf="!questions[this.questionID-1].showAnswer">done_all</mat-icon>
-                </button>
-            </ng-container>
-        </ng-container>
-    </div> -->
     </mat-card>
 </div>
 
@@ -389,6 +360,385 @@
                     (click)="onFavorite(answer.teamName, answer.questionID)">
                     <mat-icon>favorite</mat-icon>
                 </button>
+                <button
+                    mat-mini-fab
+                    color="warn"
+                    aria-label="Unlike"
+                    *ngIf="answer.favorite"
+                    (click)="onFavorite(answer.teamName, answer.questionID)">
+                    <mat-icon>heart_broken</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</div> -->
+
+<div class="admin-game-layout">
+    <!-- COLONNE GAUCHE : QUESTION & DÉTAILS -->
+    <section id="question">
+        <mat-card class="details">
+            <ng-container *ngIf="questionID > 0 && questionID <= questions.length">
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Round #{{ questions[questionID - 1].round }} |
+                        {{ questions[questionID - 1].type }}
+                        <span *ngIf="questions[questionID - 1].group">
+                            - {{ questions[questionID - 1].group }}
+                        </span>
+                        | Q{{ questions[questionID - 1].id }} |
+                        {{ questions[questionID - 1].points }} pts | Réponses :
+                        {{ getNumberAnswers() }}/{{ teams.length | number: "1.0" }}
+                        <ng-container *ngIf="questions[questionID - 1].type === 'Tips'">
+                            | Mise moyenne : {{ getMeanPoints() | number: "1.0-1" }}
+                        </ng-container>
+                        <mat-progress-bar
+                            color="primary"
+                            mode="determinate"
+                            [value]="(100 * questionID) / (questions.length + 1)">
+                        </mat-progress-bar>
+                    </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <!-- Sel ou Poivre : catégories + % -->
+                    <p class="comment" *ngIf="questions[questionID - 1].type === 'SelOuPoivre'">
+                        <ng-container
+                            *ngFor="
+                                let proposition of questions[questionID - 1].propositionsDetailed;
+                                index as i
+                            ">
+                            <ng-container *ngIf="i > 0">, </ng-container>
+                            <ng-container
+                                *ngIf="
+                                    i + 1 === questions[questionID - 1].propositionsDetailed?.length
+                                ">
+                                ou
+                            </ng-container>
+                            {{ proposition }}
+                            ({{
+                                getPercentAnswer(questions[questionID - 1]?.propositionsShort[i])
+                                    | number: "1.0-1"
+                            }}%)
+                        </ng-container>
+                    </p>
+
+                    <!-- Question -->
+                    <p>{{ questions[questionID - 1].question }}</p>
+                    <p class="comment" *ngIf="questions[questionID - 1].questionComment">
+                        {{ questions[questionID - 1].questionComment }}
+                    </p>
+
+                    <!-- Propositions détaillées (Nugget) -->
+                    <mat-card-content
+                        *ngIf="questions[questionID - 1].type === 'Nugget'"
+                        style="white-space: pre-wrap">
+                        <p
+                            class="comment"
+                            *ngFor="
+                                let proposition of questions[questionID - 1].propositionsDetailed;
+                                index as i
+                            ">
+                            {{
+                                getPercentAnswer(questions[questionID - 1]?.propositionsShort[i])
+                                    | number: "1.0-1"
+                            }}% {{ questions[questionID - 1]?.propositionsShort[i] }}.
+                            {{ proposition }}
+                        </p>
+                    </mat-card-content>
+
+                    <mat-divider></mat-divider>
+
+                    <!-- Réponse -->
+                    <p>{{ questions[questionID - 1].answer }}</p>
+                    <p class="comment" *ngIf="questions[questionID - 1].answerComment">
+                        {{ questions[questionID - 1].answerComment }}
+                    </p>
+
+                    <!-- Rapidité + rattrapages -->
+                    <div *ngIf="questions[questionID - 1].speed" class="speed-bonus-wrapper">
+                        <div id="speed">
+                            <mat-divider></mat-divider>
+                            <p>Rapidité :</p>
+                            <div class="speedResults">
+                                <p
+                                    class="comment"
+                                    *ngFor="let result of getTimeString(); index as i"
+                                    [ngClass]="
+                                        result.correct > 0
+                                            ? 'green'
+                                            : result.correct === 0
+                                              ? 'red'
+                                              : 'yellow'
+                                    "
+                                    [matBadge]="result.bonus"
+                                    [matBadgeHidden]="result.bonus === 0"
+                                    matBadgeOverlap="false"
+                                    matBadgePosition="after">
+                                    <mat-icon *ngIf="result.correct === 0">close</mat-icon>
+                                    <mat-icon *ngIf="result.correct < 0">question_mark</mat-icon>
+                                    <mat-icon *ngIf="result.correct > 0">check</mat-icon>
+                                    <span>{{ i + 1 }}. {{ result.result }}</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="bonus">
+                            <mat-divider></mat-divider>
+                            <p>Rattrapages :</p>
+                            <div class="speedResults">
+                                <p
+                                    class="comment red"
+                                    *ngFor="let result of getBonusWrongAnswersString(); index as i">
+                                    {{ result.team }} ({{ result.points }})
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </ng-container>
+        </mat-card>
+    </section>
+
+    <!-- COLONNE DROITE : CONTRÔLES -->
+    <section class="controller">
+        <!-- Gestion des questions -->
+        <div id="question-management">
+            <p>Questions</p>
+            <mat-divider></mat-divider>
+
+            <button
+                mat-icon-button
+                aria-label="Question précédente"
+                (click)="onPrevious(questionID - 1)"
+                *ngIf="questions.length !== 0 && questionID > 0">
+                <mat-icon>fast_rewind</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Verrouiller / déverrouiller"
+                (click)="onCorrection()"
+                *ngIf="questions.length !== 0 && questionID > 0 && questionID <= questions.length">
+                <mat-icon *ngIf="questions[questionID - 1].locked">lock</mat-icon>
+                <mat-icon *ngIf="!questions[questionID - 1].locked">lock_open</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Valider les réponses"
+                (click)="onValidate()"
+                *ngIf="
+                    questions.length !== 0 &&
+                    questionID > 0 &&
+                    questionID <= questions.length &&
+                    questions[questionID - 1].locked
+                ">
+                <mat-icon>published_with_changes</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Réinitialiser les scores de la question"
+                (click)="onResetScores()"
+                *ngIf="questions.length !== 0 && questionID > 0 && questionID <= questions.length">
+                <mat-icon>restart_alt</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Question suivante"
+                (click)="onNext(questionID + 1)"
+                *ngIf="questions.length !== 0 && questionID <= questions.length - 1">
+                <mat-icon>fast_forward</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Démarrer le quiz"
+                (click)="onStartQuiz()"
+                *ngIf="questions.length === 0">
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+        </div>
+
+        <!-- Timer -->
+        <div id="timer-management" *ngIf="questions.length > 0 && questionID > 0">
+            <p>Timer</p>
+            <mat-divider></mat-divider>
+
+            <span
+                class="timer-display"
+                [style.color]="timer <= 5 ? 'red' : timer <= 15 ? 'yellow' : ''">
+                {{ timer }} sec
+            </span>
+            <br />
+
+            <button
+                mat-icon-button
+                aria-label="Démarrer le timer"
+                (click)="onStartTimer()"
+                *ngIf="!timerActive">
+                <mat-icon>timer</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Mettre en pause le timer"
+                (click)="onPauseTimer()"
+                *ngIf="timerActive">
+                <mat-icon>timer_off</mat-icon>
+            </button>
+
+            <button mat-icon-button aria-label="Réinitialiser le timer" (click)="onResetTimer()">
+                <mat-icon>restart_alt</mat-icon>
+            </button>
+
+            <button mat-icon-button aria-label="Ajouter 10 secondes" (click)="onExtendTimer()">
+                <mat-icon>timer_10_alt_1</mat-icon>
+            </button>
+        </div>
+
+        <!-- Tips -->
+        <div id="tips-management" *ngIf="questions[questionID - 1]?.type === 'Tips'">
+            <p>Tips</p>
+            <mat-divider></mat-divider>
+
+            <button
+                mat-icon-button
+                aria-label="Verrouiller les mises"
+                (click)="onLockBets()"
+                *ngIf="betActive">
+                <mat-icon>vpn_key</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
+                aria-label="Déverrouiller les mises"
+                (click)="onLockBets()"
+                *ngIf="!betActive">
+                <mat-icon>lock_reset</mat-icon>
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- RÉPONSES DES ÉQUIPES -->
+<div id="answers">
+    <ng-container *ngFor="let answer of answers; let i = index">
+        <mat-card
+            class="answer-card"
+            *ngIf="answer.questionID === questionID"
+            [ngClass]="
+                answer.correct > 0
+                    ? 'correct'
+                    : answer.correct === 0
+                      ? 'incorrect'
+                      : isMenuActive(answer.teamName)
+                        ? 'menu'
+                        : ''
+            ">
+            <mat-card-header>
+                <button
+                    mat-mini-fab
+                    mat-card-avatar
+                    [matBadge]="
+                        answer.points + answer.bonusSpeed + answer.bonusWrongAnswers + answer.bonus
+                    "
+                    [matBadgeHidden]="
+                        answer.points +
+                            answer.bonusSpeed +
+                            answer.bonusWrongAnswers +
+                            answer.bonus ===
+                        0
+                    "
+                    matBadgeOverlap="true"
+                    matBadgePosition="before">
+                    {{ getTeamScore(answer.teamName) }}
+                </button>
+                <mat-card-title>
+                    <p>{{ answer.teamName }}</p>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <mat-divider></mat-divider>
+                <p>
+                    {{ answer.answer }}
+                    <span *ngIf="questions[questionID - 1].type === 'Tips'">
+                        ({{ answer.pointsBet }})
+                    </span>
+                </p>
+                <mat-divider *ngIf="answer.answer"></mat-divider>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button
+                    mat-mini-fab
+                    color="accent"
+                    aria-label="Bonne réponse"
+                    (click)="onValidAnswer(i, 1)"
+                    [matBadge]="answer.points"
+                    [matBadgeHidden]="answer.points === 0"
+                    matBadgeOverlap="true"
+                    matBadgePosition="after">
+                    <mat-icon>check_circle</mat-icon>
+                </button>
+
+                <button
+                    mat-mini-fab
+                    color="warn"
+                    aria-label="Mauvaise réponse"
+                    (click)="onValidAnswer(i, 0)"
+                    [matBadge]="answer.bonusWrongAnswers"
+                    [matBadgeHidden]="answer.bonusWrongAnswers === 0"
+                    matBadgeOverlap="true"
+                    matBadgePosition="after">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+
+                <button
+                    mat-mini-fab
+                    color="primary"
+                    aria-label="Réinitialiser la correction"
+                    (click)="onValidAnswer(i, -1)">
+                    <mat-icon>autorenew</mat-icon>
+                </button>
+
+                <button mat-mini-fab color="accent" aria-label="Bonus +" (click)="onBonus(i, 1)">
+                    <mat-icon
+                        [matBadge]="answer.bonus"
+                        [matBadgeHidden]="answer.bonus <= 0"
+                        matBadgeOverlap="false">
+                        thumb_up
+                    </mat-icon>
+                </button>
+
+                <button mat-mini-fab color="warn" aria-label="Bonus -" (click)="onBonus(i, -1)">
+                    <mat-icon
+                        [matBadge]="answer.bonus"
+                        [matBadgeHidden]="answer.bonus >= 0"
+                        matBadgeOverlap="false">
+                        thumb_down
+                    </mat-icon>
+                </button>
+
+                <button
+                    mat-mini-fab
+                    color="primary"
+                    aria-label="Effacer la réponse"
+                    (click)="onClear(answer.teamName, answer.questionID)">
+                    <mat-icon>refresh</mat-icon>
+                </button>
+
+                <button
+                    mat-mini-fab
+                    color="accent"
+                    aria-label="Like"
+                    *ngIf="!answer.favorite"
+                    (click)="onFavorite(answer.teamName, answer.questionID)">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+
                 <button
                     mat-mini-fab
                     color="warn"
