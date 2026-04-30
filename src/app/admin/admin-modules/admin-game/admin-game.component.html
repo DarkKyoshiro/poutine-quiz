@@ -449,7 +449,7 @@
                     <mat-divider></mat-divider>
 
                     <!-- Réponse -->
-                    <p>{{ questions[questionID - 1].answer }}</p>
+                    <p style="color: var(--color-blue)">{{ questions[questionID - 1].answer }}</p>
                     <p class="comment" *ngIf="questions[questionID - 1].answerComment">
                         {{ questions[questionID - 1].answerComment }}
                     </p>
@@ -504,7 +504,6 @@
         <!-- Gestion des questions -->
         <div id="question-management">
             <p>Questions</p>
-            <mat-divider></mat-divider>
 
             <button
                 mat-icon-button
@@ -533,7 +532,7 @@
                     questionID <= questions.length &&
                     questions[questionID - 1].locked
                 ">
-                <mat-icon>published_with_changes</mat-icon>
+                <mat-icon>check</mat-icon>
             </button>
 
             <button
@@ -562,16 +561,15 @@
         </div>
 
         <!-- Timer -->
+        <!-- prettier-ignore -->
         <div id="timer-management" *ngIf="questions.length > 0 && questionID > 0">
             <p>Timer</p>
-            <mat-divider></mat-divider>
 
             <span
                 class="timer-display"
                 [style.color]="timer <= 5 ? 'red' : timer <= 15 ? 'yellow' : ''">
                 {{ timer }} sec
             </span>
-            <br />
 
             <button
                 mat-icon-button
@@ -601,7 +599,6 @@
         <!-- Tips -->
         <div id="tips-management" *ngIf="questions[questionID - 1]?.type === 'Tips'">
             <p>Tips</p>
-            <mat-divider></mat-divider>
 
             <button
                 mat-icon-button
@@ -658,6 +655,38 @@
                 <mat-card-title>
                     <p>{{ answer.teamName }}</p>
                 </mat-card-title>
+
+                <mat-card-actions>
+                    <button
+                        mat-mini-fab
+                        color="accent"
+                        aria-label="Bonus +"
+                        (click)="onBonus(i, 1)">
+                        <mat-icon
+                            [matBadge]="answer.bonus"
+                            [matBadgeHidden]="answer.bonus <= 0"
+                            matBadgeOverlap="false">
+                            thumb_up
+                        </mat-icon>
+                    </button>
+
+                    <button mat-mini-fab color="warn" aria-label="Bonus -" (click)="onBonus(i, -1)">
+                        <mat-icon
+                            [matBadge]="answer.bonus"
+                            [matBadgeHidden]="answer.bonus >= 0"
+                            matBadgeOverlap="false">
+                            thumb_down
+                        </mat-icon>
+                    </button>
+
+                    <button
+                        mat-mini-fab
+                        color="primary"
+                        aria-label="Effacer la réponse"
+                        (click)="onClear(answer.teamName, answer.questionID)">
+                        <mat-icon>refresh</mat-icon>
+                    </button>
+                </mat-card-actions>
             </mat-card-header>
 
             <mat-card-content>
@@ -667,7 +696,25 @@
                     <span *ngIf="questions[questionID - 1].type === 'Tips'">
                         ({{ answer.pointsBet }})
                     </span>
+                    <button
+                        mat-mini-fab
+                        color="accent"
+                        aria-label="Like"
+                        *ngIf="!answer.favorite"
+                        (click)="onFavorite(answer.teamName, answer.questionID)">
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+
+                    <button
+                        mat-mini-fab
+                        color="warn"
+                        aria-label="Unlike"
+                        *ngIf="answer.favorite"
+                        (click)="onFavorite(answer.teamName, answer.questionID)">
+                        <mat-icon>heart_broken</mat-icon>
+                    </button>
                 </p>
+
                 <mat-divider *ngIf="answer.answer"></mat-divider>
             </mat-card-content>
 
@@ -702,50 +749,6 @@
                     aria-label="Réinitialiser la correction"
                     (click)="onValidAnswer(i, -1)">
                     <mat-icon>autorenew</mat-icon>
-                </button>
-
-                <button mat-mini-fab color="accent" aria-label="Bonus +" (click)="onBonus(i, 1)">
-                    <mat-icon
-                        [matBadge]="answer.bonus"
-                        [matBadgeHidden]="answer.bonus <= 0"
-                        matBadgeOverlap="false">
-                        thumb_up
-                    </mat-icon>
-                </button>
-
-                <button mat-mini-fab color="warn" aria-label="Bonus -" (click)="onBonus(i, -1)">
-                    <mat-icon
-                        [matBadge]="answer.bonus"
-                        [matBadgeHidden]="answer.bonus >= 0"
-                        matBadgeOverlap="false">
-                        thumb_down
-                    </mat-icon>
-                </button>
-
-                <button
-                    mat-mini-fab
-                    color="primary"
-                    aria-label="Effacer la réponse"
-                    (click)="onClear(answer.teamName, answer.questionID)">
-                    <mat-icon>refresh</mat-icon>
-                </button>
-
-                <button
-                    mat-mini-fab
-                    color="accent"
-                    aria-label="Like"
-                    *ngIf="!answer.favorite"
-                    (click)="onFavorite(answer.teamName, answer.questionID)">
-                    <mat-icon>favorite</mat-icon>
-                </button>
-
-                <button
-                    mat-mini-fab
-                    color="warn"
-                    aria-label="Unlike"
-                    *ngIf="answer.favorite"
-                    (click)="onFavorite(answer.teamName, answer.questionID)">
-                    <mat-icon>heart_broken</mat-icon>
                 </button>
             </mat-card-actions>
         </mat-card>

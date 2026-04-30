@@ -35,7 +35,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         private socket: Socket,
         private questionsService: QuestionsService,
         private dialog: MatDialog,
-        private _snackBar: MatSnackBar
+        private _snackBar: MatSnackBar,
     ) {}
 
     ngOnInit(): void {
@@ -135,7 +135,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
                     "OK",
                     {
                         duration: this.durationInSeconds * 1000,
-                    }
+                    },
                 )
             }
         })
@@ -423,7 +423,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         let answers: Answer[] = []
 
         this.answers.forEach((answer) => {
-            if (answer.questionID === this.questionID) {
+            if (answer.questionID === this.questionID && answer.answer) {
                 answers.push(answer)
             }
         })
@@ -472,7 +472,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     getNumberAnswers(): number {
         let numberAnswers: number = 0
         numberAnswers = this.answers.filter(
-            (answer) => answer.questionID === this.questionID && answer.answer !== ""
+            (answer) => answer.questionID === this.questionID && answer.answer !== "",
         ).length
 
         return numberAnswers
