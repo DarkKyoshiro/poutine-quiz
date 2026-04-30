@@ -1,44 +1,89 @@
-<!-- Before start -->
-<div *ngIf="this.questionID === 0" id="WaitRoom">
-    <p>Merci de patienter. La grande frite commencera le quiz sous peu.</p>
-</div>
+<div class="game">
+    <!-- HEADER SCORE -->
+    <header id="header" *ngIf="questionID > 0 && questionID <= questions.length - 1">
+        <h2>
+            {{ teamName }}
+            (Grp:
+            <span *ngIf="questions[questionID - 1].round === 1">{{ group1 }}</span>
+            <span *ngIf="questions[questionID - 1].round === 2">{{ group2 }}</span>
+            ) : {{ getScore(teamName) }}
+            <img src="assets/frite.png" alt="Frites" class="frite-icon" />
+            <button class="detail" (click)="onScoreDetailTrigger()">Détails</button>
+        </h2>
+    </header>
 
-<!-- After start -->
-<div *ngIf="this.questionID > this.questions.length-1 && this.questions.length > 0" id="Endgame">
-    <h2>Classement</h2>
-    <p>Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à bientôt</p>
-    <table>
-        <tr>
-            <th>Rang</th>
-            <th>Équipe</th>
-            <th>Score</th>
-        </tr>
-        <tr *ngFor="let team of this.teams; let i=index">
-            <td>{{getRanks(team.name)}}.</td>
-            <td>{{team.name}}</td>
-            <td>{{team.score}}</td>
-        </tr>
-    </table>
-</div>
-
-<!-- Team score -->
-<div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length-1">
-    <h2>{{teamName}} (Grp: <span *ngIf="questions[questionID - 1].round === 1">{{group1}}</span><span *ngIf="questions[questionID - 1].round === 2">{{group2}}</span>): {{this.getScore(teamName)}}<img src="assets/frite.png" alt="Frites"> <button class="detail" (click)="onScoreDetailTrigger()">Détails</button></h2>
     <mat-divider></mat-divider>
-</div>
 
-<!-- Gameboard -->
-<div>
-    <div *ngIf="this.questionID > 0 && this.questionID <= this.questions.length-1">
-        <h3>Question n°{{getQuestion(this.questionID - 1).id}} - <span [style.color]="timer <= 5 ? 'red' : (timer <= 15 ? 'yellow' : '')">{{timer}} sec</span></h3>
-        <!-- Before correction -->
-        <div *ngIf="!getQuestion(this.questionID - 1).locked && timer !== 0">
-            <div class="Proposition" *ngIf="(getQuestion(this.questionID - 1).type === 'Nugget' || (getQuestion(this.questionID - 1).type === 'SelOuPoivre' && (!getReponse() || !this.lockSpeed)))">
-                <button class="Proposition" *ngFor="let proposition of getQuestion(this.questionID - 1).propositionsShort" (click)="onAnswer(proposition)" [ngClass]="answer === proposition ? 'selected' : null">{{proposition}}</button>
+    <!-- SALLE D'ATTENTE -->
+    <section id="WaitRoom" *ngIf="questionID === 0">
+        <p>Merci de patienter. La Grande Frite commencera le quiz sous peu.</p>
+    </section>
+
+    <!-- FIN DE PARTIE -->
+    <section id="Endgame" *ngIf="questionID > questions.length - 1 && questions.length > 0">
+        <h2>Classement</h2>
+        <p>
+            Ce Poutine Quiz est terminé ! La Grande Frite vous remercie d'avoir joué et vous dit à
+            bientôt.
+        </p>
+
+        <div class="endgame-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rang</th>
+                        <th>Équipe</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let team of teams">
+                        <td>{{ getRanks(team.name) }}.</td>
+                        <td>{{ team.name }}</td>
+                        <td>{{ team.score }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- PLATEAU DE JEU -->
+    <section class="gameboard" *ngIf="questionID > 0 && questionID <= questions.length - 1">
+        <h3>
+            Question n°{{ getQuestion(questionID - 1).id }} -
+            <!-- prettier-ignore -->
+            <span
+                class="timer"
+                [ngClass]="{
+                    'timer-danger': timer <= 5,
+                    'timer-warning': timer > 5 && timer <= 15
+                }">
+                {{ timer }} sec
+            </span>
+        </h3>
+
+        <!-- AVANT CORRECTION -->
+        <div class="question-zone" *ngIf="!getQuestion(questionID - 1).locked && timer !== 0">
+            <!-- PROPOSITIONS (Nugget / SelOuPoivre) -->
+            <div
+                class="Proposition"
+                *ngIf="
+                    getQuestion(questionID - 1).type === 'Nugget' ||
+                    (getQuestion(questionID - 1).type === 'SelOuPoivre' &&
+                        (!getReponse() || !lockSpeed))
+                ">
+                <button
+                    class="Proposition"
+                    *ngFor="let proposition of getQuestion(questionID - 1).propositionsShort"
+                    (click)="onAnswer(proposition)"
+                    [ngClass]="{ selected: answer === proposition }">
+                    {{ proposition }}
+                </button>
             </div>
 
-            <p *ngIf="questions[questionID - 1].type === 'Tips'">
-                Points à parier: {{pointsBet}}&nbsp;
+            <!-- PARI (Tips) -->
+            <p *ngIf="questions[questionID - 1].type === 'Tips'" class="bet-zone">
+                Points à parier: {{ pointsBet }}&nbsp;
                 <mat-slider
                     max="5"
                     min="0"
@@ -46,39 +91,53 @@
                     thumbLabel="true"
                     [(ngModel)]="pointsBet"
                     [disabled]="!betActive"
-                    aria-labelledby="Nombre de points que vous souhaitez parier"
-                    (change)="onAnswer(this.answer)">
-                </mat-slider> 
+                    aria-label="Nombre de points que vous souhaitez parier"
+                    (change)="onAnswer(answer)">
+                </mat-slider>
             </p>
-                
-            <form (ngSubmit)="onAnswer(this.answer)" *ngIf="((getQuestion(this.questionID - 1).type === 'Menu' && isMenu()) || (getQuestion(this.questionID - 1).type === 'Addition' && (!getReponse() || !this.lockSpeed)) || questions[questionID - 1].type === 'Tips')">
-                <!-- <input 
-                    type="text" 
+
+            <!-- RÉPONSE LIBRE -->
+            <form
+                class="answer-form"
+                (ngSubmit)="onAnswer(answer)"
+                *ngIf="
+                    (getQuestion(questionID - 1).type === 'Menu' && isMenu()) ||
+                    (getQuestion(questionID - 1).type === 'Addition' &&
+                        (!getReponse() || !lockSpeed)) ||
+                    questions[questionID - 1].type === 'Tips'
+                ">
+                <textarea
                     name="reponse"
-                    [(ngModel)]="this.answer"
-                ><br> -->
-                <textarea 
-                    type="text" 
-                    name="reponse"
-                    [(ngModel)]="this.answer"
-                >
-                </textarea><br>
-                <button 
-                    type="submit" 
-                    class="Repondre"
-                >Répondre</button>
+                    [(ngModel)]="answer"
+                    placeholder="Votre réponse"></textarea>
+                <button type="submit" class="Repondre">Répondre</button>
             </form>
         </div>
-        
-        <!-- After correction -->
-        <div>
+
+        <!-- APRÈS CORRECTION -->
+        <div class="result-zone">
             <p>
-                {{this.getAnswer()}} <br>
-                <span *ngIf="getQuestion(this.questionID - 1).locked">Pour votre réponse: {{getPoints()[0]}}<img src="assets/frite.png" alt="Frites"><br></span>
-                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[1] != 0">Pour votre rapidité: {{getPoints()[1]}}<img src="assets/frite.png" alt="Frites"><br></span>
-                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[2] != 0">Pour les mauvaises réponses des autres: {{getPoints()[2]}}<img src="assets/frite.png" alt="Frites"><br></span>
-                <span *ngIf="getQuestion(this.questionID - 1).locked && getPoints()[3] != 0">Et en bonus (ou malus): {{getPoints()[3]}}<img src="assets/frite.png" alt="Frites"></span>
+                {{ getAnswer() }}<br />
+                <span *ngIf="getQuestion(questionID - 1).locked">
+                    Pour votre réponse: {{ getPoints()[0] }}
+                    <img src="assets/frite.png" alt="Frites" />
+                    <br />
+                </span>
+                <span *ngIf="getQuestion(questionID - 1).locked && getPoints()[1] != 0">
+                    Pour votre rapidité: {{ getPoints()[1] }}
+                    <img src="assets/frite.png" alt="Frites" />
+                    <br />
+                </span>
+                <span *ngIf="getQuestion(questionID - 1).locked && getPoints()[2] != 0">
+                    Pour les mauvaises réponses des autres: {{ getPoints()[2] }}
+                    <img src="assets/frite.png" alt="Frites" />
+                    <br />
+                </span>
+                <span *ngIf="getQuestion(questionID - 1).locked && getPoints()[3] != 0">
+                    Et en bonus (ou malus): {{ getPoints()[3] }}
+                    <img src="assets/frite.png" alt="Frites" />
+                </span>
             </p>
         </div>
-    </div>
+    </section>
 </div>
