@@ -38,3 +38,10 @@
 ::ng-deep .mat-tab-body-content {
     padding: var(--space);
 }
+
+/* Ensure the tab content wrapper doesn't clip sticky items */
+::ng-deep .mat-tab-body-wrapper,
+::ng-deep .mat-tab-body.mat-tab-body-active,
+::ng-deep .mat-tab-body-content {
+    overflow: visible !important;
+}
