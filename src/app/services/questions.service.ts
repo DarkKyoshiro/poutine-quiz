@@ -568,7 +568,7 @@ export class QuestionsService {
         {
             id: 32,
             type: "Tips",
-            speed: true,
+            speed: false,
             round: 1,
             points: 0,
 
@@ -1137,8 +1137,72 @@ export class QuestionsService {
         },
         {
             id: 63,
-            type: "Tips",
+            type: "Addition",
             speed: true,
+            round: 2,
+            points: 3,
+
+            title: "Titre de film pour adulte",
+            question: "C'est quel film",
+            answer: "Cyrano de Bergerac - Sire Anus de Vergerac.",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 64,
+            type: "Addition",
+            speed: true,
+            round: 2,
+            points: 3,
+
+            title: "Titre de film pour adulte",
+            question: "C'est quel film",
+            answer: "Edward scissorhands - Edward penishands, au penis d'argent",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 65,
+            type: "Addition",
+            speed: true,
+            round: 2,
+            points: 3,
+
+            title: "Titre de film pour adulte",
+            question: "C'est quel film",
+            answer: "Le seigneur des anneaux, le retour du roi - Le seigneur du fist, le retour du doigt",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 66,
+            type: "Addition",
+            speed: true,
+            round: 2,
+            points: 3,
+
+            title: "Titre de film pour adulte",
+            question: "C'est quel film",
+            answer: "Kirikou et la méchante sorcière - Kiki roux et la léchante sorcière",
+
+            showQuestion: false,
+            propositionsStep: 0,
+            locked: false,
+            showAnswer: false,
+        },
+        {
+            id: 67,
+            type: "Tips",
+            speed: false,
             round: 2,
             points: 0,
 
@@ -1152,14 +1216,14 @@ export class QuestionsService {
             showAnswer: false,
         },
         {
-            id: 64,
+            id: 68,
             type: "PoutineDeLaMort",
             speed: false,
             round: 3,
             points: 0,
 
             question:
-                "1. Comment s'appelerait la chanson Blue si le héro était rouge ?\n2. V ou F, Edith Piaf devait se prendre de sacré ligne pour voir la vie en rose ?\n3. Dans la chanson je te survivrai, à quoi survivrai Jean-Pierre François ?\n4. Pensez-vous qu'une emission comme la voie mais où les juges jugeraient uniquement sur le physique aurait du succès ?\n 5. Et pensez-vous que j'y ai ma chance ?\n6. Allé vous pouvez nous le dire après tout ce temps, qui a volé l'orange du marchand ?\n7. Comment s'appelerait Arian Grande si elle était très petite ?\n8. V ou F, certaines femmes enceintes diffusent du bon gros son ?\n9. Complétez ces paroles, Tiens voilà du...\n10. Et enfin, si vous demandiez de l'aide à Rick Astley, est-ce qu'il vous laisserait tomber ?",
+                "1.	V ou F, à la base les trois accords étaient 4 mais le dernier ne s’accordait pas avec les autres ?\n2.	Quelle langue belge pourrait parler un flamant rose ?\n3.	V ou F, les gens à l’hygiène buccale douteuse aiment chanter À nos aphtes manqués sous la douche ?\n4.	Combien font 1 Jean Réno plus 3 Jean Réno ? Si vous ne savez pas, dites « Je n’aime pas les calculs rénaux ».\n5.	Probable ou peu probable que les Daft Punk utilisent la reconnaissance faciale pour déverrouiller leur iPhone ?\n6.	Pensez vous que Jean-Jacques chante aussi quand la musique est pas super ?\n7.	Pensez-vous que Rihanna a trouvé l’idée de Shine Bright like a Diamond en voyant un chauve ?\n8.	Demander à la lune trois fois par semaine, c’est trop ou c’est juste ce qu’il faut ?\n9.	Si il est toujours en retard, est-ce qu’on peut dire que Charles trainait ?\n10.	À votre avis, M, il fait quelle taille de pull ?",
             answer: "NA",
 
             showQuestion: false,
