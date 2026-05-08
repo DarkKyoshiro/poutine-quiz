@@ -17,6 +17,19 @@ export class HomeComponent implements OnInit {
 
     leaderboards: Leaderboard[] = [
         {
+            titre: "S05E01 - Spécial Blind Test",
+            teams: [
+                { rang: 1, nom: "L'étable D Bills", score: 74 },
+                { rang: 2, nom: "Oui", score: 72 },
+                { rang: 3, nom: "Streichholzschächtelchen", score: 67 },
+                { rang: 4, nom: "Les fleurs en bouquet fanent", score: 62 },
+                { rang: 4, nom: "les grilled cheese", score: 62 },
+                { rang: 4, nom: "Pain au chocolatine", score: 61 },
+                { rang: 7, nom: "Johnny's angels", score: 60 },
+                { rang: 7, nom: "Les Saltimbanques", score: 50 },
+            ],
+        },
+        {
             titre: "S04E01 - Spécial Anniversaire",
             teams: [
                 { rang: 1, nom: "Les hobbits joufflues", score: 68 },
