@@ -249,6 +249,110 @@
     <div id="answers">
         <ng-container *ngFor="let answer of answers; let i = index">
             <mat-card
+                class="test"
+                *ngIf="answer.questionID === questionID"
+                [ngClass]="
+                    answer.correct > 0
+                        ? 'correct'
+                        : answer.correct === 0
+                          ? 'incorrect'
+                          : isMenuActive(answer.teamName)
+                            ? 'menu'
+                            : ''
+                ">
+                <mat-card-header>
+                    <button class="points">
+                        {{ getTeamScore(answer.teamName) }}
+                    </button>
+                    <button
+                        class="favorite_action"
+                        color="accent"
+                        *ngIf="!answer.favorite"
+                        (click)="onFavorite(answer.teamName, answer.questionID)">
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+                    <button
+                        class="unfavorite_action"
+                        color="warn"
+                        *ngIf="answer.favorite"
+                        (click)="onFavorite(answer.teamName, answer.questionID)">
+                        <mat-icon>heart_broken</mat-icon>
+                    </button>
+
+                    <mat-card-title
+                        ><p>{{ answer.teamName }}</p></mat-card-title
+                    >
+                </mat-card-header>
+
+                <mat-card-content>
+                    <div class="bonuses">
+                        <button mat-mini-fab color="accent" (click)="onBonus(i, 1)">
+                            <mat-icon> exposure_plus_1 </mat-icon>
+                        </button>
+
+                        <button mat-mini-fab color="warn" (click)="onBonus(i, -1)">
+                            <mat-icon> exposure_minus_1 </mat-icon>
+                        </button>
+
+                        <button
+                            mat-mini-fab
+                            color="primary"
+                            (click)="onClear(answer.teamName, answer.questionID)">
+                            <mat-icon> delete_sweep </mat-icon>
+                        </button>
+                    </div>
+
+                    <div class="answer">
+                        <p>
+                            {{ answer.answer
+                            }}<span *ngIf="questions[questionID - 1].type === 'Tips'">
+                                ({{ answer.pointsBet }})
+                            </span>
+                        </p>
+
+                        <p class="score">
+                            {{
+                                answer.points +
+                                    answer.bonusSpeed +
+                                    answer.bonusWrongAnswers +
+                                    answer.bonus
+                            }}
+                            = <mat-icon>check_circle</mat-icon> {{ answer.points }}
+                            <span *ngIf="answer.bonusSpeed > 0">
+                                + <mat-icon>speed</mat-icon> {{ answer.bonusSpeed }}</span
+                            >
+                            <span *ngIf="answer.bonusWrongAnswers > 0">
+                                + <mat-icon>volunteer_activism</mat-icon>
+                                {{ answer.bonusWrongAnswers }}</span
+                            >
+                            <span *ngIf="answer.bonus > 0">
+                                + <mat-icon>thumb_up</mat-icon> {{ answer.bonus }}</span
+                            >
+                            <span *ngIf="answer.bonus < 0">
+                                - <mat-icon>thumb_down</mat-icon> {{ answer.bonus }}</span
+                            >
+                        </p>
+                    </div>
+
+                    <div class="scoring">
+                        <button mat-mini-fab color="accent" (click)="onValidAnswer(i, 1)">
+                            <mat-icon>check_circle</mat-icon>
+                        </button>
+
+                        <button mat-mini-fab color="warn" (click)="onValidAnswer(i, 0)">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+
+                        <button mat-mini-fab color="primary" (click)="onValidAnswer(i, -1)">
+                            <mat-icon>autorenew</mat-icon>
+                        </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+
+        <!-- <ng-container *ngFor="let answer of answers; let i = index">
+            <mat-card
                 class="answer-card"
                 *ngIf="answer.questionID === questionID"
                 [ngClass]="
@@ -385,6 +489,6 @@
                     </button>
                 </mat-card-actions>
             </mat-card>
-        </ng-container>
+        </ng-container> -->
     </div>
 </div>
