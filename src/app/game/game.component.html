@@ -6,13 +6,14 @@
             (Grp:
             <span *ngIf="questions[questionID - 1].round === 1">{{ group1 }}</span>
             <span *ngIf="questions[questionID - 1].round === 2">{{ group2 }}</span>
-            ) : {{ getScore(teamName) }}
-            <img src="assets/frite.png" alt="Frites" class="frite-icon" />
+            )
             <!-- <button class="detail" (click)="onScoreDetailTrigger()">Détails</button> -->
         </h2>
+
+        <button id="score">{{ getScore(teamName) }}</button>
     </header>
 
-    <mat-divider></mat-divider>
+    <mat-divider *ngIf="questionID > 0 && questionID <= questions.length - 1"></mat-divider>
 
     <!-- SALLE D'ATTENTE -->
     <section id="WaitRoom" *ngIf="questionID === 0">
@@ -61,6 +62,8 @@
                 {{ timer }} sec
             </span>
         </h3>
+
+        <p>{{ getAnswer() }}</p>
 
         <!-- AVANT CORRECTION -->
         <div class="question-zone" *ngIf="!getQuestion(questionID - 1).locked && timer !== 0">
@@ -117,7 +120,6 @@
         <!-- APRÈS CORRECTION -->
         <div class="result-zone">
             <p>
-                {{ getAnswer() }}<br />
                 <span *ngIf="getQuestion(questionID - 1).locked">
                     Pour votre réponse: {{ getPoints()[0] }}
                     <img src="assets/frite.png" alt="Frites" />
