@@ -10,6 +10,10 @@ import { Question } from "src/app/models/question.model"
 import { Team } from "src/app/models/team.model"
 import { QuestionsService } from "src/app/services/questions.service"
 import * as _ from "lodash"
+import {
+    TextSimilarityService,
+    TextSimilarityResult,
+} from "src/app/services/text-similarity.service"
 
 @Component({
     selector: "app-admin-game",
@@ -36,6 +40,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
         private questionsService: QuestionsService,
         private dialog: MatDialog,
         private _snackBar: MatSnackBar,
+        private textSimilarityService: TextSimilarityService,
     ) {}
 
     ngOnInit(): void {
@@ -278,6 +283,7 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     }
 
     onFavorite(teamName: string, questionID: number) {
+        this.answers[questionID - 1].favorite = !this.answers[questionID - 1].favorite
         this.socket.emit("love-answer", teamName, questionID)
     }
 
@@ -552,5 +558,9 @@ export class AdminGameComponent implements OnInit, OnDestroy {
     onLockBets(): void {
         this.betActive = this.betActive ? false : true
         this.socket.emit("lockBets", this.betActive)
+    }
+
+    compareTexts(textA: string, textB: string): TextSimilarityResult {
+        return this.textSimilarityService.compare(textA, textB)
     }
 }

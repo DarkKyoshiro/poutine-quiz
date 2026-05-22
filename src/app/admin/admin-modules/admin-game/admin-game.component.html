@@ -304,10 +304,16 @@
 
                     <div class="answer">
                         <p>
-                            {{ answer.answer
-                            }}<span *ngIf="questions[questionID - 1].type === 'Tips'">
+                            <span *ngIf="questions[questionID - 1].type === 'Tips'">
                                 ({{ answer.pointsBet }})
                             </span>
+                            {{ answer.answer }}
+                            <i
+                                >({{
+                                    compareTexts(answer.answer, questions[questionID - 1].answer)
+                                        .percentage
+                                }})</i
+                            >
                         </p>
 
                         <p class="score">
@@ -350,145 +356,5 @@
                 </mat-card-content>
             </mat-card>
         </ng-container>
-
-        <!-- <ng-container *ngFor="let answer of answers; let i = index">
-            <mat-card
-                class="answer-card"
-                *ngIf="answer.questionID === questionID"
-                [ngClass]="
-                    answer.correct > 0
-                        ? 'correct'
-                        : answer.correct === 0
-                          ? 'incorrect'
-                          : isMenuActive(answer.teamName)
-                            ? 'menu'
-                            : ''
-                ">
-                <mat-card-header>
-                    <button
-                        mat-mini-fab
-                        mat-card-avatar
-                        [matBadge]="
-                            answer.points +
-                            answer.bonusSpeed +
-                            answer.bonusWrongAnswers +
-                            answer.bonus
-                        "
-                        [matBadgeHidden]="
-                            answer.points +
-                                answer.bonusSpeed +
-                                answer.bonusWrongAnswers +
-                                answer.bonus ===
-                            0
-                        "
-                        matBadgeOverlap="true"
-                        matBadgePosition="before">
-                        {{ getTeamScore(answer.teamName) }}
-                    </button>
-                    <mat-card-title>
-                        <p>{{ answer.teamName }}</p>
-                    </mat-card-title>
-
-                    <mat-card-actions>
-                        <button
-                            mat-mini-fab
-                            color="accent"
-                            aria-label="Bonus +"
-                            (click)="onBonus(i, 1)">
-                            <mat-icon
-                                [matBadge]="answer.bonus"
-                                [matBadgeHidden]="answer.bonus <= 0"
-                                matBadgeOverlap="false">
-                                thumb_up
-                            </mat-icon>
-                        </button>
-
-                        <button
-                            mat-mini-fab
-                            color="warn"
-                            aria-label="Bonus -"
-                            (click)="onBonus(i, -1)">
-                            <mat-icon
-                                [matBadge]="answer.bonus"
-                                [matBadgeHidden]="answer.bonus >= 0"
-                                matBadgeOverlap="false">
-                                thumb_down
-                            </mat-icon>
-                        </button>
-
-                        <button
-                            mat-mini-fab
-                            color="primary"
-                            aria-label="Effacer la réponse"
-                            (click)="onClear(answer.teamName, answer.questionID)">
-                            <mat-icon>refresh</mat-icon>
-                        </button>
-                    </mat-card-actions>
-                </mat-card-header>
-
-                <mat-card-content>
-                    <mat-divider></mat-divider>
-                    <p>
-                        {{ answer.answer }}
-                        <span *ngIf="questions[questionID - 1].type === 'Tips'">
-                            ({{ answer.pointsBet }})
-                        </span>
-                        <button
-                            mat-mini-fab
-                            color="accent"
-                            aria-label="Like"
-                            *ngIf="!answer.favorite"
-                            (click)="onFavorite(answer.teamName, answer.questionID)">
-                            <mat-icon>favorite</mat-icon>
-                        </button>
-
-                        <button
-                            mat-mini-fab
-                            color="warn"
-                            aria-label="Unlike"
-                            *ngIf="answer.favorite"
-                            (click)="onFavorite(answer.teamName, answer.questionID)">
-                            <mat-icon>heart_broken</mat-icon>
-                        </button>
-                    </p>
-
-                    <mat-divider *ngIf="answer.answer"></mat-divider>
-                </mat-card-content>
-
-                <mat-card-actions>
-                    <button
-                        mat-mini-fab
-                        color="accent"
-                        aria-label="Bonne réponse"
-                        (click)="onValidAnswer(i, 1)"
-                        [matBadge]="answer.points"
-                        [matBadgeHidden]="answer.points === 0"
-                        matBadgeOverlap="true"
-                        matBadgePosition="after">
-                        <mat-icon>check_circle</mat-icon>
-                    </button>
-
-                    <button
-                        mat-mini-fab
-                        color="warn"
-                        aria-label="Mauvaise réponse"
-                        (click)="onValidAnswer(i, 0)"
-                        [matBadge]="answer.bonusWrongAnswers"
-                        [matBadgeHidden]="answer.bonusWrongAnswers === 0"
-                        matBadgeOverlap="true"
-                        matBadgePosition="after">
-                        <mat-icon>cancel</mat-icon>
-                    </button>
-
-                    <button
-                        mat-mini-fab
-                        color="primary"
-                        aria-label="Réinitialiser la correction"
-                        (click)="onValidAnswer(i, -1)">
-                        <mat-icon>autorenew</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-        </ng-container> -->
     </div>
 </div>

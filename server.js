@@ -16,7 +16,7 @@ const app = express()
 //For HerokuApp
 //-----------------------------------------------------------------
 //! Change quizID for each quiz
-var quizID = "poutinequizS05E01-07Mai2026"
+var quizID = "poutinequizS05E01-23Mai2026"
 mongoose
     .connect(
         "mongodb+srv://GrandeFrite:452cx27pz@cluster0.tmhxw.mongodb.net/" +
@@ -480,8 +480,8 @@ io.on("connection", (socket) => {
 
         answers[answerID].favorite = !answers[answerID].favorite
 
-        io.emit("send-teams", getScores())
-        io.emit("get-answers", answers)
+        // io.emit("send-teams", getScores())
+        // io.emit("get-answers", answers)
     })
 
     socket.on("get-team-scores", (teamName) => {
