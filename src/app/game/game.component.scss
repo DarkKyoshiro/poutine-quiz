@@ -107,11 +107,27 @@ button.detail {
 
 /* PLATEAU DE JEU */
 .gameboard {
-    margin-top: var(--space);
+    margin-top: 0;
 
     p {
         font-size: clamp(24px, 7vw, 60px);
         margin: 0;
+    }
+
+    p.answer {
+        border-radius: 15px;
+        background-color: chocolate;
+        width: fit-content;
+        margin: auto;
+        padding: 0 8px;
+    }
+
+    p.correct {
+        background-color: #4caf50;
+    }
+
+    p.incorrect {
+        background-color: red;
     }
 }
 

@@ -17,6 +17,15 @@ export class HomeComponent implements OnInit {
 
     leaderboards: Leaderboard[] = [
         {
+            titre: "S05E01 - Spécial Blind Test (Rediffusion)",
+            teams: [
+                { rang: 1, nom: "Les balançoires de la côte ouest", score: 65 },
+                { rang: 2, nom: "Équipe Rocco", score: 63 },
+                { rang: 3, nom: "Les p’tits Suzukis", score: 59 },
+                { rang: 4, nom: "Les surs sûres qui susurrent", score: 55 },
+            ],
+        },
+        {
             titre: "S05E01 - Spécial Blind Test",
             teams: [
                 { rang: 1, nom: "L'étable D Bills", score: 74 },

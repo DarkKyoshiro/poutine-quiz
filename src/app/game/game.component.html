@@ -63,7 +63,15 @@
             </span>
         </h3>
 
-        <p>{{ getAnswer() }}</p>
+        <!-- prettier-ignore -->
+        <p
+            class="answer"
+            *ngIf="getAnswer().hasAnswered"
+            [ngClass]="{
+                correct: getAnswer().correction === 1, incorrect: getAnswer().correction === 0 }">
+            Vous avez répondu: <br />
+            {{ getAnswer().text }}
+        </p>
 
         <!-- AVANT CORRECTION -->
         <div class="question-zone" *ngIf="!getQuestion(questionID - 1).locked && timer !== 0">

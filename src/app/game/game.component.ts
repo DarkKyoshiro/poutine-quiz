@@ -38,7 +38,7 @@ export class GameComponent implements OnInit, OnDestroy {
         private socket: Socket,
         private route: ActivatedRoute,
         private router: Router,
-        private matBottomSheet: MatBottomSheet
+        private matBottomSheet: MatBottomSheet,
     ) {}
 
     ngOnInit(): void {
@@ -64,7 +64,7 @@ export class GameComponent implements OnInit, OnDestroy {
                         this.onAnswer(
                             this.answer === ""
                                 ? "#!Timeout!#"
-                                : "#!Timeout!# - (" + this.answer + ")"
+                                : "#!Timeout!# - (" + this.answer + ")",
                         )
                     }
                 }
@@ -198,8 +198,10 @@ export class GameComponent implements OnInit, OnDestroy {
         return this.control
     }
 
-    getAnswer(): string {
-        let returnedAnswer: string = "Vous n'avez rien répondu encore..."
+    getAnswer(): { hasAnswered: boolean; text: string; correction: number } {
+        let hasAnswered = false
+        let text = ""
+        let correction = 0
         this.answers.forEach((element) => {
             if (
                 element.questionID === this.questionID &&
@@ -208,15 +210,12 @@ export class GameComponent implements OnInit, OnDestroy {
                 element.answer !== "" &&
                 element.answer !== "#!Timeout!#"
             ) {
-                returnedAnswer = "Vous avez répondu " + element.answer
-                if (element.correct === 1) {
-                    returnedAnswer = returnedAnswer + " - Correct"
-                } else if (element.correct === 0) {
-                    returnedAnswer = returnedAnswer + " - Incorrect"
-                }
+                hasAnswered = true
+                text = element.answer
+                correction = element.correct
             }
         })
-        return returnedAnswer
+        return { hasAnswered, text, correction }
     }
 
     getScore(teamName: string): number {
@@ -315,15 +314,4 @@ export class GameComponent implements OnInit, OnDestroy {
 
         return rankings[teamIndex]
     }
-
-    // getGroup(teamName: string): number {
-    //   let tempGroup: number = 0;
-    //   this.teams.forEach(element => {
-    //     if(element.name === teamName) {
-    //       tempGroup = element.group
-    //     }
-    //   });
-
-    //   return tempGroup
-    // }
 }

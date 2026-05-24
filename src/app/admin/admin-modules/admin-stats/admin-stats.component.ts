@@ -61,7 +61,7 @@ export class AdminStatsComponent implements OnInit {
                 answer.points +
                     answer.bonus +
                     answer.bonusWrongAnswers +
-                    scoreTotal.get(answer.teamName)
+                    scoreTotal.get(answer.teamName),
             )
 
             if (table.has(answer.questionID)) {
@@ -174,7 +174,7 @@ export class AdminStatsComponent implements OnInit {
                     answer.teamName,
                     (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! +
                         (answer.timestamp - this.getFastestTime(answer.questionID))) /
-                        (teamsNumber.get(answer.teamName)! + 1)
+                        (teamsNumber.get(answer.teamName)! + 1),
                 )
                 teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
             }
@@ -208,7 +208,7 @@ export class AdminStatsComponent implements OnInit {
                     answer.teamName,
                     (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! +
                         (answer.timestamp - this.getFastestTime(answer.questionID))) /
-                        (teamsNumber.get(answer.teamName)! + 1)
+                        (teamsNumber.get(answer.teamName)! + 1),
                 )
                 teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
             }
@@ -242,7 +242,7 @@ export class AdminStatsComponent implements OnInit {
                     answer.teamName,
                     (teamsAverage.get(answer.teamName)! * teamsNumber.get(answer.teamName)! +
                         (answer.timestamp - this.getFastestTime(answer.questionID))) /
-                        (teamsNumber.get(answer.teamName)! + 1)
+                        (teamsNumber.get(answer.teamName)! + 1),
                 )
                 teamsNumber.set(answer.teamName, teamsNumber.get(answer.teamName)! + 1)
             }
@@ -273,7 +273,7 @@ export class AdminStatsComponent implements OnInit {
                 teamsAdded.set(
                     answer.teamName,
                     teamsAdded.get(answer.teamName)! +
-                        (answer.timestamp - this.getFastestTime(answer.questionID))
+                        (answer.timestamp - this.getFastestTime(answer.questionID)),
                 )
             }
         })
@@ -303,7 +303,7 @@ export class AdminStatsComponent implements OnInit {
                 teamsAdded.set(
                     answer.teamName,
                     teamsAdded.get(answer.teamName)! +
-                        (answer.timestamp - this.getFastestTime(answer.questionID))
+                        (answer.timestamp - this.getFastestTime(answer.questionID)),
                 )
             }
         })
@@ -333,7 +333,7 @@ export class AdminStatsComponent implements OnInit {
                 teamsAdded.set(
                     answer.teamName,
                     teamsAdded.get(answer.teamName)! +
-                        (answer.timestamp - this.getFastestTime(answer.questionID))
+                        (answer.timestamp - this.getFastestTime(answer.questionID)),
                 )
             }
         })
@@ -430,14 +430,14 @@ export class AdminStatsComponent implements OnInit {
                     teamsRd1.get(answer.teamName) +
                         answer.points +
                         answer.bonus +
-                        answer.bonusWrongAnswers
+                        answer.bonusWrongAnswers,
                 )
                 teamsRd2.set(
                     answer.teamName,
                     teamsRd2.get(answer.teamName) +
                         answer.points +
                         answer.bonus +
-                        answer.bonusWrongAnswers
+                        answer.bonusWrongAnswers,
                 )
             } else {
                 teamsRd2.set(
@@ -445,7 +445,7 @@ export class AdminStatsComponent implements OnInit {
                     teamsRd2.get(answer.teamName) +
                         answer.points +
                         answer.bonus +
-                        answer.bonusWrongAnswers
+                        answer.bonusWrongAnswers,
                 )
             }
         })
@@ -453,12 +453,12 @@ export class AdminStatsComponent implements OnInit {
         let teamsRd1Sorted = new Map(
             [...teamsRd1].sort((a, b) => {
                 return b[1] - a[1]
-            })
+            }),
         )
         let teamsRd2Sorted = new Map(
             [...teamsRd2].sort((a, b) => {
                 return b[1] - a[1]
-            })
+            }),
         )
 
         let teamsRd1Ranked = new Map<string, number>()
@@ -617,7 +617,7 @@ export class AdminStatsComponent implements OnInit {
             if (answer.favorite) {
                 listAnswers.push({
                     questionID: answer.questionID,
-                    questionText: this.questions[answer.questionID].question,
+                    questionText: this.questions[answer.questionID - 1].question,
                     teamName: answer.teamName,
                     answerText: answer.answer,
                 })
